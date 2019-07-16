@@ -1,0 +1,60 @@
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.tobe.mes'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.5.1'
+    compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.1'
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.1.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.6.RELEASE', ext: 'pom'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.5.0'
+    compile group : 'org.apache.tomcat.embed', name : 'tomcat-embed-jasper', version : '9.0.21'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    compile 'org.mybatis:mybatis:3.5.1'
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
+    compile "org.springframework:spring-context-support"
+    compile "com.sun.mail:javax.mail"
+}
+
+test {
+    outputs.dir snippetsDir
+}
+
+asciidoctor {
+    inputs.dir snippetsDir
+    dependsOn test
+}
