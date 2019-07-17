@@ -203,16 +203,27 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div v-cloak id="app">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-                    <h1 class="h2">&nbsp;</h1>
-                    <span>홈 > MES</span>
+                    <h1 class="font-size-18">공통코드관리</h1>
+                    <span class="pa-b-20">홈 > MES</span>
                 </div>
+                    <div class="content-border">
                     <div class="mg-left-20">
-                        <label for="common_group_select">코드그룹: </label>
-                        <select class="col-xl-2" id="common_group_select">
-                            <option v-for="(cg,index) in common_group_list" :key="index" :value="cg.group_code">
-                                {{ cg.group_name }}
-                            </option>
-                        </select>
+                        <table class="table table-border-bl" >
+                            <tr>
+                                <td class="top-td-la" style="padding-top: 12px;">
+                                    코드그룹
+                                </td>
+                                <td>
+                                    <select class="col-xl-2" id="common_group_select">
+                                        <option v-for="(cg,index) in common_group_list" :key="index" :value="cg.group_code">
+                                            {{ cg.group_name }}
+                                        </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+
                     </div>
                     <div class="mg-left-20">
                         <button class="btn btn-primary btn_pd" @click="common_get_btn">조회</button>
@@ -231,6 +242,7 @@
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
+                                    <label class="font-size-18">{{ common_group_name }}</label>
                                     <button type="button" class="close" data-dismiss="modal">×</button>
 
                                 </div>
@@ -238,22 +250,51 @@
 
                                     <div class="mg-5 mg-auto form-group">
                                         <label for="test1" class="label-ba">그룹코드</label>
-
-                                        <input id="test1" class="form-control in-s-50">
+                                        <input v-model="sys_common.code_type" readonly id="test1" class="form-control in-s-50">
                                     </div>
                                     <div class="mg-5 mg-auto form-group">
-                                        <label for="test" class="label-ba">그룹코드</label><input id="test" class="form-control in-s-50">
+                                        <label for="test2" class="label-ba">코드</label>
+                                        <input v-model="sys_common.code_value" id="test2" class="form-control in-s-50">
                                     </div>
-                                </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test3" class="label-ba">명칭1</label>
+                                        <input v-model="sys_common.code_name1" id="test3" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test4" class="label-ba">명칭2</label>
+                                        <input v-model="sys_common.code_name2" id="test4" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test5" class="label-ba">명칭3</label>
+                                        <input v-model="sys_common.code_name3" id="test5" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test6" class="label-ba">명칭4</label>
+                                        <input v-model="sys_common.code_name4" id="test6" class="form-control in-s-50">
+                                    </div>
+
+
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test7" class="label-ba">사용유무</label>
+                                        <select v-model="sys_common.use_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </div>
+
+                                    </div>
+
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" @click="common_au('I')">저장</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+                                </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-
                 </div>
+
             </main>
         </div>
     </div>

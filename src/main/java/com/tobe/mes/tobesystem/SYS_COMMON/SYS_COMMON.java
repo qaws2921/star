@@ -17,6 +17,7 @@ public class SYS_COMMON {
     private String update_date;
     private String group_code;
     private String group_name;
+    private String keyword;
 
     public String getCode_type() {
         return code_type;
@@ -144,5 +145,13 @@ public class SYS_COMMON {
 
     public void setGroup_name(String group_name) {
         this.group_name = group_name;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }

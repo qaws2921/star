@@ -18,6 +18,11 @@ public class SYS_COMMON_RESTCONTROLLER {
         System.out.println(code_type);
         return common_service.common_get(page,rows,code_type);
     }
+    @RequestMapping(value = "/common_au", method = RequestMethod.POST)
+    public void common_au (SYS_COMMON sc){
+        System.out.println(sc.getCode_type());
+
+    }
     @RequestMapping(value = "/common/group/get", method = RequestMethod.POST)
     public List<SYS_COMMON> common_group_get (){
         return common_service.common_group_get();
