@@ -56,3 +56,14 @@ p{margin: auto}
 .tree_menu li.end {background:url(http://cfile23.uf.tistory.com/image/2272CF4B5694580418FF9C) no-repeat 0 0;}
 .form_tree_menu .depth_1 {background:url(http://cfile9.uf.tistory.com/image/22601F4B569457FF051E7E) no-repeat 5px 5px;}
 .form_tree_menu ul.depth_2 li {margin-left:6px;padding-left:27px;background:url(http://cfile25.uf.tistory.com/image/2757834B5694580514C5D6) no-repeat 0 5px;}
+.ui-jqgrid .ui-jqgrid-htable .ui-th-div {
+font-size: 9px;
+}
+.btn_pd{margin-right: 5px; font-size: 10px;}
+.mg-left-20{margin-left: 20px; margin-bottom: 10px;}
+.table td, .table th {padding:5px;}
+.ui-jqgrid tr.jqgrow{font-size: 7px;}
+.mg-5{margin: 5px;}
+.mg-auto{margin-left: auto; margin-right: auto;}
+.label-ba{margin-right: 5px}
+.in-s-50{width: 50px;}

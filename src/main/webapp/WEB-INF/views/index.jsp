@@ -32,7 +32,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script type="text/javascript" src="resource/js/jem/axios.js"></script>
+    <script type="text/javascript" src="resource/js/jem/axios.min.js"></script>
+    <script type="text/javascript" src="resource/js/jem/es6-promise.auto.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="resource/js/mes/index/vue_index.js"></script>
+    <script src="resource/js/mes/index/jquery_index.js"></script>
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -189,39 +201,66 @@
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+                <div v-cloak id="app">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
                     <h1 class="h2">&nbsp;</h1>
                     <span>홈 > MES</span>
                 </div>
+                    <div class="mg-left-20">
+                        <label for="common_group_select">코드그룹: </label>
+                        <select class="col-xl-2" id="common_group_select">
+                            <option v-for="(cg,index) in common_group_list" :key="index" :value="cg.group_code">
+                                {{ cg.group_name }}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="mg-left-20">
+                        <button class="btn btn-primary btn_pd" @click="common_get_btn">조회</button>
+                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal">추가</button>
+                        <button class="btn btn-danger btn_pd">삭제</button>
+                    </div>
                 <div style="margin-left:20px;margin-top:20px">
                     <table id="jqGrid"></table>
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $("#jqGrid").jqGrid({
-                            url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
-                            mtype: "GET",
-                            datatype: "jsonp",
-                            colModel: [
-                                { label: 'OrderID', name: 'OrderID', key: true},
-                                { label: 'Customer ID', name: 'CustomerID'},
-                                { label: 'Order Date', name: 'OrderDate'},
-                                { label: 'Freight', name: 'Freight'},
-                                { label:'Ship Name', name: 'ShipName'}
-                            ],
-                            viewrecords: true,
-                            width: 1500,
-                            height: 500,
-                            rowNum: 101,
-                            pager: "#jqGridPager"
-                        });
-                    });
-                </script>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+
+                                </div>
+                                <div class="modal-body form-inline">
+
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test1" class="label-ba">그룹코드</label>
+
+                                        <input id="test1" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test" class="label-ba">그룹코드</label><input id="test" class="form-control in-s-50">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </main>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+</script>
 </html>
