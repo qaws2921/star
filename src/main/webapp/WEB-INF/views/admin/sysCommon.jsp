@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="include/header.jsp"%>
-<script src="resource/js/mes/index/vue_index.js"></script>
-<script src="resource/js/mes/index/jquery_index.js"></script>
+<%@include file="../include/header.jsp"%>
+<script src="resource/js/mes/admin/sysCommon/vue_sysCommon.js"></script>
+<script src="resource/js/mes/admin/sysCommon/jquery_sysCommon.js"></script>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div v-cloak id="app">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
                     <h1 class="font-size-18">공통코드관리</h1>
-                    <span class="pa-b-20">홈 > MES</span>
+                    <span class="pa-b-20">홈 > MES > 공통코드관리</span>
                 </div>
                     <div class="content-border">
                     <div class="mg-left-20">

@@ -31,7 +31,7 @@ window.onload = function () {
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
-            jquery_index(_this); // vue 에서 실행 못하는 jquery
+            jquery_sysPartGroup(_this); // vue 에서 실행 못하는 jquery
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -42,23 +42,19 @@ window.onload = function () {
 
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['공용그룹','코드','명칭1','명칭2','명칭3','명칭4','사용유무','등록자','등록일'],
+                    colNames:['품목그룹코드','품목그룹명','설명','등록자','등록일'],
                     colModel:[
-                        {name:'code_type',index:'code_type'},
-                        {name:'code_value',index:'code_value',key: true },
-                        {name:'code_name1',index:'code_name1'},
-                        {name:'code_name2',index:'code_name2'},
-                        {name:'code_name3',index:'code_name3'},
-                        {name:'code_name4',index:'code_name4'},
-                        {name:'use_yn',index:'use_yn'},
-                        {name:'user_name',index:'user_name'},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date},
+                        {name:'part_grp_code',index:'part_grp_code',key: true },
+                        {name:'part_grp_name',index:'part_grp_name'},
+                        {name:'remark',index:'remark'},
+                        {name:'user_code',index:'user_code'},
+                        {name:'update_date',index:'update_date'/*,formatter:formmatter_date*/},
 
 
                     ],
                     width:1500,
                     height:500,
-                    caption: "코드관리",
+                    caption: "품목그룹관리",
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,
@@ -108,7 +104,7 @@ window.onload = function () {
             common_get_btn:function () { // 조회 버튼
                 var _this = this;
                 _this.common_group_code_post =_this.common_group_code;
-                $('#jqGrid').setGridParam({ url: 'common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'part/group/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: 1}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax

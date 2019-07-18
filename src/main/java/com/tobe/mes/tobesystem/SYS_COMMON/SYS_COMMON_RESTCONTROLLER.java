@@ -13,18 +13,22 @@ public class SYS_COMMON_RESTCONTROLLER {
     @Autowired
     private SYS_COMMON_SERVICE common_service;
 
-    @RequestMapping(value = "/common/get", method = RequestMethod.POST)
+    @RequestMapping(value = "/common/get", method = RequestMethod.POST) // 코드 리스트 가져오기
     public SYS_COMMONS common_get (Double page, Double rows, String code_type){
-        System.out.println(code_type);
         return common_service.common_get(page,rows,code_type);
     }
-    @RequestMapping(value = "/common_au", method = RequestMethod.POST)
-    public void common_au (SYS_COMMON sc){
-        System.out.println(sc.getCode_type());
+    @RequestMapping(value = "/common/au", method = RequestMethod.POST)  // 코드 저장 수정
+    public int common_au (SYS_COMMON sc){
+        return common_service.common_au(sc);
 
     }
-    @RequestMapping(value = "/common/group/get", method = RequestMethod.POST)
+    @RequestMapping(value = "/common/group/get", method = RequestMethod.POST)   // 코드그룹 리스트 가져오기
     public List<SYS_COMMON> common_group_get (){
         return common_service.common_group_get();
+    }
+
+    @RequestMapping(value = "/common/delete", method = RequestMethod.DELETE) // 코드 삭제
+    public int common_delete (SYS_COMMON sc) {
+        return common_service.common_delete(sc);
     }
 }

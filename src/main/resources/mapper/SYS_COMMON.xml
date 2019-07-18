@@ -11,5 +11,11 @@
     <select id="common_group_get" resultType="com.tobe.mes.tobesystem.SYS_COMMON.SYS_COMMON">
         CALL TOBE_MES.SP_SYS_COMMON_GROUP_GET(0,0,"S")
     </select>
+    <insert id="common_au" parameterType="com.tobe.mes.tobesystem.SYS_COMMON.SYS_COMMON">
+        CALL TOBE_MES.SP_SYS_COMMON_ADD(#{code_type},#{code_value},#{code_name1},#{code_name2},#{code_name3},#{code_name4},#{code_name5},#{code_name6},#{code_name7},#{code_name8},#{use_yn},#{user_code},#{keyword})
+    </insert>
+    <delete id="common_delete">
+        CALL TOBE_MES.SP_SYS_COMMON_DEL(#{type_value})
+    </delete>
 
 </mapper>

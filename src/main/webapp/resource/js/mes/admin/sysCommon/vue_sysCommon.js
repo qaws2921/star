@@ -31,7 +31,7 @@ window.onload = function () {
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
-            jquery_index(_this); // vue 에서 실행 못하는 jquery
+            jquery_sysPartGroup(_this); // vue 에서 실행 못하는 jquery
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드

@@ -13,6 +13,7 @@ public class SYS_COMMON {
     private String code_name8;
     private String use_yn;
     private String user_code;
+    private String user_name;
     private String create_date;
     private String update_date;
     private String group_code;
@@ -153,5 +154,13 @@ public class SYS_COMMON {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 }

@@ -36,4 +36,24 @@ public class SYS_COMMON_SERVICE {
     public List<SYS_COMMON> common_group_get() {
         return sys_common_mapper.common_group_get();
     }
+
+    public int common_au(SYS_COMMON sc) {
+        return sys_common_mapper.common_au(sc);
+    }
+
+    public int common_delete(SYS_COMMON sc) {
+        char a = (char)5;
+        char b = (char)4;
+        String code_value[] = sc.getCode_value().split(",");
+        String type_value="";
+        for (int i = 0; i < code_value.length ; i++) {
+            if (i == 0){
+                type_value += sc.getCode_type()+a+code_value[i];
+            }else {
+                type_value += b+sc.getCode_type()+a+code_value[i];
+            }
+        }
+
+        return sys_common_mapper.common_delete(type_value);
+    }
 }

@@ -69,8 +69,10 @@ font-size: 9px;
 .in-s-50{width: 50px;}
 .se-s-193{width: 193px;}
 .top-td-la{width: 100px; text-align: center; background-color: #005cbf; color: white; font-weight: 600; font-size: 11px; padding-top: 100px;}
-.table-border-bl{border: black solid 0.5px; border-top: black solid 2px; width: 1500px;}
+.table-border-bl{border: solid 1px #999; border-top: 2px solid #005cbf; width: 1500px;}
 .content-border{border: #545b6255 solid 0.005mm; padding-top: 20px; padding-bottom: 30px;}
 .font-size-18{font-size: 18px; font-weight: 700;}
 .pa-b-20{padding-bottom: 20px;}
+.file-tree{display: none;}
+.ba-color-999{background-color: #b5b5bb;}
 

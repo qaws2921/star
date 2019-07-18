@@ -1,4 +1,4 @@
-function jquery_index(_this){
+function jquery_sysCommon(_this){
     $(document).on("change","#common_group_select",function(){ // select 박스 바뀔때
         _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
     });
