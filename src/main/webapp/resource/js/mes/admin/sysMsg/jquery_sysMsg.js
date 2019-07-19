@@ -1,4 +1,4 @@
-function jquery_sysPartGroup(_this){
+function jquery_sysMsg(_this){
 
 }
 

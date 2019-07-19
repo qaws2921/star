@@ -1,4 +1,4 @@
-package com.tobe.mes.tobesystem.SYS_COMMON;
+package com.tobe.mes.tobesystem.ADMIN.SYS_COMMON;
 
 public class SYS_COMMON {
     private String code_type;

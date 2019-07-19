@@ -1,11 +1,10 @@
-package com.tobe.mes.tobesystem.SYS_COMMON;
+package com.tobe.mes.tobesystem.ADMIN.SYS_COMMON;
 
 import com.tobe.mes.tobesystem.Bean.Page;
-import com.tobe.mes.tobesystem.Mapper.SYS_COMMON_Mapper;
+import com.tobe.mes.tobesystem.Mapper.Admin.SYS_COMMON_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -53,6 +52,7 @@ public class SYS_COMMON_SERVICE {
                 type_value += b+sc.getCode_type()+a+code_value[i];
             }
         }
+
 
         return sys_common_mapper.common_delete(type_value);
     }

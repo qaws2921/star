@@ -1,4 +1,4 @@
-package com.tobe.mes.tobesystem.SYS_PART_GROUP;
+package com.tobe.mes.tobesystem.ADMIN.SYS_PART_GROUP;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

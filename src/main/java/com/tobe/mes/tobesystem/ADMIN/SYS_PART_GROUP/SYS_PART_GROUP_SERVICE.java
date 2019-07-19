@@ -1,8 +1,7 @@
-package com.tobe.mes.tobesystem.SYS_PART_GROUP;
+package com.tobe.mes.tobesystem.ADMIN.SYS_PART_GROUP;
 
 import com.tobe.mes.tobesystem.Bean.Page;
-import com.tobe.mes.tobesystem.Mapper.SYS_COMMON_Mapper;
-import com.tobe.mes.tobesystem.Mapper.SYS_PART_GROUP_Mapper;
+import com.tobe.mes.tobesystem.Mapper.Admin.SYS_PART_GROUP_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +30,24 @@ public class SYS_PART_GROUP_SERVICE {
 
             return new SYS_PART_GROUPS(sys_part_groupList,total,(int)(page*1),sys_part_group_count);
         }
+    }
+
+    public int part_group_au(SYS_PART_GROUP spg) {
+        return  sys_part_group_mapper.part_group_au(spg);
+    }
+
+    public int part_group_delete(SYS_PART_GROUP spg) {
+        char a = (char) 5;
+        char b = (char) 4;
+        String part_grp_code[] = spg.getPart_grp_code().split(",");
+        String code= "";
+        for (int i = 0; i < part_grp_code.length; i++) {
+            if (i == 0) {
+                code += part_grp_code[i];
+            } else {
+                code += b + part_grp_code[i];
+            }
+        }
+        return sys_part_group_mapper.part_group_delete(code);
     }
 }

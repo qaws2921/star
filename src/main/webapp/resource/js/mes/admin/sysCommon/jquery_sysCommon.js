@@ -3,6 +3,7 @@ function jquery_sysCommon(_this){
         _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
     });
 
+
 }
 
 function formmatter_date(cellValue) { // 날짜 필터

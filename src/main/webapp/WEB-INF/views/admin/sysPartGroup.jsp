@@ -14,9 +14,9 @@
                     <div class="content-border">
 
                     <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="common_get_btn">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="common_delete">삭제</button>
+                        <button class="btn btn-primary btn_pd" @click="part_group_get_btn">조회</button>
+                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="part_group_add">추가</button>
+                        <button class="btn btn-danger btn_pd" @click="part_group_delete">삭제</button>
                     </div>
                 <div style="margin-left:20px;margin-top:20px">
                     <table id="jqGrid"></table>
@@ -30,52 +30,31 @@
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <label class="font-size-18">{{ common_group_name }}</label>
+                                    <label class="font-size-18">품목그룹관리</label>
                                     <button type="button" class="close" data-dismiss="modal">×</button>
 
                                 </div>
                                 <div class="modal-body form-inline">
 
                                     <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">그룹코드</label>
-                                        <input v-model="sys_common.code_type" readonly id="test1" class="form-control in-s-50">
+                                        <label for="test1" class="label-ba">품목그룹코드</label>
+                                        <input  v-if="add_update_check==='I'" v-model="sys_part_group.part_grp_code" id="test1" class="form-control in-s-50">
+                                        <input  v-if="add_update_check==='U'" v-model="sys_part_group.part_grp_code" readonly id="test1" class="form-control in-s-50">
                                     </div>
                                     <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">코드</label>
-                                        <input  v-if="add_update_check==='I'" v-model="sys_common.code_value" id="test2" class="form-control in-s-50">
-                                        <input  v-if="add_update_check==='U'" readonly v-model="sys_common.code_value" id="test2" class="form-control in-s-50">
+                                        <label for="test2" class="label-ba">품목그룹명</label>
+                                        <input v-model="sys_part_group.part_grp_name" id="test2" class="form-control in-s-50">
                                     </div>
                                     <div class="mg-5 mg-auto form-group">
-                                        <label for="test3" class="label-ba">명칭1</label>
-                                        <input v-model="sys_common.code_name1" id="test3" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test4" class="label-ba">명칭2</label>
-                                        <input v-model="sys_common.code_name2" id="test4" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test5" class="label-ba">명칭3</label>
-                                        <input v-model="sys_common.code_name3" id="test5" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭4</label>
-                                        <input v-model="sys_common.code_name4" id="test6" class="form-control in-s-50">
-                                    </div>
-
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test7" class="label-ba">사용유무</label>
-                                        <select v-model="sys_common.use_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
+                                        <label for="test3" class="label-ba">설명</label>
+                                        <input v-model="sys_part_group.remark" id="test3" class="form-control in-s-50">
                                     </div>
 
                                     </div>
 
                                 <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="common_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="common_au('U')">저장</button>
+                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="part_group_au('I')">저장</button>
+                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="part_group_au('U')">저장</button>
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
                                 </div>
                                 </div>

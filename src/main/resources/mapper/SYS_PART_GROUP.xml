@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.tobe.mes.tobesystem.Mapper.SYS_PART_GROUP_Mapper">
-    <select id="part_group_get" resultType="com.tobe.mes.tobesystem.SYS_PART_GROUP.SYS_PART_GROUP">
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.SYS_PART_GROUP_Mapper">
+    <select id="part_group_get" resultType="com.tobe.mes.tobesystem.ADMIN.SYS_PART_GROUP.SYS_PART_GROUP">
         CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{page_num},#{total_num},'','S')
     </select>
     <select id="part_group_count" resultType="Integer">
          CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{page_num},#{total_num},'','')
     </select>
+    <insert id="part_group_au">
+        CALL TOBE_MES.SP_SYS_PART_GROUP_ADD(#{part_grp_code},#{part_grp_name},#{remark},#{user_code},#{keyword})
+    </insert>
+    <delete id="part_group_delete">
+        CALL TOBE_MES.SP_SYS_PART_GROUP_DEL(#{code})
+    </delete>
 
 </mapper>

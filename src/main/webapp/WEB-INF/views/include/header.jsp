@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="resource/css/custom.css">
     <link href="resource/css/dashboard.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0d910fc03d.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
@@ -50,14 +49,15 @@
     </style>
 </head>
 <body>
+<div id="body"></div>
 <script>
     $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap4';
     $.jgrid.defaults.iconSet = "Octicons";
     $(document).ready(function() {
-        2
+
         $(".file-tree").filetree();
-        3
+
     });
 
 </script>
@@ -194,11 +194,11 @@
                                     </li>
                                     </li>
                                     <li>
-                                        <a href="#">메세지 관리</a>
+                                        <a href="sysMsg?check=admin">메세지 관리</a>
                                     </li>
                                     </li>
                                     <li>
-                                        <a href="#">게시판관리</a>
+                                        <a href="sysBoard?check=admin">게시판관리</a>
                                     </li>
                                 </ul>
 

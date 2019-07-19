@@ -1,21 +1,21 @@
-package com.tobe.mes.tobesystem.SYS_PART_GROUP;
+package com.tobe.mes.tobesystem.ADMIN.SYS_BOARD_CD;
 
 import java.util.List;
 
-public class SYS_PART_GROUPS {
-    private List<SYS_PART_GROUP> rows;
+public class SYS_BOARD_CDS {
+    private List<SYS_BOARD_CD> rows;
     private int total;
     private int page;
     private int records;
 
-    public SYS_PART_GROUPS(List<SYS_PART_GROUP> rows, int total, int page, int records) {
+    public SYS_BOARD_CDS(List<SYS_BOARD_CD> rows, int total, int page, int records) {
         this.rows = rows;
         this.total = total;
         this.page = page;
         this.records = records;
     }
 
-    public List<SYS_PART_GROUP> getRows() {
+    public List<SYS_BOARD_CD> getRows() {
         return rows;
     }
 
@@ -31,7 +31,7 @@ public class SYS_PART_GROUPS {
         return records;
     }
 
-    public void setRows(List<SYS_PART_GROUP> rows) {
+    public void setRows(List<SYS_BOARD_CD> rows) {
         this.rows = rows;
     }
 

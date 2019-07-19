@@ -1,4 +1,4 @@
-function jquery_sysPartGroup(_this){
+function jquery_sysBoard(_this){
 
 }
 
@@ -17,4 +17,13 @@ function formmatter_date(cellValue) { // 날짜 필터
     var date = y+"-"+m+"-"+d+" "+h+":"+mm+":"+s;
     return date;
    }
+}
+
+function formmatter_auth(cellValue) {
+    if (cellValue === 'C'){
+        return '당사';
+    } else {
+        return '전체';
+    }
+
 }

@@ -27,11 +27,15 @@ window.onload = function () {
             }
         },
         mounted: function(){
+
             var _this = this;
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
-            jquery_sysPartGroup(_this); // vue 에서 실행 못하는 jquery
+            jquery_sysCommon(_this); // vue 에서 실행 못하는 jquery
+
+
+
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -88,12 +92,13 @@ window.onload = function () {
             common_group_get:function(){ // 코드그룹 가져오는 메소드
                  var _this =this;
                  axios
-                     .post("common/group/get")
+                     .post("sysCommon/common/group/get")
                      .then(function(response){
                         _this.common_group_list = response.data;
                         _this.common_group_code = response.data[0].group_code;
                         _this.sys_common.code_type = response.data[0].group_code;
                         _this.common_group_name = response.data[0].group_name;
+
 
                  });
             },
@@ -108,7 +113,7 @@ window.onload = function () {
             common_get_btn:function () { // 조회 버튼
                 var _this = this;
                 _this.common_group_code_post =_this.common_group_code;
-                $('#jqGrid').setGridParam({ url: 'common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: 1}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -122,7 +127,7 @@ window.onload = function () {
                     if (_this.effectiveness()) {
                         _this.sys_common.keyword = au;
                         $.ajax({
-                            url: "common/au",
+                            url: "sysCommon/common/au",
                             data: _this.sys_common,
                             type: 'POST',
                             async: true,
@@ -207,7 +212,7 @@ window.onload = function () {
             common_delete_ajax:function (type,value) {  // 삭제 ajax
                 var _this = this;
                  $.ajax({
-                    url:"common/delete",
+                    url:"sysCommon/common/delete",
                     data:{code_type:type , code_value:value},
                     type : 'DELETE',
                     async: true,

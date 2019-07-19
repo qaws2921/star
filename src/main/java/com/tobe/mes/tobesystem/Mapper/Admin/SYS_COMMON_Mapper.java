@@ -1,7 +1,7 @@
-package com.tobe.mes.tobesystem.Mapper;
+package com.tobe.mes.tobesystem.Mapper.Admin;
 
 import com.tobe.mes.tobesystem.Bean.Page;
-import com.tobe.mes.tobesystem.SYS_COMMON.SYS_COMMON;
+import com.tobe.mes.tobesystem.ADMIN.SYS_COMMON.SYS_COMMON;
 
 import java.util.List;
 

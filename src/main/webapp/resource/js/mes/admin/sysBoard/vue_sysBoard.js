@@ -4,24 +4,38 @@ window.onload = function () {
         data: function () {
             return{
 
-                sys_part_group:{ // 품목그룹관리 객체
-                    part_grp_code:'',
-                     part_grp_name:'',
-                     remark:'',
-                     user_code:'',
+                sys_msg:{ // 메세지 코드 객체
+                    msg_code:'',
+                    msg_name1:'',
+                    msg_name2:'',
+                    msg_name3:'',
+                    msg_name4:'',
+                    user_code:'',
                     user_name:'',
-                     create_date:'',
-                     update_date:'',
-                     keyword:'',
+                    update_date:'',
+                    keyword:''
                 },
-
+                sys_board_cd:{
+                 board_code:'',
+                 board_en:'',
+                 board_kr:'',
+                 board_auth:'C',
+                    files:'',
+                    file_size:'',
+                 use_yn:'Y',
+                 user_code:'',
+                 create_date:'',
+                 update_date:'',
+                 user_name:'',
+                 keyword:''
+                },
                 add_update_check:'I'    // 저장인지 수정인지 체크
             }
         },
         mounted: function(){
             var _this = this;
             _this.jqGrid(); // jqGrid 실행
-            jquery_sysPartGroup(_this); // vue 에서 실행 못하는 jquery
+            jquery_sysBoard(_this); // vue 에서 실행 못하는 jquery
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -32,11 +46,15 @@ window.onload = function () {
 
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['품목그룹코드','품목그룹명','설명','등록자','등록일'],
+                    colNames:['게시판코드','영문명','한글','권한','최대파일','파일크기(MB)','사용유무','등록자','등록일'],
                     colModel:[
-                        {name:'part_grp_code',index:'part_grp_code',key: true },
-                        {name:'part_grp_name',index:'part_grp_name'},
-                        {name:'remark',index:'remark'},
+                        {name:'board_code',index:'board_code',key: true },
+                        {name:'board_en',index:'board_en'},
+                        {name:'board_kr',index:'board_kr'},
+                        {name:'board_auth',index:'board_auth',formatter:formmatter_auth},
+                        {name:'files',index:'files'},
+                        {name:'file_size',index:'file_size'},
+                        {name:'use_yn',index:'use_yn'},
                         {name:'user_name',index:'user_name'},
                         {name:'update_date',index:'update_date',formatter:formmatter_date},
 
@@ -44,7 +62,7 @@ window.onload = function () {
                     ],
                     width:1500,
                     height:500,
-                    caption: "품목그룹관리",
+                    caption: "메세지관리",
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,
@@ -59,9 +77,8 @@ window.onload = function () {
                     },
                     ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
                         var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-                        _this.part_group_edit(data); // 데이터 가공
-                        _this.part_group_update(); // 수정창 띄어주기
-
+                        _this.board_cd_edit(data); // 데이터 가공
+                        _this.board_cd_update();
                     }
 
                 }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
@@ -69,13 +86,13 @@ window.onload = function () {
 
              },
 
-            part_group_get_btn:function () { // 조회 버튼
+            board_cd_get_btn:function () { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysPartGroup/part/group/get' ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysBoard/board/cd/get' ,datatype: "json", page: 1}).trigger("reloadGrid");
 
             },
-            part_group_au:function (au) { // 저장 수정 ajax
+            board_cd_au:function (au) { // 저장 수정 ajax
                 var _this = this
                 var txt ='저장 히겠습니까?';
                 if (au === 'U'){
@@ -84,17 +101,17 @@ window.onload = function () {
                 }
                 if(confirm(txt)){
                     if (_this.effectiveness()) {
-                        _this.sys_part_group.keyword = au;
+                        _this.sys_board_cd.keyword = au;
                         $.ajax({
-                            url: "sysPartGroup/part/group/au",
-                            data: _this.sys_part_group,
+                            url: "sysBoard/board/cd/au",
+                            data: _this.sys_board_cd,
                             type: 'POST',
                             async: true,
                             dataType: "json",
                             success: function (data) {
 
                                 $('#myModal').modal("hide");
-                                _this.part_group_get_btn();
+                                _this.board_cd_get_btn();
 
                             },
                             error: function () {
@@ -110,41 +127,55 @@ window.onload = function () {
                     }
                 }
             },
-            _sys_part_group_reset:function(){ //코드 객체 리셋
+            _sys_board_cd_reset:function(){ //코드 객체 리셋
                  var _this = this;
-                _this.sys_part_group={
-                         part_grp_code:'',
-                        part_grp_name:'',
-                        remark:'',
-                        user_code:'',
-                        user_name:'',
-                        create_date:'',
-                        update_date:'',
-                        keyword:'',
+                _this.sys_board_cd={
+                    board_code:'',
+                    board_en:'',
+                    board_kr:'',
+                    board_auth:'C',
+                    files:'',
+                    file_size:'',
+                    use_yn:'Y',
+                    user_code:'',
+                    create_date:'',
+                    update_date:'',
+                    user_name:'',
+                    keyword:''
                 }
 
             },
-            part_group_update:function () { // 업데이트 모달창
+            board_cd_update:function () { // 업데이트 모달창
                 var _this = this;
                 _this.add_update_check="U";
 
                 $('#myModal').modal("show");
             },
-            part_group_add:function () {    // 추가를 누를때
+            board_cd_add:function () {    // 추가를 누를때
                 var _this = this;
                 _this.add_update_check="I";
-                _this._sys_part_group_reset();
+                _this._sys_board_cd_reset();
 
             },
-            part_group_edit:function (data) {   // 수정 값을 객체에 저장
+            board_cd_edit:function (data) {   // 수정 값을 객체에 저장
                 var _this = this;
-                _this._sys_part_group_reset();
-                _this.sys_part_group.part_grp_code=data.part_grp_code;
-                _this.sys_part_group.part_grp_name=data.part_grp_name;
-                _this.sys_part_group.remark=data.remark;
+                _this._sys_board_cd_reset();
+                _this.sys_board_cd.board_code=data.board_code;
+                _this.sys_board_cd.board_en=data.board_en;
+                _this.sys_board_cd.board_kr=data.board_kr;
+                if (data.board_auth === '당사'){
+                    _this.sys_board_cd.board_auth='C';
+                }else {
+                    _this.sys_board_cd.board_auth='A';
+
+                }
+                _this.sys_board_cd.files=data.files;
+                _this.sys_board_cd.file_size=data.file_size;
+                _this.sys_board_cd.use_yn=data.use_yn;
+
 
             },
-            part_group_delete:function () { //삭제를 누를시
+            msg_delete:function () { //삭제를 누를시
                 var _this = this;
                  var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
                 var code = ids.join(",");
@@ -154,29 +185,23 @@ window.onload = function () {
                         alert("삭제하는 데이터를 선택해주세요");
                     } else {
                         if (confirm("삭제하겠습니까?")){
-                            _this.part_group_delete_ajax(code);
+                            _this.msg_delete_ajax(code);
 
                         }
 
                     }
-                    _this.common_group_code_post
-
-
-
-
-
 
             },
-            part_group_delete_ajax:function (code) {  // 삭제 ajax
+            msg_delete_ajax:function (code) {  // 삭제 ajax
                 var _this = this;
                  $.ajax({
-                    url:"sysPartGroup/part/group/delete",
-                    data:{part_grp_code:code },
+                    url:"sysMsg/msg/delete",
+                    data:{msg_code:code },
                     type : 'DELETE',
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.part_group_get_btn();
+                        _this.board_cd_get_btn();
                     },
                      error: function () {
                          alert("삭제실패")
@@ -187,16 +212,17 @@ window.onload = function () {
 
             effectiveness:function () { // 유효성 검사
                 var _this = this;
-                if (_this.sys_part_group.part_grp_code === ''){
-                    alert("품목그룹코드를 입력해주세요");
-                    return false;
-                }else if (_this.sys_part_group.part_grp_name === ''){
-                    alert("품목그룹명을 입력해주세요");
-                    return false;
-
-                }else {
-                    return true;
-                }
+                // if (_this.sys_msg.msg_code === ''){
+                //     alert("메세지코드를 입력해주세요");
+                //     return false;
+                // }else if (_this.sys_msg.msg_name1 === ''){
+                //     alert("메세지명1을 입력해주세요");
+                //     return false;
+                //
+                // }else {
+                //     return true;
+                // }
+                return true;
             }
 
         }

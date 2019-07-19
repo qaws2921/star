@@ -1,4 +1,4 @@
-package com.tobe.mes.tobesystem.SYS_PART_GROUP;
+package com.tobe.mes.tobesystem.ADMIN.SYS_PART_GROUP;
 
 public class SYS_PART_GROUP {
     private String part_grp_code;
@@ -8,6 +8,7 @@ public class SYS_PART_GROUP {
     private String create_date;
     private String update_date;
     private String keyword;
+    private String user_name;
 
     public String getPart_grp_code() {
         return part_grp_code;
@@ -63,5 +64,13 @@ public class SYS_PART_GROUP {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 }
