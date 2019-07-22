@@ -158,10 +158,10 @@
 
                                 <ul>
                                 <li>
-                                    <a href="#">권한그룹관리</a>
+                                    <a href="sysAuth?check=admin">권한그룹관리</a>
                                 </li>
                                     <li>
-                                    <a href="#">권한그룹별 프로그램관리</a>
+                                    <a href="sysAuthProgram?check=admin">권한그룹별 프로그램관리</a>
                                 </li>
                                 </ul>
 

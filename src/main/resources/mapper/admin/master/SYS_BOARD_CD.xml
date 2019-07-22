@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Master.SYS_BOARD_CD_Mapper">
+    <select id="board_cd_get" resultType="com.tobe.mes.tobesystem.ADMIN.MASTER.SYS_BOARD_CD.SYS_BOARD_CD">
+        CALL TOBE_MES.SP_SYS_BOARD_GET(#{page_num},#{total_num},'')
+    </select>
+    <select id="board_cd_count" resultType="Integer">
+         SELECT count(*) from SYS_BOARD_CD
+    </select>
+    <insert id="board_cd_au">
+        CALL TOBE_MES.SP_SYS_BOARD_ADD(#{board_code},#{board_en},#{board_kr},#{board_auth},#{files},#{file_size},#{use_yn},#{user_code},#{keyword})
+    </insert>
+    <delete id="msg_delete">
+        CALL TOBE_MES.SP_SYS_MSG_DEL(#{code})
+    </delete>
+
+
+</mapper>
