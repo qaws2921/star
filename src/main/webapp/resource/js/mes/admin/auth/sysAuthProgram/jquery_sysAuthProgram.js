@@ -13,20 +13,7 @@ function jquery_sysAuthProgram(_this){
 
 }
 
-function formmatter_date(cellValue) { // 날짜 필터
-    var y = cellValue.substring(0,4);
-    var m = cellValue.substring(4,6);
-    var d = cellValue.substring(6,8);
-    var h = cellValue.substring(8,10);
-    var mm = cellValue.substring(10,12);
-    var s = cellValue.substring(12,14);
-    // 20190718092501
-    var date = y+"-"+m+"-"+d+" "+h+":"+mm+":"+s;
-    return date;
-}
-
 function cell(cellvalue, options, rowObject) {
-    console.log(rowObject.menu_name);
     if(rowObject.menu_name === '게시판'){
         if(rowObject.level === 1) {
             return '<img src="resource/img/icon/folder.png" style="max-width: 17px;" />'+cellvalue;
@@ -47,11 +34,4 @@ function cell(cellvalue, options, rowObject) {
 
 
 }
-function check(cellvalue, options, rowObject) {
-    if (cellvalue === 'Y'){
-        return '<input type="checkbox" checked >'
-    }else {
-        return '<input type="checkbox">'
 
-    }
-}
