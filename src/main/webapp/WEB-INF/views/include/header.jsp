@@ -171,10 +171,10 @@
 
                                 <ul>
                                 <li>
-                                    <a href="#">사용자관리</a>
+                                    <a href="sysUser?check=admin">사용자관리</a>
                                 </li>
                                     <li>
-                                    <a href="#">사용자관리(협력사)</a>
+                                    <a href="sysUserSupp?check=admin">사용자관리(협력사)</a>
                                 </li>
                                 </ul>
 
