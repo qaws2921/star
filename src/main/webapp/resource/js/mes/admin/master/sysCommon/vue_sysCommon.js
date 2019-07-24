@@ -217,7 +217,8 @@ window.onload = function () {
 
             },
             common_delete_ajax:function (type,value) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysCommon/common/delete",
                     data:{code_type:type , code_value:value},
@@ -226,8 +227,10 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
+                            closeWindowByMask();
                             _this.common_get_btn($("#jqGrid").getGridParam('page'));
                         }
 
