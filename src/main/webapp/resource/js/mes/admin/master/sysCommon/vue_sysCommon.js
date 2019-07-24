@@ -46,17 +46,21 @@ window.onload = function () {
 
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['공용그룹','코드','명칭1','명칭2','명칭3','명칭4','사용유무','등록자','등록일'],
+                    colNames:['공용그룹','코드','명칭1','명칭2','명칭3','명칭4','명칭5','명칭6','명칭7','명칭8','사용유무','등록자','등록일'],
                     colModel:[
-                        {name:'code_type',index:'code_type'},
-                        {name:'code_value',index:'code_value',key: true },
-                        {name:'code_name1',index:'code_name1'},
-                        {name:'code_name2',index:'code_name2'},
-                        {name:'code_name3',index:'code_name3'},
-                        {name:'code_name4',index:'code_name4'},
-                        {name:'use_yn',index:'use_yn'},
-                        {name:'user_name',index:'user_name'},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date},
+                        {name:'code_type',index:'code_type',sortable: false},
+                        {name:'code_value',index:'code_value',key: true ,sortable: false},
+                        {name:'code_name1',index:'code_name1',sortable: false},
+                        {name:'code_name2',index:'code_name2',sortable: false},
+                        {name:'code_name3',index:'code_name3',sortable: false},
+                        {name:'code_name4',index:'code_name4',sortable: false},
+                        {name:'code_name5',index:'code_name5',sortable: false},
+                        {name:'code_name6',index:'code_name6',sortable: false},
+                        {name:'code_name7',index:'code_name7',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'use_yn',index:'use_yn',sortable: false},
+                        {name:'user_name',index:'user_name',sortable: false},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
 
 
                     ],
@@ -110,10 +114,11 @@ window.onload = function () {
                  _this.common_group_name = name;
 
             },
-            common_get_btn:function () { // 조회 버튼
+            common_get_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.common_group_code_post =_this.common_group_code;
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: 1}).trigger("reloadGrid");
+
+                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -133,10 +138,12 @@ window.onload = function () {
                             async: true,
                             dataType: "json",
                             success: function (data) {
-
-                                $('#myModal').modal("hide");
-                                _this.common_get_btn();
-
+                                if (data.result === 'NG'){
+                                    alert(data.message);
+                                } else {
+                                    $('#myModal').modal("hide");
+                                    _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                                }
                             },
                             error: function () {
                                 if (au === 'I') {
@@ -188,7 +195,7 @@ window.onload = function () {
                 _this.sys_common.code_name4=data.code_name4;
                 _this.sys_common.code_name5=data.code_name5;
                 _this.sys_common.code_name6=data.code_name6;
-                _this.sys_common.code_name6=data.code_name7;
+                _this.sys_common.code_name7=data.code_name7;
                 _this.sys_common.code_name8=data.code_name8;
                 _this.sys_common.use_yn=data.use_yn;
             },
@@ -218,8 +225,13 @@ window.onload = function () {
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.common_get_btn();
-                    },
+                        if (data.result === 'NG'){
+                            alert(data.message);
+                        } else {
+                            _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                        }
+
+                        },
                      error: function () {
                          alert("삭제실패")
                      }

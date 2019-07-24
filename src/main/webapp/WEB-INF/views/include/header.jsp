@@ -54,11 +54,7 @@
     $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap4';
     $.jgrid.defaults.iconSet = "Octicons";
-    $(document).ready(function() {
 
-        $(".file-tree").filetree();
-
-    });
 
 </script>
 <div class="container-fluid">
@@ -72,7 +68,7 @@
         </div>
         <div class="col-md-9 right">
             <p class="gb-banner-info">
-                <a class="gb-a" href="#"><i class="fas fa-user"></i> 김재일님</a>
+                <a class="gb-a" href="#"><i class="fas fa-user"></i> 김종효님</a>
                 <span class="gb-banner">|</span>
                 <a class="gb-a" href="#">로그아웃</a>
             </p>
@@ -87,19 +83,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> 1공장
+                        <a class="nav-link dropdown-toggle" href="sysCommon?check=admin" id="navbarDropdown">
+                            <i class="fas fa-align-justify"></i> 관리자
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                        </div>
+
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> 2공장
+                            <i class="fas fa-align-justify"></i> 게시판
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">메뉴</a>
@@ -136,125 +127,4 @@
     </div>
 </div>
 </a>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">
-                                <i class="fas fa-tachometer-alt"></i>
-                                TOBE MES SYSTEM <span class="sr-only"></span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999 admin" href="#">
-                                관리자 페이지<i class="fas fa-angle-down down-icon"></i>
-                            </a>
-                        <ul class="file-tree">
-                            <li>
-                                <a href="#">권한관리</a>
-
-                                <ul>
-                                <li>
-                                    <a href="sysAuth?check=admin">권한그룹관리</a>
-                                </li>
-                                    <li>
-                                    <a href="sysAuthProgram?check=admin">권한그룹별 프로그램관리</a>
-                                </li>
-                                </ul>
-
-                            </li>
-                            <li>
-                                <a href="#">사용자관리</a>
-
-                                <ul>
-                                <li>
-                                    <a href="sysUser?check=admin">사용자관리</a>
-                                </li>
-                                    <li>
-                                    <a href="sysUserSupp?check=admin">사용자관리(협력사)</a>
-                                </li>
-                                </ul>
-
-                            </li>
-                            <li>
-                                <a href="#">마스터관리</a>
-
-                                <ul>
-                                    <li>
-                                        <a href="#">사업장관리</a>
-                                    </li>
-                                    <li>
-                                        <a href="sysCommon?check=admin">공통코드 관리</a>
-                                    </li>
-                                        <li>
-                                        <a href="sysPartGroup?check=admin">품목그룹관리</a>
-                                    </li>
-                                    </li>
-                                    <li>
-                                        <a href="sysMsg?check=admin">메세지 관리</a>
-                                    </li>
-                                    </li>
-                                    <li>
-                                        <a href="sysBoard?check=admin">게시판관리</a>
-                                    </li>
-                                </ul>
-
-                            </li>
-
-                        </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999 " href="#">
-                                게시판<i class="fas fa-angle-down down-icon"></i>
-                            </a>
-                            <ul class="file-tree">
-                                <li>
-                                    <a href="#">게시판</a>
-
-                                    <ul>
-                                        <li>
-                                            <a href="#">게시판1</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">게시판2</a>
-                                        </li>
-                                    </ul>
-
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999" href="#">
-                                메뉴
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999" href="#">
-                                메뉴
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999" href="#">
-                                메뉴
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link ba-color-999" href="#">
-                                메뉴
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </nav>
-
 

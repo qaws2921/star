@@ -32,10 +32,10 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['권한그룹코드','권한그룹명','등록자','등록일'],
                     colModel:[
-                        {name:'auth_code',index:'auth_code',key: true },
-                        {name:'auth_name',index:'auth_name'},
-                        {name:'user_name',index:'user_name'},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date},
+                        {name:'auth_code',index:'auth_code',key: true ,sortable: false},
+                        {name:'auth_name',index:'auth_name',sortable: false},
+                        {name:'user_name',index:'user_name',sortable: false},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
 
 
                     ],
@@ -67,10 +67,10 @@ window.onload = function () {
 
              },
 
-            auth_cd_get_btn:function () { // 조회 버튼
+            auth_cd_get_btn:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysAuth/auth/cd/get' ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysAuth/auth/cd/get' ,datatype: "json", page: page}).trigger("reloadGrid");
 
                 // alert($('#jqGrid').getGridParam('page'));
             },
@@ -91,10 +91,12 @@ window.onload = function () {
                             async: true,
                             dataType: "json",
                             success: function (data) {
-
-                                $('#myModal').modal("hide");
-                                _this.auth_cd_get_btn();
-
+                                if (data.result === 'NG'){
+                                    alert(data.message);
+                                } else {
+                                    $('#myModal').modal("hide");
+                                    _this.auth_cd_get_btn($("#jqGrid").getGridParam('page'));
+                                }
                             },
                             error: function () {
                                 if (au === 'I') {
@@ -170,8 +172,12 @@ window.onload = function () {
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.auth_cd_get_btn();
-                    },
+                        if (data.result === 'NG'){
+                            alert(data.message);
+                        } else {
+                            _this.auth_cd_get_btn($("#jqGrid").getGridParam('page'));
+                        }
+                        },
                      error: function () {
                          alert("삭제실패")
                      }

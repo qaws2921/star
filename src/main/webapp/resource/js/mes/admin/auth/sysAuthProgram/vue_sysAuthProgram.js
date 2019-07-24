@@ -33,7 +33,7 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['권한그룹명','권한그룹코드'],
                     colModel:[
-                        {name:'auth_name',index:'auth_name'},
+                        {name:'auth_name',index:'auth_name',sortable: false},
                         {name:'auth_code',index:'auth_code',hidden:true,key: true},
 
 
@@ -44,6 +44,8 @@ window.onload = function () {
                     width:500,
                     height:500,
                     caption: "권한그룹명",
+
+
 
                     jsonReader: {cell:""},
 
@@ -68,12 +70,12 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['code','메뉴','조회','추가','수정','삭제'],
                     colModel:[
-                        {name:'menu_code',index:'menu_code',key: true,hidden:true},
-                        {name:'menu_name',index:'menu_name',width:500,formatter:cell},
-                        {name:'check_get',index:'check_get', editable: true, formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false}},
-                        {name:'check_add',index:'check_add', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false}},
-                        {name:'check_edit',index:'check_edit', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false}},
-                        {name:'check_del',index:'check_del', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false}},
+                        {name:'menu_code',index:'menu_code',key: true,hidden:true,sortable: false},
+                        {name:'menu_name',index:'menu_name',width:500,formatter:cell,sortable: false},
+                        {name:'check_get',index:'check_get', editable: true, formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false},sortable: false},
+                        {name:'check_add',index:'check_add', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false},sortable: false},
+                        {name:'check_edit',index:'check_edit', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false},sortable: false},
+                        {name:'check_del',index:'check_del', editable: true,formatter: 'checkbox', edittype:"checkbox", editoptions:{value:'Y:N', defaultValue:'N'}, formatoptions:{disabled:false},sortable: false},
 
 
 

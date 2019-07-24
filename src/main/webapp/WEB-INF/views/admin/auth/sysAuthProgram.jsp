@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
+<%@include file="../menu.jsp"%>
 <script src="resource/js/mes/admin/auth/sysAuthProgram/vue_sysAuthProgram.js"></script>
 <script src="resource/js/mes/admin/auth/sysAuthProgram/jquery_sysAuthProgram.js"></script>
 
@@ -9,7 +10,7 @@
                 <div v-cloak id="app">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
                     <h1 class="font-size-18">권한그룹별 프로그램관리</h1>
-                    <span class="pa-b-20">홈 > MES > 권한그룹별 프로그램관리</span>
+                    <span class="pa-b-20 font-size-9">홈 > 관리자 > 권한관리 > 권한그룹별 프로그램관리</span>
                 </div>
                     <div class="content-border">
                     <div class="mg-left-20">

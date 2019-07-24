@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
+<%@include file="../menu.jsp"%>
 <script src="resource/js/mes/admin/master/sysPartGroup/vue_sysPartGroup.js"></script>
 <script src="resource/js/mes/admin/master/sysPartGroup/jquery_sysPartGroup.js"></script>
 
@@ -9,12 +10,12 @@
                 <div v-cloak id="app">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
                     <h1 class="font-size-18">품목그룹관리</h1>
-                    <span class="pa-b-20">홈 > MES > 품목그룹관리</span>
+                    <span class="pa-b-20 font-size-9">홈 > 관리자 > 마스터관리 > 품목그룹관리</span>
                 </div>
                     <div class="content-border">
 
                     <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="part_group_get_btn">조회</button>
+                        <button class="btn btn-primary btn_pd" @click="part_group_get_btn(1)">조회</button>
                         <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="part_group_add">추가</button>
                         <button class="btn btn-danger btn_pd" @click="part_group_delete">삭제</button>
                     </div>

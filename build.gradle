@@ -48,6 +48,7 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
     compile "org.springframework:spring-context-support"
     compile "com.sun.mail:javax.mail"
+
 }
 
 test {

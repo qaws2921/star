@@ -27,7 +27,7 @@ function cell(cellvalue, options, rowObject) {
         }else if(rowObject.level === 2){
             return "      "+'<img src="resource/img/icon/folder.png" style="max-width: 17px;" />'+ cellvalue;
         }else if(rowObject.level === 3){
-            return "           "+ '<img src="resource/img/icon/File.png" style="max-width: 17px;" />'+cellvalue;
+            return "              "+ '<img src="resource/img/icon/File.png" style="max-width: 17px;" />'+cellvalue;
         }
 
     }

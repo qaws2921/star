@@ -48,15 +48,15 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['게시판코드','영문명','한글','권한','최대파일','파일크기(MB)','사용유무','등록자','등록일'],
                     colModel:[
-                        {name:'board_code',index:'board_code',key: true },
-                        {name:'board_en',index:'board_en'},
-                        {name:'board_kr',index:'board_kr'},
-                        {name:'board_auth',index:'board_auth',formatter:formmatter_auth},
-                        {name:'files',index:'files'},
-                        {name:'file_size',index:'file_size'},
-                        {name:'use_yn',index:'use_yn'},
-                        {name:'user_name',index:'user_name'},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date},
+                        {name:'board_code',index:'board_code',key: true ,sortable: false},
+                        {name:'board_en',index:'board_en',sortable: false},
+                        {name:'board_kr',index:'board_kr',sortable: false},
+                        {name:'board_auth',index:'board_auth',formatter:formmatter_auth,sortable: false},
+                        {name:'files',index:'files',sortable: false},
+                        {name:'file_size',index:'file_size',sortable: false},
+                        {name:'use_yn',index:'use_yn',sortable: false},
+                        {name:'user_name',index:'user_name',sortable: false},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
 
 
                     ],
@@ -86,10 +86,10 @@ window.onload = function () {
 
              },
 
-            board_cd_get_btn:function () { // 조회 버튼
+            board_cd_get_btn:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysBoard/board/cd/get' ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysBoard/board/cd/get' ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             board_cd_au:function (au) { // 저장 수정 ajax
@@ -109,10 +109,12 @@ window.onload = function () {
                             async: true,
                             dataType: "json",
                             success: function (data) {
-
-                                $('#myModal').modal("hide");
-                                _this.board_cd_get_btn();
-
+                                if (data.result === 'NG'){
+                                    alert(data.message);
+                                } else {
+                                    $('#myModal').modal("hide");
+                                    _this.board_cd_get_btn($("#jqGrid").getGridParam('page'));
+                                }
                             },
                             error: function () {
                                 if (au === 'I') {
@@ -202,7 +204,7 @@ window.onload = function () {
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.board_cd_get_btn();
+                        _this.board_cd_get_btn($("#jqGrid").getGridParam('page'));
                     },
                      error: function () {
                          alert("삭제실패")

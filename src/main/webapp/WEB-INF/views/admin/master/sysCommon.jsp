@@ -2,6 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
+<%@include file="../menu.jsp"%>
 <script src="resource/js/mes/admin/master/sysCommon/vue_sysCommon.js"></script>
 <script src="resource/js/mes/admin/master/sysCommon/jquery_sysCommon.js"></script>
 
@@ -9,7 +10,7 @@
                 <div v-cloak id="app">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
                     <h1 class="font-size-18">공통코드관리</h1>
-                    <span class="pa-b-20">홈 > MES > 공통코드관리</span>
+                    <span class="pa-b-20 font-size-9">홈 > 관리자 > 마스터관리 > 공통코드관리</span>
                 </div>
                     <div class="content-border">
                     <div class="mg-left-20">
@@ -31,7 +32,7 @@
 
                     </div>
                     <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="common_get_btn">조회</button>
+                        <button class="btn btn-primary btn_pd" @click="common_get_btn(1)">조회</button>
                         <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
                         <button class="btn btn-danger btn_pd" @click="common_delete">삭제</button>
                     </div>
@@ -77,6 +78,22 @@
                                     <div class="mg-5 mg-auto form-group">
                                         <label for="test6" class="label-ba">명칭4</label>
                                         <input v-model="sys_common.code_name4" id="test6" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test6" class="label-ba">명칭5</label>
+                                        <input v-model="sys_common.code_name5" id="test6" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test6" class="label-ba">명칭6</label>
+                                        <input v-model="sys_common.code_name6" id="test6" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test6" class="label-ba">명칭7</label>
+                                        <input v-model="sys_common.code_name7" id="test6" class="form-control in-s-50">
+                                    </div>
+                                    <div class="mg-5 mg-auto form-group">
+                                        <label for="test6" class="label-ba">명칭8</label>
+                                        <input v-model="sys_common.code_name8" id="test6" class="form-control in-s-50">
                                     </div>
 
 

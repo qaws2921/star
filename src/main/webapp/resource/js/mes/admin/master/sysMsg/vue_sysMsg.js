@@ -34,13 +34,13 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['메세지코드','메세지명1','메세지명2','메세지명3','메세지명4','등록자','등록일'],
                     colModel:[
-                        {name:'msg_code',index:'msg_code',key: true },
-                        {name:'msg_name1',index:'msg_name1'},
-                        {name:'msg_name2',index:'msg_name2'},
-                        {name:'msg_name3',index:'msg_name3'},
-                        {name:'msg_name4',index:'msg_name4'},
-                        {name:'user_name',index:'user_name'},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date},
+                        {name:'msg_code',index:'msg_code',key: true,sortable: false },
+                        {name:'msg_name1',index:'msg_name1',sortable: false},
+                        {name:'msg_name2',index:'msg_name2',sortable: false},
+                        {name:'msg_name3',index:'msg_name3',sortable: false},
+                        {name:'msg_name4',index:'msg_name4',sortable: false},
+                        {name:'user_name',index:'user_name',sortable: false},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
 
 
                     ],
@@ -71,10 +71,10 @@ window.onload = function () {
 
              },
 
-            msg_get_btn:function () { // 조회 버튼
+            msg_get_btn:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysMsg/msg/get' ,datatype: "json", page: 1}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysMsg/msg/get' ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             msg_au:function (au) { // 저장 수정 ajax
@@ -94,10 +94,12 @@ window.onload = function () {
                             async: true,
                             dataType: "json",
                             success: function (data) {
-
-                                $('#myModal').modal("hide");
-                                _this.msg_get_btn();
-
+                                if (data.result === 'NG'){
+                                    alert(data.message);
+                                } else {
+                                    $('#myModal').modal("hide");
+                                    _this.msg_get_btn($("#jqGrid").getGridParam('page'));
+                                }
                             },
                             error: function () {
                                 if (au === 'I') {
@@ -175,8 +177,12 @@ window.onload = function () {
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.msg_get_btn();
-                    },
+                        if (data.result === 'NG'){
+                            alert(data.message);
+                        } else {
+                            _this.msg_get_btn($("#jqGrid").getGridParam('page'));
+                        }
+                        },
                      error: function () {
                          alert("삭제실패")
                      }
