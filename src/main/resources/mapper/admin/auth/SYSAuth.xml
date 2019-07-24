@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Auth.SYSAuth_Mapper">
+    <select id="auth_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_AUTH_CD.SYS_AUTH_CD">
+        CALL TOBE_MES.SP_SYS_AUTH_GROUP_GET(#{page_num},#{total_num},'','S')
+    </select>
+    <select id="auth_cd_count" resultType="Integer">
+        CALL TOBE_MES.SP_SYS_AUTH_GROUP_GET(#{page_num},#{total_num},'','C')
+    </select>
+    <select id="auth_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_AUTH_GROUP_ADD(#{auth_code},#{auth_name},#{keyword})
+    </select>
+    <select id="auth_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_AUTH_GROUP_DEL(#{code})
+    </select>
+
+
+</mapper>
