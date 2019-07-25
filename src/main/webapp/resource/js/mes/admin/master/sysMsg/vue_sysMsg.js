@@ -169,7 +169,8 @@ window.onload = function () {
 
             },
             msg_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysMsg/msg/delete",
                     data:{msg_code:code },
@@ -178,13 +179,16 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
+                            closeWindowByMask();
                             _this.msg_get_btn($("#jqGrid").getGridParam('page'));
                         }
                         },
                      error: function () {
-                         alert("삭제실패")
+                         closeWindowByMask();
+                         alert("삭제실패");
                      }
 
                 });

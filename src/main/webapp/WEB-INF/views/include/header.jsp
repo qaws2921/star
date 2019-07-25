@@ -101,7 +101,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> 3공장
+                            <i class="fas fa-align-justify"></i> BOM
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">메뉴</a>
@@ -111,15 +111,9 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> 4공장
+                        <a class="nav-link dropdown-toggle" href="scmCargo">
+                            <i class="fas fa-align-justify"></i> SCM
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                        </div>
                     </li>
                 </ul>
             </div>

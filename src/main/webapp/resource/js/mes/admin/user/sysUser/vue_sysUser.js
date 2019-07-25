@@ -167,6 +167,11 @@ window.onload = function () {
                 $('#jqGrid').setGridParam({ url: 'sysUser/user/get',postData: { dept_code: _this.common_dept_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
+            user_get_btn2:function (page) { // 조회 버튼
+                var _this = this;
+                $('#jqGrid').setGridParam({ url: 'sysUser/user/get',postData: { dept_code: _this.common_dept_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+
+            },
             user_cd_au:function (au) { // 저장 수정 ajax
                 var _this = this
                 var txt ='저장 히겠습니까?';
@@ -188,7 +193,13 @@ window.onload = function () {
                                     alert(data.message);
                                 } else {
                                     $('#myModal').modal("hide");
-                                    _this.user_get_btn($("#jqGrid").getGridParam('page'));
+                                    if (au === 'I') {
+                                        _this.user_get_btn($("#jqGrid").getGridParam('page'));
+
+                                    } else {
+
+                                        _this.user_get_btn2($("#jqGrid").getGridParam('page'));
+                                    }
 
                                 }
 
@@ -278,7 +289,8 @@ window.onload = function () {
 
             },
             user_cd_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysUser/user/cd/delete",
                     data:{user_code:code},
@@ -287,13 +299,16 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
-                            _this.user_get_btn($("#jqGrid").getGridParam('page'));
+                            closeWindowByMask();
+                            _this.user_get_btn2($("#jqGrid").getGridParam('page'));
                         }
                         },
                      error: function () {
-                         alert("삭제실패")
+                         closeWindowByMask();
+                         alert("삭제실패");
                      }
 
                 });

@@ -113,6 +113,12 @@ window.onload = function () {
                 $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
+            common_get_btn2:function (page) { // 조회 버튼
+                var _this = this;
+
+                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+
+            },
             common_au:function (au) { // 저장 수정 ajax
                 var _this = this
                 var txt ='저장 히겠습니까?';
@@ -134,7 +140,13 @@ window.onload = function () {
                                     alert(data.message);
                                 } else {
                                     $('#myModal').modal("hide");
-                                    _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                                    if (au === 'I') {
+                                        _this.common_get_btn($("#jqGrid").getGridParam('page'));
+
+                                    } else {
+
+                                        _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                                    }
                                 }
                             },
                             error: function () {
@@ -223,11 +235,12 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                            _this.common_get_btn2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
                      error: function () {
+                         closeWindowByMask();
                          alert("삭제실패")
                      }
 
