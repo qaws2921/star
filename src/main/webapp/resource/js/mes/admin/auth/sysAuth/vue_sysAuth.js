@@ -164,7 +164,8 @@ window.onload = function () {
 
             },
             auth_cd_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysAuth/auth/cd/delete",
                     data:{auth_code:code },
@@ -173,12 +174,15 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
+                            closeWindowByMask();
                             _this.auth_cd_get_btn($("#jqGrid").getGridParam('page'));
                         }
                         },
                      error: function () {
+                         closeWindowByMask();
                          alert("삭제실패")
                      }
 

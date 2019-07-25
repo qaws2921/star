@@ -204,7 +204,8 @@ window.onload = function () {
 
             },
             user_supp_cd_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysUserSupp/user/supp/cd/delete",
                     data:{user_code:code },
@@ -213,13 +214,16 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
+                            closeWindowByMask();
                             _this.user_supp_get_btn($("#jqGrid").getGridParam('page'));
                         }
                         },
                      error: function () {
-                         alert("삭제실패")
+                         closeWindowByMask();
+                        alert("삭제실패")
                      }
 
                 });

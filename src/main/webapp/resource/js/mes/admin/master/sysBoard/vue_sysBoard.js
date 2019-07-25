@@ -196,7 +196,8 @@ window.onload = function () {
 
             },
             board_cd_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysMsg/msg/delete",
                     data:{msg_code:code },
@@ -204,9 +205,17 @@ window.onload = function () {
                     async: true,
                     dataType : "json",
                     success : function(data){
-                        _this.board_cd_get_btn($("#jqGrid").getGridParam('page'));
+                        if (data.result === 'NG'){
+                            closeWindowByMask();
+                            alert(data.message);
+                        }else {
+                            closeWindowByMask();
+                            _this.board_cd_get_btn($("#jqGrid").getGridParam('page'));
+
+                        }
                     },
                      error: function () {
+                         closeWindowByMask();
                          alert("삭제실패")
                      }
 

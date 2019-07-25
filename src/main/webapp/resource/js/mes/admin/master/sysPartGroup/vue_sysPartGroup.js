@@ -170,7 +170,8 @@ window.onload = function () {
 
             },
             part_group_delete_ajax:function (code) {  // 삭제 ajax
-                var _this = this;
+                wrapWindowByMask();
+                 var _this = this;
                  $.ajax({
                     url:"sysPartGroup/part/group/delete",
                     data:{part_grp_code:code },
@@ -179,12 +180,15 @@ window.onload = function () {
                     dataType : "json",
                     success : function(data){
                         if (data.result === 'NG'){
+                            closeWindowByMask();
                             alert(data.message);
                         } else {
+                            closeWindowByMask();
                             _this.part_group_get_btn($("#jqGrid").getGridParam('page'));
                         }
                         },
                      error: function () {
+                         closeWindowByMask();
                          alert("삭제실패")
                      }
 
