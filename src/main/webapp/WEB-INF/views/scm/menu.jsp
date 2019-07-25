@@ -15,10 +15,10 @@
                     </li>
 
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 menuMainA" href="#">
+                        <a class="nav-link ba-color-999 standard menuMainA" href="#">
                             기준 정보<i class="fas fa-angle-down down-icon"></i>
                         </a>
-                        <ul class="file-tree auth">
+                        <ul class="file-tree">
 
                             <li>
                                 <a class="sysAuth" href="sysAuth?check=auth">매입단가관리</a>
@@ -30,7 +30,7 @@
                                 <a class="sysAuthProgram" href="sysAuthProgram?check=auth">품목코드 관리</a>
                             </li>
                             <li>
-                                <a class="scmCargo" href="scmCargo">창고 관리</a>
+                                <a class="scmCargo" href="scmCargo?check=standard">창고 관리</a>
                             </li>
                             <li>
                                 <a class="sysAuthProgram" href="sysAuthProgram?check=auth">업체코드 관리</a>

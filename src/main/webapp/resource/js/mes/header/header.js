@@ -1,7 +1,7 @@
 $(function () {
     $(".file-tree").filetree();
-    // var params = getUrlParams();
-
+    var params = getUrlParams();
+    $("."+params.check).css("background-color","#1453a1").css("color","#FFF");
     // $(".file-tree").slideDown();
 
     var link = document.location.href.split("/");
