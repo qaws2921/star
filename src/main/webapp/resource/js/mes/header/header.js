@@ -6,7 +6,7 @@ $(function () {
 
     var link = document.location.href.split("/");
     var link2 = link[3].split("?");
-    $("."+link2[0]).css("color","#0320f1");
+    $("."+link2[0]).css("color","#1453a1").css("font-weight",700);
     $("."+link2[0]).parent().parent().parent().children(".menuMainA").addClass("menuMainA_down");
     $("."+link2[0]).parent().parent(".file-tree").slideDown(100);
 

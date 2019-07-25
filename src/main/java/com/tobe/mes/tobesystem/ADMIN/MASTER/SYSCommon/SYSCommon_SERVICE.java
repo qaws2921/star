@@ -55,8 +55,7 @@ public class SYSCommon_SERVICE {
                 type_value += b+sc.getCode_type()+a+code_value[i];
             }
         }
-
-
+        System.out.println("ok");
         return sys_common_mapper.common_delete(type_value);
     }
 }

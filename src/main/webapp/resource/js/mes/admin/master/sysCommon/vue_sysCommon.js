@@ -33,17 +33,12 @@ window.onload = function () {
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
             jquery_sysCommon(_this); // vue 에서 실행 못하는 jquery
-
-
-
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
                  var _this = this;
             var grid = $("#jqGrid");
                 grid.jqGrid({
-
-
                     datatype: "json",
                     mtype: 'POST',
                     colNames:['공용그룹','코드','명칭1','명칭2','명칭3','명칭4','명칭5','명칭6','명칭7','명칭8','사용유무','등록자','등록일'],
@@ -61,12 +56,9 @@ window.onload = function () {
                         {name:'use_yn',index:'use_yn',sortable: false},
                         {name:'user_name',index:'user_name',sortable: false},
                         {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
-
-
                     ],
                     width:1500,
                     height:450,
-                    caption: "코드관리",
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,

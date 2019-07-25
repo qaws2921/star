@@ -13,6 +13,11 @@
                     <span class="pa-b-20 font-size-9">홈 > 관리자 > 마스터관리 > 공통코드관리</span>
                 </div>
                     <div class="content-border">
+                        <div class="mg-left-20" style="float: right;margin-right: 30px;">
+                            <button class="btn btn-primary btn_999" @click="common_get_btn(1)">조회</button>
+                            <button class="btn btn-success btn_999" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
+                            <button class="btn btn-danger btn_999" @click="common_delete">삭제</button>
+                        </div>
                     <div class="mg-left-20">
                         <table class="table table-border-bl" >
                             <tr>
@@ -28,13 +33,6 @@
                                 </td>
                             </tr>
                         </table>
-
-
-                    </div>
-                    <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="common_get_btn(1)">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="common_delete">삭제</button>
                     </div>
                 <div style="margin-left:20px;margin-top:20px">
                     <table id="jqGrid"></table>

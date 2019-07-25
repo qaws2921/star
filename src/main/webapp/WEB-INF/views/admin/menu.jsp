@@ -7,11 +7,8 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="fas fa-tachometer-alt"></i>
-                            TOBE MES SYSTEM <span class="sr-only"></span>
-                        </a>
+                    <li class="nav-item top-sticky">
+                            Admin <span class="sr-only"></span>
                     </li>
 
                     <li class="nav-item bor-bm">
