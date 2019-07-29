@@ -12,10 +12,10 @@
                     </li>
 
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 menuMainA" href="#">
+                        <a class="nav-link ba-color-999 auth menuMainA" href="#">
                             권한 관리<i class="fas fa-angle-down down-icon"></i>
                         </a>
-                        <ul class="file-tree auth">
+                        <ul class="file-tree">
 
                             <li>
                                 <a class="sysAuth" href="sysAuth?check=auth">권한그룹관리</a>
@@ -28,10 +28,10 @@
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 admin menuMainA" href="#">
+                        <a class="nav-link ba-color-999 user menuMainA" href="#">
                             사용자 관리<i class="fas fa-angle-down down-icon"></i>
                         </a>
-                        <ul class="file-tree user">
+                        <ul class="file-tree">
 
                                     <li>
                                         <a class="sysUser" href="sysUser?check=user">사용자관리</a>
@@ -43,10 +43,10 @@
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 admin menuMainA" href="#">
+                        <a class="nav-link ba-color-999 master menuMainA" href="#">
                             마스터 관리<i class="fas fa-angle-down down-icon"></i>
                         </a>
-                        <ul class="file-tree master">
+                        <ul class="file-tree">
 
 
 
