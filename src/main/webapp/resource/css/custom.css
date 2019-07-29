@@ -72,7 +72,7 @@ font-size: 9px;
 .table-border-bl{border: solid 1px #999; border-top: 2px solid #6f809a; width: 1500px;}
 .table-border-bl2{border: solid 1px #999; border-top: 2px solid #005cbf; width: 950px;}
 .content-border{border: #545b6255 solid 0.005mm; padding-top: 10px; padding-bottom: 30px;}
-.font-size-18{font-size: 18px; font-weight: 700;}
+.font-size-18{font-size: 15px; font-weight: 700;}
 .pa-b-20{padding-bottom: 20px;}
 .file-tree{display: none;}
 .ba-color-999{background-color: #b5b5bb;}
@@ -83,3 +83,114 @@ font-size: 9px;
 .font-size-9{font-size: 9pt;}
 .btn_999{border: 1px solid #6f809a; background-color: #6f809a;margin-right: 5px;font-size: 10px;}
 .btn_999:hover{border: 1px solid #585858; background-color: #585858;}
+
+.modal-top{
+    background-color: #6f809a;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.modal-x-button{
+    font-size: 18px;
+    color: #ffffff;
+}
+.modal-footer-btn{
+    font-size: 12px;
+    background-color: #6f809a;
+    border: 1px solid;
+}
+.modal-footer-btn:hover{
+    background-color: #696969;
+}
+.data-warp{
+    width: 500px;
+    border: 1px solid #c1c1c1;
+    padding: 5px;
+}
+.input-label{
+    width: 75px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #696969;
+}
+.input-data{
+    width: 125px;
+    margin-right: 30px;
+    font-size: 12px;
+    text-align: center;
+}
+.form-warp{
+    margin: 10px;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px dotted #c1c1c1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+table.type03 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-left: 3px solid #369;
+    margin : 20px 10px;
+    width:100%;
+}
+table.type03 th {
+    width: 147px;
+    padding: 13px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+
+}
+.public{
+    background-color: #eee;
+}
+.b_gubun{
+    font-size: 8px;
+}
+.b_sub{
+    font-size: 12px;
+    font-weight: 100;
+}
+table.type03 td {
+    width: 150px;
+    padding: 5px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+.form-inline label{
+    justify-content: left;
+    text-align: left;
+    line-height: 1.5;
+    margin: 0px 10px;
+    width: 100%;
+    font-weight: bold;
+    color: #153d73;
+}
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}

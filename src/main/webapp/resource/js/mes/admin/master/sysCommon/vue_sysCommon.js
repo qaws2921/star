@@ -186,7 +186,6 @@ window.onload = function () {
                 var _this = this;
                 _this.add_update_check="I";
                 _this._sys_common_reset();
-
             },
             common_edit:function (data) {   // 수정 값을 객체에 저장
                 var _this = this;

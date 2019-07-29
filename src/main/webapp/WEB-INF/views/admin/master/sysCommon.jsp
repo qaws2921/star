@@ -40,75 +40,68 @@
                     <span class="oi oi-person"  ></span>
                 </div>
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                    <div class="modal hide" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-lg">
 
                             <!-- Modal content-->
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <label class="font-size-18">{{ common_group_name }}</label>
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
-
+                                <div class="modal-header modal-top">
+                                    <label class="font-size-18">공통 코드관리 <b class="b_gubun">|</b> <span class="b_sub">Tobe MES</span></label>
+                                    <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                                 </div>
                                 <div class="modal-body form-inline">
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">그룹코드</label>
-                                        <input v-model="sys_common.code_type" readonly id="test1" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">코드</label>
-                                        <input  v-if="add_update_check==='I'" v-model="sys_common.code_value" id="test2" class="form-control in-s-50">
-                                        <input  v-if="add_update_check==='U'" readonly v-model="sys_common.code_value" id="test2" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test3" class="label-ba">명칭1</label>
-                                        <input v-model="sys_common.code_name1" id="test3" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test4" class="label-ba">명칭2</label>
-                                        <input v-model="sys_common.code_name2" id="test4" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test5" class="label-ba">명칭3</label>
-                                        <input v-model="sys_common.code_name3" id="test5" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭4</label>
-                                        <input v-model="sys_common.code_name4" id="test6" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭5</label>
-                                        <input v-model="sys_common.code_name5" id="test6" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭6</label>
-                                        <input v-model="sys_common.code_name6" id="test6" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭7</label>
-                                        <input v-model="sys_common.code_name7" id="test6" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test6" class="label-ba">명칭8</label>
-                                        <input v-model="sys_common.code_name8" id="test6" class="form-control in-s-50">
-                                    </div>
-
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test7" class="label-ba">사용유무</label>
-                                        <select v-model="sys_common.use_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
-                                    </div>
-
-                                    </div>
+                                    <label class="table_header">공통구분</label>
+                                    <table class="type03">
+                                        <tr>
+                                            <th scope="row" class="public">그룹</th>
+                                            <th scope="row" >{{ sys_common.code_type }}</th>
+                                            <th scope="row" class="public">코드</th>
+                                            <td>
+                                                <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="form-control">
+                                                <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="form-control">
+                                            </td>
+                                            <th scope="row" class="public">사용유무</th>
+                                            <td>
+                                                <select v-model="sys_common.use_yn" style="width: 100px;" class="form-control">
+                                                <option value="Y">Y</option>
+                                                <option value="N">N</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <label class="table_header">코드명칭</label>
+                                    <table class="type03">
+                                        <tr>
+                                            <th scope="row">명칭1</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name1"></td>
+                                            <th scope="row">명칭2</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name2"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">명칭3</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name3"></td>
+                                            <th scope="row">명칭4</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name4"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">명칭5</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name5"></td>
+                                            <th scope="row">명칭6</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name6"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">명칭7</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name7"></td>
+                                            <th scope="row">명칭8</th>
+                                            <td><input type="text" class="form-control" v-model="sys_common.code_name8"></td>
+                                        </tr>
+                                    </table>
+                                </div>
 
                                 <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="common_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="common_au('U')">저장</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('I')">저장</button>
+                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('U')">저장</button>
+                                    <button type="button" class="btn btn-primary modal-footer-btn" data-dismiss="modal">취소</button>
                                 </div>
                                 </div>
                             </div>
@@ -121,6 +114,7 @@
         </div>
     </div>
 </body>
+
 <script type="text/javascript">
     $(document).ready(function () {
 
