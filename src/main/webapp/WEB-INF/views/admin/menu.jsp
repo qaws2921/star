@@ -7,10 +7,6 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                    <li class="nav-item top-sticky">
-                            Admin <span class="sr-only"></span>
-                    </li>
-
                     <li class="nav-item bor-bm">
                         <a class="nav-link ba-color-999 auth menuMainA" href="#">
                             권한 관리<i class="fas fa-angle-down down-icon"></i>

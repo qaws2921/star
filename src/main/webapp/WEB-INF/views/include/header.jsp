@@ -15,7 +15,7 @@
     <link rel="canonical" href="http://www.tobesystem.co.kr">
     <meta property="og:type" content="website">
     <link rel="shortcut icon" href="resource/img/icon.png">
-    <title>투비 MES</title>
+    <title>(주)투비시스템 - MES</title>
 
     <%--  JqGrido  --%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -54,71 +54,39 @@
     $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap4';
     $.jgrid.defaults.iconSet = "Octicons";
-
-
 </script>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 top">Tobe MES System</div>
-        <div class="col-md-6 top right">HelpDesk</div>
-    </div>
-    <div class="row banner">
-        <div class="col-md-3">
-            <a href="/"><img src="resource/img/logo-sm.png" alt="(주)투비시스템" class="ci-img"/></a>
-        </div>
-        <div class="col-md-9 right">
-            <p class="gb-banner-info">
-                <a class="gb-a" href="#"><i class="fas fa-user"></i> 김종효님</a>
+<table class="top-sub-header">
+    <tbody>
+        <tr>
+            <td class="top-left">TobeSystem MES</td>
+            <td class="top-right">HelpDesk</td>
+        </tr>
+    </tbody>
+</table>
+<table class="top-header">
+    <tbody>
+        <tr>
+            <td class="header-img"><img src="resource/img/logo/tobemes.png" alt="(주)투비시스템" class="ci-img"/></td>
+            <td class="header-info">
+                <i class="fas fa-user"></i>
+                김종효님
                 <span class="gb-banner">|</span>
                 <a class="gb-a" href="#">로그아웃</a>
-            </p>
-        </div>
-    </div>
-    <div class="row sub_header">
-        <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler navs" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class="system-menu">
+    <tbody>
+        <tr>
+            <td>
+                <a href="sysCommon" class="s-menu s-menu-active">ADMIN</a>
+                <a href="#" class="s-menu">MES</a>
+                <a href="#" class="s-menu">SCM</a>
+                <a href="#" class="s-menu">BOM</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="sysCommon?check=admin" id="navbarDropdown">
-                            <i class="fas fa-align-justify"></i> 관리자
-                        </a>
-
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> 게시판
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-align-justify"></i> BOM
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">메뉴</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="scmCargo">
-                            <i class="fas fa-align-justify"></i> SCM
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</div>
-</a>
 
