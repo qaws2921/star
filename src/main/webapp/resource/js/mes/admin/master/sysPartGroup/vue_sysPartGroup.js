@@ -44,7 +44,7 @@ window.onload = function () {
                     ],
                     width:1500,
                     height:500,
-                    caption: "품목그룹관리",
+
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,

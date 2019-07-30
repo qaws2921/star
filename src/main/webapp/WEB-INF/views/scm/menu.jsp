@@ -33,6 +33,9 @@
                                 <a class="scmCargo" href="scmCargo?check=standard">창고 관리</a>
                             </li>
                             <li>
+                                <a class="scmLoc" href="scmLoc?check=standard">로케이션관리</a>
+                            </li>
+                            <li>
                                 <a class="sysAuthProgram" href="sysAuthProgram?check=auth">업체코드 관리</a>
                             </li>
 

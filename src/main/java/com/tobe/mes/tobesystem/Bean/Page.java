@@ -4,6 +4,8 @@ public class Page {
     private int page_num;
     private int total_num;
     private String keyword;
+    private String keyword2;
+    private String keyword3;
     private String start_date;
     private String end_date;
 
@@ -45,5 +47,21 @@ public class Page {
 
     public void setEnd_date(String end_date) {
         this.end_date = end_date;
+    }
+
+    public String getKeyword2() {
+        return keyword2;
+    }
+
+    public String getKeyword3() {
+        return keyword3;
+    }
+
+    public void setKeyword2(String keyword2) {
+        this.keyword2 = keyword2;
+    }
+
+    public void setKeyword3(String keyword3) {
+        this.keyword3 = keyword3;
     }
 }
