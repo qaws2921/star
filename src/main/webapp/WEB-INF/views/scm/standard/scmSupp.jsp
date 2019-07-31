@@ -6,26 +6,40 @@
 <script src="resource/js/mes/scm/standard/scmSupp//vue_scmSupp.js"></script>
 <script src="resource/js/mes/scm/standard/scmSupp/jquery_scmSupp.js"></script>
 
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-            <h1 class="font-size-18">업체관리</h1>
-            <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 업체관리</span>
-        </div>
+        <table class="menu-class">
+            <tbody>
+            <tr>
+                <td class="left-header">업체관리</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 기준정보 > 업체관리</td>
+            </tr>
+            </tbody>
+        </table>
         <div class="content-border">
-            <div class="mg-left-20" style="float: right;margin-right: 30px;">
-                <button class="btn btn-primary btn_999" @click="common_get_btn(1)">조회</button>
-                <button class="btn btn-success btn_999" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                <button class="btn btn-danger btn_999" @click="common_delete">삭제</button>
-            </div>
-            <div class="mg-left-20">
+            <table class="contents">
+                <tbody>
+                <tr>
+                    <td class="button-group">
+                        <button class="btn" @click="supp_cd_get(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
+                        <button class="btn" @click="common_delete">삭제</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <span class="content_header">
+                            <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;그룹선택
+                        </span>
+            <div class="public-mg">
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 12px;">
                             구분
                         </td>
                         <td>
-                            <select class="col-xl-2" id="common_group_select">
+                            <select class="col-xl-2 input-modal" id="corp_type_select">
                                <option value="0">전체</option>
                                <option value="1">고객사</option>
                                <option value="2">협력사</option>
@@ -34,7 +48,7 @@
                     </tr>
                 </table>
             </div>
-            <div style="margin-left:20px;margin-top:20px">
+            <div style="margin:20px;">
                 <table id="jqGrid"></table>
                 <div id="jqGridPager"></div>
                 <span class="oi oi-person"  ></span>
@@ -46,44 +60,93 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">공통 코드관리 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">업체관리 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
-                            <table class="type03">
-                                <tr class="public-tr">
-                                    <th scope="row" class="public">창고</th>
-                                    <th scope="row" class="content">{{ sys_common.code_type }}</th>
-                                    <th scope="row" class="public">위치코드</th>
-                                    <td>
-                                        <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="input-modal">
-                                    </td>
-                                    <th scope="row" class="public">사용유무</th>
-                                    <td>
-                                        <select v-model="sys_common.use_yn" class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
+
                             <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
                             <table class="type03">
                                 <tr>
-                                    <th scope="row" class="content">위치명</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">업체코드</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_code"></td>
+                                    <th scope="row" class="content">업체명</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_name"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">대표자</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.ceo"></td>
+                                    <th scope="row" class="content">업체명(영문)</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_name_en"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">사업자번호</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_no"></td>
+                                    <th scope="row" class="content">전화번호</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.tel_no"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">업태</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.buss_type"></td>
+                                    <th scope="row" class="content">팩스번호</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.fax_no"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">종목</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.category"></td>
+                                    <th scope="row" class="content">결재방법</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.give_type"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">주소</th>
+                                    <td colspan="3"><input type="text" class="input-modal" v-model="sys_supp_cd.address"></td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">당담자</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_name"></td>
+                                    <th scope="row" class="content">고객사구분</th>
+                                    <td>
+                                        <select v-model="sys_supp_cd.corp_type1">
+                                            <option value="Y">예</option>
+                                            <option value="N">아니오</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">당담자(전화)</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_tel"></td>
+                                    <th scope="row" class="content">협력사구분</th>
+                                    <td>
+                                        <select v-model="sys_supp_cd.corp_type2">
+                                            <option value="Y">예</option>
+                                            <option value="N">아니오</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">이메일</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_email"></td>
+                                    <th scope="row" class="content">활성화</th>
+                                    <td>
+                                        <select v-model="sys_supp_cd.use_yn">
+                                            <option value="Y">예</option>
+                                            <option value="N">아니오</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <th scope="row" class="content">비고</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td colspan="3"><input type="text" class="input-modal" placeholder="디비에 컬럼 없음"></td>
+
                                 </tr>
                             </table>
                         </div>
 
                         <div class="modal-footer">
-                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('I')">저장</button>
-                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('U')">저장</button>
-                            <button type="button" class="btn btn-primary modal-footer-btn" data-dismiss="modal">취소</button>
+                            <button v-if="add_update_check==='I'"  type="button" class="btn" @click="common_au('I')">저장</button>
+                            <button v-if="add_update_check==='U'"  type="button" class="btn" @click="common_au('U')">저장</button>
+                            <button type="button" class="btn" data-dismiss="modal">취소</button>
                         </div>
                     </div>
                 </div>

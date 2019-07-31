@@ -15,9 +15,9 @@
                     <div class="content-border">
 
                     <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="user_supp_get_btn(1)">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="user_supp_cd_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="user_supp_cd_delete">삭제</button>
+                        <button class="btn" @click="user_supp_get_btn(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="user_supp_cd_add">추가</button>
+                        <button class="btn" @click="user_supp_cd_delete">삭제</button>
                     </div>
                 <div style="margin-left:20px;margin-top:20px">
                     <table id="jqGrid"></table>

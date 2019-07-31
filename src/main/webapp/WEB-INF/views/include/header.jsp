@@ -82,7 +82,7 @@
             <td>
                 <a href="sysCommon?check=master" class="s-menu s-menu-active">ADMIN</a>
                 <a href="#" class="s-menu">MES</a>
-                <a href="#" class="s-menu">SCM</a>
+                <a href="scmCargo" class="s-menu">SCM</a>
                 <a href="#" class="s-menu">BOM</a>
             </td>
         </tr>

@@ -1,6 +1,6 @@
 function jquery_scmSupp(_this){
-    $(document).on("change","#common_group_select",function(){ // select 박스 바뀔때
-        _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
+    $(document).on("change","#corp_type_select",function(){ // select 박스 바뀔때
+        _this.corp_type_select_change($("#corp_type_select").val(),$("#corp_type_select option:checked").text());
     });
 
 

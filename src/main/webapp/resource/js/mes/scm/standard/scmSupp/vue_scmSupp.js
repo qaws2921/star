@@ -3,6 +3,32 @@ window.onload = function () {
         el:"#app",
         data: function () {
             return{
+                corp_type:'0',
+                sys_supp_cd:{
+                     supp_code:'',
+                     supp_name:'',
+                     supp_name_en:'',
+                     ceo:'',
+                     supp_no:'',
+                     tel_no:'',
+                     fax_no:'',
+                     buss_type:'',
+                     category:'',
+                     address:'',
+                     give_type:'',
+                     emp_name:'',
+                     emp_tel:'',
+                     emp_email:'',
+                     corp_type1:'Y',
+                     corp_type2:'Y',
+                     use_yn:'Y',
+                     user_code:'',
+                     user_name:'',
+                     create_date:'',
+                     update_date:'',
+                     keyword:'',
+                },
+
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
                 common_group_name:'', // 코드그룹 값
@@ -41,27 +67,26 @@ window.onload = function () {
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['업체코드','업체명','업체명(영문)','사업자번호','대표자','전화번호','팩스번호','업태','종목','결재방법','주소','당담자','당담자(전화번호)','당담자(휴대폰)','이메일','고객사구분','협력사구분','활성화','비고','등록자','등록일'],
+                    colNames:['업체코드','업체명','업체명(영문)','사업자번호','대표자','전화번호','팩스번호','업태','종목','결재방법','주소','당담자','당담자(전화번호)','이메일','고객사구분','협력사구분','활성화','비고','등록자','등록일'],
                     colModel:[
-                        {name:'code_type',index:'code_type',sortable: false},
-                        {name:'code_value',index:'code_value',key: true ,sortable: false},
-                        {name:'code_name1',index:'code_name1',sortable: false},
-                        {name:'code_name2',index:'code_name2',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'supp_code',index:'supp_code',key: true,sortable: false},
+                        {name:'supp_name',index:'supp_name' ,sortable: false},
+                        {name:'supp_name_en',index:'supp_name_en',sortable: false},
+                        {name:'supp_no',index:'supp_no',sortable: false},
+                        {name:'ceo',index:'ceo',sortable: false},
+                        {name:'tel_no',index:'tel_no',sortable: false},
+                        {name:'fax_no',index:'fax_no',sortable: false},
+                        {name:'buss_type',index:'buss_type',sortable: false},
+                        {name:'category',index:'category',sortable: false},
+                        {name:'give_type',index:'give_type',sortable: false},
+                        {name:'address',index:'address',sortable: false},
+                        {name:'emp_name',index:'emp_name',sortable: false},
+                        {name:'emp_tel',index:'emp_tel',sortable: false},
+                        {name:'emp_email',index:'emp_email',sortable: false},
+                        {name:'corp_type1',index:'corp_type1',sortable: false},
+                        {name:'corp_type2',index:'corp_type2',sortable: false},
                         {name:'use_yn',index:'use_yn',sortable: false},
+                        {name:'11',index:'11',sortable: false},
                         {name:'user_name',index:'user_name',sortable: false},
                         {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
                     ],
@@ -92,7 +117,7 @@ window.onload = function () {
 
              },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_group_select").select2();
+                 $("#corp_type_select").select2();
             },
             common_group_get:function(){ // 코드그룹 가져오는 메소드
                  var _this =this;
@@ -107,25 +132,22 @@ window.onload = function () {
 
                  });
             },
-            common_group_change:function(code,name){ // select 박스 바뀔때
+            corp_type_select_change:function(code,name){ // select 박스 바뀔때
                 var _this = this;
-                 _this.common_group_code = code;
-                 _this.sys_common.code_type=code;
-
-                 _this.common_group_name = name;
+                 _this.corp_type = code;
 
             },
-            common_get_btn:function (page) { // 조회 버튼
+            supp_cd_get:function (page) { // 조회 버튼
                 var _this = this;
-                _this.common_group_code_post =_this.common_group_code;
 
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+
+                $('#jqGrid').setGridParam({ url: 'sysSupp/supp/cd/get',postData: { corp_type: _this.corp_type} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            common_get_btn2:function (page) { // 조회 버튼
+            supp_cd_get2:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'sysSupp/supp/cd/get',postData: { corp_type: _this.corp_type} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -150,11 +172,11 @@ window.onload = function () {
                                 } else {
                                     $('#myModal').modal("hide");
                                     if (au === 'I') {
-                                        _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                                        _this.supp_cd_get($("#jqGrid").getGridParam('page'));
 
                                     } else {
 
-                                        _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                                        _this.supp_cd_get2($("#jqGrid").getGridParam('page'));
                                     }
                                 }
                             },
@@ -171,18 +193,32 @@ window.onload = function () {
                     }
                 }
             },
-            _sys_common_reset:function(){ //코드 객체 리셋
+            _sys_supp_cd_reset:function(){ //코드 객체 리셋
                  var _this = this;
-                _this.sys_common.code_value="";
-                _this.sys_common.code_name1="";
-                _this.sys_common.code_name2="";
-                _this.sys_common.code_name3="";
-                _this.sys_common.code_name4="";
-                _this.sys_common.code_name5="";
-                _this.sys_common.code_name6="";
-                _this.sys_common.code_name6="";
-                _this.sys_common.code_name8="";
-                _this.sys_common.use_yn="Y";
+                _this.sys_supp_cd={
+                    supp_code:'',
+                        supp_name:'',
+                        supp_name_en:'',
+                        ceo:'',
+                        supp_no:'',
+                        tel_no:'',
+                        fax_no:'',
+                        buss_type:'',
+                        category:'',
+                        address:'',
+                        give_type:'',
+                        emp_name:'',
+                        emp_tel:'',
+                        emp_email:'',
+                        corp_type1:'Y',
+                        corp_type2:'Y',
+                        use_yn:'Y',
+                        user_code:'',
+                        user_name:'',
+                        create_date:'',
+                        update_date:'',
+                        keyword:'',
+                }
 
             },
             common_update:function () { // 업데이트 모달창
@@ -194,11 +230,11 @@ window.onload = function () {
             common_add:function () {    // 추가를 누를때
                 var _this = this;
                 _this.add_update_check="I";
-                _this._sys_common_reset();
+                _this._sys_supp_cd_reset();
             },
             common_edit:function (data) {   // 수정 값을 객체에 저장
                 var _this = this;
-                _this._sys_common_reset();
+                _this._sys_supp_cd_reset();
                 _this.sys_common.code_type=data.code_type;
                 _this.sys_common.code_value=data.code_value;
                 _this.sys_common.code_name1=data.code_name1;
@@ -243,7 +279,7 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                            _this.supp_cd_get2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
