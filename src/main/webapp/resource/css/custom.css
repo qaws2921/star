@@ -12,6 +12,29 @@ body {
     font-size: .875rem;
     overflow:hidden;
 }
+.btn{
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    border: 1px solid #3a5c8a;
+    background-color: #3a5c8a;
+    margin-right: 5px;
+    font-size: 10px;
+    color: #fff;
+}
+.btn:hover{
+    border: 1px solid #6f809a;
+    background-color: #6f809a;
+    color: #ffffff;
+}
 table.top-sub-header td.top-right{
     padding-right: 10px;
     width: 50%;
@@ -29,7 +52,6 @@ table.top-sub-header td.top-left{
     width: 100%;
     height: 20px;
     margin: auto;
-    border-bottom: 1px dotted;
 }
 .top-header{
     width: 100%;
@@ -70,11 +92,11 @@ table.system-menu td{
     font-size: 12px;
 }
 .s-menu-active{
-    background-color: #6f809a;
+    background-color: #7b7b7b;
     border-radius: 5px;
 }
 .s-menu:hover{
-    background-color: #6f809a;
+    background-color: #7b7b7b;
     border-radius: 5px;
 }
 .s-menu:visited{
@@ -132,7 +154,8 @@ table.contents td.button-group{
     float: right;
     width: 100%;
     text-align: right;
-    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 table.contents td.gb-t{
     width: 15%;
@@ -207,6 +230,23 @@ table.jqGrid-wrap{
 .ci-img{
     width: 150px;
 }
+table.menu-class{
+    width: 100%;
+    margin-bottom: 10px;
+    color: #3c3c3c;
+}
+table.menu-class td.left-header{
+    width: 50%;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+}
+table.menu-class td.right-header{
+    width: 50%;
+    text-align: right;
+    font-weight: 700;
+    font-size: 11px;
+}
 .gb-banner{color: #a0a0a0}
 p{margin: auto}
 .sub_header{background-color: #1453a1; border:1px solid #1453a1; height: 60px; color: #ffffff;}
@@ -248,7 +288,7 @@ p{margin: auto}
 font-size: 9px;
 }
 .btn_pd{margin-right: 5px; font-size: 10px;}
-.mg-left-20{margin-left: 20px; margin-bottom: 10px;}
+.public-mg {margin-top :5px; margin-bottom: 20px; margin-left: 20px; margin-right: 20px;}
 .table td, .table th {padding:5px;}
 .ui-jqgrid tr.jqgrow{font-size: 7px;}
 .mg-5{margin: 5px;}
@@ -256,24 +296,21 @@ font-size: 9px;
 .label-ba{margin-right: 5px; border: #1b1e21 solid 1px; height: 38px; width: 100px; background-color: #005cbf; font-weight: 700; border-radius: 10px; color: white;}
 .in-s-50{width: 50px;}
 .se-s-193{width: 193px;}
-.top-td-la{width: 100px; text-align: center; background-color: #6f809a; color: white; font-weight: 600; font-size: 11px; padding-top: 100px;}
-.table-border-bl{border: solid 1px #999; border-top: 2px solid #6f809a; width: 100%;}
+.top-td-la{width: 100px; text-align: center; background-color: #e0f2ff; color: #3a5c8a; font-weight: 600; font-size: 11px; padding-top: 100px;}
+.table-border-bl{border: solid 1px #cccccc; border-top: 2px solid #336699; width: 100%;}
 .table-border-bl2{border: solid 1px #999; border-top: 2px solid #005cbf; width: 950px;}
 .content-border{border: #545b6255 solid 0.005mm; padding-top: 10px; padding-bottom: 30px;}
 .font-size-18{font-size: 15px; font-weight: 700;}
 .pa-b-20{padding-bottom: 20px;}
 .file-tree{display: none;}
-.ba-color-999{background-color: #b5b5bb;}
-.ui-jqgrid-labels{background-color: #6f809a; color: white; text-align: center;}
+.ui-jqgrid-labels{background-color: #e0f2ff; color: #3a5c8a; text-align: center;border-top: 2px solid #336699;}
 #jqGrid2 tr{font-size: 9pt;}
 #jqgh_jqGrid2_auth_name{font-size: 11pt;}
 .bor-bm{ padding-bottom: 10px;}
 .font-size-9{font-size: 9pt;}
-.btn_999{border: 1px solid #6f809a; background-color: #6f809a;margin-right: 5px;font-size: 10px;}
-.btn_999:hover{border: 1px solid #585858; background-color: #585858;}
 
 .modal-top{
-    background-color: #6f809a;
+    background-color: #336699;
     color: #fff;
     height: 50px;
     border-top-left-radius: 0;
@@ -317,6 +354,14 @@ font-size: 9px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.content_header{
+    width: 100%;
+    color: #3a5c8a;
+    margin: 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+}
 table.type03 {
     border-collapse: collapse;
     text-align: left;
@@ -325,6 +370,7 @@ table.type03 {
     margin: 10px 0px 25px 0px;
     width:100%;
 }
+
 table.type03 th.public {
     width: 147px;
     padding: 8px;

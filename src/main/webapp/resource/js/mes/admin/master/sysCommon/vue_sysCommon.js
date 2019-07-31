@@ -58,6 +58,7 @@ window.onload = function () {
                         {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
                     ],
                     autowidth: true,
+                    shrinkToFit:false,
                     height:450,
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
