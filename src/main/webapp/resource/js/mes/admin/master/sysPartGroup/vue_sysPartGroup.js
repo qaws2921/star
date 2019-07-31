@@ -42,7 +42,8 @@ window.onload = function () {
 
 
                     ],
-                    width:1500,
+                    autowidth: true,
+                    shrinkToFit:false,
                     height:500,
 
                     pager:'#jqGridPager',

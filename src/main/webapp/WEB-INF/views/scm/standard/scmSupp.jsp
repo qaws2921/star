@@ -3,14 +3,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/standard/scmLoc//vue_scmLoc.js"></script>
-<script src="resource/js/mes/scm/standard/scmLoc/jquery_scmLoc.js"></script>
+<script src="resource/js/mes/scm/standard/scmSupp//vue_scmSupp.js"></script>
+<script src="resource/js/mes/scm/standard/scmSupp/jquery_scmSupp.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-            <h1 class="font-size-18">로케이션관리</h1>
-            <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 로케이션관리</span>
+            <h1 class="font-size-18">업체관리</h1>
+            <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 업체관리</span>
         </div>
         <div class="content-border">
             <div class="mg-left-20" style="float: right;margin-right: 30px;">
@@ -22,13 +22,13 @@
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 12px;">
-                            창고
+                            구분
                         </td>
                         <td>
                             <select class="col-xl-2" id="common_group_select">
-                                <option v-for="(cg,index) in common_group_list" :key="index" :value="cg.group_code">
-                                    {{ cg.group_name }}
-                                </option>
+                               <option value="0">전체</option>
+                               <option value="1">고객사</option>
+                               <option value="2">협력사</option>
                             </select>
                         </td>
                     </tr>

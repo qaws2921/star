@@ -32,7 +32,7 @@ window.onload = function () {
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
-            jquery_scmLoc(_this); // vue 에서 실행 못하는 jquery
+            jquery_scmBPrice(_this); // vue 에서 실행 못하는 jquery
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -41,16 +41,19 @@ window.onload = function () {
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['구분','창고','위치코드','위치명','비고','활성','등록자','등록일'],
+                    colNames:['No','업체코드','업체명','단가구분','시작일','종료일','품번','품명','단위','단가','사용유무'],
                     colModel:[
-                        {name:'code_type',index:'code_type',sortable: false},
-                        {name:'code_value',index:'code_value',key: true ,sortable: false},
-                        {name:'code_name1',index:'code_name1',sortable: false},
-                        {name:'code_name2',index:'code_name2',sortable: false},
-                        {name:'code_name8',index:'code_name8',sortable: false},
-                        {name:'use_yn',index:'use_yn',sortable: false},
-                        {name:'user_name',index:'user_name',sortable: false},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
+                        {name:'code_type',index:'code_type',width:50,sortable: false},
+                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false},
+                        {name:'code_name1',index:'code_name1',width:100,sortable: false},
+                        {name:'code_name2',index:'code_name2',width:100,sortable: false},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                        {name:'use_yn',index:'use_yn',width:100,sortable: false},
+                        {name:'user_name',index:'user_name',width:100,sortable: false},
+                        {name:'update_date',index:'update_date',width:100,formatter:formmatter_date,sortable: false},
                     ],
                     autowidth: true,
                     shrinkToFit:false,

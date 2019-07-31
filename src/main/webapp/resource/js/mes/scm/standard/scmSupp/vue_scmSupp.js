@@ -32,7 +32,7 @@ window.onload = function () {
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
-            jquery_scmLoc(_this); // vue 에서 실행 못하는 jquery
+            jquery_scmSupp(_this); // vue 에서 실행 못하는 jquery
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -41,12 +41,25 @@ window.onload = function () {
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['구분','창고','위치코드','위치명','비고','활성','등록자','등록일'],
+                    colNames:['업체코드','업체명','업체명(영문)','사업자번호','대표자','전화번호','팩스번호','업태','종목','결재방법','주소','당담자','당담자(전화번호)','당담자(휴대폰)','이메일','고객사구분','협력사구분','활성화','비고','등록자','등록일'],
                     colModel:[
                         {name:'code_type',index:'code_type',sortable: false},
                         {name:'code_value',index:'code_value',key: true ,sortable: false},
                         {name:'code_name1',index:'code_name1',sortable: false},
                         {name:'code_name2',index:'code_name2',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
+                        {name:'code_name8',index:'code_name8',sortable: false},
                         {name:'code_name8',index:'code_name8',sortable: false},
                         {name:'use_yn',index:'use_yn',sortable: false},
                         {name:'user_name',index:'user_name',sortable: false},

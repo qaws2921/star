@@ -41,7 +41,8 @@ window.onload = function () {
                     ],
                     page:0,
                     rowNum:0,
-                    width:500,
+                    autowidth: true,
+
                     height:500,
                     caption: "권한그룹명",
 
@@ -58,7 +59,6 @@ window.onload = function () {
                     }
 
                 }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
-
             },
              jqGrid:function(){ // jqGrid 메소드
                  var _this = this;
@@ -83,7 +83,8 @@ window.onload = function () {
 
 
 
-                    width:950,
+                    autowidth: true,
+
                     height:500,
                     caption: "권한그룹별 프로그램관리",
 

@@ -21,7 +21,7 @@
                         <ul class="file-tree">
 
                             <li>
-                                <a class="sysAuth" href="sysAuth?check=auth">매입단가관리</a>
+                                <a class="scmBPrice" href="scmBPrice?check=standard">매입단가관리</a>
                             </li>
                             <li>
                                 <a class="sysAuthProgram" href="sysAuthProgram?check=auth">품목코드 관리</a>
@@ -36,7 +36,7 @@
                                 <a class="scmLoc" href="scmLoc?check=standard">로케이션관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?check=auth">업체코드 관리</a>
+                                <a class="scmSupp" href="scmSupp?check=standard">업체코드 관리</a>
                             </li>
 
 
