@@ -437,14 +437,14 @@ table.type03 td {
         height: 100%;
     }
 }
-
+.mg-20{margin:20px;}
 .modal-dialog {
     display: inline-block;
     text-align: left;
     vertical-align: middle;
 }
 .input-modal{
-    width: 170px;
+    width: 100%;
     font-size: 9px;
 }
 .select-modal{

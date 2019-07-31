@@ -47,12 +47,12 @@
                             </tr>
                         </table>
                     </div>
-                <div style="margin:20px;">
+                <div class="mg-20">
                     <table id="jqGrid"></table>
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                    <!-- Modal -->
+                    <!-- 모달 -->
                     <div class="modal hide" id="myModal" role="dialog">
                         <div class="modal-dialog modal-lg">
 

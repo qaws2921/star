@@ -34,11 +34,11 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['품목그룹코드','품목그룹명','설명','등록자','등록일'],
                     colModel:[
-                        {name:'part_grp_code',index:'part_grp_code',key: true,sortable: false },
-                        {name:'part_grp_name',index:'part_grp_name',sortable: false},
-                        {name:'remark',index:'remark',sortable: false},
-                        {name:'user_name',index:'user_name',sortable: false},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
+                        {name:'part_grp_code',index:'part_grp_code',key: true,width:300,sortable: false },
+                        {name:'part_grp_name',index:'part_grp_name',sortable: false,width:300},
+                        {name:'remark',index:'remark',sortable: false,width:300},
+                        {name:'user_name',index:'user_name',sortable: false,width:300},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false,width:300},
 
 
                     ],

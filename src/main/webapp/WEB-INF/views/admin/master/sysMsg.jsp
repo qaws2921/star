@@ -8,18 +8,27 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div v-cloak id="app">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-                    <h1 class="font-size-18">메세지관리</h1>
-                    <span class="pa-b-20 font-size-9">홈 > 관리자 > 마스터관리 > 메세지관리</span>
-                </div>
+                    <table class="menu-class">
+                        <tbody>
+                        <tr>
+                            <td class="left-header">메세지 관리</td>
+                            <td class="right-header"><i class="fas fa-home"></i> > 관리자 > 메세지관리</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <div class="content-border">
-
-                    <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="msg_get_btn(1)">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="msg_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="msg_delete">삭제</button>
-                    </div>
-                <div style="margin-left:20px;margin-top:20px">
+                        <table class="contents">
+                            <tbody>
+                            <tr>
+                                <td class="button-group">
+                                    <button class="btn" @click="msg_get_btn(1)">조회</button>
+                                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="msg_add">추가</button>
+                                    <button class="btn" @click="msg_delete">삭제</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                <div class="mg-20">
                     <table id="jqGrid"></table>
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
