@@ -80,9 +80,9 @@
     <tbody>
         <tr>
             <td>
-                <a href="sysCommon?check=master" class="s-menu s-menu-active">ADMIN</a>
+                <a href="sysCommon?active=admin&check=master" class="s-menu admin">ADMIN</a>
                 <a href="#" class="s-menu">MES</a>
-                <a href="scmCargo" class="s-menu">SCM</a>
+                <a href="scmCargo?active=scm&check=standard" class="s-menu scm">SCM</a>
                 <a href="#" class="s-menu">BOM</a>
             </td>
         </tr>

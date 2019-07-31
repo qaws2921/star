@@ -2,6 +2,7 @@ $(function () {
     $(".file-tree").filetree();
     var params = getUrlParams();
     $("."+params.check).css("background-color","#1453a1").css("color","#FFF");
+    $("."+params.active).addClass("s-menu-active");
     // $(".file-tree").slideDown();
 
     var link = document.location.href.split("/");

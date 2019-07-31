@@ -23,8 +23,8 @@
                 <tr>
                     <td class="button-group">
                         <button class="btn" @click="supp_cd_get(1)">조회</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="supp_cd_add">추가</button>
+                        <button class="btn" @click="supp_cd_delete">삭제</button>
                     </td>
                 </tr>
                 </tbody>
@@ -69,7 +69,10 @@
                             <table class="type03">
                                 <tr>
                                     <th scope="row" class="content">업체코드</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_code"></td>
+                                    <td>
+                                        <input v-if="add_update_check === 'I'" type="text" class="input-modal" v-model="sys_supp_cd.supp_code">
+                                        <input v-if="add_update_check === 'U'" readonly type="text" class="input-modal" v-model="sys_supp_cd.supp_code">
+                                    </td>
                                     <th scope="row" class="content">업체명</th>
                                     <td><input type="text" class="input-modal" v-model="sys_supp_cd.supp_name"></td>
                                 </tr>
@@ -144,8 +147,8 @@
                         </div>
 
                         <div class="modal-footer">
-                            <button v-if="add_update_check==='I'"  type="button" class="btn" @click="common_au('I')">저장</button>
-                            <button v-if="add_update_check==='U'"  type="button" class="btn" @click="common_au('U')">저장</button>
+                            <button v-if="add_update_check==='I'"  type="button" class="btn" @click="supp_cd_au('I')">저장</button>
+                            <button v-if="add_update_check==='U'"  type="button" class="btn" @click="supp_cd_au('U')">저장</button>
                             <button type="button" class="btn" data-dismiss="modal">취소</button>
                         </div>
                     </div>

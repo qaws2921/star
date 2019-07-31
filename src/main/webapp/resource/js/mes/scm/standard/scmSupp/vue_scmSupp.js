@@ -29,26 +29,6 @@ window.onload = function () {
                      keyword:'',
                 },
 
-                common_group_list:[], // 코드그룹 리스트
-                common_group_code:'', // 코드그룹 코드
-                common_group_name:'', // 코드그룹 값
-                common_group_code_post:'', // 코드그룹 코드 조회 데이터
-                sys_common:{        // 코드 객체
-                    code_type:"",
-                    code_value:"",
-                    code_name1:"",
-                    code_name2:"",
-                    code_name3:"",
-                    code_name4:"",
-                    code_name5:"",
-                    code_name6:"",
-                    code_name7:"",
-                    code_name8:"",
-                    use_yn:"Y",
-                    user_name:"",
-                    update_date:"",
-                    keyword:""
-                },
                 add_update_check:'I'    // 저장인지 수정인지 체크
             }
         },
@@ -56,7 +36,7 @@ window.onload = function () {
 
             var _this = this;
             _this.jqGrid(); // jqGrid 실행
-            _this.common_group_get(); // 코드그룹 가져오기
+
             _this.selectBox(); // select2 실행
             jquery_scmSupp(_this); // vue 에서 실행 못하는 jquery
         },
@@ -107,8 +87,8 @@ window.onload = function () {
                     },
                     ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
                         var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-                        _this.common_edit(data); // 데이터 가공
-                        _this.common_update(); // 수정창 띄어주기
+                        _this.supp_cd_edit(data); // 데이터 가공
+                        _this.supp_cd_update(); // 수정창 띄어주기
 
                     }
 
@@ -119,19 +99,7 @@ window.onload = function () {
             selectBox:function(){  // select2 실행 메소드
                  $("#corp_type_select").select2();
             },
-            common_group_get:function(){ // 코드그룹 가져오는 메소드
-                 var _this =this;
-                 axios
-                     .post("sysCommon/common/group/get")
-                     .then(function(response){
-                        _this.common_group_list = response.data;
-                        _this.common_group_code = response.data[0].group_code;
-                        _this.sys_common.code_type = response.data[0].group_code;
-                        _this.common_group_name = response.data[0].group_name;
 
-
-                 });
-            },
             corp_type_select_change:function(code,name){ // select 박스 바뀔때
                 var _this = this;
                  _this.corp_type = code;
@@ -150,7 +118,7 @@ window.onload = function () {
                 $('#jqGrid').setGridParam({ url: 'sysSupp/supp/cd/get',postData: { corp_type: _this.corp_type} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            common_au:function (au) { // 저장 수정 ajax
+            supp_cd_au:function (au) { // 저장 수정 ajax
                 var _this = this
                 var txt ='저장 히겠습니까?';
                 if (au === 'U'){
@@ -159,10 +127,10 @@ window.onload = function () {
                 }
                 if(confirm(txt)){
                     if (_this.effectiveness()) {
-                        _this.sys_common.keyword = au;
+                        _this.sys_supp_cd.keyword = au;
                         $.ajax({
-                            url: "sysCommon/common/au",
-                            data: _this.sys_common,
+                            url: "sysSupp/supp/cd/au",
+                            data: _this.sys_supp_cd,
                             type: 'POST',
                             async: true,
                             dataType: "json",
@@ -221,41 +189,48 @@ window.onload = function () {
                 }
 
             },
-            common_update:function () { // 업데이트 모달창
+            supp_cd_update:function () { // 업데이트 모달창
                 var _this = this;
                 _this.add_update_check="U";
 
                 $('#myModal').modal("show");
             },
-            common_add:function () {    // 추가를 누를때
+            supp_cd_add:function () {    // 추가를 누를때
                 var _this = this;
                 _this.add_update_check="I";
                 _this._sys_supp_cd_reset();
             },
-            common_edit:function (data) {   // 수정 값을 객체에 저장
+            supp_cd_edit:function (data) {   // 수정 값을 객체에 저장
                 var _this = this;
                 _this._sys_supp_cd_reset();
-                _this.sys_common.code_type=data.code_type;
-                _this.sys_common.code_value=data.code_value;
-                _this.sys_common.code_name1=data.code_name1;
-                _this.sys_common.code_name2=data.code_name2;
-                _this.sys_common.code_name3=data.code_name3;
-                _this.sys_common.code_name4=data.code_name4;
-                _this.sys_common.code_name5=data.code_name5;
-                _this.sys_common.code_name6=data.code_name6;
-                _this.sys_common.code_name7=data.code_name7;
-                _this.sys_common.code_name8=data.code_name8;
-                _this.sys_common.use_yn=data.use_yn;
+                _this.sys_supp_cd.supp_code = data.supp_code;
+                _this.sys_supp_cd.supp_name = data.supp_name;
+                _this.sys_supp_cd.supp_name_en = data.supp_name_en;
+                _this.sys_supp_cd.ceo = data.ceo;
+                _this.sys_supp_cd.supp_no = data.supp_no;
+                _this.sys_supp_cd.tel_no = data.tel_no;
+                _this.sys_supp_cd.fax_no = data.fax_no;
+                _this.sys_supp_cd.buss_type = data.buss_type;
+                _this.sys_supp_cd.category = data.category;
+                _this.sys_supp_cd.address = data.address;
+                _this.sys_supp_cd.give_type = data.give_type;
+                _this.sys_supp_cd.emp_name = data.emp_name;
+                _this.sys_supp_cd.emp_tel = data.emp_tel;
+                _this.sys_supp_cd.emp_email = data.emp_email;
+                _this.sys_supp_cd.corp_type1 = data.corp_type1;
+                _this.sys_supp_cd.corp_type2 = data.corp_type2;
+                _this.sys_supp_cd.use_yn = data.use_yn;
+
             },
-            common_delete:function () { //삭제를 누를시
+            supp_cd_delete:function () { //삭제를 누를시
                 var _this = this;
                  var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
-                var code_value = ids.join(",");
-                if (code_value === ''){
+                var code = ids.join(",");
+                if (code === ''){
                     alert("삭제하는 데이터를 선택해주세요");
                 } else {
                     if (confirm("삭제하겠습니까?")){
-                        _this.common_delete_ajax(_this.common_group_code_post,code_value);
+                        _this.supp_cd_delete_ajax(code);
 
                     }
 
@@ -264,12 +239,12 @@ window.onload = function () {
 
 
             },
-            common_delete_ajax:function (type,value) {  // 삭제 ajax
+            supp_cd_delete_ajax:function (code) {  // 삭제 ajax
                 wrapWindowByMask();
                  var _this = this;
                  $.ajax({
-                    url:"sysCommon/common/delete",
-                    data:{code_type:type , code_value:value},
+                    url:"scmSupp/supp/cd/delete",
+                    data:{supp_code:code},
                     type : 'DELETE',
                     async: true,
                     dataType : "json",
@@ -293,16 +268,66 @@ window.onload = function () {
 
             effectiveness:function () { // 유효성 검사
                 var _this = this;
-                if (_this.sys_common.code_value === ''){
-                    alert("코드를 입력해주세요");
+                if (_this.sys_supp_cd.supp_code === ''){
+                    alert("업체코드를 입력해주세요");
                     return false;
-                }else if (_this.sys_common.code_name1 === ''){
-                    alert("명칭1을 입력해주세요");
+                }else if (_this.sys_supp_cd.supp_name === ''){
+                    alert("업체명을 입력해주세요");
                     return false;
 
-                }else {
+                }else if (_this.sys_supp_cd.ceo === ''){
+                    alert("대표자를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.supp_name_en === ''){
+                    alert("업체명(영문)을 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.supp_no === ''){
+                    alert("사업자번호를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.tel_no === ''){
+                    alert("전화번호를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.buss_type === ''){
+                    alert("업태를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.fax_no === ''){
+                    alert("팩스번호를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.category === ''){
+                    alert("종목을 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.give_type === ''){
+                    alert("결재방법을 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.address === ''){
+                    alert("주소를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.emp_name === ''){
+                    alert("당담자를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.emp_tel === ''){
+                    alert("당담자(전화)를 입력해주세요");
+                    return false;
+
+                }else if (_this.sys_supp_cd.emp_email === ''){
+                    alert("이메일을 입력해주세요");
+                    return false;
+
+                }
+                else {
                     return true;
                 }
+
             }
 
         }
