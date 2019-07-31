@@ -2,21 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMSupp_Mapper">
-    <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
-        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
-    </select>
     <select id="supp_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_SUPP_CD.SYS_SUPP_CD">
         CALL TOBE_MES.SP_SYS_SUPP_GET(#{page_num},#{total_num},#{keyword},'','S')
     </select>
     <select id="supp_cd_get_count" resultType="Integer">
         CALL TOBE_MES.SP_SYS_SUPP_GET(#{page_num},#{total_num},#{keyword},'','C')
     </select>
-    <select id="cargo_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_CARGO_ADD(#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})
+    <select id="supp_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_SUPP_ADD(#{supp_code},#{supp_name},#{supp_name_en},#{ceo},#{supp_no},#{tel_no},#{tel_no},#{buss_type},#{category},#{address},#{give_type},#{emp_name},#{emp_tel},#{emp_email},#{corp_type1},#{corp_type2},#{use_yn},#{user_code},#{keyword})
     </select>
 
-    <select id="cargo_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_CARGO_DEL(#{code})
+    <select id="supp_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_SUPP_DEL(#{code})
     </select>
 
 </mapper>

@@ -14,10 +14,10 @@
                         <ul class="file-tree">
 
                             <li>
-                                <a class="sysAuth" href="sysAuth?check=auth">권한그룹관리</a>
+                                <a class="sysAuth" href="sysAuth?active=admin&check=auth">권한그룹관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?check=auth">권한그룹별 프로그램관리</a>
+                                <a class="sysAuthProgram" href="sysAuthProgram?active=admin&check=auth">권한그룹별 프로그램관리</a>
                             </li>
 
 
@@ -30,10 +30,10 @@
                         <ul class="file-tree">
 
                                     <li>
-                                        <a class="sysUser" href="sysUser?check=user">사용자관리</a>
+                                        <a class="sysUser" href="sysUser?active=admin&check=user">사용자관리</a>
                                     </li>
                                     <li>
-                                        <a class="sysUserSupp" href="sysUserSupp?check=user">사용자관리(협력사)</a>
+                                        <a class="sysUserSupp" href="sysUserSupp?active=admin&check=user">사용자관리(협력사)</a>
                                     </li>
 
                         </ul>
@@ -50,18 +50,18 @@
                                         <a href="#">사업장관리</a>
                                     </li>
                                     <li>
-                                        <a class="sysCommon" href="sysCommon?check=master">공통코드 관리</a>
+                                        <a class="sysCommon" href="sysCommon?active=admin&check=master">공통코드 관리</a>
                                     </li>
                                     <li>
-                                        <a class="sysPartGroup" href="sysPartGroup?check=master">품목그룹관리</a>
-                                    </li>
-                                    </li>
-                                    <li>
-                                        <a class="sysMsg" href="sysMsg?check=master">메세지 관리</a>
+                                        <a class="sysPartGroup" href="sysPartGroup?active=admin&check=master">품목그룹관리</a>
                                     </li>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">게시판관리</a>
+                                        <a class="sysMsg" href="sysMsg?active=admin&check=master">메세지 관리</a>
+                                    </li>
+                                    </li>
+                                    <li>
+                                        <a class="sysBoard" href="sysBoard?active=admin&check=master">게시판관리</a>
                                     </li>
 
                         </ul>

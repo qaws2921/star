@@ -21,22 +21,22 @@
                         <ul class="file-tree">
 
                             <li>
-                                <a class="scmBPrice" href="scmBPrice?check=standard">매입단가관리</a>
+                                <a class="scmBPrice" href="scmBPrice?active=scm&check=standard">매입단가관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?check=auth">품목코드 관리</a>
+                                <a class="sysAuthProgram" href="sysAuthProgram?active=scm&check=auth">품목코드 관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?check=auth">품목코드 관리</a>
+                                <a class="sysAuthProgram" href="sysAuthProgram?active=scm&check=auth">품목코드 관리</a>
                             </li>
                             <li>
-                                <a class="scmCargo" href="scmCargo?check=standard">창고 관리</a>
+                                <a class="scmCargo" href="scmCargo?active=scm&check=standard">창고 관리</a>
                             </li>
                             <li>
-                                <a class="scmLoc" href="scmLoc?check=standard">로케이션관리</a>
+                                <a class="scmLoc" href="scmLoc?active=scm&check=standard">로케이션관리</a>
                             </li>
                             <li>
-                                <a class="scmSupp" href="scmSupp?check=standard">업체코드 관리</a>
+                                <a class="scmSupp" href="scmSupp?active=scm&check=standard">업체코드 관리</a>
                             </li>
 
 
@@ -49,13 +49,13 @@
                         <ul class="file-tree user">
 
                                     <li>
-                                        <a class="sysUser" href="sysUser?check=user">매입마감처리</a>
+                                        <a class="sysUser" href="sysUser?active=scm&check=user">매입마감처리</a>
                                     </li>
                                     <li>
-                                        <a class="sysUserSupp" href="sysUserSupp?check=user">매입마감내역</a>
+                                        <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">매입마감내역</a>
                                     </li>
                                     <li>
-                                        <a class="sysUserSupp" href="sysUserSupp?check=user">마감취소</a>
+                                        <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">마감취소</a>
                                     </li>
 
                         </ul>
@@ -72,34 +72,34 @@
                                         <a href="#">재고현황</a>
                                     </li>
                                     <li>
-                                        <a class="sysCommon" href="sysCommon?check=master">고객계획대비 소요량</a>
+                                        <a class="sysCommon" href="sysCommon?active=scm&check=master">고객계획대비 소요량</a>
                                     </li>
                                     <li>
-                                        <a class="sysPartGroup" href="sysPartGroup?check=master">생산계획대비 소요량</a>
-                                    </li>
-                                    </li>
-                                    <li>
-                                        <a class="sysMsg" href="sysMsg?check=master">수불현황</a>
+                                        <a class="sysPartGroup" href="sysPartGroup?active=scm&check=master">생산계획대비 소요량</a>
                                     </li>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">입고처리</a>
+                                        <a class="sysMsg" href="sysMsg?active=scm&check=master">수불현황</a>
+                                    </li>
+                                    </li>
+                                    <li>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">입고처리</a>
                                     </li>
 
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">출고처리</a>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">출고처리</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">재고조정</a>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">재고조정</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">재고조정이력</a>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">재고조정이력</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">자재이동</a>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">자재이동</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?check=master">반출증관리</a>
+                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">반출증관리</a>
                                     </li>
 
                         </ul>
@@ -111,13 +111,13 @@
                         <ul class="file-tree user">
 
                             <li>
-                                <a class="sysUser" href="sysUser?check=user">출고증관리</a>
+                                <a class="sysUser" href="sysUser?active=scm&check=user">출고증관리</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">입고처리</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">입고처리</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">납품현황</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
                             </li>
 
                         </ul>
@@ -129,22 +129,22 @@
                         <ul class="file-tree user">
 
                             <li>
-                                <a class="sysUser" href="sysUser?check=user">고객계획대비 소요량</a>
+                                <a class="sysUser" href="sysUser?active=scm&check=user">고객계획대비 소요량</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">생산계획대비 소요량</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">생산계획대비 소요량</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">납품증관리</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품증관리</a>
                             </li>
                             <li>
-                                <a class="sysUser" href="sysUser?check=user">부품식별표 인쇄</a>
+                                <a class="sysUser" href="sysUser?active=scm&check=user">부품식별표 인쇄</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">납품현황</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?check=user">마감현황</a>
+                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">마감현황</a>
                             </li>
 
                         </ul>
