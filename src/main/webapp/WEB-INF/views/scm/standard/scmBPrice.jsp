@@ -8,26 +8,44 @@
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-            <h1 class="font-size-18">매입단가 관리</h1>
-            <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 매입단가 관리</span>
-        </div>
+
+        <table class="menu-class">
+            <tbody>
+            <tr>
+                <td class="left-header">매입단가 관리</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 기준정보 > 매입단가 관리</td>
+            </tr>
+            </tbody>
+        </table>
+
         <div class="content-border">
-            <div class="mg-left-20" style="float: right;margin-right: 30px;">
-                <button class="btn btn-primary btn_999" @click="common_get_btn(1)">조회</button>
-                <button class="btn btn-success btn_999" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                <button class="btn btn-danger btn_999" @click="common_delete">삭제</button>
-                <button class="btn btn-danger btn_999" >엑셀다운</button>
-                <button class="btn btn-danger btn_999" >엑셀업</button>
-            </div>
-            <div class="mg-left-20">
+
+            <table class="contents">
+                <tbody>
+                <tr>
+                    <td class="button-group">
+                        <button class="btn" @click="common_get_btn(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
+                        <button class="btn" @click="common_delete">삭제</button>
+                        <button class="btn" id="scmBPrice_excel_download" >엑셀다운</button>
+                        <button class="btn" >엑셀업</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <span class="content_header">
+                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;그룹선택
+            </span>
+
+            <div class="public-mg">
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 12px;">
                             조회기간
                         </td>
                         <td style="width: 400px;">
-                            <input>~<input>
+
+                            <input class="input-modal" id="date_input1">~<input class="input-modal" id="date_input2">
                         </td>
                         <td class="top-td-la" style="padding-top: 12px;"> 단가구분</td>
                         <td>
@@ -52,7 +70,11 @@
                     </tr>
                 </table>
             </div>
-            <div style="margin-left:20px;margin-top:20px">
+
+
+
+
+            <div style="margin:20px;">
                 <table id="jqGrid"></table>
                 <div id="jqGridPager"></div>
                 <span class="oi oi-person"  ></span>

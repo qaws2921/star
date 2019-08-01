@@ -18,5 +18,8 @@
     <select id="cargo_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_CARGO_DEL(#{code})
     </select>
+    <select id="scmBPrice_excel_download" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPRICE_CD.SYS_BPRICE_CD">
+        SELECT * FROM SYS_BPRICE_CD
+    </select>
 
 </mapper>

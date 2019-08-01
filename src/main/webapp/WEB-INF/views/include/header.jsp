@@ -41,7 +41,9 @@
     <script src="resource/js/tree/file-explore.js"></script>
     <link href="resource/js/tree/file-explore.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <style type="text/css">
         [v-cloak] {
             display: none;
