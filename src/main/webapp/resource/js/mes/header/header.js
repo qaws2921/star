@@ -38,6 +38,10 @@ $(function () {
 
 });
 
+
+
+
+
 function wrapWindowByMask() {
     //화면의 높이와 너비를 구한다.
     var maskHeight = $(document).height();
