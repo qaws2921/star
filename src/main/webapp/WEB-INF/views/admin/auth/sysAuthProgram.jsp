@@ -13,43 +13,41 @@
                     <span class="pa-b-20 font-size-9">홈 > 관리자 > 권한관리 > 권한그룹별 프로그램관리</span>
                 </div>
                     <div class="content-border">
-                    <div class="mg-left-20">
+                        <span class="content_header">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;그룹선택
+                                    </span>
+                        <div class="public-mg">
+                            <table class="table table-border-bl" >
+                                <tr>
+                                    <td class="top-td-la" style="padding-top: 12px;">
+                                        업무조회
+                                    </td>
+                                    <td>
+                                        <select class="col-xl-2 input-modal"  id="menu_group_select">
+                                            <option v-for="(mg,index) in menu_group_list" :key="index" :value="mg.menu_code">
+                                                {{ mg.menu_name }}
+                                            </option>
+                                        </select>
+                                        <button class="btn" @click="menu_cd_add">저장</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    <div style="margin-left: 5px;margin-right: 5px;">
                         <div class="col-xl-12">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div style="height: 64px;">
-
-                                    </div>
                                   <table id="jqGrid2"></table>
-
                                 </div>
                                 <div class="col-md-8">
-
-                        <table class="mg-left-20 table table-border-bl2" >
-                            <tr>
-                                <td class="top-td-la" style="padding-top: 12px;">
-                                   업무조회
-                                </td>
-                                <td>
-                                    <select class="col-xl-2" id="menu_group_select">
-                                        <option v-for="(mg,index) in menu_group_list" :key="index" :value="mg.menu_code">
-                                            {{ mg.menu_name }}
-                                        </option>
-                                    </select>
-                                    <button style="margin-left: 5px;" class="btn btn-primary btn_pd" @click="menu_cd_add">저장</button>
-                                </td>
-
-                            </tr>
-                        </table>
-
-                <div style="margin-left:20px;margin-top:20px">
-                    <table id="jqGrid"></table>
-                    <div id="jqGridPager"></div>
-                    <span class="oi oi-person"  ></span>
-                </div>
+                                    <div>
+                                        <table id="jqGrid"></table>
+                                        <div id="jqGridPager"></div>
+                                        <span class="oi oi-person"></span>
+                                    </div>
                                 </div>
                             </div>
-                    </div>
+                        </div>
                     </div>
                     <!-- Modal -->
 

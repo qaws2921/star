@@ -8,57 +8,67 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div v-cloak id="app">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-                    <h1 class="font-size-18">권한그룹관리</h1>
-                    <span class="pa-b-20 font-size-9">홈 > 관리자 > 권한관리 > 권한그룹관리</span>
-                </div>
+                    <table class="menu-class">
+                        <tbody>
+                        <tr>
+                            <td class="left-header">권한그룹 관리</td>
+                            <td class="right-header"><i class="fas fa-home"></i> > 관리자 > 권한그룹관리</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <div class="content-border">
-
-                    <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="auth_cd_get_btn(1)">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="auth_cd_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="auth_cd_delete">삭제</button>
-                    </div>
-                <div style="margin-left:20px;margin-top:20px">
+                        <table class="contents">
+                            <tbody>
+                            <tr>
+                                <td class="button-group">
+                                    <button class="btn" @click="auth_cd_get_btn(1)">조회</button>
+                                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="auth_cd_add">추가</button>
+                                    <button class="btn" @click="auth_cd_delete">삭제</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                <div class="mg-20">
                     <table id="jqGrid"></table>
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                        <!-- 모달 -->
+                        <div class="modal hide" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-lg">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <label class="font-size-18">권한그룹관리</label>
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
-
-                                </div>
-                                <div class="modal-body form-inline">
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">권한그룹코드</label>
-                                        <input  v-if="add_update_check==='I'" v-model="sys_auth_cd.auth_code" id="test1" class="form-control in-s-50">
-                                        <input  v-if="add_update_check==='U'" v-model="sys_auth_cd.auth_code" readonly id="test1" class="form-control in-s-50">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header modal-top">
+                                        <label class="font-size-18">사용자 관리 <span class="b_sub"> | Tobe MES</span></label>
+                                        <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                                     </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">권한그룹명</label>
-                                        <input v-model="sys_auth_cd.auth_name" id="test2" class="form-control in-s-50">
+                                    <div class="modal-body form-inline">
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+                                        <table class="type03">
+                                            <tr class="public-tr">
+                                                <th scope="row" class="public">코드</th>
+                                                <td>
+                                                    <input v-if="add_update_check==='I'" v-model="sys_auth_cd.auth_code"class="input-modal">
+                                                    <input v-if="add_update_check==='U'" v-model="sys_auth_cd.auth_code" readonly class="input-modal">
+                                                </td>
+                                                <th scope="row" class="public">그룹명</th>
+                                                <td>
+                                                    <input v-model="sys_auth_cd.auth_name" class="input-modal">
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
 
-
+                                    <div class="modal-footer">
+                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="auth_cd_au('I')">저장</button>
+                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="auth_cd_au('U')">저장</button>
+                                        <button type="button" class="btn" data-dismiss="modal">취소</button>
                                     </div>
-
-                                <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="auth_cd_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="auth_cd_au('U')">저장</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
-                                </div>
                                 </div>
                             </div>
-
                         </div>
+                        <!-- Modal -->
                     </div>
                 </div>
 

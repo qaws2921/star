@@ -69,9 +69,9 @@ window.onload = function () {
 
 
                     ],
-                    width:1500,
+                    autowidth: true,
+                    shrinkToFit:false,
                     height:450,
-                    caption: "코드관리",
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,

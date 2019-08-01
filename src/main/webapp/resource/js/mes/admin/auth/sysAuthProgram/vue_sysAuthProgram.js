@@ -33,23 +33,15 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['권한그룹명','권한그룹코드'],
                     colModel:[
-                        {name:'auth_name',index:'auth_name',sortable: false},
-                        {name:'auth_code',index:'auth_code',hidden:true,key: true},
-
-
-
+                        {name:'auth_name',index:'auth_name',sortable: false,width:487},
+                        {name:'auth_code',index:'auth_code',hidden:true,key: true,width:487},
                     ],
                     page:0,
                     rowNum:0,
                     autowidth: true,
-
-                    height:500,
-                    caption: "권한그룹명",
-
-
-
+                    shrinkToFit:false,
+                    height:300,
                     jsonReader: {cell:""},
-
                     viewrecords: true,
 
                     onCellSelect: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
@@ -80,18 +72,11 @@ window.onload = function () {
 
 
                     ],
-
-
-
                     autowidth: true,
-
+                    shrinkToFit:false,
                     height:500,
-                    caption: "권한그룹별 프로그램관리",
-
                     jsonReader: {cell:""},
-
                     viewrecords: true,
-
                     ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
 
 

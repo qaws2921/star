@@ -33,66 +33,73 @@
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                        <!-- 모달 -->
+                        <div class="modal hide" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-lg">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <label class="font-size-18">게시판관리</label>
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header modal-top">
+                                        <label class="font-size-18">게시판 관리 <span class="b_sub"> | Tobe MES</span></label>
+                                        <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body form-inline">
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+                                        <table class="type03">
+                                            <tr class="public-tr">
+                                                <th scope="row" class="public">코드</th>
+                                                <td>
+                                                    <input  v-if="add_update_check==='I'" v-model="sys_board_cd.board_code" class="input-modal">
+                                                    <input  v-if="add_update_check==='U'" v-model="sys_board_cd.board_code" readonly class="input-modal">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;상세구분</label>
+                                        <table class="type03">
+                                            <tr>
+                                                <th scope="row" class="content">영문명</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_board_cd.board_en"></td>
+                                                <th scope="row" class="content">한글명</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_board_cd.board_kr"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="content">권한</th>
+                                                <td>
+                                                    <select v-model="sys_board_cd.board_auth" class="select-modal">
+                                                        <option value="C">당사</option>
+                                                        <option value="A">전체</option>
+                                                    </select>
+                                                </td>
+                                                <th scope="row" class="content">사용유무</th>
+                                                <td>
+                                                    <select v-model="sys_board_cd.use_yn" class="select-modal">
+                                                        <option value="Y">Y</option>
+                                                        <option value="N">N</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="content">최대 파일 수</th>
+                                                <td>
+                                                    <input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" v-model="sys_board_cd.files"class="input-modal">
+                                                </td>
+                                                <th scope="row" class="content">최대파일크기(MB)</th>
+                                                <td>
+                                                    <input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" v-model="sys_board_cd.file_size"class="input-modal">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
 
-                                </div>
-                                <div class="modal-body form-inline">
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">게시판코드</label>
-                                        <input  v-if="add_update_check==='I'" v-model="sys_board_cd.board_code" id="test1" class="form-control in-s-50">
-                                        <input  v-if="add_update_check==='U'" v-model="sys_board_cd.board_code" readonly id="test1" class="form-control in-s-50">
+                                    <div class="modal-footer">
+                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="board_cd_au('I')">저장</button>
+                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="board_cd_au('U')">저장</button>
+                                        <button type="button" class="btn" data-dismiss="modal">취소</button>
                                     </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">영문명</label>
-                                        <input v-model="sys_board_cd.board_en" id="test2" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">한글</label>
-                                        <input v-model="sys_board_cd.board_kr" id="test3" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">권한</label>
-                                        <select v-model="sys_board_cd.board_auth" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="C">당사</option>
-                                            <option value="A">전체</option>
-                                        </select>
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">최대파일수</label>
-                                        <input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" v-model="sys_board_cd.files" id="test5" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">최대파일크기(MB)</label>
-                                        <input onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" v-model="sys_board_cd.file_size" id="test5" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">사용유무</label>
-                                        <select v-model="sys_board_cd.use_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
-                                    </div>
-
-                                    </div>
-
-                                <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="board_cd_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="board_cd_au('U')">저장</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
-                                </div>
                                 </div>
                             </div>
-
                         </div>
+                    <!-- Modal -->
                     </div>
                 </div>
 

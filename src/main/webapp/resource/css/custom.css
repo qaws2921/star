@@ -367,7 +367,7 @@ table.type03 {
     text-align: left;
     line-height: 1.5;
     border-top: 2px solid #369;
-    margin: 10px 0px 25px 0px;
+    margin: 10px 0px 10px 0px;
     width:100%;
 }
 
@@ -447,9 +447,15 @@ table.type03 td {
     width: 100%;
     font-size: 9px;
 }
+.input-modal:read-only{
+    background-color: #eee;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+}
 .select-modal{
     font-size: 9px;
-    width: 50px;
+    width: 100%;
+    height: 21px;
 }
 /* select2 */
 .select2-results__option,select2-results,select2-selection__rendered,select2-selection,select2,select2-selection--single,select2-container{
@@ -471,4 +477,14 @@ table.type03 td {
 .ui-paging-info{
     font-size: 9px;
 }
-
+.duble_jqGrid_wrap{
+    width: 100%;
+}
+.duble_jqGrid_wrap-left{
+    width: 30%;
+    float: left;
+}
+.duble_jqGrid_wrap-right{
+    width: 70%;
+    float: right;
+}

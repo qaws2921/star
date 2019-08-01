@@ -32,16 +32,16 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['권한그룹코드','권한그룹명','등록자','등록일'],
                     colModel:[
-                        {name:'auth_code',index:'auth_code',key: true ,sortable: false},
-                        {name:'auth_name',index:'auth_name',sortable: false},
-                        {name:'user_name',index:'user_name',sortable: false},
-                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false},
+                        {name:'auth_code',index:'auth_code',key: true ,sortable: false,width:380},
+                        {name:'auth_name',index:'auth_name',sortable: false,width:380},
+                        {name:'user_name',index:'user_name',sortable: false,width:380},
+                        {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false,width:380},
 
 
                     ],
-                    width:1500,
+                    autowidth: true,
+                    shrinkToFit:false,
                     height:500,
-                    caption: "권한그룹관리",
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,

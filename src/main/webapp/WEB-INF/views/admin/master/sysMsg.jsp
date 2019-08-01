@@ -33,51 +33,51 @@
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                        <!-- 모달 -->
+                        <div class="modal hide" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-lg">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <label class="font-size-18">메세지관리</label>
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header modal-top">
+                                        <label class="font-size-18">메세지 관리 <span class="b_sub"> | Tobe MES</span></label>
+                                        <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body form-inline">
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+                                        <table class="type03">
+                                            <tr class="public-tr">
+                                                <th scope="row" class="public">그룹</th>
+                                                <td>
+                                                    <input  v-if="add_update_check==='I'" v-model="sys_msg.msg_code" class="input-modal">
+                                                    <input  v-if="add_update_check==='U'" v-model="sys_msg.msg_code" readonly class="input-modal">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;메세지명</label>
+                                        <table class="type03">
+                                            <tr>
+                                                <th scope="row" class="content">메세지명1</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_msg.msg_name1"></td>
+                                                <th scope="row" class="content">메세지명2</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_msg.msg_name2"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="content">메세지명3</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_msg.msg_name3"></td>
+                                                <th scope="row" class="content">메세지명4</th>
+                                                <td><input type="text" class="input-modal" v-model="sys_msg.msg_name4"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
 
-                                </div>
-                                <div class="modal-body form-inline">
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">메세지코드</label>
-                                        <input  v-if="add_update_check==='I'" v-model="sys_msg.msg_code" id="test1" class="form-control in-s-50">
-                                        <input  v-if="add_update_check==='U'" v-model="sys_msg.msg_code" readonly id="test1" class="form-control in-s-50">
+                                    <div class="modal-footer">
+                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="msg_au('I')">저장</button>
+                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="msg_au('U')">저장</button>
+                                        <button type="button" class="btn" data-dismiss="modal">취소</button>
                                     </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">메세지명1</label>
-                                        <input v-model="sys_msg.msg_name1" id="test2" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">메세지명2</label>
-                                        <input v-model="sys_msg.msg_name2" id="test3" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">메세지명3</label>
-                                        <input v-model="sys_msg.msg_name3" id="test4" class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">메세지명4</label>
-                                        <input v-model="sys_msg.msg_name4" id="test5" class="form-control in-s-50">
-                                    </div>
-
-                                    </div>
-
-                                <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="msg_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="msg_au('U')">저장</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
-                                </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
