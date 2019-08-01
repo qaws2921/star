@@ -8,7 +8,6 @@
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
-
         <table class="menu-class">
             <tbody>
             <tr>
@@ -17,9 +16,7 @@
             </tr>
             </tbody>
         </table>
-
         <div class="content-border">
-
             <table class="contents">
                 <tbody>
                 <tr>
@@ -34,38 +31,43 @@
                 </tbody>
             </table>
             <span class="content_header">
-                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;그룹선택
+                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
             </span>
 
             <div class="public-mg">
                 <table class="table table-border-bl" >
                     <tr>
-                        <td class="top-td-la" style="padding-top: 12px;">
+                        <td class="top-td-la" style="padding-top: 10px;">
                             조회기간
                         </td>
-                        <td style="width: 400px;">
+                        <td style="width: 500px">
+                            <input class="input-cal" id="date_input1">
+                            <span style="width: 10%">-</span>
+                            <input class="input-cal" id="date_input2">
 
-                            <input class="input-modal" id="date_input1">~<input class="input-modal" id="date_input2">
                         </td>
-                        <td class="top-td-la" style="padding-top: 12px;"> 단가구분</td>
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            단가구분
+                        </td>
                         <td>
-                            <select>
-
+                            <select class="select-modal width-20">
                                 <option>표준단가</option>
                                 <option>적용단가</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <td class="top-td-la" style="padding-top: 12px;">
+                        <td class="top-td-la" style="padding-top: 10px;">
                             업체
                         </td>
-                        <td style="width: 400px;">
-                            <input><input>
-                        </td>
-                        <td class="top-td-la" style="padding-top: 12px;"> 품번</td>
                         <td>
-                            <input><input>
+                            <input type="text" name="name" class="search-input" value="" placeholder="업체 검색...">
+                            <a class="seach-button"><i class='fas fa-search'></i></a>
+                        </td>
+                        <td class="top-td-la" style="padding-top: 10px;"> 품번</td>
+                        <td>
+                            <input type="text" name="name" class="search-input" value="" placeholder="품번 검색...">
+                            <a class="seach-button"><i class='fas fa-search'></i></a>
                         </td>
                     </tr>
                 </table>

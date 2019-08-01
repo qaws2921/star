@@ -8,92 +8,108 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div v-cloak id="app">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-                    <h1 class="font-size-18">창고 관리</h1>
-                    <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 창고 관리</span>
-                </div>
+                    <table class="menu-class">
+                        <tbody>
+                        <tr>
+                            <td class="left-header">창고 관리</td>
+                            <td class="right-header"><i class="fas fa-home"></i> > 관리자 > 창고관리</td>
+                        </tr>
+                        </tbody>
+                    </table>
                     <div class="content-border">
-                    <div class="mg-left-20">
-                        <table class="table table-border-bl" >
+                        <table class="contents">
+                            <tbody>
                             <tr>
-                                <td class="top-td-la" style="padding-top: 12px;">
-                                    부서
-                                </td>
-                                <td>
-                                    <select class="col-xl-2" id="common_cargo_type_select">
-                                        <option v-for="(cctg,index) in common_cargo_type_get" :key="index" :value="cctg.code_value">{{ cctg.code_name1 }}</option>
-                                    </select>
+                                <td class="button-group">
+                                    <button class="btn" @click="cargo_type_get_btn(1)">조회</button>
+                                    <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="cargo_cd_add">추가</button>
+                                    <button class="btn" @click="cargo_cd_delete">삭제</button>
                                 </td>
                             </tr>
+                            </tbody>
                         </table>
-
-
-                    </div>
-                    <div class="mg-left-20">
-                        <button class="btn btn-primary btn_pd" @click="cargo_type_get_btn(1)">조회</button>
-                        <button class="btn btn-success btn_pd" type="button" data-toggle="modal" data-target="#myModal" @click="cargo_cd_add">추가</button>
-                        <button class="btn btn-danger btn_pd" @click="cargo_cd_delete">삭제</button>
-                    </div>
-                <div style="margin-left:20px;margin-top:20px">
+                        <span class="content_header">
+                            <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;분류선택
+                        </span>
+                        <div class="public-mg">
+                            <table class="table table-border-bl" >
+                                <tr>
+                                    <td class="top-td-la" style="padding-top: 12px;">
+                                        분류명
+                                    </td>
+                                    <td>
+                                        <select class="col-xl-2 input-modal" id="common_cargo_type_select">
+                                            <option v-for="(cctg,index) in common_cargo_type_get" :key="index" :value="cctg.code_value">{{ cctg.code_name1 }}</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                <div class="mg-20">
                     <table id="jqGrid"></table>
                     <div id="jqGridPager"></div>
                     <span class="oi oi-person"  ></span>
                 </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                        <!-- 모달 -->
+                        <div class="modal hide" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-lg">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <label class="font-size-18"></label>
-                                    <button type="button" class="close" data-dismiss="modal">×</button>
-
-                                </div>
-                                <div class="modal-body form-inline">
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test1" class="label-ba">구분</label>
-                                        <input v-if="add_update_check === 'I'" v-model="common_cargo_type_name" id="test1" readonly class="form-control in-s-50">
-                                        <input v-if="add_update_check === 'U'" v-model="common_cargo_type_name_other" id="test1" readonly class="form-control in-s-50">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header modal-top">
+                                        <label class="font-size-18">창고 관리 <span class="b_sub"> | Tobe MES</span></label>
+                                        <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                                     </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test2" class="label-ba">창고코드</label>
-                                        <input v-if="add_update_check === 'I'" v-model="sys_cargo_cd.cargo_code" id="test2" class="form-control in-s-50">
-                                        <input v-if="add_update_check === 'U'" v-model="sys_cargo_cd.cargo_code" id="test2" readonly class="form-control in-s-50">
-                                    </div>
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test3" class="label-ba">창고명</label>
-                                        <input v-model="sys_cargo_cd.cargo_name" id="test3" class="form-control in-s-50">
+                                    <div class="modal-body form-inline">
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+                                        <table class="type03">
+                                            <tr class="public-tr">
+                                                <th scope="row" class="public">구분</th>
+                                                <td>
+                                                    <input v-if="add_update_check === 'I'" v-model="common_cargo_type_name" readonly class="input-modal">
+                                                    <input v-if="add_update_check === 'U'" v-model="common_cargo_type_name_other" readonly class="input-modal">
+                                                </td>
+                                                <th scope="row" class="public">코드</th>
+                                                <td>
+                                                    <input v-if="add_update_check === 'I'" v-model="sys_cargo_cd.cargo_code" class="input-modal">
+                                                    <input v-if="add_update_check === 'U'" v-model="sys_cargo_cd.cargo_code" readonly class="input-modal">
+                                                </td>
+                                                <th scope="row" class="public">사용유무</th>
+                                                    <td>
+                                                        <select v-model="sys_cargo_cd.use_yn" class="select-modal">
+                                                            <option value="Y">Y</option>
+                                                            <option value="N">N</option>
+                                                        </select>
+                                                    </td>
+                                            </tr>
+                                        </table>
+                                        <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;상세구분</label>
+                                        <table class="type03">
+                                            <tr>
+                                                <th scope="row" class="content">창고명</th>
+                                                <td>
+                                                    <input v-model="sys_cargo_cd.cargo_name" class="input-modal">
+                                                </td>
+                                                <th scope="row" class="content">수량관리</th>
+                                                <td>
+                                                    <select v-model="sys_cargo_cd.qty_yn" class="select-modal">
+                                                        <option value="Y">Y</option>
+                                                        <option value="N">N</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
 
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test7" class="label-ba">수량관리</label>
-                                        <select v-model="sys_cargo_cd.qty_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
+                                    <div class="modal-footer">
+                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="auth_cd_au('I')">저장</button>
+                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="auth_cd_au('U')">저장</button>
+                                        <button type="button" class="btn" data-dismiss="modal">취소</button>
                                     </div>
-
-                                    <div class="mg-5 mg-auto form-group">
-                                        <label for="test7" class="label-ba">사용유무</label>
-                                        <select v-model="sys_cargo_cd.use_yn" style="width: 193px;" id="test7" class="form-control se-s-193">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
-                                        </select>
-                                    </div>
-
-                                    </div>
-
-                                <div class="modal-footer">
-                                    <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary" @click="cargo_cd_au('I')">저장</button>
-                                    <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary" @click="cargo_cd_au('U')">저장</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
-                                </div>
                                 </div>
                             </div>
-
                         </div>
+                        <!-- Modal -->
                     </div>
                 </div>
 

@@ -7,13 +7,6 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            <i class="fas fa-tachometer-alt"></i>
-                            TOBE MES SYSTEM <span class="sr-only"></span>
-                        </a>
-                    </li>
-
                     <li class="nav-item bor-bm">
                         <a class="nav-link ba-color-999 standard menuMainA" href="#">
                             기준 정보<i class="fas fa-angle-down down-icon"></i>
