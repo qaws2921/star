@@ -20,9 +20,6 @@
                                 <a class="sysAuthProgram" href="sysAuthProgram?active=scm&check=auth">품목코드 관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?active=scm&check=auth">품목코드 관리</a>
-                            </li>
-                            <li>
                                 <a class="scmCargo" href="scmCargo?active=scm&check=standard">창고 관리</a>
                             </li>
                             <li>

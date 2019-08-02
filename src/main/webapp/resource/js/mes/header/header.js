@@ -4,6 +4,12 @@ $(function () {
     $("."+params.check).css("background-color","#1453a1").css("color","#FFF");
     $("."+params.active).addClass("s-menu-active");
     // $(".file-tree").slideDown();
+    if (params.befor){
+        $("."+params.befor).css("color","#1453a1").css("font-weight",700);
+        $("."+params.befor).parent().parent().parent().children(".menuMainA").addClass("menuMainA_down");
+        $("."+params.befor).parent().parent(".file-tree").slideDown(100);
+    }
+
 
     var link = document.location.href.split("/");
     var link2 = link[3].split("?");

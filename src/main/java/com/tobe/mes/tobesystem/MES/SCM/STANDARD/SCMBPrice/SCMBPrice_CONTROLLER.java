@@ -9,4 +9,9 @@ public class SCMBPrice_CONTROLLER {
     public String scmBPrice(){
         return "scm/standard/scmBPrice";
     }
+
+    @RequestMapping(value = "/scmBPriceExcelUp")
+    public String scmBPriceExcelUp(){
+        return "scm/standard/scmBPriceExcelUp";
+    }
 }

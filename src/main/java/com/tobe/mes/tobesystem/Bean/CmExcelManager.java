@@ -98,13 +98,20 @@ public class CmExcelManager {
         String cellStr;
         for (int i=mStartRow+1; i<dataCount+mStartRow+1; i++) {
             dataRow = sheet.createRow(i);
+            System.out.println("여기1");
+            System.out.println("여기1");
+            System.out.println("여기1");
             data = mData.get(i - (mStartRow + 1));
+            System.out.println("여기2");
 
             count = data.size();
+            System.out.println("여기3");
 
             for (int j=mStartCol; j<count+mStartCol; j++) {
                dataCell = dataRow.createCell(j, XSSFCell.CELL_TYPE_STRING);
+            System.out.println("여기4");
 
+            System.out.println("여기1ㅋ");
                 cell = data.get(j - mStartCol);
 
 
