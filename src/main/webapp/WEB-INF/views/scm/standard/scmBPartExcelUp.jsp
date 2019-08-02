@@ -3,16 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/standard/scmBPriceExcelUp//vue_scmBPriceExcelUp.js"></script>
-<script src="resource/js/mes/scm/standard/scmBPriceExcelUp/jquery_scmBPriceExcelUp.js"></script>
+<script src="resource/js/mes/scm/standard/scmBPartExcelUp//vue_scmBPartExcelUp.js"></script>
+<script src="resource/js/mes/scm/standard/scmBPartExcelUp/jquery_scmBPartExcelUp.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">매입단가 엑셀업로드</td>
-                <td class="right-header"><i class="fas fa-home"></i> > SCM > 기준정보 > 매입단가 관리 > 매입단가 엑셀업로드</td>
+                <td class="left-header">매입품목 엑셀업로드</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 기준정보 > 매입단가 관리 > 매입품목 엑셀업로드</td>
             </tr>
             </tbody>
         </table>
@@ -23,7 +23,7 @@
                     <td class="button-group">
                         <button class="btn" @click="common_get_btn(1)">가져오기</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">적용하기</button>
-                        <a href="scmBPrice?active=scm&check=standard">
+                        <a href="scmPart?active=scm&check=standard">
 
                             <button class="btn">목록으로</button>
                         </a>
@@ -37,19 +37,7 @@
 
             <div class="public-mg">
                 <table class="table table-border-bl" >
-                    <tr>
-                        <td class="top-td-la" style="padding-top: 10px;">
-                            단가구분
-                        </td>
-                        <td style="width: 500px">
-                            <select class="select-modal width-20">
-                                <option>표준단가</option>
-                                <option>적용단가</option>
-                            </select>
 
-                        </td>
-
-                    </tr>
                     <tr>
                         <td class="top-td-la" style="padding-top: 10px;">
                             찾아보기
