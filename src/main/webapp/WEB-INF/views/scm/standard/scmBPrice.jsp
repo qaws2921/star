@@ -5,7 +5,11 @@
 <%@include file="../menu.jsp"%>
 <script src="resource/js/mes/scm/standard/scmBPrice//vue_scmBPrice.js"></script>
 <script src="resource/js/mes/scm/standard/scmBPrice/jquery_scmBPrice.js"></script>
-
+<script>
+    jQuery(document).ready(function() {
+        jQuery("#myModal").draggable();
+    });
+</script>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <table class="menu-class">
@@ -40,7 +44,7 @@
                         <td class="top-td-la" style="padding-top: 10px;">
                             조회기간
                         </td>
-                        <td style="width: 500px">
+                        <td style="width: 314px">
                             <input class="input-cal" id="date_input1">
                             <span style="width: 10%">-</span>
                             <input class="input-cal" id="date_input2">
@@ -50,7 +54,7 @@
                             단가구분
                         </td>
                         <td>
-                            <select class="select-modal width-20">
+                            <select class="select-modal" style="width: 300px;">
                                 <option>표준단가</option>
                                 <option>적용단가</option>
                             </select>
@@ -72,9 +76,6 @@
                     </tr>
                 </table>
             </div>
-
-
-
 
             <div style="margin:20px;">
                 <table id="jqGrid"></table>

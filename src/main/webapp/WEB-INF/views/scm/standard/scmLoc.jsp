@@ -8,17 +8,27 @@
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-1">
-            <h1 class="font-size-18">로케이션관리</h1>
-            <span class="pa-b-20 font-size-9">홈 > SCM > 기준정보 > 로케이션관리</span>
-        </div>
+        <table class="menu-class">
+            <tbody>
+            <tr>
+                <td class="left-header">로케이션 관리</td>
+                <td class="right-header"><i class="fas fa-home"></i> > 기준정보 > 로케이션관리</td>
+            </tr>
+            </tbody>
+        </table>
         <div class="content-border">
-            <div class="mg-left-20" style="float: right;margin-right: 30px;">
-                <button class="btn btn-primary btn_999" @click="common_get_btn(1)">조회</button>
-                <button class="btn btn-success btn_999" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                <button class="btn btn-danger btn_999" @click="common_delete">삭제</button>
-            </div>
-            <div class="mg-left-20">
+            <table class="contents">
+                <tbody>
+                <tr>
+                    <td class="button-group">
+                        <button class="btn" @click="common_get_btn(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
+                        <button class="btn" @click="common_delete">삭제</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="mg-20">
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 12px;">
@@ -34,7 +44,7 @@
                     </tr>
                 </table>
             </div>
-            <div style="margin-left:20px;margin-top:20px">
+            <div class="mg-20">
                 <table id="jqGrid"></table>
                 <div id="jqGridPager"></div>
                 <span class="oi oi-person"  ></span>
@@ -46,7 +56,7 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">공통 코드관리 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">로케이션 관리 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">

@@ -110,7 +110,7 @@
                                     <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_name"></td>
                                     <th scope="row" class="content">고객사구분</th>
                                     <td>
-                                        <select v-model="sys_supp_cd.corp_type1">
+                                        <select class="select-modal" v-model="sys_supp_cd.corp_type1">
                                             <option value="Y">예</option>
                                             <option value="N">아니오</option>
                                         </select>
@@ -121,7 +121,7 @@
                                     <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_tel"></td>
                                     <th scope="row" class="content">협력사구분</th>
                                     <td>
-                                        <select v-model="sys_supp_cd.corp_type2">
+                                        <select class="select-modal" v-model="sys_supp_cd.corp_type2">
                                             <option value="Y">예</option>
                                             <option value="N">아니오</option>
                                         </select>
@@ -132,7 +132,7 @@
                                     <td><input type="text" class="input-modal" v-model="sys_supp_cd.emp_email"></td>
                                     <th scope="row" class="content">활성화</th>
                                     <td>
-                                        <select v-model="sys_supp_cd.use_yn">
+                                        <select class="select-modal" v-model="sys_supp_cd.use_yn">
                                             <option value="Y">예</option>
                                             <option value="N">아니오</option>
                                         </select>
