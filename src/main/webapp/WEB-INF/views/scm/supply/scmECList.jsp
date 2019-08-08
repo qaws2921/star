@@ -11,8 +11,8 @@
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">입고처리 관리</td>
-                <td class="right-header"><i class="fas fa-home"></i> > SCM > 사급품 > 입고처리 관리</td>
+                <td class="left-header">납품현황</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 사급품 > 납품현황</td>
             </tr>
             </tbody>
         </table>
@@ -22,8 +22,6 @@
                 <tr>
                     <td class="button-group">
                         <button class="btn" @click="common_get_btn(1)">조회</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
 
                     </td>
                 </tr>
@@ -47,6 +45,12 @@
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             공급업체
+                        </td>
+                        <td>
+                            <button class="btn">검색</button>
+                        </td>
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            공급받업체
                         </td>
                         <td>
                             <button class="btn">검색</button>

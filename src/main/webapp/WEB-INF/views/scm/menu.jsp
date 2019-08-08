@@ -107,7 +107,7 @@
                                 <a class="scmECIn" href="scmECIn?active=scm&check=supply">입고처리</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
+                                <a class="scmECList" href="scmECList?active=scm&check=supply">납품현황</a>
                             </li>
 
                         </ul>
