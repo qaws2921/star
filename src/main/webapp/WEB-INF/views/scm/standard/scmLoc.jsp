@@ -68,7 +68,7 @@
                                     <th scope="row" class="public">위치코드</th>
                                     <td>
                                         <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="input-modal">
+                                        <input type="text" v-if="add_update_check==='U'" readonly v-model="sys_common.code_value" class="input-modal">
                                     </td>
                                     <th scope="row" class="public">사용유무</th>
                                     <td>

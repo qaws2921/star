@@ -29,9 +29,10 @@
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
                         <button class="btn" @click="common_delete">삭제</button>
                         <button class="btn" id="scmBPrice_excel_download" >엑셀다운</button>
-                        <a href="/scmBPriceExcelUp?active=scm&check=standard&befor=scmBPrice">
-                            <button class="btn" >엑셀업</button>
-                        </a>
+<%--                        <a href="/scmBPriceExcelUp?active=scm&check=standard&befor=scmBPrice">--%>
+<%--                            <button class="btn" >엑셀업</button>--%>
+<%--                        </a>--%>
+                        <button class="btn" data-toggle="modal" data-target="#myModal2">엑셀업</button>
                     </td>
                 </tr>
                 </tbody>
@@ -91,35 +92,40 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">공통 코드관리 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">매입단가 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+
+                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
                             <table class="type03">
-                                <tr class="public-tr">
-                                    <th scope="row" class="public">창고</th>
-                                    <th scope="row" class="content">{{ sys_common.code_type }}</th>
-                                    <th scope="row" class="public">위치코드</th>
+                                <tr>
+                                    <th scope="row" class="content">단가구분</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">사용유무</th>
                                     <td>
-                                        <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="input-modal">
-                                    </td>
-                                    <th scope="row" class="public">사용유무</th>
-                                    <td>
-                                        <select v-model="sys_common.use_yn" class="select-modal">
+                                        <select class="select-modal">
                                             <option value="Y">Y</option>
                                             <option value="N">N</option>
                                         </select>
                                     </td>
                                 </tr>
-                            </table>
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
-                            <table class="type03">
                                 <tr>
-                                    <th scope="row" class="content">위치명</th>
+                                    <th scope="row" class="content">업체코드</th>
                                     <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
-                                    <th scope="row" class="content">비고</th>
+                                    <th scope="row" class="content">품번</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">시작일</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">종료일</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">화폐</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">단가</th>
                                     <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
                                 </tr>
                             </table>
@@ -134,6 +140,83 @@
                 </div>
 
             </div>
+
+
+            <!-- Modal -->
+            <div class="modal hide" id="myModal2" role="dialog">
+                <div class="modal-dialog" style="width: 1000px; max-width: 1000px;">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header modal-top">
+                            <label class="font-size-18">매입단가 <span class="b_sub"> | Tobe MES</span></label>
+                            <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="modal-body form-inline">
+
+                            <div class="content-border" style="width: 900px; margin: auto">
+                                <table class="contents">
+                                    <tbody>
+                                    <tr>
+                                        <td class="button-group">
+                                            <button class="btn" @click="common_get_btn(1)">가져오기</button>
+                                            <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">적용하기</button>
+                                            <a href="scmBPrice?active=scm&check=standard">
+
+                                                <button class="btn">목록으로</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <span class="content_header">
+                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
+            </span>
+
+                                <div class="public-mg">
+                                    <table class="table table-border-bl" >
+                                        <tr>
+                                            <td class="top-td-la" style="padding-top: 10px;">
+                                                단가구분
+                                            </td>
+                                            <td style="width: 500px">
+                                                <select class="select-modal width-20">
+                                                    <option>표준단가</option>
+                                                    <option>적용단가</option>
+                                                </select>
+
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="top-td-la" style="padding-top: 10px;">
+                                                찾아보기
+                                            </td>
+                                            <td>
+                                                <input type="file" name="name" class="search-input" value="" placeholder="파일을 넣어주세요">
+
+                                            </td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+
+
+                                <div style="margin:20px;">
+                                    <table id="jqGrid2"></table>
+
+                                    <span class="oi oi-person"  ></span>
+                                </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 

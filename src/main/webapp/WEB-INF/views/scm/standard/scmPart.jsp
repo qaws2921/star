@@ -86,35 +86,52 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">공통 코드관리 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">품목코드 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;공통구분</label>
+
+                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
                             <table class="type03">
-                                <tr class="public-tr">
-                                    <th scope="row" class="public">창고</th>
-                                    <th scope="row" class="content">{{ sys_common.code_type }}</th>
-                                    <th scope="row" class="public">위치코드</th>
+                                <tr>
+                                    <th scope="row" class="content">품목그룹</th>
                                     <td>
-                                        <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="input-modal">
-                                    </td>
-                                    <th scope="row" class="public">사용유무</th>
-                                    <td>
-                                        <select v-model="sys_common.use_yn" class="select-modal">
+                                        <select class="select-modal">
                                             <option value="Y">Y</option>
                                             <option value="N">N</option>
                                         </select>
                                     </td>
+                                    <th scope="row" class="content">품목구분</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
                                 </tr>
-                            </table>
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
-                            <table class="type03">
                                 <tr>
-                                    <th scope="row" class="content">위치명</th>
+                                    <th scope="row" class="content">품목코드</th>
                                     <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
-                                    <th scope="row" class="content">비고</th>
+                                    <th scope="row" class="content">품목명</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">보관창고</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">보관로케이션</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">업체코드</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">업체명</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">규격</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">단위</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="content">재고 최대</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <th scope="row" class="content">재고 최소</th>
                                     <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
                                 </tr>
                             </table>
