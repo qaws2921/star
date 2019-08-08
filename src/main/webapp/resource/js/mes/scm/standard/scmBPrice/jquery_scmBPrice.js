@@ -85,3 +85,41 @@ function formmatter_date(cellValue) { // 날짜 필터
 function callback(cb) {
     cb();
 }
+
+function jqgrid2() {
+    var grid = $("#jqGrid2");
+    grid.jqGrid({
+        datatype: "json",
+        mtype: 'POST',
+        colNames:['업체코드','업체명','단가구분','시작일','종료일','품번','품명','단위','단가','사용유무'],
+        colModel:[
+
+            {name:'code_value',index:'code_value',width:100,key: true ,sortable: false, width:150},
+            {name:'code_name1',index:'code_name1',width:100,sortable: false, width:150},
+            {name:'code_name2',index:'code_name2',width:100,sortable: false, width:150},
+            {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+            {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+            {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+            {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+            {name:'use_yn',index:'use_yn',width:100,sortable: false, width:150},
+            {name:'user_name',index:'user_name',width:100,sortable: false, width:150},
+            {name:'update_date',index:'update_date',width:100,formatter:formmatter_date,sortable: false, width:150},
+        ],
+        // autowidth: true,
+        width:860,
+        shrinkToFit:false,
+        height:200,
+
+        jsonReader: {cell:""},
+        rowNum: 100,
+        rowList: [100, 200, 300, 400],
+        viewrecords: true,
+
+        ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
+
+
+        }
+
+    }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
+
+}
