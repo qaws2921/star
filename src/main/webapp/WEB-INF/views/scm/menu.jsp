@@ -59,7 +59,7 @@
 
 
                                     <li>
-                                        <a href="#">재고현황</a>
+                                        <a href="scmStockInfo?active=scm&check=master">재고현황</a>
                                     </li>
                                     <li>
                                         <a class="sysCommon" href="sysCommon?active=scm&check=master">고객계획대비 소요량</a>

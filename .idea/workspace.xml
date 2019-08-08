@@ -2,45 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96d9b366-9800-40f6-9867-7708b4b2eb72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_RESTCONTROLLER.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_SERVICE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanCust.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanWork.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/charts-chartjs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/charts-flot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/charts-peity.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/font-fontawesome.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/font-themify.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/forms-advanced.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/forms-basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/maps-gmap.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/maps-vector.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/page-login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/page-register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/pages-forget.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/tables-basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/tables-data.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-badges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-cards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-grids.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-modals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-progressbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-social-buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-switches.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/ui-typgraphy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ex/widgets.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPrice/vue_scmBPrice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPrice/vue_scmBPrice.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -78,8 +43,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8816">
-              <caret line="551" column="13" selection-start-line="551" selection-start-column="13" selection-end-line="551" selection-end-column="13" />
+            <state relative-caret-position="326">
+              <caret line="512" column="14" selection-start-line="512" selection-start-column="14" selection-end-line="512" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="69" column="88" lean-forward="true" selection-start-line="69" selection-start-column="88" selection-end-line="69" selection-end-column="88" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#3;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="112">
               <caret line="7" column="42" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -99,17 +78,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPrice/vue_scmBPrice.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1600">
-              <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+            <state relative-caret-position="22">
+              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                <element signature="e#5265#5271#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanCust.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="276">
               <caret line="18" column="92" selection-start-line="18" selection-start-column="92" selection-end-line="18" selection-end-column="92" />
             </state>
           </provider>
@@ -126,26 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanWork.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/STANDARD/SCMBPrice/SCMBPrice_CONTROLLER.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_RESTCONTROLLER.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="286">
+              <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -162,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+            <state relative-caret-position="-1000">
+              <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -260,12 +219,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/STANDARD/SCMBPrice/SCMBPrice_SERVICE.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/ExcelManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/STANDARD/SCMBPrice/SCMBPrice_CONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/header/header.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPriceExcelUp/jquery_scmBPriceExcelUp.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPriceExcelUp/vue_scmBPriceExcelUp.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPriceExcelUp.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/METERIALS/SCMBPrice/SCMBPrice_RESTCONTROLLER.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/STANDARD/SCMLoc/SCMLoc_SERVICE.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/METERIALS/SCMStockInfo/SCMStockInfo_SERVICE.java" />
@@ -274,8 +231,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanCust.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanWork.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/custom.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPrice/vue_scmBPrice.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/custom.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp" />
       </list>
     </option>
@@ -343,6 +302,71 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="tobe" type="462c0819:PsiDirectoryNode" />
               <item name="mes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MES" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MES" type="462c0819:PsiDirectoryNode" />
+              <item name="SCM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MES" type="462c0819:PsiDirectoryNode" />
+              <item name="SCM" type="462c0819:PsiDirectoryNode" />
+              <item name="MATERIALS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="MES" type="462c0819:PsiDirectoryNode" />
+              <item name="SCM" type="462c0819:PsiDirectoryNode" />
+              <item name="MATERIALS" type="462c0819:PsiDirectoryNode" />
+              <item name="SCMStockInfo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
@@ -629,7 +653,7 @@
       <workItem from="1564530904369" duration="9877000" />
       <workItem from="1564616802895" duration="9381000" />
       <workItem from="1564704079685" duration="5758000" />
-      <workItem from="1565221695507" duration="899000" />
+      <workItem from="1565221695507" duration="6166000" />
     </task>
     <task id="LOCAL-00001" summary="테스트">
       <created>1563251645840</created>
@@ -750,11 +774,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564626838815</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="관리자 마무리">
+      <created>1565228020004</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1565228020005</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223112000" />
+    <option name="totallyTimeSpent" value="228379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1141,16 +1172,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmDC.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="32" column="59" lean-forward="true" selection-end-line="151" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#td#3;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/METERIALS/SCMStockInfo/StockInfo_CONTROLLER.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/METERIALS/SCMBPrice/SCMBPrice_SERVICE.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/METERIALS/SCMBPrice/SCMBPrice_CONTROLLER.java" />
@@ -1172,23 +1193,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/STANDARD/SCMSupp/SCMSupp_RESTCONTROLLER.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/STANDARD/SCMCargo/SCMCargo_CONTROLLER.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/STANDARD/SCMLoc/SCMLoc_SERVICE.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8816">
-          <caret line="551" column="13" selection-start-line="551" selection-start-column="13" selection-end-line="551" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/standard/scmBPrice/vue_scmBPrice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1600">
@@ -1196,24 +1200,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanCust.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="92" selection-start-line="18" selection-start-column="92" selection-end-line="18" selection-end-column="92" />
+        <state relative-caret-position="326">
+          <caret line="512" column="14" selection-start-line="512" selection-start-column="14" selection-end-line="512" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanWork.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/standard/scmBPrice.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="74" column="63" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+        <state relative-caret-position="503">
+          <caret line="69" column="88" lean-forward="true" selection-start-line="69" selection-start-column="88" selection-end-line="69" selection-end-column="88" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#3;n#tr#1;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/STANDARD/SCMBPrice/SCMBPrice_CONTROLLER.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,17 +1250,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanWork.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmPlanCust.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="18" column="92" selection-start-line="18" selection-start-column="92" selection-end-line="18" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+        <state relative-caret-position="-1000">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="22">
+          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+            <element signature="e#5265#5271#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

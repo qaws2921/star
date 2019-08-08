@@ -510,7 +510,7 @@ table.type03 td {
 }
 .search-input{
     height: 20px;
-    width: 300px;
+    width: 50%;
     font-size: 9px;
     padding-left: 5px;
     display: inline;

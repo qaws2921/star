@@ -56,7 +56,7 @@
                             단가구분
                         </td>
                         <td>
-                            <select class="select-modal" style="width: 300px;">
+                            <select class="select-modal width-30">
                                 <option>표준단가</option>
                                 <option>적용단가</option>
                             </select>
@@ -67,12 +67,12 @@
                             업체
                         </td>
                         <td>
-                            <input type="text" name="name" class="search-input" value="" placeholder="업체 검색...">
+                            <input type="text" name="name" class="search-input" style="width: 98.7%;" value="" placeholder="업체 검색...">
                             <a class="seach-button"><i class='fas fa-search'></i></a>
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;"> 품번</td>
                         <td>
-                            <input type="text" name="name" class="search-input" value="" placeholder="품번 검색...">
+                            <input type="text" name="name" class="search-input"  style="width: 30%;" value="" placeholder="품번 검색...">
                             <a class="seach-button"><i class='fas fa-search'></i></a>
                         </td>
                     </tr>
