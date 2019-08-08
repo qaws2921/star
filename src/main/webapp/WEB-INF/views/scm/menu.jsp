@@ -17,7 +17,7 @@
                                 <a class="scmBPrice" href="scmBPrice?active=scm&check=standard">매입단가관리</a>
                             </li>
                             <li>
-                                <a class="sysAuthProgram" href="sysAuthProgram?active=scm&check=auth">품목코드 관리</a>
+                                <a class="scmPart" href="scmPart?active=scm&check=standard">품목코드 관리</a>
                             </li>
                             <li>
                                 <a class="scmCargo" href="scmCargo?active=scm&check=standard">창고 관리</a>
@@ -95,19 +95,19 @@
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 admin menuMainA" href="#">
+                        <a class="nav-link ba-color-999 supply menuMainA" href="#">
                             사급품<i class="fas fa-angle-down down-icon"></i>
                         </a>
                         <ul class="file-tree user">
 
                             <li>
-                                <a class="sysUser" href="sysUser?active=scm&check=user">출고증관리</a>
+                                <a class="scmEC" href="scmEC?active=scm&check=supply">출고증관리</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">입고처리</a>
+                                <a class="scmECIn" href="scmECIn?active=scm&check=supply">입고처리</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
+                                <a class="scmECList" href="scmECList?active=scm&check=supply">납품현황</a>
                             </li>
 
                         </ul>
