@@ -362,6 +362,16 @@ font-size: 9px;
     font-size: 12px;
     font-weight: 700;
 }
+.b_gubun{
+    font-size: 8px;
+}
+.b_sub{
+    font-size: 12px;
+    font-weight: 100;
+}
+.public{
+    background-color: #e0f2ff;
+}
 table.type03 {
     border-collapse: collapse;
     text-align: left;
@@ -395,16 +405,6 @@ table.type03 th.content {
 }
 table.type03 tr.public-tr {
     border-top: 2px solid #369;
-}
-.public{
-    background-color: #e0f2ff;
-}
-.b_gubun{
-    font-size: 8px;
-}
-.b_sub{
-    font-size: 12px;
-    font-weight: 100;
 }
 table.type03 td {
     width: 150px;
@@ -525,3 +525,50 @@ table.type03 td {
 .seach-button:hover{
     color: #1453a1;
 }
+
+/* double grido modal*/
+
+table.db-modal {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 2px solid #369;
+    margin: 10px 0px 10px 0px;
+    width:50%;
+}
+
+table.db-modal th.public {
+    width: 15%;
+    padding: 8px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 9px;
+    background-color: #e0f2ff;
+}
+table.db-modal th.content {
+    width: 15%;
+    padding: 8px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 9px;
+    background-color: #eeeeee;
+}
+table.db-modal tr.public-tr {
+    border-top: 2px solid #369;
+}
+table.db-modal td {
+    width: 20%;
+    padding: 5px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 9px;
+}
+/* end */

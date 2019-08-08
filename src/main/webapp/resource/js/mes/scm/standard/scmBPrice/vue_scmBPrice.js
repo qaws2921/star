@@ -79,7 +79,46 @@ window.onload = function () {
 
                 }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
 
+                 $("#testgrid").jqGrid({
+                     datatype: "json",
+                     mtype: 'POST',
+                     colNames:['No','업체코드','업체명','단가구분','시작일','종료일','품번','품명','단위','단가','사용유무'],
+                     colModel:[
+                         {name:'code_type',index:'code_type',width:50,sortable: false},
+                         {name:'code_value',index:'code_value',width:100,key: true ,sortable: false},
+                         {name:'code_name1',index:'code_name1',width:100,sortable: false},
+                         {name:'code_name2',index:'code_name2',width:100,sortable: false},
+                         {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                         {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                         {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                         {name:'code_name8',index:'code_name8',width:100,sortable: false},
+                         {name:'use_yn',index:'use_yn',width:100,sortable: false},
+                         {name:'user_name',index:'user_name',width:100,sortable: false},
+                         {name:'update_date',index:'update_date',width:100,formatter:formmatter_date,sortable: false},
+                     ],
+                     width: 300,
+                     shrinkToFit:false,
+                     height:200,
+                     pager:'#testpager',
+                     jsonReader: {cell:""},
+                     rowNum: 100,
+                     rowList: [100, 200, 300, 400],
+                     viewrecords: true,
+                     multiselect:true,
+                     beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
+                         var $myGrid = $(this),
+                             i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                             cm = $myGrid.jqGrid('getGridParam', 'colModel');
+                         return (cm[i].name === 'cb');
+                     },
+                     ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
+                         var data = $('#testgrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
+                         _this.common_edit(data); // 데이터 가공
+                         _this.common_update(); // 수정창 띄어주기
 
+                     }
+
+                 }).navGrid("#testpager", { search: false, add: false, edit: false, del: false});
              },
             selectBox:function(){  // select2 실행 메소드
                  $("#common_group_select").select2();
