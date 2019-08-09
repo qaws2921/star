@@ -5,11 +5,11 @@
     <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
         CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
     </select>
-    <select id="cargo_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_CARGO_CD.SYS_CARGO_CD">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','S')
+    <select id="scmLoc_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD.SYS_LOC_CD">
+        CALL TOBE_MES.SP_SYS_LOC_GET(#{page_num},#{total_num},#{keyword},'','S')
     </select>
-    <select id="cargo_cd_get_count" resultType="Integer">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','')
+    <select id="scmLoc_get_count" resultType="Integer">
+                CALL TOBE_MES.SP_SYS_LOC_GET(#{page_num},#{total_num},#{keyword},'','C')
     </select>
     <select id="cargo_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_CARGO_ADD(#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})

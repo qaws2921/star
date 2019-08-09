@@ -21,7 +21,7 @@
                 <tbody>
                 <tr>
                     <td class="button-group">
-                        <button class="btn" @click="common_get_btn(1)">조회</button>
+                        <button class="btn" @click="scmLoc_get_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
                         <button class="btn" @click="common_delete">삭제</button>
                     </td>
@@ -35,10 +35,8 @@
                             창고
                         </td>
                         <td>
-                            <select class="col-xl-2" id="common_group_select">
-                                <option v-for="(cg,index) in common_group_list" :key="index" :value="cg.group_code">
-                                    {{ cg.group_name }}
-                                </option>
+                            <select class="col-xl-2" id="cargo_cd_select">
+                                <option v-for="(ccg,index) in cargo_cd_get" :key="index" :value="ccg.cargo_code">{{ ccg.cargo_name }}</option>
                             </select>
                         </td>
                     </tr>
@@ -49,6 +47,7 @@
                 <div id="jqGridPager"></div>
                 <span class="oi oi-person"  ></span>
             </div>
+
             <!-- Modal -->
             <div class="modal hide" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">
@@ -101,10 +100,13 @@
             </div>
         </div>
     </div>
-
+    <div id="app2">
+        <div @click="test()">{{ he }}</div>
+    </div>
 </main>
 </div>
 </div>
+
 </body>
 
 <script type="text/javascript">

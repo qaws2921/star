@@ -1,8 +1,32 @@
 window.onload = function () {
+
+    new Vue({
+        el:"#app2",
+        data: function () {
+            return{
+                he:"zzz"
+            }
+        },
+        mounted: function(){
+
+        },
+        methods:{
+            test:function () {
+                alert("Sss");
+            }
+        }
+    });
+
     new Vue({
         el:"#app",
         data: function () {
             return{
+                cargo_cd_get:[],
+                cargo_code:'',
+                cargo_name:'',
+                cargo_code_post:'',
+
+
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
                 common_group_name:'', // 코드그룹 값
@@ -29,6 +53,9 @@ window.onload = function () {
         mounted: function(){
 
             var _this = this;
+
+            _this.common_cargo_cd_get();
+
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             _this.selectBox(); // select2 실행
@@ -41,13 +68,13 @@ window.onload = function () {
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['구분','창고','위치코드','위치명','비고','활성','등록자','등록일'],
+                    colNames:['구분','창고명','위치코드','위치명','비고','활성','등록자','등록일'],
                     colModel:[
-                        {name:'code_type',index:'code_type',sortable: false,width:200},
-                        {name:'code_value',index:'code_value',key: true ,sortable: false,width:200},
-                        {name:'code_name1',index:'code_name1',sortable: false,width:200},
-                        {name:'code_name2',index:'code_name2',sortable: false,width:200},
-                        {name:'code_name8',index:'code_name8',sortable: false,width:200},
+                        {name:'plant_code',index:'plant_code',sortable: false,width:200},
+                        {name:'plant_code1',index:'plant_code1',key: true ,sortable: false,width:200},
+                        {name:'loc_code',index:'loc_code',sortable: false,width:200},
+                        {name:'loc_name',index:'loc_name',sortable: false,width:200},
+                        {name:'remark',index:'remark',sortable: false,width:200},
                         {name:'use_yn',index:'use_yn',sortable: false,width:200},
                         {name:'user_name',index:'user_name',sortable: false,width:200},
                         {name:'update_date',index:'update_date',formatter:formmatter_date,sortable: false,width:200},
@@ -79,8 +106,28 @@ window.onload = function () {
 
              },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_group_select").select2();
+                 $("#cargo_cd_select").select2();
             },
+            common_cargo_cd_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/cargo/cd/get",
+                    type: 'POST',
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.cargo_cd_get = data;
+                        _this.cargo_code = data[0].cargo_code;
+                        _this.cargo_name = data[0].cargo_name;
+
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+
             common_group_get:function(){ // 코드그룹 가져오는 메소드
                  var _this =this;
                  axios
@@ -94,25 +141,23 @@ window.onload = function () {
 
                  });
             },
-            common_group_change:function(code,name){ // select 박스 바뀔때
+            cargo_cd_select_change:function(code,name){ // select 박스 바뀔때
                 var _this = this;
-                 _this.common_group_code = code;
-                 _this.sys_common.code_type=code;
-
-                 _this.common_group_name = name;
+                 _this.cargo_code = code;
+                 _this.cargo_name = name;
 
             },
-            common_get_btn:function (page) { // 조회 버튼
+            scmLoc_get_btn:function (page) { // 조회 버튼
                 var _this = this;
-                _this.common_group_code_post =_this.common_group_code;
+                _this.cargo_code_post =_this.cargo_code;
 
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmLoc/get',postData: { keyword: _this.cargo_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            common_get_btn2:function (page) { // 조회 버튼
+            scmLoc_get_btn2:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmLoc/get',postData: { keyword: _this.cargo_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -137,11 +182,11 @@ window.onload = function () {
                                 } else {
                                     $('#myModal').modal("hide");
                                     if (au === 'I') {
-                                        _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                                        _this.scmLoc_get_btn($("#jqGrid").getGridParam('page'));
 
                                     } else {
 
-                                        _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                                        _this.scmLoc_get_btn2($("#jqGrid").getGridParam('page'));
                                     }
                                 }
                             },
@@ -230,7 +275,7 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                            _this.scmLoc_get_btn2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
