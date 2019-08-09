@@ -3,16 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/supply/scmECList//vue_scmECList.js"></script>
-<script src="resource/js/mes/scm/supply/scmECList/jquery_scmECList.js"></script>
+<script src="resource/js/mes/scm/partners/scmPlanWorkPart//vue_scmPlanWorkPart.js"></script>
+<script src="resource/js/mes/scm/partners/scmPlanWorkPart/jquery_scmPlanWorkPart.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">납품현황</td>
-                <td class="right-header"><i class="fas fa-home"></i> > SCM > 사급품 > 납품현황</td>
+                <td class="left-header">생산계획대비 소요량</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 협력업 > 생산계획대비 소요량</td>
             </tr>
             </tbody>
         </table>
@@ -22,6 +22,8 @@
                 <tr>
                     <td class="button-group">
                         <button class="btn" @click="common_get_btn(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">저장</button>
+
 
                     </td>
                 </tr>
@@ -35,25 +37,19 @@
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            조회기간
+                            조회일자
                         </td>
                         <td style="width: 500px">
                             <input class="input-cal" id="date_input1">
-                            <span style="width: 10%">-</span>
-                            <input class="input-cal" id="date_input2">
 
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            공급업체
+                            품목그룹
                         </td>
                         <td>
-                            <button class="btn">검색</button>
-                        </td>
-                        <td class="top-td-la" style="padding-top: 10px;">
-                            공급받업체
-                        </td>
-                        <td>
-                            <button class="btn">검색</button>
+                            <select>
+                                <option>전체</option>
+                            </select>
                         </td>
                     </tr>
 
