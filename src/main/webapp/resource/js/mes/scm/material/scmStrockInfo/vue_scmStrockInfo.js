@@ -27,28 +27,36 @@ window.onload = function () {
             }
         },
         mounted: function(){
+
             var _this = this;
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
-            jquery_scmDC(_this); // vue 에서 실행 못하는 jquery
+            _this.selectBox(); // select2 실행
+            jquery_scmBPrice(_this); // vue 에서 실행 못하는 jquery
+            jqgrid2();
         },
         methods:{
-             jqGrid:function(){ // jqGrid 메소드
-                 var _this = this;
-            var grid = $("#jqGrid");
+            jqGrid:function(){ // jqGrid 메소드
+                var _this = this;
+                var grid = $("#jqGrid");
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+                    colNames:['No','업체코드','업체명','단가구분','시작일','종료일','품번','품명','단위','단가','사용유무'],
                     colModel:[
-                        {name:'code_type',index:'code_type',width:50,sortable: false, width:250},
-                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false, width:250},
-                        {name:'code_name1',index:'code_name1',width:100,sortable: false, width:250},
-                        {name:'code_name2',index:'code_name2',width:100,sortable: false, width:250},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:250},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:222},
+                        {name:'code_type',index:'code_type',width:50,sortable: false, width:150},
+                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false, width:150},
+                        {name:'code_name1',index:'code_name1',width:100,sortable: false, width:150},
+                        {name:'code_name2',index:'code_name2',width:100,sortable: false, width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:150},
+                        {name:'use_yn',index:'use_yn',width:100,sortable: false, width:150},
+                        {name:'user_name',index:'user_name',width:100,sortable: false, width:150},
+                        {name:'update_date',index:'update_date',width:100,formatter:formmatter_date,sortable: false, width:150},
                     ],
-                    autowidth: true,
+                    width: true,
                     shrinkToFit:false,
                     height:450,
                     pager:'#jqGridPager',
@@ -71,29 +79,30 @@ window.onload = function () {
                     }
 
                 }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
-             },
+
+            },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_group_select").select2();
+                $("#common_group_select").select2();
             },
             common_group_get:function(){ // 코드그룹 가져오는 메소드
-                 var _this =this;
-                 axios
-                     .post("sysCommon/common/group/get")
-                     .then(function(response){
+                var _this =this;
+                axios
+                    .post("sysCommon/common/group/get")
+                    .then(function(response){
                         _this.common_group_list = response.data;
                         _this.common_group_code = response.data[0].group_code;
                         _this.sys_common.code_type = response.data[0].group_code;
                         _this.common_group_name = response.data[0].group_name;
 
 
-                 });
+                    });
             },
             common_group_change:function(code,name){ // select 박스 바뀔때
                 var _this = this;
-                 _this.common_group_code = code;
-                 _this.sys_common.code_type=code;
+                _this.common_group_code = code;
+                _this.sys_common.code_type=code;
 
-                 _this.common_group_name = name;
+                _this.common_group_name = name;
 
             },
             common_get_btn:function (page) { // 조회 버튼
@@ -153,7 +162,7 @@ window.onload = function () {
                 }
             },
             _sys_common_reset:function(){ //코드 객체 리셋
-                 var _this = this;
+                var _this = this;
                 _this.sys_common.code_value="";
                 _this.sys_common.code_name1="";
                 _this.sys_common.code_name2="";
@@ -194,7 +203,7 @@ window.onload = function () {
             },
             common_delete:function () { //삭제를 누를시
                 var _this = this;
-                 var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
+                var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
                 var code_value = ids.join(",");
                 if (code_value === ''){
                     alert("삭제하는 데이터를 선택해주세요");
@@ -211,8 +220,8 @@ window.onload = function () {
             },
             common_delete_ajax:function (type,value) {  // 삭제 ajax
                 wrapWindowByMask();
-                 var _this = this;
-                 $.ajax({
+                var _this = this;
+                $.ajax({
                     url:"sysCommon/common/delete",
                     data:{code_type:type , code_value:value},
                     type : 'DELETE',
@@ -227,11 +236,11 @@ window.onload = function () {
                             _this.common_get_btn2($("#jqGrid").getGridParam('page'));
                         }
 
-                        },
-                     error: function () {
-                         closeWindowByMask();
-                         alert("삭제실패")
-                     }
+                    },
+                    error: function () {
+                        closeWindowByMask();
+                        alert("삭제실패")
+                    }
 
                 });
             },

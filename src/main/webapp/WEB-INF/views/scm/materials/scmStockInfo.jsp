@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/standard/scmBPrice//vue_scmBPrice.js"></script>
-<script src="resource/js/mes/scm/standard/scmBPrice/jquery_scmBPrice.js"></script>
+<script src="resource/js/mes/scm/material/scmStrockInfo//vue_scmStrockInfo.js"></script>
+<script src="resource/js/mes/scm/material/scmStrockInfo/jquery_scmStrockInfo.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
@@ -77,39 +77,60 @@
                 <span class="oi oi-person"  ></span>
             </div>
             <!-- Modal -->
-            <div class="modal hide" id="myModal" role="dialog">
-                <div class="modal-dialog">
+            <<div class="modal hide" id="myModal" role="dialog">
+            <div class="modal-dialog" style="width: 1000px; max-width: 1000px;">
 
-                    <!-- Modal content-->
-                    <div class="modal-content" style="margin-left: auto;margin-right: auto;width: 1000px;">
-                        <div class="modal-header modal-top" style="cursor: move;">
-                            <label class="font-size-18">출고요청 <span class="b_sub"> | Tobe MES</span></label>
-                            <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
-                        </div>
-                        <div class="modal-body form-inline">
-                            <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
-                            <table class="db-modal">
-                                <tr>
-                                    <th scope="row" class="content">위치명</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
-                                    <th scope="row" class="content">비고</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
-                                </tr>
-                            </table>
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header modal-top">
+                        <label class="font-size-18">매입단가 <span class="b_sub"> | Tobe MES</span></label>
+                        <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
+                    </div>
+                    <div class="modal-body form-inline">
 
-                        </div>
-                        <table id="testgrid"></table>
-                        <div id="testpager"></div>
-                        <span class="oi oi-person"  ></span>
-                        <div class="modal-footer">
-                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('I')">저장</button>
-                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('U')">저장</button>
-                            <button type="button" class="btn btn-primary modal-footer-btn" data-dismiss="modal">취소</button>
+                        <div style="width: 1000px; margin:0px">
+                            <span class="content_header">
+                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
+            </span>
+                            <div class="public-mg">
+                                <table class="table table-border-bl" >
+                                    <tr>
+                                        <td class="top-td-la" style="padding-top: 10px;">
+                                            단가구분
+                                        </td>
+                                        <td style="width: 500px">
+                                            <select class="select-modal width-20">
+                                                <option>표준단가</option>
+                                                <option>적용단가</option>
+                                            </select>
+
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="top-td-la" style="padding-top: 10px;">
+                                            찾아보기
+                                        </td>
+                                        <td>
+                                            <input type="file" name="name" class="search-input" value="" placeholder="파일을 넣어주세요">
+
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="margin:20px;">
+                                <table id="jqGrid2"></table>
+
+                                <span class="oi oi-person"  ></span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+        </div>
         </div>
     </div>
 

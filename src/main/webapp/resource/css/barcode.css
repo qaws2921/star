@@ -1,0 +1,86 @@
+@font-face{ font-family:C39TWttf; src:url(C39TW.TTF);}
+@font-face{ font-family:C39TWeot; src:url(C39TW.eot);}
+.barcode{font-family:C39TWttf,C39TWeot; font-size: 30px;}
+.line-sero{size:100px; width:1px; color:blue; align:center;}
+.line-garo{border:1px dotted #ccc; width: 100%; margin-bottom: 35px; margin-top: 35px}
+.b{font-weight: 700}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body.x2{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font-size: 25px;
+}
+.x2-headline{width: 100%}
+.x2-txt-left{float: left; font-size: 18px;padding-top: 15px;}
+.x2-img-right{float: right; width: 150px}
+.x2-btn-group{padding-top: 0px;padding-bottom: 20px}
+.x2-page{
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.x2-subpage {
+    padding: 1cm;
+    border: 5px red solid;
+    height: 257mm;
+    outline: 2cm #FFEAEA solid;
+}
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+    .x2-page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+    #print-button{display : none;}
+}
+table.x2{
+    width: 100%;
+    height: 115mm;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border: 2px solid #369;
+    margin : 0;
+    text-align: center;
+}
+table.x2 th{
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: center;
+    color: #153d73;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #efefef;
+}
+table.x2 td{
+    padding: 10px;
+    vertical-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.x2-verticalLine {
+    border-left: thick solid #ff0000;
+}

@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/standard/scmBPrice//vue_scmBPrice.js"></script>
-<script src="resource/js/mes/scm/standard/scmBPrice/jquery_scmBPrice.js"></script>
+<script src="resource/js/mes/scm/partners/scmDC//vue_scmDC.js"></script>
+<script src="resource/js/mes/scm/partners/scmDC/jquery_scmDC.js"></script>
 <script>
     jQuery(document).ready(function() {
         jQuery("#myModal").draggable();
@@ -15,8 +15,8 @@
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">매입단가 관리</td>
-                <td class="right-header"><i class="fas fa-home"></i> > SCM > 기준정보 > 매입단가 관리</td>
+                <td class="left-header">납품증 관리</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 협력업체 > 납품증 관리</td>
             </tr>
             </tbody>
         </table>
@@ -28,11 +28,7 @@
                         <button class="btn" @click="common_get_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
                         <button class="btn" @click="common_delete">삭제</button>
-                        <button class="btn" id="scmBPrice_excel_download" >엑셀다운</button>
-<%--                        <a href="/scmBPriceExcelUp?active=scm&check=standard&befor=scmBPrice">--%>
-<%--                            <button class="btn" >엑셀업</button>--%>
-<%--                        </a>--%>
-                        <button class="btn" data-toggle="modal" data-target="#myModal2">엑셀업</button>
+                        <button class="btn" id="scmBPrice_excel_download" >인쇄</button>
                     </td>
                 </tr>
                 </tbody>
@@ -54,27 +50,19 @@
 
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            단가구분
+                            업체
                         </td>
                         <td>
-                            <select class="select-modal width-30">
+                            <select class="select-modal">
                                 <option>표준단가</option>
                                 <option>적용단가</option>
                             </select>
                         </td>
-                    </tr>
-                    <tr>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            업체
+                            납품증번호
                         </td>
                         <td>
-                            <input type="text" name="name" class="search-input" style="width: 98.7%;" value="" placeholder="업체 검색...">
-                            <a class="seach-button"><i class='fas fa-search'></i></a>
-                        </td>
-                        <td class="top-td-la" style="padding-top: 10px;"> 품번</td>
-                        <td>
-                            <input type="text" name="name" class="search-input"  style="width: 30%;" value="" placeholder="품번 검색...">
-                            <a class="seach-button"><i class='fas fa-search'></i></a>
+                            <input type="text" class="input-modal w-50">
                         </td>
                     </tr>
                 </table>
@@ -199,19 +187,19 @@
                                         </tr>
                                     </table>
                                 </div>
-                            <div style="margin:20px;">
-                                <table id="jqGrid2"></table>
+                                <div style="margin:20px;">
+                                    <table id="jqGrid2"></table>
 
-                                <span class="oi oi-person"  ></span>
+                                    <span class="oi oi-person"  ></span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
 
 </main>
 </div>
@@ -219,9 +207,7 @@
 </body>
 
 <script type="text/javascript">
-    $(document).ready(function () {
 
-    });
 </script>
 
 </html>
