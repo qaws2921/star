@@ -1,3 +1,5 @@
+Vue.prototype.EventBus = new Vue();
+
 window.onload = function () {
     new Vue({
         el:"#app",
@@ -5,6 +7,10 @@ window.onload = function () {
             return{
                 sys_part_group:[],
                 sys_common:[],
+                sys_cargo_cd:[],
+                sys_loc_cd:[],
+                sys_common_unit:[],
+
                 sys_part_group_code:'',
                 sys_part_group_code_post:'',
                 part_code:'',
@@ -18,9 +24,10 @@ window.onload = function () {
                      cargo_code:'',
                      loc_code:'',
                      supp_code:'',
+                     supp_name:'',
                      spec:'',
                      unit_code:'',
-                     pack_qty:'',
+                     pack_qty:0,
                      max_qty:'',
                      min_qty:'',
                      user_code:'',
@@ -60,6 +67,8 @@ window.onload = function () {
 
             _this.sys_part_group_get();
             _this.sys_common_get();
+            _this.sys_common_unit_get();
+            _this.sys_carogo_cd_get();
 
 
             _this.jqGrid(); // jqGrid 실행
@@ -67,15 +76,29 @@ window.onload = function () {
             _this.selectBox(); // select2 실행
             jquery_scmPart(_this); // vue 에서 실행 못하는 jquery
         },
+        created:function() {
+            this.EventBus.$on('supp', this.supp_bus);
+        },
         methods:{
+            _test2:function(test2,test3){
+                alert(test2);
+                alert(test3);
+            },
+            supp_bus:function(code,name){
+                var _this =this;
+                _this.sys_bPart_cd.supp_code = code;
+                _this.sys_bPart_cd.supp_name = name;
+
+            },
              jqGrid:function(){ // jqGrid 메소드
                  var _this = this;
             var grid = $("#jqGrid");
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['품목코드','품목명','보관창고','보관로케이션','업체명','등급','규격','단위','재고최대','재고최소','사용자','수정일'],
+                    colNames:['코드그룹','품목코드','품목명','보관창고','보관로케이션','업체명','등급','규격','단위','재고최대','재고최소','사용자','수정일'],
                     colModel:[
+                        {name:'part_grp_code',index:'part_grp_code',width:100,sortable: false, width:150},
                         {name:'part_code',index:'part_code',width:100,key: true ,sortable: false, width:150},
                         {name:'part_name',index:'part_name',width:100,sortable: false, width:150},
                         {name:'cargo_code',index:'cargo_code',width:100,sortable: false, width:150},
@@ -106,8 +129,8 @@ window.onload = function () {
                     },
                     ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
                         var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-                        _this.common_edit(data); // 데이터 가공
-                        _this.common_update(); // 수정창 띄어주기
+                        _this.scmPart_edit(data); // 데이터 가공
+                        _this.scmPart_update(); // 수정창 띄어주기
 
                     }
 
@@ -117,6 +140,11 @@ window.onload = function () {
              },
             selectBox:function(){  // select2 실행 메소드
                  $("#scm_part_select1").select2();
+                 $("#part_group_select").val("").select2();
+                 $("#common_select").val("").select2();
+                 $("#cargo_select").val("").select2();
+                 $("#loc_select").val("").select2();
+                 $("#common_unit_select").val("").select2();
 
             },
             sys_part_group_get:function(){
@@ -152,6 +180,58 @@ window.onload = function () {
                 });
 
             },
+            sys_carogo_cd_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/cargo/cd/get",
+                    type: 'POST',
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_cargo_cd = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+            sys_loc_cd_get:function(keyword){
+                var _this = this;
+                $.ajax({
+                    url: "common/loc/cd/get",
+                    type: 'POST',
+                    data:{keyword:keyword},
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_loc_cd = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+            sys_common_unit_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/common/get",
+                    type: 'POST',
+                    data:{keyword:"UNIT"},
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_common_unit = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+
+
             common_group_get:function(){ // 코드그룹 가져오는 메소드
                  var _this =this;
                  axios
@@ -184,7 +264,7 @@ window.onload = function () {
                 $('#jqGrid').setGridParam({ url: 'scmPart/bPart/get',postData: { keyword: _this.sys_part_group_code_post,keyword2:_this.part_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            common_au:function (au) { // 저장 수정 ajax
+            scmPart_au:function (au) { // 저장 수정 ajax
                 var _this = this
                 var txt ='저장 히겠습니까?';
                 if (au === 'U'){
@@ -193,10 +273,10 @@ window.onload = function () {
                 }
                 if(confirm(txt)){
                     if (_this.effectiveness()) {
-                        _this.sys_common.keyword = au;
+                        _this.sys_bPart_cd.keyword = au;
                         $.ajax({
-                            url: "sysCommon/common/au",
-                            data: _this.sys_common,
+                            url: "scmPart/au",
+                            data: _this.sys_bPart_cd,
                             type: 'POST',
                             async: true,
                             dataType: "json",
@@ -240,7 +320,7 @@ window.onload = function () {
                      supp_code:'',
                      spec:'',
                      unit_code:'',
-                     pack_qty:'',
+                     pack_qty:0,
                      max_qty:'',
                      min_qty:'',
                      user_code:'',
@@ -251,7 +331,7 @@ window.onload = function () {
                  };
 
             },
-            common_update:function () { // 업데이트 모달창
+            scmPart_update:function () { // 업데이트 모달창
                 var _this = this;
                 _this.add_update_check="U";
 
@@ -261,10 +341,19 @@ window.onload = function () {
                 var _this = this;
                 _this.add_update_check="I";
                 _this._sys_bPart_cd_reset();
+                _this.selectBox();
+                _this.sys_loc_cd=[];
+                $("#part_group_select").val(_this.sys_part_group_code).select2();
+
+
             },
-            common_edit:function (data) {   // 수정 값을 객체에 저장
+            scmPart_edit:function (data) {   // 수정 값을 객체에 저장
                 var _this = this;
                 _this._sys_bPart_cd_reset();
+                _this.sys_bPart_cd.part_grp_code = data.part_grp_code;
+                _this.sys_bPart_cd.part_code = data.part_code;
+
+
                 _this.sys_common.code_type=data.code_type;
                 _this.sys_common.code_value=data.code_value;
                 _this.sys_common.code_name1=data.code_name1;
@@ -323,16 +412,17 @@ window.onload = function () {
 
             effectiveness:function () { // 유효성 검사
                 var _this = this;
-                if (_this.sys_common.code_value === ''){
-                    alert("코드를 입력해주세요");
-                    return false;
-                }else if (_this.sys_common.code_name1 === ''){
-                    alert("명칭1을 입력해주세요");
-                    return false;
-
-                }else {
-                    return true;
-                }
+                // if (_this.sys_common.code_value === ''){
+                //     alert("코드를 입력해주세요");
+                //     return false;
+                // }else if (_this.sys_common.code_name1 === ''){
+                //     alert("명칭1을 입력해주세요");
+                //     return false;
+                //
+                // }else {
+                //     return true;
+                // }
+                return true;
             }
 
         }

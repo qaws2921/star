@@ -3,6 +3,7 @@ package com.tobe.mes.tobesystem.MES.SCM.STANDARD.SCMLoc;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD.SYS_LOC_CD;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD.SYS_LOC_CDS;
 import com.tobe.mes.tobesystem.Bean.Page;
+import com.tobe.mes.tobesystem.Bean.Result;
 import com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMLoc_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,25 @@ public class SCMLoc_SERVICE {
 
             return new SYS_LOC_CDS(sys_loc_cdList,total,(int)(page*1),scmLoc_get_count);
         }
+    }
+
+    public Result scmLoc_au(SYS_LOC_CD slc) {
+        return scmLoc_mapper.scmLoc_au(slc);
+    }
+
+    public Result scmLoc_delete(SYS_LOC_CD slc) {
+        char a = (char)5;
+        char b = (char)4;
+        String code_value[] = slc.getLoc_code().split(",");
+        String type_value="";
+        for (int i = 0; i < code_value.length ; i++) {
+            if (i == 0){
+                type_value += slc.getCargo_code()+a+code_value[i];
+            }else {
+                type_value += b+slc.getCargo_code()+a+code_value[i];
+            }
+        }
+
+        return scmLoc_mapper.scmLoc_delete(type_value);
     }
 }

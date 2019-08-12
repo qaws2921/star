@@ -3,6 +3,7 @@ package com.tobe.mes.tobesystem.MES.SCM.STANDARD.SCMPart;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPART_CD.SYS_BPART_CD;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPART_CD.SYS_BPART_CDS;
 import com.tobe.mes.tobesystem.Bean.Page;
+import com.tobe.mes.tobesystem.Bean.Result;
 import com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMPart_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,9 @@ public class SCMPart_SERVICE {
 
             return new SYS_BPART_CDS(sys_bpart_cdList,total,(int)(page*1),bPart_get_count);
         }
+    }
+
+    public Result scmPart_au(SYS_BPART_CD sbc) {
+        return scmPart_mapper.scmPart_au(sbc);
     }
 }

@@ -43,7 +43,7 @@
                             품목그룹
                         </td>
                         <td>
-                            <select id="scm_part_select1">
+                            <select id="scm_part_select1" class="select-width-154">
                                 <option value="">전체</option>
                                 <option v-for="(spg , index) in sys_part_group" :key="index" :value="spg.part_grp_code">
                                     {{ spg.part_grp_name }}
@@ -87,73 +87,74 @@
 
                             <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
                             <table class="type03">
+
+                                <tr>
+                                    <th scope="row" class="content">품목코드</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.part_code"></td>
+                                    <th scope="row" class="content">품목명</th>
+                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.part_name"></td>
+                                </tr>
                                 <tr>
                                     <th scope="row" class="content">품목그룹</th>
                                     <td>
-                                        <select class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
+                                        <select id="part_group_select" class="select-width-154"  v-model="sys_bPart_cd.part_grp_code">
+                                            <option value="">선택안함</option>
+                                            <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
                                         </select>
                                     </td>
                                     <th scope="row" class="content">품목구분</th>
                                     <td>
-                                        <select class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
+                                        <select id="common_select" class="select-width-154" v-model="sys_bPart_cd.part_type">
+                                            <option value="">선택안함</option>
+                                            <option v-for="(sc,index) in sys_common" :key="index" :value="sc.code_value">{{ sc.code_name1}}</option>
                                         </select>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="content">품목코드</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
-                                    <th scope="row" class="content">품목명</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">보관창고</th>
                                     <td>
-                                        <select class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
+                                        <select id="cargo_select" class="select-width-154" v-model="sys_bPart_cd.cargo_code">
+                                            <option value="">선택안함</option>
+                                            <option v-for="(scc,index) in sys_cargo_cd" :key="index" :value="scc.cargo_code">{{ scc.cargo_name}}</option>
                                         </select>
                                     </td>
                                     <th scope="row" class="content">보관로케이션</th>
                                     <td>
-                                        <select class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
+                                        <select id="loc_select" class="select-width-154" v-model="sys_bPart_cd.loc_code">
+                                            <option value="">선택안함</option>
+                                            <option v-for="(slc,index) in sys_loc_cd" :key="index" :value="slc.loc_code">{{ slc.loc_name}}</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">업체코드</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <td><input type="text" readonly class="input-modal" data-toggle="modal" data-target="#myModal3" v-model="sys_bPart_cd.supp_code"></td>
                                     <th scope="row" class="content">업체명</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td><input type="text" readonly class="input-modal" v-model="sys_bPart_cd.supp_name"></td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">규격</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.spec"></td>
                                     <th scope="row" class="content">단위</th>
                                     <td>
-                                        <select class="select-modal">
-                                            <option value="Y">Y</option>
-                                            <option value="N">N</option>
+                                        <select id="common_unit_select" class="select-width-154" v-model="sys_bPart_cd.unit_code">
+                                            <option value="">선택안함</option>
+                                            <option v-for="(scu,index) in sys_common_unit" :key="index" :value="scu.code_value">{{ scu.code_name1}}</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">재고 최대</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.max_qty"></td>
                                     <th scope="row" class="content">재고 최소</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.min_qty"></td>
                                 </tr>
                             </table>
                         </div>
 
                         <div class="modal-footer">
-                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('I')">저장</button>
-                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('U')">저장</button>
+                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="scmPart_au('I')">저장</button>
+                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="scmPart_au('U')">저장</button>
                             <button type="button" class="btn btn-primary modal-footer-btn" data-dismiss="modal">취소</button>
                         </div>
                     </div>
@@ -162,7 +163,7 @@
             </div>
         </div>
     </div>
-
+    <%@include file="../supp_modal.jsp"%>
 </main>
 </div>
 </div>
