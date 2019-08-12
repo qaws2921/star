@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/supply/scmECIn//vue_scmECIn.js"></script>
-<script src="resource/js/mes/scm/supply/scmECIn/jquery_scmECIn.js"></script>
+<script src="resource/js/mes/scm/supply/scmECList//vue_scmECList.js"></script>
+<script src="resource/js/mes/scm/supply/scmECList/jquery_scmECList.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">

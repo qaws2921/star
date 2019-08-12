@@ -2,14 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMPart_Mapper">
-    <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
-        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
+    <select id="bPart_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPART_CD.SYS_BPART_CD">
+        CALL TOBE_MES.SP_SYS_BPART_GET(#{page_num},#{total_num},'',#{keyword},#{keyword2},'S')
     </select>
-    <select id="cargo_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_CARGO_CD.SYS_CARGO_CD">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','S')
-    </select>
-    <select id="cargo_cd_get_count" resultType="Integer">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','')
+    <select id="bPart_get_count" resultType="Integer">
+         CALL TOBE_MES.SP_SYS_BPART_GET(#{page_num},#{total_num},'',#{keyword},#{keyword2},'C')
     </select>
     <select id="cargo_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_CARGO_ADD(#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})

@@ -1,6 +1,6 @@
 function jquery_scmLoc(_this){
-    $(document).on("change","#common_group_select",function(){ // select 박스 바뀔때
-        _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
+    $(document).on("change","#cargo_cd_select",function(){ // select 박스 바뀔때
+        _this.cargo_cd_select_change($("#cargo_cd_select").val(),$("#cargo_cd_select option:checked").text());
     });
 
 

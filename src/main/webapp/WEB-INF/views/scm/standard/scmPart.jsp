@@ -21,8 +21,8 @@
                 <tbody>
                 <tr>
                     <td class="button-group">
-                        <button class="btn" @click="common_get_btn(1)">조회</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
+                        <button class="btn" @click="bPart_get_btn(1)">조회</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="scmPart_add">추가</button>
                         <button class="btn" @click="common_delete">삭제</button>
                         <button class="btn" id="scmBPrice_excel_download" >엑셀다운</button>
                         <a href="/scmBPartExcelUp?active=scm&check=standard&befor=scmBPrice">
@@ -40,29 +40,23 @@
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            조회기간
+                            품목그룹
                         </td>
                         <td>
-                            <select class="select-modal width-20">
-                                <option>전체</option>
+                            <select id="scm_part_select1">
+                                <option value="">전체</option>
+                                <option v-for="(spg , index) in sys_part_group" :key="index" :value="spg.part_grp_code">
+                                    {{ spg.part_grp_name }}
+                                </option>
                             </select>
 
                         </td>
+
                         <td class="top-td-la" style="padding-top: 10px;">
-                            단가구분
+                            품목코드
                         </td>
                         <td>
-                            <select class="select-modal width-20">
-                                <option>전체</option>
-                            </select>
-                        </td>
-                        <td class="top-td-la" style="padding-top: 10px;">
-                            단가구분
-                        </td>
-                        <td>
-                            <select class="select-modal width-20">
-                                <option>전체</option>
-                            </select>
+                            <input v-model="part_code">
                         </td>
 
 
@@ -102,7 +96,12 @@
                                         </select>
                                     </td>
                                     <th scope="row" class="content">품목구분</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td>
+                                        <select class="select-modal">
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">품목코드</th>
@@ -112,9 +111,19 @@
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">보관창고</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <td>
+                                        <select class="select-modal">
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </td>
                                     <th scope="row" class="content">보관로케이션</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td>
+                                        <select class="select-modal">
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">업체코드</th>
@@ -126,7 +135,12 @@
                                     <th scope="row" class="content">규격</th>
                                     <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
                                     <th scope="row" class="content">단위</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td>
+                                        <select class="select-modal">
+                                            <option value="Y">Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">재고 최대</th>

@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD;
 
 public class SYS_LOC_CD {
     private String cargo_code;
+    private String plant_code;
     private String loc_code;
     private String loc_name;
     private String remark;
@@ -90,5 +91,13 @@ public class SYS_LOC_CD {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getPlant_code() {
+        return plant_code;
+    }
+
+    public void setPlant_code(String plant_code) {
+        this.plant_code = plant_code;
     }
 }

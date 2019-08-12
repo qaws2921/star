@@ -113,7 +113,7 @@
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 admin menuMainA" href="#">
+                        <a class="nav-link ba-color-999 partners menuMainA" href="#">
                             협력업체<i class="fas fa-angle-down down-icon"></i>
                         </a>
                         <ul class="file-tree user">
@@ -122,7 +122,7 @@
                                 <a class="sysUser" href="sysUser?active=scm&check=user">고객계획대비 소요량</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">생산계획대비 소요량</a>
+                                <a class="scmPlanWorkPart" href="scmPlanWorkPart?active=scm&check=partners">생산계획대비 소요량</a>
                             </li>
                             <li>
                                 <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품증관리</a>
@@ -134,7 +134,10 @@
                                 <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">마감현황</a>
+                                <a class="scmClosePart" href="scmClosePart?active=scm&check=partners">마감현황</a>
+                            </li>
+                            <li>
+                                <a class="qmsPartInNgSupp" href="qmsPartInNgSupp?active=scm&check=partners">불량현황</a>
                             </li>
 
                         </ul>

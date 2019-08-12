@@ -3,16 +3,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/standard/scmLoc//vue_scmLoc.js"></script>
-<script src="resource/js/mes/scm/standard/scmLoc/jquery_scmLoc.js"></script>
+<script src="resource/js/mes/scm/partners/scmClosePart//vue_scmClosePart.js"></script>
+<script src="resource/js/mes/scm/partners/scmClosePart/jquery_scmClosePart.js"></script>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">로케이션 관리</td>
-                <td class="right-header"><i class="fas fa-home"></i> > 기준정보 > 로케이션관리</td>
+                <td class="left-header">마감현황</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 협력업체 > 마감현황</td>
             </tr>
             </tbody>
         </table>
@@ -21,33 +21,56 @@
                 <tbody>
                 <tr>
                     <td class="button-group">
-                        <button class="btn" @click="scmLoc_get_btn(1)">조회</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
+                        <button class="btn" @click="common_get_btn(1)">조회</button>
+                        <button class="btn" @click="common_get_btn(1)">저장</button>
+
                     </td>
                 </tr>
                 </tbody>
             </table>
-            <div class="mg-20">
+            <span class="content_header">
+                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
+            </span>
+
+            <div class="public-mg">
                 <table class="table table-border-bl" >
                     <tr>
-                        <td class="top-td-la" style="padding-top: 12px;">
-                            창고
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            조회기간
+                        </td>
+                        <td style="width: 500px">
+                            <input class="input-cal" id="date_input1">
+                            <span style="width: 10%">-</span>
+                            <input class="input-cal" id="date_input2">
+
+                        </td>
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            품목그룹
                         </td>
                         <td>
-                            <select class="col-xl-2" id="cargo_cd_select">
-                                <option v-for="(ccg,index) in cargo_cd_get" :key="index" :value="ccg.cargo_code">{{ ccg.cargo_name }}</option>
+                            <select class="select-modal">
+                                <option>전체</option>
                             </select>
                         </td>
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            품목코드
+                        </td>
+                        <td>
+                            <input class="input-cal">
+                        </td>
                     </tr>
+
                 </table>
             </div>
-            <div class="mg-20">
+
+
+
+
+            <div style="margin:20px;">
                 <table id="jqGrid"></table>
                 <div id="jqGridPager"></div>
                 <span class="oi oi-person"  ></span>
             </div>
-
             <!-- Modal -->
             <div class="modal hide" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">
@@ -55,7 +78,7 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">로케이션 관리 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">공통 코드관리 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
@@ -67,7 +90,7 @@
                                     <th scope="row" class="public">위치코드</th>
                                     <td>
                                         <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" readonly v-model="sys_common.code_value" class="input-modal">
+                                        <input type="text" v-if="add_update_check==='U'" v-model="sys_common.code_value" class="input-modal">
                                     </td>
                                     <th scope="row" class="public">사용유무</th>
                                     <td>
@@ -100,13 +123,10 @@
             </div>
         </div>
     </div>
-    <div id="app2">
-        <div @click="test()">{{ he }}</div>
-    </div>
+
 </main>
 </div>
 </div>
-
 </body>
 
 <script type="text/javascript">

@@ -1,9 +1,10 @@
-function jquery_scmPart(_this){
-    $(document).on("change","#scm_part_select1",function(){ // select 박스 바뀔때
-        _this.part_group_change($("#scm_part_select1").val(),$("#scm_part_select1 option:checked").text());
+function jquery_scmClosePart(_this){
+    $(document).on("change","#common_group_select",function(){ // select 박스 바뀔때
+        _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
     });
 
-
+    $("#date_input1").datepicker(date);
+    $("#date_input2").datepicker(date);
 
     $(document).on("click","#scmBPrice_excel_download",function () {
 
