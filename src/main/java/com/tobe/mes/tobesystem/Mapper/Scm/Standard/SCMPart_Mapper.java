@@ -12,4 +12,6 @@ public interface SCMPart_Mapper {
     int bPart_get_count(Page p);
 
     Result scmPart_au(SYS_BPART_CD sbc);
+
+    Result scmPart_delete(String code);
 }

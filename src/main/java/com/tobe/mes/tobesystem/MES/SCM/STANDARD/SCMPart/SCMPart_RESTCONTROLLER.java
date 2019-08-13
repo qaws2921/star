@@ -22,4 +22,8 @@ public class SCMPart_RESTCONTROLLER {
     public Result scmPart_au (SYS_BPART_CD sbc){
         return scmPart_service.scmPart_au(sbc);
     }
+    @RequestMapping(value = "/scmPart/delete", method = RequestMethod.DELETE) // 코드 리스트 가져오기
+    public Result scmPart_delete (SYS_BPART_CD sbc){
+        return scmPart_service.scmPart_delete(sbc);
+    }
 }

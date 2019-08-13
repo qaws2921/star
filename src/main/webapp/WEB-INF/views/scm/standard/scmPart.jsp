@@ -23,7 +23,7 @@
                     <td class="button-group">
                         <button class="btn" @click="bPart_get_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="scmPart_add">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
+                        <button class="btn" @click="scmPart_delete">삭제</button>
                         <button class="btn" id="scmBPrice_excel_download" >엑셀다운</button>
                         <a href="/scmBPartExcelUp?active=scm&check=standard&befor=scmBPrice">
                             <button class="btn" >엑셀업</button>
@@ -42,7 +42,7 @@
                         <td class="top-td-la" style="padding-top: 10px;">
                             품목그룹
                         </td>
-                        <td>
+                        <td class="td-width-200">
                             <select id="scm_part_select1" class="select-width-154">
                                 <option value="">전체</option>
                                 <option v-for="(spg , index) in sys_part_group" :key="index" :value="spg.part_grp_code">
@@ -90,7 +90,10 @@
 
                                 <tr>
                                     <th scope="row" class="content">품목코드</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_bPart_cd.part_code"></td>
+                                    <td>
+                                        <input v-if="add_update_check==='I'" type="text" class="input-modal" v-model="sys_bPart_cd.part_code">
+                                        <input v-if="add_update_check==='U'" readonly type="text" class="input-modal" v-model="sys_bPart_cd.part_code">
+                                    </td>
                                     <th scope="row" class="content">품목명</th>
                                     <td><input type="text" class="input-modal" v-model="sys_bPart_cd.part_name"></td>
                                 </tr>
@@ -128,7 +131,9 @@
                                 </tr>
                                 <tr>
                                     <th scope="row" class="content">업체코드</th>
-                                    <td><input type="text" readonly class="input-modal" data-toggle="modal" data-target="#myModal3" v-model="sys_bPart_cd.supp_code"></td>
+                                    <td>
+                                        <input type="text" readonly class="input-modal" data-toggle="modal" data-target="#myModal3" v-model="sys_bPart_cd.supp_code">
+                                    </td>
                                     <th scope="row" class="content">업체명</th>
                                     <td><input type="text" readonly class="input-modal" v-model="sys_bPart_cd.supp_name"></td>
                                 </tr>

@@ -34,4 +34,19 @@ public class SCMPart_SERVICE {
     public Result scmPart_au(SYS_BPART_CD sbc) {
         return scmPart_mapper.scmPart_au(sbc);
     }
+
+    public Result scmPart_delete(SYS_BPART_CD sbc) {
+        char a = (char) 5;
+        char b = (char) 4;
+        String part_code[] = sbc.getPart_code().split(",");
+        String code= "";
+        for (int i = 0; i < part_code.length; i++) {
+            if (i == 0) {
+                code += part_code[i];
+            } else {
+                code += b + part_code[i];
+            }
+        }
+        return scmPart_mapper.scmPart_delete(code);
+    }
 }
