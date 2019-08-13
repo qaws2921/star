@@ -9,4 +9,8 @@ public class SCMDC_CONTROLLER {
     public String scmDC(){
         return "scm/partners/scmDC";
     }
+    @RequestMapping(value = "/print_delivered")
+    public String print_delivered(){
+        return "scm/partners/print/delivered";
+    }
 }

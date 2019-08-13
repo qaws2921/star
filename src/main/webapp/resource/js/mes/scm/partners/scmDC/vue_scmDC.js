@@ -31,6 +31,9 @@ window.onload = function () {
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
             jquery_scmDC(_this); // vue 에서 실행 못하는 jquery
+            _this.jqGrid1(); // jqGrid 실행
+            _this.jqGrid2(); // jqGrid 실행
+
         },
         methods:{
              jqGrid:function(){ // jqGrid 메소드
@@ -72,6 +75,84 @@ window.onload = function () {
 
                 }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
              },
+            jqGrid1:function(){ // jqGrid 메소드
+                var _this = this;
+                var grid = $("#jqGrid1");
+                grid.jqGrid({
+                    datatype: "json",
+                    mtype: 'POST',
+                    colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+                    colModel:[
+                        {name:'code_type',index:'code_type',width:50,sortable: false,width:150},
+                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false,width:150},
+                        {name:'code_name1',index:'code_name1',width:100,sortable: false,width:150},
+                        {name:'code_name2',index:'code_name2',width:100,sortable: false,width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
+                    ],
+                    width:926,
+                    shrinkToFit:false,
+                    height:150,
+                    pager:'#jqGridPager1',
+                    jsonReader: {cell:""},
+                    rowNum: 100,
+                    rowList: [100, 200, 300, 400],
+                    viewrecords: true,
+                    multiselect:true,
+                    beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
+                        var $myGrid = $(this),
+                            i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                            cm = $myGrid.jqGrid('getGridParam', 'colModel');
+                        return (cm[i].name === 'cb');
+                    },
+                    ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
+                        var data = $('#jqGrid1').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
+                        _this.common_edit(data); // 데이터 가공
+                        _this.common_update(); // 수정창 띄어주기
+
+                    }
+
+                }).navGrid("#jqGridPager1", { search: false, add: false, edit: false, del: false});
+            },
+            jqGrid2:function(){ // jqGrid 메소드
+                var _this = this;
+                var grid = $("#jqGrid2");
+                grid.jqGrid({
+                    datatype: "json",
+                    mtype: 'POST',
+                    colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+                    colModel:[
+                        {name:'code_type',index:'code_type',width:50,sortable: false,width:150},
+                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false,width:150},
+                        {name:'code_name1',index:'code_name1',width:100,sortable: false,width:150},
+                        {name:'code_name2',index:'code_name2',width:100,sortable: false,width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
+                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
+                    ],
+                    width:926,
+                    shrinkToFit:false,
+                    height:150,
+                    pager:'#jqGridPager2',
+                    jsonReader: {cell:""},
+                    rowNum: 100,
+                    rowList: [100, 200, 300, 400],
+                    viewrecords: true,
+                    multiselect:true,
+                    beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
+                        var $myGrid = $(this),
+                            i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                            cm = $myGrid.jqGrid('getGridParam', 'colModel');
+                        return (cm[i].name === 'cb');
+                    },
+                    ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
+                        var data = $('#jqGrid2').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
+                        _this.common_edit(data); // 데이터 가공
+                        _this.common_update(); // 수정창 띄어주기
+
+                    }
+
+                }).navGrid("#jqGridPager2", { search: false, add: false, edit: false, del: false});
+            },
             selectBox:function(){  // select2 실행 메소드
                  $("#common_group_select").select2();
             },

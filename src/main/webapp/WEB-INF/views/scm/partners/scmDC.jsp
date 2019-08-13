@@ -7,7 +7,7 @@
 <script src="resource/js/mes/scm/partners/scmDC/jquery_scmDC.js"></script>
 <script>
     jQuery(document).ready(function() {
-        jQuery("#myModal").draggable();
+        jQuery("#myModal2").draggable();
     });
 </script>
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -28,7 +28,7 @@
                         <button class="btn" @click="common_get_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
                         <button class="btn" @click="common_delete">삭제</button>
-                        <button class="btn" id="scmBPrice_excel_download" >인쇄</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal2" @click="common_add">인쇄</button>
                     </td>
                 </tr>
                 </tbody>
@@ -76,7 +76,6 @@
             <!-- Modal -->
             <div class="modal hide" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">
-
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
@@ -128,8 +127,6 @@
                 </div>
 
             </div>
-
-
             <!-- Modal -->
             <div class="modal hide" id="myModal2" role="dialog">
                 <div class="modal-dialog" style="width: 1000px; max-width: 1000px;">
@@ -137,70 +134,85 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
-                            <label class="font-size-18">매입단가 <span class="b_sub"> | Tobe MES</span></label>
+                            <label class="font-size-18">부품식별표 인쇄 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
 
-                            <div class="content-border" style="width: 900px; margin: auto">
+                            <div>
                                 <table class="contents">
                                     <tbody>
                                     <tr>
                                         <td class="button-group">
-                                            <button class="btn" @click="common_get_btn(1)">가져오기</button>
-                                            <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">적용하기</button>
-                                            <a href="scmBPrice?active=scm&check=standard">
-
-                                                <button class="btn">목록으로</button>
-                                            </a>
+                                            <button class="btn" @click="common_get_btn(1)">조회</button>
+                                            <button class="btn" @click="common_get_btn(1)">삭제</button>
+                                            <button class="btn" @click="common_get_btn(1)">저장</button>
                                         </td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <span class="content_header">
-                <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
-            </span>
+                                    <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
+                                </span>
                                 <div class="public-mg">
                                     <table class="table table-border-bl" >
                                         <tr>
                                             <td class="top-td-la" style="padding-top: 10px;">
-                                                단가구분
+                                                납품일자
                                             </td>
-                                            <td style="width: 500px">
-                                                <select class="select-modal width-20">
+                                            <td>
+                                                <select class="select-modal">
                                                     <option>표준단가</option>
                                                     <option>적용단가</option>
                                                 </select>
-
                                             </td>
-
-                                        </tr>
-                                        <tr>
                                             <td class="top-td-la" style="padding-top: 10px;">
-                                                찾아보기
+                                                업체
                                             </td>
                                             <td>
-                                                <input type="file" name="name" class="search-input" value="" placeholder="파일을 넣어주세요">
-
+                                                <select class="select-modal">
+                                                    <option>표준단가</option>
+                                                    <option>적용단가</option>
+                                                </select>
                                             </td>
-
+                                            <td class="top-td-la" style="padding-top: 10px;">
+                                                품목그룹
+                                            </td>
+                                            <td>
+                                                <select class="select-modal">
+                                                    <option>표준단가</option>
+                                                    <option>적용단가</option>
+                                                </select>
+                                            </td>
+                                            <td class="top-td-la" style="padding-top: 10px;">
+                                                비고
+                                            </td>
+                                            <td>
+                                                <input type="text" class="input-modal">
+                                            </td>
                                         </tr>
                                     </table>
-                                </div>
-                                <div style="margin:20px;">
-                                    <table id="jqGrid2"></table>
-
-                                    <span class="oi oi-person"  ></span>
+                                    <div style="width: 100%">
+                                        <div class="row" style="margin: 0">
+                                            <table id="jqGrid1"></table>
+                                            <div id="jqGridPager1"></div>
+                                            <span class="oi oi-person"></span>
+                                            <div style="width: 100%; text-align: center" class="mg-20">
+                                                <button class="btn"><i class="fas fa-arrow-up"></i></button>
+                                                <button class="btn"><i class="fas fa-arrow-down"></i></button>
+                                            </div>
+                                            <table id="jqGrid2"></table>
+                                            <div id="jqGridPager2"></div>
+                                            <span class="oi oi-person"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
 </main>
 </div>
 </div>
