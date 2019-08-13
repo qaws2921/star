@@ -57,8 +57,8 @@ table.top-sub-header td.top-left{
     width: 100%;
     font-weight: 700;
     font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .header-img{
     padding-left: 10px;
@@ -578,4 +578,17 @@ table.db-modal td {
 }
 .td-width-200{
     width: 200px;
+}
+.btn-529fff{
+    margin-bottom: 10px;
+    background-color: #529fff;
+    border: 1px solid #529fff;
+}
+.btn-e74344{
+    background-color: #e74344;
+    border: 1px solid #e74344;
+
+}
+.pt-10{
+    padding-top: 10px;
 }

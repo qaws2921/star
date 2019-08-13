@@ -2,7 +2,7 @@
 @font-face{ font-family:C39TWeot; src:url(C39TW.eot);}
 .barcode{font-family:C39TWttf,C39TWeot; font-size: 30px;}
 .line-sero{size:100px; width:1px; color:blue; align:center;}
-.line-garo{border:1px dotted #ccc; width: 100%; margin-bottom: 20px; margin-top: 20px}
+.line-garo{border:1px dotted #ccc; width: 100%; margin-bottom: 50px; margin-top: 20px}
 .b{font-weight: 700}
 .float-l{float: left}
 .float-r{float: right}

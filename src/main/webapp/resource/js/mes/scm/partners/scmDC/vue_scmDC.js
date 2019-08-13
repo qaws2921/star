@@ -41,7 +41,7 @@ window.onload = function () {
             var _this = this;
             _this.jqGrid(); // jqGrid 실행
             _this.common_group_get(); // 코드그룹 가져오기
-            jquery_scmDC(_this); // vue 에서 실행 못하는 jquery
+            jquery_scmDCBox(_this); // vue 에서 실행 못하는 jquery
             _this.jqGrid1(); // jqGrid 실행
             _this.jqGrid2(); // jqGrid 실행
 

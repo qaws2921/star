@@ -5,8 +5,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>투비 MES - 납입카드 발행</title>
+    <title>TobeMES - 납입카드 발행</title>
     <link href="resource/css/delivered.css" rel="stylesheet">
+    <link rel="shortcut icon" href="resource/img/icon.png">
 </head>
 <body>
 <div class="page">

@@ -5,8 +5,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>인쇄 테스트 2x2</title>
+    <title>TobeMES - 부품식별표 발행 (대)</title>
     <link href="resource/css/barcode.css" rel="stylesheet">
+    <link rel="shortcut icon" href="resource/img/icon.png">
 </head>
 <body class="x2">
 <div class="x2-page">
