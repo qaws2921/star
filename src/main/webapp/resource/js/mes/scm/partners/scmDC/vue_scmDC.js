@@ -1,8 +1,19 @@
+Vue.prototype.EventBus = new Vue();
+
 window.onload = function () {
     new Vue({
         el:"#app",
         data: function () {
             return{
+                keyword:{
+                    start_date:'',
+                    end_date:'',
+                    keyword:'',
+                    keyword2:''
+
+                },
+                supp_name:'',
+
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
                 common_group_name:'', // 코드그룹 값
@@ -35,7 +46,16 @@ window.onload = function () {
             _this.jqGrid2(); // jqGrid 실행
 
         },
+        created:function() {
+            this.EventBus.$on('supp', this.supp_bus);
+        },
         methods:{
+            supp_bus:function(code,name){
+                var _this =this;
+                _this.keyword.keyword = code;
+                _this.supp_name = name;
+
+            },
              jqGrid:function(){ // jqGrid 메소드
                  var _this = this;
             var grid = $("#jqGrid");
