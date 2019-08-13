@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 @MapperScan(value={"com.tobe.mes.tobeSystem.Mapper"})
 public class TobesystemApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(TobesystemApplication.class, args);
     }

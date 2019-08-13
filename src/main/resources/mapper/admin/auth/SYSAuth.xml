@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Auth.SYSAuth_Mapper">
+
     <select id="auth_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_AUTH_CD.SYS_AUTH_CD">
         CALL TOBE_MES.SP_SYS_AUTH_GROUP_GET(#{page_num},#{total_num},'','S')
     </select>
