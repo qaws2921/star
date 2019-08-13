@@ -12,9 +12,8 @@
                             <label class="font-size-18">업체코드 <span class="b_sub"> | Tobe MES</span></label>
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
-                        <div class="modal-body form-inline">
+                        <div class="modal-body">
 
-                            <div class="content-border" style="width: 900px; margin: auto">
                                 <table class="contents">
                                     <tbody>
                                     <tr>
@@ -37,7 +36,7 @@
                                             <td class="top-td-la" style="padding-top: 10px;">
                                                 업체코드/업체명
                                             </td>
-                                            <td style="width: 500px">
+                                            <td>
                                                 <select id="supp_select" class="select-width-154">
                                                     <option value="">전체</option>
                                                     <option v-for="(ssc,index) in sys_supp_cd" :key="index" :value="ssc.supp_code">{{ ssc.supp_code }}/{{ssc.supp_name}}</option>
@@ -53,12 +52,11 @@
 
 
 
-                                <div style="margin:20px;">
+                                <div class="mg-20">
                                     <table id="jqGrid3"></table>
 
                                     <span class="oi oi-person"  ></span>
                                 </div>
-                        </div>
 
 
                     </div>
