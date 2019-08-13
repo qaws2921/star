@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SYSAuth_RESTCONTROLLER {
 
+
     @Autowired
     private SYSAuth_SERVICE sys_auth_cd_service;
 

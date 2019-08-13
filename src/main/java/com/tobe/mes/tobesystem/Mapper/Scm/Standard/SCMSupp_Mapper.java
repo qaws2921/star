@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface SCMSupp_Mapper {
     List<SYS_SUPP_CD> supp_cd_get(Page p);
+    List<SYS_SUPP_CD> supp_cd_get_modal(Page p);
 
     int supp_cd_get_count(Page p);
 

@@ -5,6 +5,9 @@
     <select id="supp_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_SUPP_CD.SYS_SUPP_CD">
         CALL TOBE_MES.SP_SYS_SUPP_GET(#{page_num},#{total_num},#{keyword},'','S')
     </select>
+    <select id="supp_cd_get_modal" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_SUPP_CD.SYS_SUPP_CD">
+        CALL TOBE_MES.SP_SYS_SUPP_GET(#{page_num},#{total_num},'',#{keyword},'S')
+    </select>
     <select id="supp_cd_get_count" resultType="Integer">
         CALL TOBE_MES.SP_SYS_SUPP_GET(#{page_num},#{total_num},#{keyword},'','C')
     </select>

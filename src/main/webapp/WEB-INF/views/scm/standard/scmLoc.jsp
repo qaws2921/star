@@ -22,8 +22,8 @@
                 <tr>
                     <td class="button-group">
                         <button class="btn" @click="scmLoc_get_btn(1)">조회</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="common_add">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
+                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="scmLoc_add">추가</button>
+                        <button class="btn" @click="scmLoc_delete">삭제</button>
                     </td>
                 </tr>
                 </tbody>
@@ -63,15 +63,16 @@
                             <table class="type03">
                                 <tr class="public-tr">
                                     <th scope="row" class="public">창고</th>
-                                    <th scope="row" class="content">{{ sys_common.code_type }}</th>
+                                    <th v-if="add_update_check==='I'" scope="row" class="content">{{ cargo_name }}</th>
+                                    <th v-if="add_update_check==='U'" scope="row" class="content">{{ cargo_name_post }}</th>
                                     <th scope="row" class="public">위치코드</th>
                                     <td>
-                                        <input type="text" v-if="add_update_check==='I'" v-model="sys_common.code_value" class="input-modal">
-                                        <input type="text" v-if="add_update_check==='U'" readonly v-model="sys_common.code_value" class="input-modal">
+                                        <input type="text" v-if="add_update_check==='I'" v-model="sys_loc_cd.loc_code" class="input-modal">
+                                        <input type="text" v-if="add_update_check==='U'" readonly v-model="sys_loc_cd.loc_code" class="input-modal">
                                     </td>
                                     <th scope="row" class="public">사용유무</th>
                                     <td>
-                                        <select v-model="sys_common.use_yn" class="select-modal">
+                                        <select v-model="sys_loc_cd.use_yn" class="select-modal">
                                             <option value="Y">Y</option>
                                             <option value="N">N</option>
                                         </select>
@@ -82,16 +83,16 @@
                             <table class="type03">
                                 <tr>
                                     <th scope="row" class="content">위치명</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name1"></td>
+                                    <td><input type="text" class="input-modal" v-model="sys_loc_cd.loc_name"></td>
                                     <th scope="row" class="content">비고</th>
-                                    <td><input type="text" class="input-modal" v-model="sys_common.code_name2"></td>
+                                    <td><input type="text" class="input-modal" v-model="sys_loc_cd.remark"></td>
                                 </tr>
                             </table>
                         </div>
 
                         <div class="modal-footer">
-                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('I')">저장</button>
-                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="common_au('U')">저장</button>
+                            <button v-if="add_update_check==='I'"  type="button" class="btn btn-primary modal-footer-btn" @click="scmLoc_au('I')">저장</button>
+                            <button v-if="add_update_check==='U'"  type="button" class="btn btn-primary modal-footer-btn" @click="scmLoc_au('U')">저장</button>
                             <button type="button" class="btn btn-primary modal-footer-btn" data-dismiss="modal">취소</button>
                         </div>
                     </div>
@@ -100,9 +101,9 @@
             </div>
         </div>
     </div>
-    <div id="app2">
-        <div @click="test()">{{ he }}</div>
-    </div>
+<%--    <div id="app2">--%>
+<%--        <div @click="_test3">{{ test }}</div>--%>
+<%--    </div>--%>
 </main>
 </div>
 </div>

@@ -1,6 +1,35 @@
 function jquery_scmPart(_this){
+    $('.modal-content').draggable();
     $(document).on("change","#scm_part_select1",function(){ // select 박스 바뀔때
         _this.part_group_change($("#scm_part_select1").val(),$("#scm_part_select1 option:checked").text());
+    });
+    $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.part_grp_code = $("#part_group_select").val();
+    });
+
+    $(document).on("change","#common_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.part_type = $("#common_select").val();
+    });
+
+
+    $(document).on("change","#cargo_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.cargo_code = $("#cargo_select").val();
+        if ($("#cargo_select").val() !== '') {
+            _this.sys_loc_cd_get($("#cargo_select").val());
+            $("#loc_select").select2();
+        }else {
+            _this.sys_bPart_cd.loc_code = '';
+        }
+
+
+    });
+
+    $(document).on("change","#loc_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.loc_code = $("#loc_select").val();
+    });
+
+    $(document).on("change","#common_unit_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.unit_code = $("#common_unit_select").val();
     });
 
 
