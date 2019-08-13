@@ -53,10 +53,7 @@
                             업체
                         </td>
                         <td>
-                            <select class="select-modal">
-                                <option>표준단가</option>
-                                <option>적용단가</option>
-                            </select>
+                            <input type="text" readonly  data-toggle="modal" data-target="#myModal3" v-model="supp_name">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             납품증번호
@@ -213,6 +210,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <%@include file="../supp_modal.jsp"%>
 </main>
 </div>
 </div>
