@@ -6,6 +6,7 @@ public class Page {
     private String keyword;
     private String keyword2;
     private String keyword3;
+    private String keyword4;
     private String start_date;
     private String end_date;
 
@@ -63,5 +64,13 @@ public class Page {
 
     public void setKeyword3(String keyword3) {
         this.keyword3 = keyword3;
+    }
+
+    public String getKeyword4() {
+        return keyword4;
+    }
+
+    public void setKeyword4(String keyword4) {
+        this.keyword4 = keyword4;
     }
 }

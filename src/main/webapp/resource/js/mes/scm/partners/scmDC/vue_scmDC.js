@@ -5,6 +5,8 @@ window.onload = function () {
         el:"#app",
         data: function () {
             return{
+
+                sys_common:[],
                 keyword:{
                     start_date:'',
                     end_date:'',
@@ -12,7 +14,23 @@ window.onload = function () {
                     keyword2:''
 
                 },
+                keyword_post:{
+                    start_date:'',
+                    end_date:'',
+                    keyword:'',
+                    keyword2:''
+
+                },
+
+                keyword_modal:{
+                    keyword:'',
+                    keyword2:'',
+                    keyword3:'',
+                    keyword4:''
+                },
+
                 supp_name:'',
+                supp_name_modal:'',
 
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
@@ -34,14 +52,22 @@ window.onload = function () {
                     update_date:"",
                     keyword:""
                 },
-                add_update_check:'I'    // 저장인지 수정인지 체크
+                add_update_check:'I',    // 저장인지 수정인지 체크
+                supp_bus_check:''
             }
         },
         mounted: function(){
             var _this = this;
+
+            _this.sys_common_get();
+
             _this.jqGrid(); // jqGrid 실행
-            _this.common_group_get(); // 코드그룹 가져오기
+            _this.sys_part_group_get(); // 코드그룹 가져오기
             jquery_scmDC(_this); // vue 에서 실행 못하는 jquery
+            _this.selectBox();
+
+            jqgrid_au_modal(_this);
+
             _this.jqGrid1(); // jqGrid 실행
             _this.jqGrid2(); // jqGrid 실행
 
@@ -50,10 +76,38 @@ window.onload = function () {
             this.EventBus.$on('supp', this.supp_bus);
         },
         methods:{
+            sys_common_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/common/get",
+                    type: 'POST',
+                    data:{keyword:"PART_TYPE"},
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_common = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+            _supp_bus_check:function (what){
+                var _this = this;
+                _this.supp_bus_check = what;
+            },
+
             supp_bus:function(code,name){
                 var _this =this;
+                if ( _this.supp_bus_check === 'M'){
+
                 _this.keyword.keyword = code;
                 _this.supp_name = name;
+                }else if( _this.supp_bus_check === 'S'){
+                    _this.keyword_modal.keyword2 = code;
+                    _this.supp_name_modal = name;
+                }
 
             },
              jqGrid:function(){ // jqGrid 메소드
@@ -64,12 +118,12 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
                     colModel:[
-                        {name:'code_type',index:'code_type',width:50,sortable: false, width:250},
-                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false, width:250},
-                        {name:'code_name1',index:'code_name1',width:100,sortable: false, width:250},
-                        {name:'code_name2',index:'code_name2',width:100,sortable: false, width:250},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:250},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false, width:222},
+                        {name:'dc_no',index:'dc_no',width:50,key: true,sortable: false,width:150},
+                        {name:'supp_code',index:'supp_code',width:100 ,sortable: false,width:150},
+                        {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
+                        {name:'work_date',index:'work_date',width:100,sortable: false,width:150},
+                        {name:'in_type',index:'in_type',width:100,sortable: false,width:150},
+                        {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
                     ],
                     autowidth: true,
                     shrinkToFit:false,
@@ -142,12 +196,12 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
                     colModel:[
-                        {name:'code_type',index:'code_type',width:50,sortable: false,width:150},
-                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false,width:150},
-                        {name:'code_name1',index:'code_name1',width:100,sortable: false,width:150},
-                        {name:'code_name2',index:'code_name2',width:100,sortable: false,width:150},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:150},
+                        {name:'dc_no',index:'dc_no',width:50,key: true,sortable: false,width:150},
+                        {name:'supp_code',index:'supp_code',width:100 ,sortable: false,width:150},
+                        {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
+                        {name:'work_date',index:'work_date',width:100,sortable: false,width:150},
+                        {name:'in_type',index:'in_type',width:100,sortable: false,width:150},
+                        {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
                     ],
                     width:926,
                     shrinkToFit:false,
@@ -174,20 +228,23 @@ window.onload = function () {
                 }).navGrid("#jqGridPager2", { search: false, add: false, edit: false, del: false});
             },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_group_select").select2();
+                 $("#common_select").select2();
             },
-            common_group_get:function(){ // 코드그룹 가져오는 메소드
-                 var _this =this;
-                 axios
-                     .post("sysCommon/common/group/get")
-                     .then(function(response){
-                        _this.common_group_list = response.data;
-                        _this.common_group_code = response.data[0].group_code;
-                        _this.sys_common.code_type = response.data[0].group_code;
-                        _this.common_group_name = response.data[0].group_name;
+            sys_part_group_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/part/group/get",
+                    type: 'POST',
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_part_group = data;
+                    },
+                    error: function () {
 
+                    }
+                });
 
-                 });
             },
             common_group_change:function(code,name){ // select 박스 바뀔때
                 var _this = this;
@@ -197,17 +254,23 @@ window.onload = function () {
                  _this.common_group_name = name;
 
             },
-            common_get_btn:function (page) { // 조회 버튼
+            modal_get_btn:function(page){
                 var _this = this;
-                _this.common_group_code_post =_this.common_group_code;
-
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#scmDC_au_modal1').setGridParam({ url: 'scmDC/SP_SCM_DC_BOX_READY_GET',postData: _this.keyword_modal ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            common_get_btn2:function (page) { // 조회 버튼
+
+            scmDC_btn:function (page) { // 조회 버튼
+                var _this = this;
+                _this.keyword_post = _this.keyword;
+
+                $('#jqGrid').setGridParam({ url: 'scmDC/get',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+
+            },
+            scmDC_btn2:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmDC/get',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -232,11 +295,11 @@ window.onload = function () {
                                 } else {
                                     $('#myModal').modal("hide");
                                     if (au === 'I') {
-                                        _this.common_get_btn($("#jqGrid").getGridParam('page'));
+                                        _this.scmDC_btn($("#jqGrid").getGridParam('page'));
 
                                     } else {
 
-                                        _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                                        _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
                                     }
                                 }
                             },
@@ -325,7 +388,7 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.common_get_btn2($("#jqGrid").getGridParam('page'));
+                            _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
