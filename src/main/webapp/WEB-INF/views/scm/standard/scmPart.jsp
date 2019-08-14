@@ -42,8 +42,8 @@
                         <td class="top-td-la" style="padding-top: 10px;">
                             품목그룹
                         </td>
-                        <td class="td-width-200">
-                            <select id="scm_part_select1" class="select-width-154">
+                        <td class="w-200px">
+                            <select id="scm_part_select1" class="select2-input">
                                 <option value="">전체</option>
                                 <option v-for="(spg , index) in sys_part_group" :key="index" :value="spg.part_grp_code">
                                     {{ spg.part_grp_name }}
@@ -56,7 +56,7 @@
                             품목코드
                         </td>
                         <td>
-                            <input v-model="part_code">
+                            <input class="select2-input" v-model="part_code">
                         </td>
 
 

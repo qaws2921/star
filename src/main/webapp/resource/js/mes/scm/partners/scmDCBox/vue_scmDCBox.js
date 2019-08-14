@@ -152,15 +152,13 @@ window.onload = function () {
                 var _this = this;
                  _this.common_group_code = code;
                  _this.sys_common.code_type=code;
-
                  _this.common_group_name = name;
-
             },
             common_get_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.common_group_code_post =_this.common_group_code;
 
-                $('#jqGrid1').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid1').setGridParam({ url: 'scmDCBox/SP_SYS_BPART_GET',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_get_btn2:function (page) { // 조회 버튼

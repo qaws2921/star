@@ -8,4 +8,8 @@ import org.springframework.stereotype.Service;
 public class SCMDCBox_SERVICE {
     @Autowired
     private SCMDCBox_Mapper scmdcBox_mapper;
+
+//    public List<> SP_SYS_BPART_GET(){
+//        return scmdcBox_mapper.SP_SYS_BPART_GET();
+//    }
 }

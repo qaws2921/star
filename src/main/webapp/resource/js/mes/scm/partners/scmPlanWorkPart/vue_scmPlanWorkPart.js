@@ -57,7 +57,7 @@ window.onload = function () {
                     ],
                     autowidth: true,
                     shrinkToFit:false,
-                    height:450,
+                    height:700,
                     pager:'#jqGridPager',
                     jsonReader: {cell:""},
                     rowNum: 100,

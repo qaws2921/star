@@ -299,7 +299,7 @@ font-size: 9px;
 .top-td-la{width: 100px; text-align: center; background-color: #e0f2ff; color: #3a5c8a; font-weight: 600; font-size: 11px; padding-top: 12px;}
 .table-border-bl{border: solid 1px #cccccc; border-top: 2px solid #336699; width: 100%;}
 .table-border-bl2{border: solid 1px #999; border-top: 2px solid #005cbf; width: 950px;}
-.content-border{border: #545b6255 solid 0.005mm; padding-top: 10px; padding-bottom: 30px;}
+.content-border{border: #545b6255 solid 0.005mm; padding-top: 10px; padding-bottom: 10px; height: 785px}
 .font-size-18{font-size: 15px; font-weight: 700;}
 .pa-b-20{padding-bottom: 20px;}
 .file-tree{display: none;}
@@ -493,6 +493,7 @@ table.type03 td {
     width: 144px;
     text-align: center;
 }
+/* 넓이 */
 .width-10{
     width: 10%;
 }
@@ -508,6 +509,112 @@ table.type03 td {
 .width-50{
     width: 50%;
 }
+.width-60{
+    width: 60%;
+}
+.width-70{
+    width: 70%;
+}
+.width-80{
+    width: 80%;
+}
+.width-90{
+    width: 90%;
+}
+.width-100{
+    width: 100%;
+}
+.w-50px{
+    width: 50px;
+}
+.w-75px{
+    width: 75px;
+}
+.w-100px{
+    width: 100px;
+}
+.w-150px{
+    width: 150px;
+}
+.w-200px{
+    width: 200px;
+}
+.w-250px{
+    width: 250px;
+}
+.w-300px{
+    width: 300px;
+}
+.w-350px{
+    width: 350px;
+}
+.w-400px{
+    width: 400px;
+}
+.w-450px{
+    width: 450px;
+}
+.w-500px{
+    width: 500px;
+}
+/* 넓이 */
+/* padding */
+.pt-5{
+    padding-top: 5px;
+}
+.pt-10{
+    padding-top: 10px;
+}
+.pt-15{
+    padding-top: 15px;
+}
+.pt-20{
+    padding-top: 20px;
+}
+.pt-25{
+    padding-top: 25px;
+}
+.pt-30{
+    padding-top: 30px;
+}
+.pb-5{
+    padding-bottom: 5px;
+}
+.pb-10{
+    padding-bottom: 10px;
+}
+.pb-15{
+    padding-bottom: 15px;
+}
+.pb-20{
+    padding-bottom: 20px;
+}
+.pb-25{
+    padding-bottom: 25px;
+}
+.pb-30{
+    padding-bottom: 30px;
+}
+.p-t-b-5{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.p-t-b-15{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.p-t-b-20{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.p-t-b-25{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}.p-t-b-30{
+     padding-top: 30px;
+     padding-bottom: 30px;
+ }
+/* padding */
 .search-input{
     height: 20px;
     width: 50%;
@@ -572,11 +679,11 @@ table.db-modal td {
     font-size: 9px;
 }
 /* end */
-
-.select-width-154{
-    width: 154px;
-}
-.td-width-200{
+.select2-input{
+    font-size: 9px;
+    text-align: center;
+    font-weight: 700;
+    height: 28px;
     width: 200px;
 }
 .btn-529fff{
@@ -588,7 +695,4 @@ table.db-modal td {
     background-color: #e74344;
     border: 1px solid #e74344;
 
-}
-.pt-10{
-    padding-top: 10px;
 }

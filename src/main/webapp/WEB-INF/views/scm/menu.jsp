@@ -119,7 +119,7 @@
                         <ul class="file-tree user">
 
                             <li>
-                                <a class="sysUser" href="sysUser?active=scm&check=user">고객계획대비 소요량</a>
+                                <a class="sysUser" href="#">고객계획대비 소요량</a>
                             </li>
                             <li>
                                 <a class="scmPlanWorkPart" href="scmPlanWorkPart?active=scm&check=partners">생산계획대비 소요량</a>
@@ -128,10 +128,10 @@
                                 <a class="scmDC" href="scmDC?active=scm&check=partners">납품증관리</a>
                             </li>
                             <li>
-                                <a class="sysUser" href="sysUser?active=scm&check=user">부품식별표 인쇄</a>
+                                <a class="scmDCBox" href="scmDCBox?active=scm&check=partners">부품식별표 인쇄</a>
                             </li>
                             <li>
-                                <a class="sysUserSupp" href="sysUserSupp?active=scm&check=user">납품현황</a>
+                                <a class="scmDCList" href="scmDCList?active=scm&check=partners">납품현황</a>
                             </li>
                             <li>
                                 <a class="scmClosePart" href="scmClosePart?active=scm&check=partners">마감현황</a>

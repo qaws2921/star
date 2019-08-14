@@ -37,7 +37,7 @@
                                                 업체코드/업체명
                                             </td>
                                             <td>
-                                                <select id="supp_select" class="select-width-154">
+                                                <select id="supp_select" class="select2-input">
                                                     <option value="">전체</option>
                                                     <option v-for="(ssc,index) in sys_supp_cd" :key="index" :value="ssc.supp_code">{{ ssc.supp_code }}/{{ssc.supp_name}}</option>
                                                 </select>

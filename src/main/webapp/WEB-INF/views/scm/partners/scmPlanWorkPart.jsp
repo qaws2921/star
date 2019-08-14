@@ -40,7 +40,7 @@
                             조회일자
                         </td>
                         <td style="width: 500px">
-                            <input class="input-cal" id="date_input1">
+                            <input class="input-modal" id="date_input1">
 
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">

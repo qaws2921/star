@@ -1,3 +1,4 @@
+// vue에서 시작하면 실행시킴.
 function jquery_scmDCBox(_this){
     $("#date_input").datepicker(date);
 }
