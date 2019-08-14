@@ -188,7 +188,7 @@ window.onload = function () {
                 var cargo_grp_code = _this.sys_cargo_cd.cargo_grp_code;
                 for (i=0;i < _this.common_cargo_type_get.length; i++){
                     if (cargo_grp_code === _this.common_cargo_type_get[i].code_value){
-                        _this.common_cargo_type_name_other = this.common_cargo_type_get[i].code_name1;
+                        _this.common_cargo_type_name_other = _this.common_cargo_type_get[i].code_name1;
                     }
                 }
                 _this.sys_cargo_cd.cargo_grp_code = _this.common_cargo_type_code_post;
@@ -278,3 +278,4 @@ window.onload = function () {
         }
     });
 }
+
