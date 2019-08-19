@@ -54,14 +54,17 @@ function jqgrid_au_modal(_this) {
    $("#scmDC_au_modal1").jqGrid({
         datatype: "json",
         mtype: 'POST',
-        colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+        colNames:['품목그룹','품번','품명','수량','부품식별표','LOTNO'],
         colModel:[
-            {name:'dc_no',index:'dc_no',width:50,key: true,sortable: false,width:150},
-            {name:'supp_code',index:'supp_code',width:100 ,sortable: false,width:150},
-            {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
-            {name:'work_date',index:'work_date',width:100,sortable: false,width:150},
-            {name:'in_type',index:'in_type',width:100,sortable: false,width:150},
-            {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
+            {name:'part_grp_name',index:'part_grp_name',width:50,sortable: false,width:150},
+            {name:'part_code',index:'part_code',width:100 ,sortable: false,width:150},
+            {name:'part_name',index:'part_name',width:100,sortable: false,width:150},
+            {name:'pack_qty',index:'pack_qty',width:100,sortable: false,width:150},
+            {name:'box_no',index:'box_no',width:100,key: true,sortable: false,width:150},
+            {name:'lot_no',index:'lot_no',width:100,sortable: false,width:150},
+            // {name:'lot_no',index:'lot_no',width:100,sortable: false,width:150, formatter: function (cellValue, option) {
+            //         return '<input type="text" size="7" name="txtBox" id="txt_' + option.rowId +'"/>';
+            //     }},
         ],
        width:926,
         shrinkToFit:false,
@@ -72,39 +75,31 @@ function jqgrid_au_modal(_this) {
         rowList: [100, 200, 300, 400],
         viewrecords: true,
         multiselect:true,
-        beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
-            var $myGrid = $(this),
-                i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
-                cm = $myGrid.jqGrid('getGridParam', 'colModel');
-            return (cm[i].name === 'cb');
-        },
-        ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
-            var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-            _this.common_edit(data); // 데이터 가공
-            _this.common_update(); // 수정창 띄어주기
 
-        }
 
     }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
 
 
 
     $("#scmDC_au_modal2").jqGrid({
-        datatype: "json",
-        mtype: 'POST',
-        colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+
+
+        colNames:['품목그룹','품번','품명','수량','부품식별표','LOTNO'],
         colModel:[
-            {name:'dc_no',index:'dc_no',width:50,key: true,sortable: false,width:150},
-            {name:'supp_code',index:'supp_code',width:100 ,sortable: false,width:150},
-            {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
-            {name:'work_date',index:'work_date',width:100,sortable: false,width:150},
-            {name:'in_type',index:'in_type',width:100,sortable: false,width:150},
-            {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
+            {name:'part_grp_name',index:'part_grp_name',width:50,sortable: false,width:150},
+            {name:'part_code',index:'part_code',width:100 ,sortable: false,width:150},
+            {name:'part_name',index:'part_name',width:100,sortable: false,width:150},
+            {name:'pack_qty',index:'pack_qty',width:100,sortable: false,width:150},
+            {name:'box_no',index:'box_no',width:100,key: true,sortable: false,width:150},
+            {name:'lot_no',index:'lot_no',width:100,sortable: false,width:150},
+            // {name:'lot_no',index:'lot_no',width:100,sortable: false,width:150, formatter: function (cellValue, option) {
+            //         return '<input type="text" size="7" name="txtBox" id="txt_' + option.rowId +'"/>';
+            //     }},
         ],
         width:926,
         shrinkToFit:false,
         height:150,
-        pager:'#scmDC_au_modal_page2',
+
         jsonReader: {cell:""},
         rowNum: 100,
         rowList: [100, 200, 300, 400],

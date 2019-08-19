@@ -116,7 +116,7 @@
                                                 품목그룹
                                             </td>
                                             <td>
-                                                <select id="part_group_select" class="select-width-154"  v-model="keyword_modal.keyword3">
+                                                <select id="part_group_select"  v-model="keyword_modal.keyword3">
                                                     <option value="">선택안함</option>
                                                     <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
                                                 </select>
@@ -135,11 +135,11 @@
                                             <div id="scmDC_au_modal_page1"></div>
                                             <span class="oi oi-person"></span>
                                             <div style="width: 100%; text-align: center" class="mg-20">
-                                                <button class="btn"><i class="fas fa-arrow-up"></i></button>
-                                                <button class="btn"><i class="fas fa-arrow-down"></i></button>
+                                                <button @click="btn_up" class="btn"><i class="fas fa-arrow-up"></i></button>
+                                                <button @click="btn_down" class="btn"><i class="fas fa-arrow-down"></i></button>
                                             </div>
                                             <table id="scmDC_au_modal2"></table>
-                                            <div id="scmDC_au_modal_page2"></div>
+
                                             <span class="oi oi-person"></span>
                                         </div>
                                     </div>

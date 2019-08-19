@@ -6,7 +6,9 @@ window.onload = function () {
         data: function () {
             return{
 
-                sys_common:[],
+                modal_list:[],
+
+                sys_part_group:[],
                 keyword:{
                     start_date:'',
                     end_date:'',
@@ -59,7 +61,7 @@ window.onload = function () {
         mounted: function(){
             var _this = this;
 
-            _this.sys_common_get();
+
 
             _this.jqGrid(); // jqGrid 실행
             _this.sys_part_group_get(); // 코드그룹 가져오기
@@ -76,22 +78,70 @@ window.onload = function () {
             this.EventBus.$on('supp', this.supp_bus);
         },
         methods:{
-            sys_common_get:function(){
-                var _this = this;
-                $.ajax({
-                    url: "common/common/get",
-                    type: 'POST',
-                    data:{keyword:"PART_TYPE"},
-                    async: true,
-                    dataType: "json",
-                    success: function (data) {
-                        _this.sys_common = data;
-                    },
-                    error: function () {
+            btn_up:function(){
+                var _this =this;
+                var ids2 = $("#scmDC_au_modal2").getGridParam('selarrrow').slice();
+
+                for (var i =0; i<ids2.length;i++) {
+
+                    $('#scmDC_au_modal2').jqGrid('delRowData', ids2[i]);
+                }
+                $('#scmDC_au_modal2').jqGrid("resetSelection");
+
+
+            },
+
+
+            btn_down:function(){
+                var _this =this;
+                var ids = $("#scmDC_au_modal1").getGridParam('selarrrow').slice();
+
+                var ids2 = $("#scmDC_au_modal2").jqGrid("getDataIDs");
+                var overlap = 0;
+
+                for (var i =0; i<ids.length;i++){
+                    for (var j =0; j<ids2.length;j++){
+                        if (ids[i] === ids2[j]){
+                            ids.splice(i,1);
+                            overlap++;
+                        }
 
                     }
-                });
+                }
 
+
+
+
+                var data;
+                for (var i =0; i<ids.length;i++){
+
+                    data = $('#scmDC_au_modal1').jqGrid('getRowData', ids[i]);
+                    _this.modal_list.push(data);
+
+
+
+
+                }
+                callback(function () {
+
+                    if (overlap !== 0){
+                        alert(overlap+"개 중복");
+                    }
+
+                    for(var i =0; i<_this.modal_list.length;i++){
+
+                        $('#scmDC_au_modal2').jqGrid('addRowData',_this.modal_list[i].box_no,_this.modal_list[i]);
+
+                    }
+                    $('#scmDC_au_modal1').jqGrid("resetSelection");
+
+                    _this.modal_list = [];
+
+                    // $('#scmDC_au_modal2').clearGridData();
+                    // $('#scmDC_au_modal2').addJSONData(_this.modal_list);
+
+
+                });
             },
             _supp_bus_check:function (what){
                 var _this = this;
@@ -228,7 +278,7 @@ window.onload = function () {
                 }).navGrid("#jqGridPager2", { search: false, add: false, edit: false, del: false});
             },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_select").select2();
+                 $("#part_group_select").select2();
             },
             sys_part_group_get:function(){
                 var _this = this;
@@ -416,4 +466,7 @@ window.onload = function () {
 
         }
     });
+}
+function callback(cb) {
+    cb();
 }
