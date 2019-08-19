@@ -86,5 +86,6 @@ public class SCMDC_SERVICE {
         return scmdc_mapper.scmDC_SP_SCM_DC_ADD_au(p);
 
 
+
     }
 }
