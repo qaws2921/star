@@ -89,7 +89,7 @@
                                         <td class="button-group">
                                             <button class="btn" @click="modal_get_btn(1)">조회</button>
                                             <button class="btn" @click="common_get_btn(1)">삭제</button>
-                                            <button class="btn" @click="common_get_btn(1)">저장</button>
+                                            <button class="btn" @click="modal_add_btn('I')">저장</button>
                                         </td>
                                     </tr>
                                     </tbody>

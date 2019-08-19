@@ -5,6 +5,7 @@ import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC.SCM_DCS;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOXS;
 import com.tobe.mes.tobesystem.Bean.Page;
+import com.tobe.mes.tobesystem.Bean.Result;
 import com.tobe.mes.tobesystem.Mapper.Scm.Partners.SCMDC_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,5 +61,30 @@ public class SCMDC_SERVICE {
 
             return new SCM_DC_BOXS(scm_dc_boxList,total,(int)(page*1),scmDC_SP_SCM_DC_BOX_READY_GET_get_count);
         }
+    }
+
+    public Result scmDC_SP_SCM_DC_ADD_au(Page p) {
+
+        String date = p.getKeyword().replace("-","");
+
+        p.setKeyword(date);
+
+        char a = (char) 5;
+        char b = (char) 4;
+        String box_no[] = p.getKeyword5().split(",");
+        String code= "";
+        for (int i = 0; i < box_no.length; i++) {
+            if (i == 0) {
+                code += box_no[i];
+            } else {
+                code += b + box_no[i];
+            }
+        }
+
+        p.setKeyword5(code);
+
+        return scmdc_mapper.scmDC_SP_SCM_DC_ADD_au(p);
+
+
     }
 }
