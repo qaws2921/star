@@ -17,12 +17,13 @@
     <select id="scmDC_SP_SCM_DC_BOX_READY_GET_get_count" resultType="Integer">
         CALL TOBE_MES.SP_SCM_DC_BOX_READY_GET(#{page_num},#{total_num},#{keyword},#{keyword2},#{keyword3},'C')
     </select>
-    <select id="cargo_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_CARGO_ADD(#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})
+    <select id="scmDC_SP_SCM_DC_ADD_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SCM_DC_ADD(#{keyword},#{keyword2},#{keyword5},#{keyword4},#{user_code})
     </select>
 
     <select id="cargo_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_CARGO_DEL(#{code})
+
     </select>
 
 </mapper>

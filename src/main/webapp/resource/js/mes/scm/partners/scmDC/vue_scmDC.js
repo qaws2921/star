@@ -28,8 +28,11 @@ window.onload = function () {
                     keyword:'',
                     keyword2:'',
                     keyword3:'',
-                    keyword4:''
+                    keyword4:'',
+                    keyword5:'',
+                    keyword6:''
                 },
+                supp_code:'',
 
                 supp_name:'',
                 supp_name_modal:'',
@@ -58,6 +61,15 @@ window.onload = function () {
                 supp_bus_check:''
             }
         },
+        watch: {
+
+            supp_code: function () {
+                $("#scmDC_au_modal2").jqGrid('clearGridData');
+
+            }
+        },
+
+
         mounted: function(){
             var _this = this;
 
@@ -78,6 +90,63 @@ window.onload = function () {
             this.EventBus.$on('supp', this.supp_bus);
         },
         methods:{
+            add_uadate:function(keyword){
+
+
+            },
+
+
+            modal_add_btn:function(au){
+                var _this = this;
+                if (_this.effectiveness3()){
+                    var ids2 = $("#scmDC_au_modal2").jqGrid("getDataIDs").slice();
+                    var box_no = ids2.join(",");
+                    _this.keyword_modal.keyword5 = box_no;
+                    _this.keyword_modal.keyword6 = au;
+
+                    if (box_no !== ''){
+                        $.ajax({
+                            url: "scmDC/SP_SCM_DC_ADD",
+                            data: _this.keyword_modal,
+                            type: 'POST',
+                            async: true,
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.result === 'NG'){
+                                    alert(data.message);
+                                } else {
+                                    $('#myModal').modal("hide");
+                                    if (au === 'I') {
+                                        _this.scmDC_btn(1);
+
+                                    } else {
+
+                                        _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
+                                    }
+                                    $("#scmDC_au_modal1").jqGrid('clearGridData');
+                                    $("#scmDC_au_modal2").jqGrid('clearGridData');
+                                }
+                            },
+                            error: function () {
+                                if (au === 'I') {
+                                    alert("저장실패");
+
+                                } else {
+
+                                    alert("수정실패");
+                                }
+                            }
+                        });
+                    } else {
+                        alert("값을 선택해주세요");
+                    }
+
+
+                }
+
+            },
+
+
             btn_up:function(){
                 var _this =this;
                 var ids2 = $("#scmDC_au_modal2").getGridParam('selarrrow').slice();
@@ -156,6 +225,7 @@ window.onload = function () {
                 _this.supp_name = name;
                 }else if( _this.supp_bus_check === 'S'){
                     _this.keyword_modal.keyword2 = code;
+                    _this.supp_code = code;
                     _this.supp_name_modal = name;
                 }
 
@@ -306,7 +376,9 @@ window.onload = function () {
             },
             modal_get_btn:function(page){
                 var _this = this;
-                $('#scmDC_au_modal1').setGridParam({ url: 'scmDC/SP_SCM_DC_BOX_READY_GET',postData: _this.keyword_modal ,datatype: "json", page: page}).trigger("reloadGrid");
+                if (_this.effectiveness2()){
+                    $('#scmDC_au_modal1').setGridParam({ url: 'scmDC/SP_SCM_DC_BOX_READY_GET',postData: _this.keyword_modal ,datatype: "json", page: page}).trigger("reloadGrid");
+                }
 
             },
 
@@ -462,7 +534,32 @@ window.onload = function () {
                 }else {
                     return true;
                 }
+            },
+            effectiveness2:function () { // 유효성 검사
+                var _this = this;
+                if (_this.keyword_modal.keyword2 === ''){
+                    alert("협럭업체를 선택해주세요");
+                    return false;
+                }else {
+                    return true;
+                }
+            },
+            effectiveness3:function () { // 유효성 검사
+                var _this = this;
+                if (_this.keyword_modal.keyword === ''){
+                    alert("날짜를 선택해주세요");
+                    return false;
+                }else if (_this.keyword_modal.keyword2 === ''){
+                    alert("협럭업체를 선택해주세요");
+                    return false;
+                }else if (_this.keyword_modal.keyword4 === ''){
+                    alert("비고를 입력해주세요");
+                    return false;
+                }else {
+                    return true;
+                }
             }
+
 
         }
     });

@@ -105,18 +105,7 @@ function jqgrid_au_modal(_this) {
         rowList: [100, 200, 300, 400],
         viewrecords: true,
         multiselect:true,
-        beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
-            var $myGrid = $(this),
-                i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
-                cm = $myGrid.jqGrid('getGridParam', 'colModel');
-            return (cm[i].name === 'cb');
-        },
-        ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
-            var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-            _this.common_edit(data); // 데이터 가공
-            _this.common_update(); // 수정창 띄어주기
 
-        }
 
     }).navGrid("#jqGridPager", { search: false, add: false, edit: false, del: false});
 
