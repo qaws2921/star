@@ -61,11 +61,11 @@ window.onload = function () {
                     mtype: 'POST',
                     colNames:['품목그룹','품번','품명','규격','단위'],
                     colModel:[
-                        {name:'code_type',index:'code_type',width:50,sortable: false,width:100,align:'center'},
-                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false,width:100,align:'center'},
-                        {name:'code_name1',index:'code_name1',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name2',index:'code_name2',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
+                        {name:'part_grp_code',index:'part_grp_code',width:50,sortable: false,width:100,align:'center'},
+                        {name:'part_code',index:'part_code',width:100,key: true ,sortable: false,width:100,align:'center'},
+                        {name:'part_name',index:'part_name',width:100,sortable: false,width:100,align:'center'},
+                        {name:'spec',index:'spec',width:100,sortable: false,width:100,align:'center'},
+                        {name:'unit_code',index:'unit_code',width:100,sortable: false,width:100,align:'center'},
                     ],
                     autowidth: true,
                     shrinkToFit:false,
@@ -157,14 +157,12 @@ window.onload = function () {
             common_get_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.common_group_code_post =_this.common_group_code;
-
-                $('#jqGrid1').setGridParam({ url: 'scmDCBox/SP_SYS_BPART_GET',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
-
+                $('#jqGrid1').setGridParam({ url: 'scmPart/bPart/get',postData: { keyword: _this.sys_part_group_code_post,keyword2:_this.part_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
             },
             common_get_btn2:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid1').setGridParam({ url: 'sysCommon/common/get',postData: { code_type: _this.common_group_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid1').setGridParam({ url: 'scmPart/bPart/get',postData: { keyword: _this.sys_part_group_code_post,keyword2:_this.part_code_post} ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
 

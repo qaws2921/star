@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/partners/scmDCBox//vue_scmDCBox.js"></script>
+<script src="resource/js/mes/scm/partners/scmDCBox/vue_scmDCBox.js"></script>
 <script src="resource/js/mes/scm/partners/scmDCBox/jquery_scmDCBox.js"></script>
 <script>
     jQuery(document).ready(function() {
@@ -50,7 +50,7 @@
                             <input type="text" readonly class="input-modal" data-toggle="modal" data-target="#myModal3" v-model="supp_name">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            납품증번호
+                            품목그룹
                         </td>
                         <td>
                             <input type="text" class="input-modal">

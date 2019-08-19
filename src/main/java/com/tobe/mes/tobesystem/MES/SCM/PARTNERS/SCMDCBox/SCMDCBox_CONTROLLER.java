@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SCMDCBox_CONTROLLER {
-    @RequestMapping("/scmDCBox")
+    @RequestMapping("scmDCBox")
     public String scmDCBox(){
         return "scm/partners/scmDCBox";
     }
+
 }

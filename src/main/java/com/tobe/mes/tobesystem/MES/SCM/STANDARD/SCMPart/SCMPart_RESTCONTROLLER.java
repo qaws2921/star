@@ -14,7 +14,7 @@ public class SCMPart_RESTCONTROLLER {
     @Autowired
     private SCMPart_SERVICE scmPart_service;
 
-    @RequestMapping(value = "/scmPart/bPart/get", method = RequestMethod.POST) // 코드 리스트 가져오기
+    @RequestMapping(value = "/scmPart/bPart/get") // 코드 리스트 가져오기
     public SYS_BPART_CDS bPart_get (Double page, Double rows, Page p){
         return scmPart_service.bPart_get(page,rows,p);
     }
