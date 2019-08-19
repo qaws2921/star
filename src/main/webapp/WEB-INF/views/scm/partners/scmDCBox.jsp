@@ -41,7 +41,7 @@
                             납품일자
                         </td>
                         <td>
-                            <input class="input-modal" id="date_input">
+                            <input class="input-modal" id="date" v-model="date">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             업체
@@ -53,7 +53,10 @@
                             품목그룹
                         </td>
                         <td>
-                            <input type="text" class="input-modal">
+                            <select id="part_group_select" class="select2-input"  v-model="sys_bPart_cd.part_grp_code">
+                                <option value="">선택안함</option>
+                                <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
+                            </select>
                         </td>
                     </tr>
                 </table>

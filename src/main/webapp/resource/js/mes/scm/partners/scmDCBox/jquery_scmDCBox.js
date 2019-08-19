@@ -1,7 +1,14 @@
 // vue에서 시작하면 실행시킴.
 function jquery_scmDCBox(_this){
     $("#date_input").datepicker(date);
+    $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
+        _this.sys_bPart_cd.part_grp_code = $("#part_group_select").val();
+    });
+    $( "#date" ).datepicker(date).on('change', function(e) {
+        _this.keyword.date = e.target.value;
+    });
 }
+
 
 var date={
     dateFormat: 'yy-mm-dd',

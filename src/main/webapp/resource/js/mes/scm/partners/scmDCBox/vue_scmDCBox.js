@@ -11,6 +11,7 @@ window.onload = function () {
                     keyword2:''
 
                 },
+                sys_part_group:[],
                 supp_name:'',
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
@@ -32,11 +33,33 @@ window.onload = function () {
                     update_date:"",
                     keyword:""
                 },
-                add_update_check:'I'    // 저장인지 수정인지 체크
+                sys_bPart_cd:{
+                    part_code:'',
+                    part_name:'',
+                    alc_code:'',
+                    part_grp_code:'',
+                    part_type:'',
+                    cargo_code:'',
+                    loc_code:'',
+                    supp_code:'',
+                    supp_name:'',
+                    spec:'',
+                    unit_code:'',
+                    pack_qty:0,
+                    max_qty:'',
+                    min_qty:'',
+                    user_code:'',
+                    user_name:'',
+                    create_date:'',
+                    update_date:'',
+                    keyword:''
+                }
             }
         },
         mounted: function(){
             var _this = this;
+            _this.sys_part_group_get();
+            _this.selectBox();
             _this.common_group_get(); // 코드그룹 가져오기
             jquery_scmDCBox(_this); // vue 에서 실행 못하는 jquery
             _this.jqGrid1(); // jqGrid 실행
@@ -135,7 +158,23 @@ window.onload = function () {
                 }).navGrid("#jqGridPager2", { search: false, add: false, edit: false, del: false});
             },
             selectBox:function(){  // select2 실행 메소드
-                 $("#common_group_select").select2();
+                $("#part_group_select").select2();
+            },
+            sys_part_group_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/part/group/get",
+                    type: 'POST',
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        _this.sys_part_group = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
             },
             common_group_get:function(){ // 코드그룹 가져오는 메소드
                  var _this =this;
