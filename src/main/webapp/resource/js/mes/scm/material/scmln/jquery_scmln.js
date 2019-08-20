@@ -103,6 +103,14 @@ var lastsel2;
                         {
                             type: 'focusout',
                             fn: function (e) {
+
+                                if ($("#"+lastsel2+"_in_qty").val()){
+                                    if (isNaN($("#"+lastsel2+"_in_qty").val())){
+
+                                        return false;
+                                    }
+                                }
+
                                 $("#au_modal2").jqGrid('saveRow', lastsel2);
                             }
                         }
