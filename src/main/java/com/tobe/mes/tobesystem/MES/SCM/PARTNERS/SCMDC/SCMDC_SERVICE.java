@@ -6,7 +6,6 @@ import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOXS;
 import com.tobe.mes.tobesystem.Bean.Page;
 import com.tobe.mes.tobesystem.Bean.Result;
-import com.tobe.mes.tobesystem.Mapper.Scm.Partners.SCMDC_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
