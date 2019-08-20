@@ -13,24 +13,21 @@ window.onload = function () {
                     start_date:'',
                     end_date:'',
                     keyword:'',
-                    keyword2:''
+
 
                 },
                 keyword_post:{
                     start_date:'',
                     end_date:'',
                     keyword:'',
-                    keyword2:''
+
 
                 },
 
                 keyword_modal:{
                     keyword:'',
                     keyword2:'',
-                    keyword3:'',
-                    keyword4:'',
-                    keyword5:'',
-                    keyword6:''
+
                 },
                 supp_code:'',
 
@@ -77,7 +74,7 @@ window.onload = function () {
 
             _this.jqGrid(); // jqGrid 실행
             _this.sys_part_group_get(); // 코드그룹 가져오기
-            jquery_scmDC(_this); // vue 에서 실행 못하는 jquery
+            jquery_scmln(_this); // vue 에서 실행 못하는 jquery
             _this.selectBox();
 
             jqgrid_au_modal(_this);
@@ -112,12 +109,12 @@ window.onload = function () {
                                 } else {
                                     $('#myModal').modal("hide");
                                     if (au === 'I') {
-                                        _this.scmDC_btn(1);
+                                        _this.main_gat_btn(1);
 
 
                                     } else {
 
-                                        _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
+                                        _this.main_gat_btn2($("#jqGrid").getGridParam('page'));
                                     }
                                     _this.reset();
 
@@ -146,21 +143,23 @@ window.onload = function () {
 
             btn_up:function(){
                 var _this =this;
-                var ids2 = $("#scmDC_au_modal2").getGridParam('selarrrow').slice();
+                var ids2 = $("#au_modal2").getGridParam('selarrrow').slice();
 
                 for (var i =0; i<ids2.length;i++) {
 
-                    $('#scmDC_au_modal2').jqGrid('delRowData', ids2[i]);
+                    $('#au_modal2').jqGrid('delRowData', ids2[i]);
                 }
-                $('#scmDC_au_modal2').jqGrid("resetSelection");
+                $('#au_modal2').jqGrid("resetSelection");
 
 
             },
+
+
             btn_down:function(){
                 var _this =this;
-                var ids = $("#scmDC_au_modal1").getGridParam('selarrrow').slice();
+                var ids = $("#au_modal1").getGridParam('selarrrow').slice();
 
-                var ids2 = $("#scmDC_au_modal2").jqGrid("getDataIDs");
+                var ids2 = $("#au_modal2").jqGrid("getDataIDs");
                 var overlap = 0;
 
                 for (var i =0; i<ids.length;i++){
@@ -172,10 +171,14 @@ window.onload = function () {
 
                     }
                 }
+
+
+
+
                 var data;
                 for (var i =0; i<ids.length;i++){
 
-                    data = $('#scmDC_au_modal1').jqGrid('getRowData', ids[i]);
+                    data = $('#au_modal1').jqGrid('getRowData', ids[i]);
                     _this.modal_list.push(data);
 
 
@@ -190,10 +193,10 @@ window.onload = function () {
 
                     for(var i =0; i<_this.modal_list.length;i++){
 
-                        $('#scmDC_au_modal2').jqGrid('addRowData',_this.modal_list[i].box_no,_this.modal_list[i]);
+                        $('#au_modal2').jqGrid('addRowData',_this.modal_list[i].part_code,_this.modal_list[i]);
 
                     }
-                    $('#scmDC_au_modal1').jqGrid("resetSelection");
+                    $('#au_modal1').jqGrid("resetSelection");
 
                     _this.modal_list = [];
 
@@ -202,6 +205,21 @@ window.onload = function () {
 
 
                 });
+            },
+            test22:function(){
+                var ids2 = $("#au_modal2").jqGrid("getDataIDs");
+                var data;
+                for(var i =0; i<ids2.length;i++){
+                    $("#au_modal2").jqGrid('saveRow', ids2[i]);
+                }
+
+                for(var i =0; i<ids2.length;i++){
+
+                    data = $('#au_modal2').jqGrid('getRowData', ids2[i]);
+
+                    alert(JSON.stringify(data));
+                }
+
             },
             _supp_bus_check:function (what){
                 var _this = this;
@@ -215,26 +233,29 @@ window.onload = function () {
                 _this.keyword.keyword = code;
                 _this.supp_name = name;
                 }else if( _this.supp_bus_check === 'S'){
-                    _this.keyword_modal.keyword2 = code;
+                    _this.keyword_modal.keyword = code;
                     _this.supp_code = code;
                     _this.supp_name_modal = name;
                 }
 
             },
+
+
              jqGrid:function(){ // jqGrid 메소드
                  var _this = this;
             var grid = $("#jqGrid");
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['납품증번호','업체코드','업체명','납품일','입고구분','등록자'],
+                    colNames:['입고일자','입고번호','납품증번호','업체코드','업체명','등록자','등록일시'],
                     colModel:[
-                        {name:'dc_no',index:'dc_no',width:50,key: true,sortable: false,width:150},
-                        {name:'supp_code',index:'supp_code',width:100 ,sortable: false,width:150},
+                        {name:'work_date',index:'work_date',width:50,key: true,sortable: false,width:150},
+                        {name:'in_no',index:'in_no',width:100 ,sortable: false,width:150},
+                        {name:'dc_no',index:'dc_no',width:100,sortable: false,width:150},
+                        {name:'supp_code',index:'supp_code',width:100,sortable: false,width:150},
                         {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
-                        {name:'work_date',index:'work_date',width:100,sortable: false,width:150},
-                        {name:'in_type',index:'in_type',width:100,sortable: false,width:150},
                         {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
+                        {name:'update_date',index:'update_date',width:100,sortable: false,width:150,formatter:formmatter_date},
 
                     ],
                     autowidth: true,
@@ -295,22 +316,22 @@ window.onload = function () {
             modal_get_btn:function(page){
                 var _this = this;
                 if (_this.effectiveness2()){
-                    $('#scmDC_au_modal1').setGridParam({ url: 'scmDC/SP_SCM_DC_BOX_READY_GET',postData: _this.keyword_modal ,datatype: "json", page: page}).trigger("reloadGrid");
+                    $('#au_modal1').setGridParam({ url: 'scmPart/bPart/supp/get',postData: _this.keyword_modal ,datatype: "json", page: page}).trigger("reloadGrid");
                 }
 
             },
 
-            scmDC_btn:function (page) { // 조회 버튼
+            main_gat_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.keyword_post = _this.keyword;
 
-                $('#jqGrid').setGridParam({ url: 'scmDC/get',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
-            scmDC_btn2:function (page) { // 조회 버튼
+            main_gat_btn2:function (page) { // 조회 버튼
                 var _this = this;
 
-                $('#jqGrid').setGridParam({ url: 'scmDC/get',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
 
             },
             common_au:function (au) { // 저장 수정 ajax
@@ -335,11 +356,11 @@ window.onload = function () {
                                 } else {
                                     $('#myModal').modal("hide");
                                     if (au === 'I') {
-                                        _this.scmDC_btn($("#jqGrid").getGridParam('page'));
+                                        _this.main_gat_btn($("#jqGrid").getGridParam('page'));
 
                                     } else {
 
-                                        _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
+                                        _this.main_gat_btn2($("#jqGrid").getGridParam('page'));
                                     }
                                 }
                             },
@@ -360,16 +381,12 @@ window.onload = function () {
                  var _this = this;
                 _this.keyword_modal={
                     keyword:'',
-                    keyword2:'',
-                    keyword3:'',
-                    keyword4:'',
-                    keyword5:'',
-                    keyword6:''
+                    keyword2:''
                 }
                 _this.supp_name_modal = '';
                 $("#part_group_select").val("").select2();
-                $("#scmDC_au_modal1").jqGrid('clearGridData');
-                $("#scmDC_au_modal2").jqGrid('clearGridData');
+                $("#au_modal1").jqGrid('clearGridData');
+                $("#au_modal2").jqGrid('clearGridData');
 
             },
             common_update:function () { // 업데이트 모달창
@@ -430,7 +447,7 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.scmDC_btn2($("#jqGrid").getGridParam('page'));
+                            _this.main_gat_btn2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
@@ -457,7 +474,7 @@ window.onload = function () {
             },
             effectiveness2:function () { // 유효성 검사
                 var _this = this;
-                if (_this.keyword_modal.keyword2 === ''){
+                if (_this.keyword_modal.keyword === ''){
                     alert("협럭업체를 선택해주세요");
                     return false;
                 }else {

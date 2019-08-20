@@ -8,6 +8,12 @@
     <select id="bPart_get_count" resultType="Integer">
          CALL TOBE_MES.SP_SYS_BPART_GET(#{page_num},#{total_num},'',#{keyword},#{keyword2},'C')
     </select>
+    <select id="bPart_supp_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPART_CD.SYS_BPART_CD">
+        CALL TOBE_MES.SP_SYS_BPART_GET(#{page_num},#{total_num},#{keyword},#{keyword2},'','S')
+    </select>
+    <select id="bPart_get_supp_count" resultType="Integer">
+         CALL TOBE_MES.SP_SYS_BPART_GET(#{page_num},#{total_num},#{keyword},#{keyword2},'','C')
+    </select>
     <select id="scmPart_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_BPART_ADD(#{part_code},#{part_name},#{alc_code},#{part_grp_code},#{part_type},#{cargo_code},#{loc_code},#{supp_code},#{spec},#{unit_code},#{pack_qty},#{max_qty},#{min_qty},#{user_code},#{keyword})
     </select>

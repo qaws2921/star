@@ -1,5 +1,6 @@
 package com.tobe.mes.tobesystem.Public;
 
+import com.tobe.mes.tobesystem.Bean.MESBean.SYS_BPART_CD.SYS_BPART_CDS;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_CARGO_CD.SYS_CARGO_CD;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD;
 import com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD.SYS_LOC_CD;
@@ -37,6 +38,10 @@ public class COMMON_RESTCONTROLLER {
     @RequestMapping(value = "/common/supp/get", method = RequestMethod.POST) // 코드 리스트 가져오기
     public List<SYS_SUPP_CD> supp_get (Page p){
         return common_service.supp_get(p);
+    }
+    @RequestMapping(value = "/scmPart/bPart/supp/get",method = RequestMethod.POST) // 코드 리스트 가져오기
+    public SYS_BPART_CDS bPart_get (Double page, Double rows, Page p){
+        return common_service.bPart_get(page,rows,p);
     }
 
 }

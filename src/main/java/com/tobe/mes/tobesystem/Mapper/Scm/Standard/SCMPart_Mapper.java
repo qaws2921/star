@@ -14,4 +14,8 @@ public interface SCMPart_Mapper {
     Result scmPart_au(SYS_BPART_CD sbc);
 
     Result scmPart_delete(String code);
+
+    List<SYS_BPART_CD> bPart_supp_get(Page p);
+
+    int bPart_get_supp_count(Page p);
 }

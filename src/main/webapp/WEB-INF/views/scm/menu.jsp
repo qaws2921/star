@@ -51,7 +51,7 @@
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 admin menuMainA" href="#">
+                        <a class="nav-link ba-color-999 materials menuMainA" href="#">
                             자재<i class="fas fa-angle-down down-icon"></i>
                         </a>
                         <ul class="file-tree master">
@@ -74,6 +74,9 @@
                                     </li>
                                     <li>
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">입고처리</a>
+                                    </li>
+                                    <li>
+                                        <a class="scmln" href="scmln?active=scm&check=materials">입고관리</a>
                                     </li>
 
                                     <li>
