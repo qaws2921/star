@@ -696,3 +696,9 @@ table.db-modal td {
     border: 1px solid #e74344;
 
 }
+#au_modal_page1_left{
+    width: 0px;
+}
+#au_modal_page1_right{
+    width: 0px;
+}

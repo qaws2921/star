@@ -60,7 +60,7 @@ Vue.prototype.EventBus = new Vue();
                         {name:'address',index:'address',width:100,sortable: false},
                     ],
                      // autowidth: true,
-                    width:500,
+                    width:600,
                     shrinkToFit:false,
                     height:200,
 
