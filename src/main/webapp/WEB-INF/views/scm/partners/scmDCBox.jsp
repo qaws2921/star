@@ -41,7 +41,7 @@
                             납품일자
                         </td>
                         <td>
-                            <input class="input-modal" id="date" v-model="date">
+                            <input class="input-modal" id="date">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             업체
@@ -70,8 +70,8 @@
                             <span class="oi oi-person"></span>
                         </div>
                         <div style="text-align: center; margin:auto; width: 50px">
-                            <button class="btn" style="margin-bottom: 10px"><i class="fas fa-arrow-right"></i></button>
-                            <button class="btn"><i class="fas fa-arrow-left"></i></button>
+                            <button class="btn" style="margin-bottom: 10px" @click="btn_down"><i class="fas fa-arrow-right"></i></button>
+                            <button class="btn" @click="btn_up"><i class="fas fa-arrow-left"></i></button>
                         </div>
                         <div style="width: 1000px">
                             <div>

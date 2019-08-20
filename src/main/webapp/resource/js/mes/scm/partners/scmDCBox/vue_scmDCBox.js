@@ -5,6 +5,7 @@ window.onload = function () {
         el:"#app",
         data: function () {
             return{
+                modal_list:[],
                 keyword:{
                     date:'',
                     keyword:'',
@@ -52,7 +53,9 @@ window.onload = function () {
                     user_name:'',
                     create_date:'',
                     update_date:'',
-                    keyword:''
+                    keyword:'',
+                    qty:'',
+                    lot_no:''
                 }
             }
         },
@@ -70,6 +73,62 @@ window.onload = function () {
             this.EventBus.$on('supp', this.supp_bus);
         },
         methods:{
+            btn_up:function(){
+                var _this =this;
+                var ids2 = $("#jqGrid2").getGridParam('selarrrow').slice();
+
+                for (var i =0; i<ids2.length;i++) {
+
+                    $('#jqGrid2').jqGrid('delRowData', ids2[i]);
+                }
+                $('#jqGrid2').jqGrid("resetSelection");
+
+
+            },
+            btn_down:function(){
+                var _this =this;
+                var ids = $("#jqGrid1").getGridParam('selarrrow').slice();
+
+                var ids2 = $("#jqGrid2").jqGrid("getDataIDs");
+                var overlap = 0;
+
+                for (var i =0; i<ids.length;i++){
+                    for (var j =0; j<ids2.length;j++){
+                        if (ids[i] === ids2[j]){
+                            ids.splice(i,1);
+                            overlap++;
+                        }
+
+                    }
+                }
+                var data;
+                for (var i =0; i<ids.length;i++){
+
+                    data = $('#jqGrid1').jqGrid('getRowData', ids[i]);
+                    _this.modal_list.push(data);
+
+                }
+                callback(function () {
+
+                    if (overlap !== 0){
+                        alert(overlap+"개 중복");
+                    }
+
+                    for(var i =0; i<_this.modal_list.length;i++){
+
+                        $('#jqGrid2').jqGrid('addRowData',_this.modal_list[i].part_code,_this.modal_list[i]);
+
+                    }
+                    $('#jqGrid1').jqGrid("resetSelection");
+
+                    _this.modal_list = [];
+
+                    // $('#scmDC_au_modal2').clearGridData();
+                    // $('#scmDC_au_modal2').addJSONData(_this.modal_list);
+
+
+                });
+            },
             supp_bus:function(code,name){
                 var _this =this;
                 _this.keyword.keyword = code;
@@ -82,13 +141,14 @@ window.onload = function () {
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['품목그룹','품번','품명','규격','단위'],
+                    colNames:['품목그룹','품번','품명','규격','단위','포장'],
                     colModel:[
                         {name:'part_grp_code',index:'part_grp_code',width:50,sortable: false,width:100,align:'center'},
                         {name:'part_code',index:'part_code',width:100,key: true ,sortable: false,width:100,align:'center'},
                         {name:'part_name',index:'part_name',width:100,sortable: false,width:100,align:'center'},
                         {name:'spec',index:'spec',width:100,sortable: false,width:100,align:'center'},
                         {name:'unit_code',index:'unit_code',width:100,sortable: false,width:100,align:'center'},
+                        {name:'pack_qty',index:'pack_qty',width:100,sortable: false,width:100,align:'center'},
                     ],
                     autowidth: true,
                     shrinkToFit:false,
@@ -99,40 +159,45 @@ window.onload = function () {
                     rowList: [100, 200, 300, 400],
                     viewrecords: true,
                     multiselect:true,
-                    beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
-                        var $myGrid = $(this),
-                            i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
-                            cm = $myGrid.jqGrid('getGridParam', 'colModel');
-                        return (cm[i].name === 'cb');
-                    },
-                    ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
-                        var data = $('#jqGrid1').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-                        _this.common_edit(data); // 데이터 가공
-                        _this.common_update(); // 수정창 띄어주기
-
-                    }
-
+                    // beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
+                    //     var $myGrid = $(this),
+                    //         i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
+                    //         cm = $myGrid.jqGrid('getGridParam', 'colModel');
+                    //     return (cm[i].name === 'cb');
+                    // },
                 }).navGrid("#jqGridPager1", { search: false, add: false, edit: false, del: false});
             },
+
             jqGrid2:function(){ // jqGrid 메소드
+                var lastsel2;
                 var _this = this;
                 var grid = $("#jqGrid2");
+                var url = 'http://localhost:8899/barcode2x';
                 grid.jqGrid({
                     datatype: "json",
                     mtype: 'POST',
-                    colNames:['품목그룹','품번','품명','규격','단위','포장','수량','LOT/NO','사이즈','인쇄'],
+                    colNames:['품목그룹','품번','품명','규격','단위','포장','수량','LOT/NO','사이즈',''],
                     colModel:[
-                        {name:'code_type',index:'code_type',width:50,sortable: false,width:100,align:'center'},
-                        {name:'code_value',index:'code_value',width:100,key: true ,sortable: false,width:100,align:'center'},
-                        {name:'code_name1',index:'code_name1',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name2',index:'code_name2',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center', background:'#eee'},
-                        {name:'code_name8',index:'code_name8',width:100,sortable: false,width:100,align:'center'},
+                        {name:'part_grp_code',index:'part_grp_code',width:50,sortable: false,width:100,align:'center'},
+                        {name:'part_code',index:'part_code',width:100,key: true ,sortable: false,width:100,align:'center'},
+                        {name:'part_name',index:'part_name',width:100,sortable: false,width:100,align:'center'},
+                        {name:'spec',index:'spec',width:100,sortable: false,width:100,align:'center'},
+                        {name:'unit_code',index:'unit_code',width:100,sortable: false,width:100,align:'center'},
+                        {name:'pack_qty',index:'pack_qty',width:100,sortable: false,width:100,align:'center'},
+                        {name:'qty',index:'qty',width:100,sortable: false,width:100,align:'center', editable: true,sorttype:"int",classes:"jqGrid2_qty"},
+                        {name:'lot_no',index:'lot_no',width:100,sortable: false,width:100,align:'center', editable: true,sorttype:"int",classes:"jqGrid2_lot_no"},
+                        {name:'size',index:'size',width:100,sortable: false,width:100,align:'center',editable: true,edittype:"select",editoptions:{value:"large:대;middle:중;small:소"}},
+                        {name:'print',index:'part_code',width:100,sortable: false,width:100,align:'center',
+                            formatter: function (cellValue, option, rowObject) {
+                                return '<button onclick="test12(\''+rowObject.part_code+','+rowObject.qty+','+rowObject.lot_no+'\')">인쇄</button>';
+                            }
+                        },
                     ],
+                    onCellSelect: function(id){
+                            grid.jqGrid('restoreRow',lastsel2);
+                            grid.jqGrid('editRow',id,true);
+                            lastsel2=id;
+                    },
                     autowidth: true,
                     shrinkToFit:false,
                     height:500,
@@ -148,12 +213,6 @@ window.onload = function () {
                             cm = $myGrid.jqGrid('getGridParam', 'colModel');
                         return (cm[i].name === 'cb');
                     },
-                    ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
-                        var data = $('#jqGrid2').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-                        _this.common_edit(data); // 데이터 가공
-                        _this.common_update(); // 수정창 띄어주기
-
-                    }
 
                 }).navGrid("#jqGridPager2", { search: false, add: false, edit: false, del: false});
             },

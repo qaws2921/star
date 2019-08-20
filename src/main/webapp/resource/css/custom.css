@@ -304,7 +304,7 @@ font-size: 9px;
 .pa-b-20{padding-bottom: 20px;}
 .file-tree{display: none;}
 .ui-jqgrid-labels{background-color: #e0f2ff; color: #3a5c8a; text-align: center;border-top: 2px solid #336699;}
-#jqGrid2 tr{font-size: 9pt;}
+#jqGrid2 tr{font-size: 7px;}
 #jqgh_jqGrid2_auth_name{font-size: 11pt;}
 .bor-bm{ padding-bottom: 10px;}
 .font-size-9{font-size: 9pt;}
@@ -446,6 +446,16 @@ table.type03 td {
 .input-modal{
     width: 100%;
     font-size: 9px;
+}
+.input-jq{
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+}
+.select-jq {
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
 }
 .input-modal:read-only{
     background-color: #eee;
@@ -695,4 +705,38 @@ table.db-modal td {
     background-color: #e74344;
     border: 1px solid #e74344;
 
+}
+.editable{
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 9px;
+    text-align: center;
+    padding: 2px;
+    font-weight: 400;
+    line-height: 0.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#jqGrid2_qty{
+    background-color: #c8ffcd;
+}
+#jqgh_jqGrid2_qty{
+    background-color: #c8ffcd;
+}
+#jqGrid2_lot_no{
+    background-color: #c8ffcd;
+}
+#jqgh_jqGrid2_lot_no{
+    background-color: #c8ffcd;
+}
+.jqGrid2_qty{
+    background-color: #c8ffcd;
+}
+.jqGrid2_lot_no{
+    background-color: #c8ffcd;
 }

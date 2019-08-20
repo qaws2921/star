@@ -12,7 +12,15 @@ public class Page {
     private String start_date;
     private String end_date;
     private String user_code;
+    private String date;
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public int getPage_num() {
         return page_num;

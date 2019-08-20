@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.PARTNERS.SCMDCBox_Mapper">
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Partners.SCMDCBox_Mapper">
     <select id="SP_SCM_DC_BOX_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX">
         CALL TOBE_MES.SP_SCM_DC_BOX_GET()
     </select>

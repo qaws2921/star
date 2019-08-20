@@ -159,8 +159,6 @@ window.onload = function () {
 
 
             },
-
-
             btn_down:function(){
                 var _this =this;
                 var ids = $("#scmDC_au_modal1").getGridParam('selarrrow').slice();
@@ -177,10 +175,6 @@ window.onload = function () {
 
                     }
                 }
-
-
-
-
                 var data;
                 for (var i =0; i<ids.length;i++){
 

@@ -1,7 +1,7 @@
 package com.tobe.mes.tobesystem.MES.SCM.PARTNERS.SCMDCBox;
 
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX;
-import com.tobe.mes.tobesystem.Mapper.Scm.PARTNERS.SCMDCBox_Mapper;
+import com.tobe.mes.tobesystem.Mapper.Scm.Partners.SCMDCBox_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

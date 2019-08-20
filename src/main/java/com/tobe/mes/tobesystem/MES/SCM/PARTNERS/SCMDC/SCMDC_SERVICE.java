@@ -30,13 +30,10 @@ public class SCMDC_SERVICE {
             p.setStart_date(start_date);
             p.setEnd_date(end_date);
 
-
             List<SCM_DC> scm_dcList = scmdc_mapper.scmDC_get(p);
             int scmDC_get_count = scmdc_mapper.scmDC_get_count(p);
 
             int total =(int) Math.ceil(scmDC_get_count/(rows*1));
-
-
             return new SCM_DCS(scm_dcList,total,(int)(page*1),scmDC_get_count);
         }
     }

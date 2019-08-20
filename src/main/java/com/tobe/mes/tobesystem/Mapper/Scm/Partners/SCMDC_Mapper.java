@@ -16,4 +16,5 @@ public interface SCMDC_Mapper {
     int scmDC_SP_SCM_DC_BOX_READY_GET_get_count(Page p);
 
     Result scmDC_SP_SCM_DC_ADD_au(Page p);
+
 }

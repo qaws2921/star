@@ -64,10 +64,6 @@
 
                 </table>
             </div>
-
-
-
-
             <div style="margin:20px;">
                 <table id="jqGrid"></table>
                 <div id="jqGridPager"></div>
@@ -76,7 +72,6 @@
             <!-- Modal -->
             <div class="modal hide" id="myModal" role="dialog">
                 <div class="modal-dialog modal-lg">
-
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header modal-top">
@@ -84,7 +79,6 @@
                             <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
                         </div>
                         <div class="modal-body form-inline">
-
                             <label class="table_header"><i class="fas fa-arrow-alt-circle-right"></i>&nbsp;코드명칭</label>
                             <table class="type03">
 

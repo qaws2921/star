@@ -33,10 +33,13 @@ function formmatter_date(cellValue) { // 날짜 필터
     var h = cellValue.substring(8,10);
     var mm = cellValue.substring(10,12);
     var s = cellValue.substring(12,14);
-    // 20190718092501
     var date = y+"-"+m+"-"+d+" "+h+":"+mm+":"+s;
     return date;
 }
 function callback(cb) {
     cb();
+}
+function test12(add) {
+    var res = add.split(",", 3);
+    alert('0번:'+res[0]+'1번:'+res[1]+'2번:'+res[2]);
 }
