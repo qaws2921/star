@@ -8,13 +8,4 @@ import com.tobe.mes.tobesystem.Bean.Result;
 import java.util.List;
 
 public interface SCMDC_Mapper {
-    List<SCM_DC> scmDC_get(Page p);
-
-    int scmDC_get_count(Page p);
-    List<SCM_DC_BOX> scmDC_SP_SCM_DC_BOX_READY_GET_get(Page p);
-
-    int scmDC_SP_SCM_DC_BOX_READY_GET_get_count(Page p);
-
-    Result scmDC_SP_SCM_DC_ADD_au(Page p);
-
 }
