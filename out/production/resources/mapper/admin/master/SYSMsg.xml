@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Master.SYSMsg_Mapper">
+    <select id="msg_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_MSG_CD.SYS_MSG_CD">
+        CALL TOBE_MES.SP_SYS_MSG_GET(#{page_num},#{total_num},'','S')
+    </select>
+    <select id="msg_count" resultType="Integer">
+         CALL TOBE_MES.SP_SYS_MSG_GET(#{page_num},#{total_num},'','')
+    </select>
+    <select id="msg_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_MSG_ADD(#{msg_code},#{msg_name1},#{msg_name2},#{msg_name3},#{msg_name4},#{user_code},#{keyword})
+    </select>
+    <select id="msg_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_MSG_DEL(#{code})
+    </select>
+
+
+</mapper>

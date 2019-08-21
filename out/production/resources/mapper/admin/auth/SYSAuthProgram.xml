@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Auth.SYSAuthProgram_Mapper">
+    <select id="menu_group_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_MENU_CD.SYS_MENU_CD">
+        CALL TOBE_MES.SP_SYS_MENU_GROUP_GET()
+    </select>
+    <select id="menu_cd_program_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_MENU_CD.SYS_MENU_CD">
+         CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_GET(#{menu_code},#{auth_code})
+    </select>
+    <select id="auth_program_add" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_ADD(#{auth_code},#{menu_code},#{check_get},#{check_add},#{check_edit},#{check_del})
+    </select>
+
+
+
+</mapper>
