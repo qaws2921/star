@@ -16,93 +16,9 @@
         <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
     </div>
     <c:forEach items="${print_data}" var="data" varStatus="status">
-        <c:if test="${status.index % 2==0}">
-
-        <table class="x2">
-            <tbody>
-            <tr>
-                <td colspan="2">
-                    부품식별표
-                </td>
-                <td colspan="2">
-                    <img src="resource/img/logo/tobemes.png" alt="(주)투비시스템" class="img"/>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    차종
-                </th>
-                <td class="b">
-                    ${data.part_code}
-                </td>
-                <th>
-                    업체명
-                </th>
-                <td>
-                    ${data.part_name}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    품번
-                </th>
-                <td class="b">
-                        ${data.box_no}
-                </td>
-                <th>
-                    ALC
-                </th>
-                <td>
-                        ${data.dc_no}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    품명
-                </th>
-                <td colspan="3">
-                    ${data.part_name}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    수량
-                </th>
-                <td class="b">
-                    ${data.order_qty}
-                </td>
-                <th>
-                    납품일자
-                </th>
-                <td>
-                    ${data.work_date}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    LOT
-                </th>
-                <td>
-                    ${data.lot_no}
-                </td>
-                <th>
-                    검수일자
-                </th>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4" class="barcode">
-                    *${data.part_code}${data.lot_no}${data.work_date}*
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-
-        </c:if>
         <c:if test="${status.index % 2==1}">
             <hr class="line-garo">
+        </c:if>
         <table class="x2">
             <tbody>
             <tr>
@@ -183,9 +99,6 @@
             </tr>
             </tbody>
         </table>
-
-
-        </c:if>
 
     </c:forEach>
 </div>
