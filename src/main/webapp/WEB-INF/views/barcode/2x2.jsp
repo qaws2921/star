@@ -18,6 +18,7 @@
         <c:forEach var="i" begin="1" end="${page+((page%1>=0.5)?(1-(page%1))%1:-(page%1))-1}" step="1">
             <div class="x2-page">
 
+
             <c:forEach items="${print_data}" var="data" varStatus="status">
                 <c:if test="${status.index == (i%2 == 1 ? i-1 : i)  || status.index == (i%2 == 1 ? i : i+1)}">
                     <c:if test="${status.index ==0}">
