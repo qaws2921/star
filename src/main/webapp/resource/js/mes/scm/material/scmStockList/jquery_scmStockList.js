@@ -1,18 +1,12 @@
-function jquery_scmln(_this){
+function jquery_scmStockList(_this){
 
     $( "#date_input1" ).datepicker(date).on('change', function(e) {
-        _this.keyword.start_date = e.target.value;
-    });
-    $( "#date_input2" ).datepicker(date).on('change', function(e) {
-        _this.keyword.end_date = e.target.value;
+        _this.keyword.keyword = e.target.value;
     });
 
-    $( "#date_input3" ).datepicker(date).on('change', function(e) {
-        _this.scm_in.work_date = e.target.value;
-    });
 
     $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
-        _this.keyword_modal.keyword2 = $("#part_group_select").val();
+        _this.keyword.keyword3 = $("#part_group_select").val();
     });
 
 }

@@ -10,16 +10,17 @@ window.onload = function () {
 
                 sys_part_group:[],
                 keyword:{
-                    start_date:'',
-                    end_date:'',
                     keyword:'',
+                    keyword2:'',
+                    keyword3:'',
 
 
                 },
                 keyword_post:{
-                    start_date:'',
-                    end_date:'',
                     keyword:'',
+                    keyword2:'',
+                    keyword3:'',
+
 
 
                 },
@@ -75,7 +76,7 @@ window.onload = function () {
         mounted: function(){
             var _this = this;
             _this.sys_part_group_get(); // 코드그룹 가져오기
-            jquery_scmln(_this); // vue 에서 실행 못하는 jquery
+            jquery_scmStockList(_this); // vue 에서 실행 못하는 jquery
             _this.selectBox();
             jqgrid_au_modal(_this);
 
@@ -84,12 +85,12 @@ window.onload = function () {
             this.EventBus.$on('supp', this.supp_bus);
         },
         methods:{
-            main_gat_btn:function (page) { // 조회 버튼
+            main_get_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.keyword_post = _this.keyword;
                 $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
             },
-            main_gat_btn2:function (page) { // 조회 버튼
+            main_get_btn2:function (page) { // 조회 버튼
                 var _this = this;
                 $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
             },
@@ -200,7 +201,7 @@ window.onload = function () {
                                     alert(data.message);
                                 } else {
                                     $('#myModal').modal("hide");
-                                    _this.main_gat_btn(1);
+                                    _this.main_get_btn(1);
                                     _this.reset();
                                 }
                             },
@@ -260,7 +261,7 @@ window.onload = function () {
                             alert(data.message);
                         } else {
                             closeWindowByMask();
-                            _this.main_gat_btn2($("#jqGrid").getGridParam('page'));
+                            _this.main_get_btn2($("#jqGrid").getGridParam('page'));
                         }
 
                         },
@@ -341,7 +342,7 @@ window.onload = function () {
                 var _this =this;
                 if ( _this.supp_bus_check === 'M'){
 
-                    _this.keyword.keyword = code;
+                    _this.keyword.keyword2 = code;
                     _this.supp_name = name;
                 }else if( _this.supp_bus_check === 'S'){
                     _this.keyword_modal.keyword = code;
