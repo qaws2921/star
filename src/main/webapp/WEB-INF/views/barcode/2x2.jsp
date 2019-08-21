@@ -11,11 +11,12 @@
     <link rel="shortcut icon" href="resource/img/icon.png">
 </head>
 <body class="x2">
-<div class="x2-page">
-    <div class="x2-btn-group">
-        <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
-    </div>
+
     <c:forEach items="${print_data}" var="data" varStatus="status">
+    <div class="x2-page">
+        <div class="x2-btn-group">
+            <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
+        </div>
         <c:if test="${status.index % 2==1}">
             <hr class="line-garo">
         </c:if>
@@ -99,8 +100,7 @@
             </tr>
             </tbody>
         </table>
-
+    </div>
     </c:forEach>
-</div>
 </body>
 </html>
