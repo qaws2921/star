@@ -88,11 +88,11 @@ window.onload = function () {
             main_get_btn:function (page) { // 조회 버튼
                 var _this = this;
                 _this.keyword_post = _this.keyword;
-                $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmStockList/SP_SCM_STOCK_BPART_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
             },
             main_get_btn2:function (page) { // 조회 버튼
                 var _this = this;
-                $('#jqGrid').setGridParam({ url: 'scmln/SP_SCM_IN_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmStockList/SP_SCM_STOCK_BPART_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
             },
             add_btn:function () {    // 추가를 누를때
                 var _this = this;
