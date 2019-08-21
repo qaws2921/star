@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
 <script src="resource/js/mes/scm/partners/scmDCBox/vue_scmDCBox.js"></script>
@@ -10,6 +11,7 @@
         jQuery("#myModal3").draggable();
     });
 </script>
+<c:set var="now" value="<%=new java.util.Date()%>" />
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div v-cloak id="app">
         <table class="menu-class">
@@ -41,7 +43,7 @@
                             납품일자
                         </td>
                         <td>
-                            <input class="input-modal" id="date">
+                            <input class="input-modal" id="date" value="<fmt:formatDate value="${now}" pattern="yyyyMMdd" />">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             업체

@@ -86,7 +86,6 @@ var lastsel2;
     });
 
     $("#au_modal2").jqGrid({
-
         editurl: 'clientArray',
         colNames:['품목그룹','품번','품명','단위','입고수량'],
         colModel:[
@@ -98,23 +97,18 @@ var lastsel2;
                 editrules: { number: true },
                 editable: true,
                 editoptions: {
-
                     dataEvents: [
                         {
                             type: 'focusout',
                             fn: function (e) {
-
                                 if ($("#"+lastsel2+"_in_qty").val()){
                                     if (isNaN($("#"+lastsel2+"_in_qty").val())){
-
                                         return false;
                                     }
                                 }
-
                                 $("#au_modal2").jqGrid('saveRow', lastsel2);
                             }
                         }
-
                     ]
                 }
                 },
@@ -130,15 +124,11 @@ var lastsel2;
 
 
         onCellSelect: function(rowid,icol,cellcontent,e){
-
             // rowid : 선택한 셀의 행 번호
             //
             // icol : 선택한 셀의 열 번호
             //
             // cellcontent : 선택한 셀의 값
-
-
-
              if (icol == 5){
                if ($("#"+lastsel2+"_in_qty").val()){
                    if (isNaN($("#"+lastsel2+"_in_qty").val())){
@@ -154,8 +144,6 @@ var lastsel2;
                  });
                lastsel2=rowid;
             }
-
-
         },
             beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
             var $myGrid = $(this),

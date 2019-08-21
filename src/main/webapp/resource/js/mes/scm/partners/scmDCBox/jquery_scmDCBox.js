@@ -39,7 +39,8 @@ function formmatter_date(cellValue) { // 날짜 필터
 function callback(cb) {
     cb();
 }
-function test12(add) {
-    var res = add.split(",", 3);
-    alert('0번:'+res[0]+'1번:'+res[1]+'2번:'+res[2]);
+function scmDCBoxAdd(data) {
+    var date = $("#date").val();
+    var url="scmDCBoxAdd?part_code="+encodeURI(data.part_code)+"&order_qty="+encodeURI(data.qty)+"&lot_no="+data.lot_no+"&work_date="+encodeURI(date);
+    window.open(url);
 }

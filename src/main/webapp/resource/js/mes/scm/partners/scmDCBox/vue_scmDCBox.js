@@ -172,8 +172,8 @@ window.onload = function () {
                 var lastsel2;
                 var _this = this;
                 var grid = $("#jqGrid2");
-                var url = 'http://localhost:8899/barcode2x';
                 grid.jqGrid({
+                    editurl: 'clientArray',
                     datatype: "json",
                     mtype: 'POST',
                     colNames:['품목그룹','품번','품명','규격','단위','포장','수량','LOT/NO','사이즈',''],
@@ -184,12 +184,28 @@ window.onload = function () {
                         {name:'spec',index:'spec',width:100,sortable: false,width:100,align:'center'},
                         {name:'unit_code',index:'unit_code',width:100,sortable: false,width:100,align:'center'},
                         {name:'pack_qty',index:'pack_qty',width:100,sortable: false,width:100,align:'center'},
-                        {name:'qty',index:'qty',width:100,sortable: false,width:100,align:'center', editable: true,sorttype:"int",classes:"jqGrid2_qty"},
+                        {name:'qty',index:'qty',width:100,sortable: false,width:100,align:'center', editable: true,sorttype:"int",classes:"jqGrid2_qty",
+                            // editoptions: {
+                            //     dataEvents: [
+                            //         {
+                            //             type: 'focusout',
+                            //             fn: function (e) {
+                            //                 if ($("#"+lastsel2+"_qty").val()){
+                            //                     if (isNaN($("#"+lastsel2+"_qty").val())){
+                            //                         return false;
+                            //                     }
+                            //                 }
+                            //                 grid.jqGrid('saveRow', lastsel2);
+                            //             }
+                            //         }
+                            //     ]
+                            // }
+                        },
                         {name:'lot_no',index:'lot_no',width:100,sortable: false,width:100,align:'center', editable: true,sorttype:"int",classes:"jqGrid2_lot_no"},
                         {name:'size',index:'size',width:100,sortable: false,width:100,align:'center',editable: true,edittype:"select",editoptions:{value:"large:대;middle:중;small:소"}},
                         {name:'print',index:'part_code',width:100,sortable: false,width:100,align:'center',
                             formatter: function (cellValue, option, rowObject) {
-                                return '<button onclick="test12(\''+rowObject.part_code+','+rowObject.qty+','+rowObject.lot_no+'\')">인쇄</button>';
+                                return '<button>인쇄</button>';
                             }
                         },
                     ],
@@ -207,6 +223,29 @@ window.onload = function () {
                     rowList: [100, 200, 300, 400],
                     viewrecords: true,
                     multiselect:true,
+
+                    onCellSelect: function(rowid,icol,cellcontent,e){
+                        // rowid : 선택한 셀의 행 번호
+                        // icol : 선택한 셀의 열 번호
+                        // cellcontent : 선택한 셀의 값
+                            if (icol == 7 || icol == 8)
+                            {
+                                if ($("#"+lastsel2+"_qty").val()){
+                                    if (isNaN($("#"+lastsel2+"_qty").val())){
+                                        return false;
+                                }
+                            }
+                                grid.jqGrid('saveRow', lastsel2);
+                                grid.jqGrid('editRow',rowid,{
+                                    keys: true,
+                                });
+                            }
+                            if(icol == 10)
+                            {
+                                var data = grid.jqGrid('getRowData',rowid)
+                                scmDCBoxAdd(data);
+                            }
+                    },
                     beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
                         var $myGrid = $(this),
                             i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
