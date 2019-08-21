@@ -3,8 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../../include/header.jsp"%>
 <%@include file="../menu.jsp"%>
-<script src="resource/js/mes/scm/material/scmln//vue_scmln.js"></script>
-<script src="resource/js/mes/scm/material/scmln/jquery_scmln.js"></script>
+<script src="resource/js/mes/scm/material/scmStockList//vue_scmStockList.js"></script>
+<script src="resource/js/mes/scm/material/scmStockList/jquery_scmStockList.js"></script>
 <script>
     jQuery(document).ready(function() {
         jQuery("#myModal2").draggable();
@@ -15,8 +15,8 @@
         <table class="menu-class">
             <tbody>
             <tr>
-                <td class="left-header">입고관리</td>
-                <td class="right-header"><i class="fas fa-home"></i> > SCM > 자재 > 입고관리</td>
+                <td class="left-header">재고현황</td>
+                <td class="right-header"><i class="fas fa-home"></i> > SCM > 자재 > 재고현황</td>
             </tr>
             </tbody>
         </table>
@@ -25,9 +25,8 @@
                 <tbody>
                 <tr>
                     <td class="button-group">
-                        <button class="btn" @click="main_gat_btn(1)">조회</button>
+                        <button class="btn" @click="main_get_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="add_btn">추가</button>
-                        <button class="btn" @click="main_delete">삭제</button>
                     </td>
                 </tr>
                 </tbody>
@@ -40,19 +39,26 @@
                 <table class="table table-border-bl" >
                     <tr>
                         <td class="top-td-la" style="padding-top: 10px;">
-                            조회기간
+                            조회일자
                         </td>
-                        <td style="width: 314px">
+                        <td class="w-150px">
                             <input class="input-cal" id="date_input1" v-model="keyword.start_date">
-                            <span style="width: 10%">-</span>
-                            <input class="input-cal" id="date_input2" v-model="keyword.end_date">
 
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             업체
                         </td>
+                        <td class="w-150px">
+                            <input type="text" class="input-modal" readonly @click="_supp_bus_check('M')"  data-toggle="modal" data-target="#myModal3" v-model="supp_name">
+                        </td>
+                        <td class="top-td-la" style="padding-top: 10px;">
+                            품목그룹
+                        </td>
                         <td>
-                            <input type="text" class="input-modal w-25" readonly @click="_supp_bus_check('M')"  data-toggle="modal" data-target="#myModal3" v-model="supp_name">
+                            <select id="part_group_select"  v-model="keyword_modal.keyword2">
+                                <option value="">선택안함</option>
+                                <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
+                            </select>
                         </td>
 
                     </tr>

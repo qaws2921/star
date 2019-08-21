@@ -5,6 +5,7 @@ public class SYS_BPART_CD {
     private String part_name;
     private String alc_code;
     private String part_grp_code;
+    private String part_grp_name;
     private String part_type;
     private String cargo_code;
     private String loc_code;
@@ -162,5 +163,13 @@ public class SYS_BPART_CD {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getPart_grp_name() {
+        return part_grp_name;
+    }
+
+    public void setPart_grp_name(String part_grp_name) {
+        this.part_grp_name = part_grp_name;
     }
 }
