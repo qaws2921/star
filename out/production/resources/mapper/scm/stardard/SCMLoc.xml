@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMLoc_Mapper">
+    <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
+        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
+    </select>
+    <select id="scmLoc_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_LOC_CD.SYS_LOC_CD">
+        CALL TOBE_MES.SP_SYS_LOC_GET(#{page_num},#{total_num},#{keyword},'','S')
+    </select>
+    <select id="scmLoc_get_count" resultType="Integer">
+                CALL TOBE_MES.SP_SYS_LOC_GET(#{page_num},#{total_num},#{keyword},'','C')
+    </select>
+    <select id="scmLoc_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_LOC_ADD(#{cargo_code},#{loc_code},#{loc_name},#{remark},#{use_yn},#{user_code},#{keyword})
+    </select>
+
+    <select id="scmLoc_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_LOC_DEL(#{type_value})
+    </select>
+
+</mapper>

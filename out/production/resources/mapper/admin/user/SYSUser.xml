@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.User.SYSUser_Mapper">
+    <select id="common_dept_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
+        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('DEPT')
+    </select>
+    <select id="common_duty_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
+        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('DUTY')
+    </select>
+    <select id="user_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_USER_CD.SYS_USER_CD">
+        CALL TOBE_MES.SP_SYS_USER_GET(#{page_num},#{total_num},#{keyword},'','S')
+    </select>
+    <select id="user_get_count" resultType="Integer">
+        CALL TOBE_MES.SP_SYS_USER_GET(#{page_num},#{total_num},'','','C')
+    </select>
+    <select id="user_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_USER_ADD(#{user_code},#{user_name},#{dept_code},#{duty_code},#{auth_code},#{tel_no},#{email},#{use_yn},#{update_user},#{keyword})
+    </select>
+    <select id="user_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_USER_DEL(#{code})
+    </select>
+</mapper>
