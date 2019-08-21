@@ -4,5 +4,9 @@
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tobesystem.main" target="1.8" />
+      <module name="tobesystem.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

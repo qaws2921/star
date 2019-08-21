@@ -15,8 +15,10 @@
     <div class="x2-btn-group">
         <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
     </div>
-    <c:forEach items="${print_data}" var="data">
-        <c:set var="len" value="${fn:length(print_data)}"/>
+    <c:forEach items="${print_data}" var="data" varStatus="status">
+        <c:if test="${status.index % 2==1}">
+            <hr class="line-garo">
+        </c:if>
         <table class="x2">
             <tbody>
             <tr>
@@ -97,7 +99,7 @@
             </tr>
             </tbody>
         </table>
-            <hr class="line-garo">
+
     </c:forEach>
 </div>
 </body>
