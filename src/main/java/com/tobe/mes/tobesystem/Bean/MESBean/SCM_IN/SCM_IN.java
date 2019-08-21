@@ -49,7 +49,7 @@ public class SCM_IN {
     public void setSupp_name(String supp_name) {
         this.supp_name = supp_name;
     }
-
+    
     public String getDc_no() {
         return dc_no;
     }

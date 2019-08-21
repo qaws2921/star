@@ -1,5 +1,7 @@
 package com.tobe.mes.tobesystem.MES.SCM.MATERIALS.SCMStockList;
 
+import com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_STOCK_BPART_GET.SP_SCM_STOCK_BPART_GETS;
+import com.tobe.mes.tobesystem.Bean.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,8 +13,8 @@ public class SCMStockList_RESTCONTROLLER {
     @Autowired
     private SCMStockList_SERVICE scmStockList_service;
 
-//    @RequestMapping(value = "/scmln/SP_SCM_IN_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
-//    public SCM_INS scmln_SP_SCM_IN_GET (Double page, Double rows, Page p){
-//        return scMln_service.scmln_SP_SCM_IN_GET(page,rows,p);
-//    }
+    @RequestMapping(value = "/scmStockList/SP_SCM_STOCK_BPART_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
+    public SP_SCM_STOCK_BPART_GETS scmStockList_SP_SCM_STOCK_BPART_GET (Double page, Double rows, Page p){
+        return scmStockList_service.scmStockList_SP_SCM_STOCK_BPART_GET(page,rows,p);
+    }
 }
