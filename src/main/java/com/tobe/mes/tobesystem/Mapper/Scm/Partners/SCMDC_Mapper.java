@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Mapper.Scm.Partners;
 
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC.SCM_DC;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX;
+import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOXS;
 import com.tobe.mes.tobesystem.Bean.Page;
 import com.tobe.mes.tobesystem.Bean.Result;
 
@@ -16,4 +17,10 @@ public interface SCMDC_Mapper {
     int scmDC_SP_SCM_DC_BOX_READY_GET_get_count(Page p);
 
     Result scmDC_SP_SCM_DC_ADD_au(Page p);
+
+    List<SCM_DC_BOX> scmDC_SP_SCM_DC_BOX_GET_get(SCM_DC sd);
+
+    Result scmDC_SP_SCM_DC_DEL(String code);
+
+    Result scmDC_SP_SP_SCM_DC_BOX_DEL(String code);
 }

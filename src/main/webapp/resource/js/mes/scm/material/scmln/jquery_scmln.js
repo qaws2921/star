@@ -94,6 +94,7 @@ function jqgrid_au_modal(_this) {
 
 
 
+
 var lastsel2;
    $("#au_modal1").jqGrid({
         datatype: "json",

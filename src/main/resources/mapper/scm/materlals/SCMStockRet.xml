@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMStockList_Mapper">
-    <select id="scmStockList_SP_SCM_STOCK_BPART_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_STOCK_BPART_GET.SP_SCM_STOCK_BPART_GET">
-        CALL TOBE_MES.SP_SCM_STOCK_BPART_GET(#{page_num},#{total_num},#{keyword},#{keyword2},#{keyword3},'S')
+<mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMStockRetList_Mapper">
+    <select id="scmStockRet_SP_SCM_STOCK_RET_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_STOCK_BPART_GET.SP_SCM_STOCK_BPART_GET">
+        CALL TOBE_MES.SP_SCM_STOCK_RET_GET(#{page_num},#{total_num},#{start_date},#{end_date},#{keyword2},'','S')
     </select>
-    <select id="scmStockList_SP_SCM_STOCK_BPART_GET_count" resultType="Integer">
-            CALL TOBE_MES.SP_SCM_STOCK_BPART_GET(#{page_num},#{total_num},#{keyword},#{keyword2},#{keyword3},'C')
+    <select id="scmStockRet_SP_SCM_STOCK_RET_GET_count" resultType="Integer">
+            CALL TOBE_MES.SP_SCM_STOCK_RET_GET(#{page_num},#{total_num},#{start_date},#{end_date},#{keyword2},'','C')
     </select>
     <select id="scmStockList_download" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_STOCK_BPART_GET.SP_SCM_STOCK_BPART_GET">
         CALL TOBE_MES.SP_SCM_STOCK_BPART_GET(0,0,#{keyword},#{keyword2},#{keyword3},'S')

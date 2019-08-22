@@ -27,8 +27,8 @@
                     <td class="button-group">
                         <button class="btn" @click="scmDC_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="add_btn">추가</button>
-                        <button class="btn" @click="common_delete">삭제</button>
-                        <button class="btn" type="button" data-toggle="modal" data-target="#myModal2">인쇄</button>
+                        <button class="btn" @click="main_delete">삭제</button>
+                        <button class="btn" type="button" @click="print_btn">인쇄</button>
                     </td>
                 </tr>
                 </tbody>
@@ -83,151 +83,99 @@
                         <div class="modal-body form-inline">
 
                             <div>
-                                <table class="contents">
-                                    <tbody>
-                                    <tr>
-                                        <td class="button-group">
-                                            <button class="btn" @click="modal_get_btn(1)">조회</button>
-                                            <button class="btn" @click="common_get_btn(1)">삭제</button>
-                                            <button class="btn" @click="modal_add_btn('I')">저장</button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+
+
+
+
+
                                 <span class="content_header">
                                     <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
                                 </span>
                                 <div class="public-mg">
-                                    <table class="table table-border-bl" >
+                                    <table>
                                         <tr>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                납품일자
-                                            </td>
-                                            <td>
-                                                <input id="date_input3" v-model="keyword_modal.keyword">
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                업체
-                                            </td>
-                                            <td>
-                                                <input @click="_supp_bus_check('S')"  data-toggle="modal" data-target="#myModal3" v-model="supp_name_modal">
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                품목그룹
-                                            </td>
-                                            <td>
-                                                <select id="part_group_select"  v-model="keyword_modal.keyword3">
-                                                    <option value="">선택안함</option>
-                                                    <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
-                                                </select>
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                비고
-                                            </td>
-                                            <td>
-                                                <input type="text" class="input-modal" v-model="keyword_modal.keyword4">
+                                            <td colspan="3" >
+
+                                                            <table class="table table-border-bl" >
+                                                                <tr>
+                                                                    <td class="top-td-la" style="padding-top: 10px;">
+                                                                        납품일자
+                                                                    </td>
+                                                                    <td>
+                                                                        <input id="date_input3" v-model="keyword_modal.keyword">
+                                                                    </td>
+                                                                    <td class="top-td-la" style="padding-top: 10px;">
+                                                                        업체
+                                                                    </td>
+                                                                    <td>
+                                                                        <input @click="_supp_bus_check('S')"  data-toggle="modal" data-target="#myModal3" v-model="supp_name_modal">
+                                                                    </td>
+                                                                    <td class="top-td-la" style="padding-top: 10px;">
+                                                                        품목그룹
+                                                                    </td>
+                                                                    <td>
+                                                                        <select id="part_group_select"  v-model="keyword_modal.keyword3">
+                                                                            <option value="">선택안함</option>
+                                                                            <option v-for="(pgs,index) in sys_part_group" :key="index" :value="pgs.part_grp_code">{{ pgs.part_grp_name}}</option>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td class="top-td-la" style="padding-top: 10px;">
+                                                                        비고
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" class="input-modal" v-model="keyword_modal.keyword4">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+
                                             </td>
                                         </tr>
-                                    </table>
-                                    <div style="width: 100%">
-                                        <div class="row" style="margin: 0">
-                                            <table id="scmDC_au_modal1"></table>
-                                            <div id="scmDC_au_modal_page1"></div>
-                                            <span class="oi oi-person"></span>
-                                            <div style="width: 100%; text-align: center" class="mg-20">
-                                                <button @click="btn_up" class="btn"><i class="fas fa-arrow-up"></i></button>
-                                                <button @click="btn_down" class="btn"><i class="fas fa-arrow-down"></i></button>
-                                            </div>
-                                            <table id="scmDC_au_modal2"></table>
+                                        <tr>
+                                            <td style="padding-bottom: 20px;">
+                                                <button class="btn" @click="modal_get_btn(1)">조회</button>
+                                                <button @click="modal_delete" class="btn">삭제</button>
 
-                                            <span class="oi oi-person"></span>
-                                        </div>
-                                    </div>
+                                            </td>
+                                            <td></td>
+                                            <td style="padding-bottom: 20px;">
+                                                <button v-if="add_update_check === 'I'" @click="modal_add_btn('I')" class="btn">저장</button>
+                                                <button v-if="add_update_check === 'U'" @click="modal_add_btn('U')" class="btn">저장</button>
+
+
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="w-400px">
+                                                <span class="content_header" style="margin: 0px">
+                                                    <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;자재목록
+                                                 </span>
+                                                <table id="scmDC_au_modal1"></table>
+                                                 <div id="scmDC_au_modal_page1"></div>
+
+                                            </td>
+                                            <td>
+                                                <div style="text-align: center; margin:auto; width: 30px">
+
+                                                        <button class="btn" @click="btn_down" style="margin-bottom: 10px"><i class="fas fa-arrow-right"></i></button>
+                                                        <button class="btn" @click="btn_up"><i class="fas fa-arrow-left"></i></button>
+
+                                                </div>
+                                            </td>
+                                            <td class="w-400px">
+                                                <span class="content_header" style="margin: 0px">
+                                                    <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;입고할 목록
+                                                 </span>
+                                                <table id="scmDC_au_modal2"></table>
+
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal hide" id="myModal2" role="dialog">
-                <div class="modal-dialog" style="width: 1000px; max-width: 1000px;">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header modal-top">
-                            <label class="font-size-18">부품식별표 인쇄 <span class="b_sub"> | Tobe MES</span></label>
-                            <button type="button" class="close modal-x-button" data-dismiss="modal">×</button>
-                        </div>
-                        <div class="modal-body form-inline">
-
-                            <div>
-                                <table class="contents">
-                                    <tbody>
-                                    <tr>
-                                        <td class="button-group">
-                                            <button class="btn" @click="common_get_btn(1)">조회</button>
-                                            <button class="btn" @click="common_get_btn(1)">삭제</button>
-                                            <button class="btn" @click="common_get_btn(1)">저장</button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <span class="content_header">
-                                    <i class="fas fa-arrow-alt-circle-right"></i>&nbsp;구분설정
-                                </span>
-                                <div class="public-mg">
-                                    <table class="table table-border-bl" >
-                                        <tr>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                납품일자
-                                            </td>
-                                            <td>
-                                                <select class="select-modal">
-                                                    <option>표준단가</option>
-                                                    <option>적용단가</option>
-                                                </select>
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                업체
-                                            </td>
-                                            <td>
-                                                <select class="select-modal">
-                                                    <option>표준단가</option>
-                                                    <option>적용단가</option>
-                                                </select>
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                품목그룹
-                                            </td>
-                                            <td>
-                                                <select class="select-modal">
-                                                    <option>표준단가</option>
-                                                    <option>적용단가</option>
-                                                </select>
-                                            </td>
-                                            <td class="top-td-la" style="padding-top: 10px;">
-                                                비고
-                                            </td>
-                                            <td>
-                                                <input type="text" class="input-modal">
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <div style="width: 100%">
-                                        <div class="row" style="margin: 0">
-                                            <table id="jqGrid1"></table>
-                                            <div id="jqGridPager1"></div>
-                                            <span class="oi oi-person"></span>
-                                            <div style="width: 100%; text-align: center" class="mg-20">
-                                                <button class="btn"><i class="fas fa-arrow-up"></i></button>
-                                                <button class="btn"><i class="fas fa-arrow-down"></i></button>
-                                            </div>
-                                            <table id="jqGrid2"></table>
-                                            <div id="jqGridPager2"></div>
-                                            <span class="oi oi-person"></span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

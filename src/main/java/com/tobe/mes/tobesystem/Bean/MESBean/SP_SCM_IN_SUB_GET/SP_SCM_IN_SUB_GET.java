@@ -13,6 +13,7 @@ public class SP_SCM_IN_SUB_GET {
     private String spec;
     private String part_grp_name;
 
+
     public String getIn_no() {
         return in_no;
     }

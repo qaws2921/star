@@ -7,6 +7,7 @@ import com.tobe.mes.tobesystem.Bean.Result;
 
 import java.util.List;
 
+
 public interface SCMln_Mapper {
     List<SCM_IN> scmln_SP_SCM_IN_GET(Page p);
 

@@ -1,12 +1,15 @@
-function jquery_scmStockList(_this){
+function jquery_scmStockRetList(_this){
 
     $( "#date_input1" ).datepicker(date).on('change', function(e) {
-        _this.keyword.keyword = e.target.value;
+        _this.keyword.start_date = e.target.value;
+    });
+    $( "#date_input2" ).datepicker(date).on('change', function(e) {
+        _this.keyword.end_date = e.target.value;
     });
 
 
-    $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
-        _this.keyword.keyword3 = $("#part_group_select").val();
+    $(document).on("change","#cargo_select",function(){ // select 박스 바뀔때
+        _this.keyword.keyword = $("#cargo_select").val();
     });
 
 }
@@ -38,11 +41,11 @@ function jqgrid_au_modal(_this) {
     $("#jqGrid").jqGrid({
         datatype: "json",
         mtype: 'POST',
-        colNames:['품목그룹','품목코드','품목명','규격','단위','공급업체','적정재고(최소)','적정재고(최대)','재고량'],
+        colNames:['일자','창고','업체','품목그룹','품번','품명','수량','등록자','일시'],
         colModel:[
-            {name:'part_grp_name',index:'part_grp_name',width:50,sortable: false,width:150},
+            {name:'work_date',index:'work_date',width:50,sortable: false,width:150},
             {name:'part_code',index:'part_code',width:100 ,key: true,sortable: false,width:150},
-            {name:'part_name',index:'part_name',width:100,sortable: false,width:150},
+            {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
             {name:'spec',index:'spec',width:100,sortable: false,width:150},
             {name:'unit_name',index:'unit_name',width:100,sortable: false,width:150},
             {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},

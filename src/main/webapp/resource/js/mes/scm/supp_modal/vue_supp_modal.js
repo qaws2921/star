@@ -97,6 +97,10 @@ Vue.prototype.EventBus = new Vue();
             },
             supp_bus:function (code,name) {
                 this.EventBus.$emit('supp', code,name);
+            },
+            supp_x:function () {
+                this.EventBus.$emit('supp', '','');
+
             }
 
         }

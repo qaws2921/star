@@ -21,6 +21,7 @@ public class SYS_BPART_CD {
     private String update_date;
     private String keyword;
 
+
     public String getPart_code() {
         return part_code;
     }
