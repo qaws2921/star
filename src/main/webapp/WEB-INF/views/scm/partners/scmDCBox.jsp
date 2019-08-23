@@ -43,7 +43,7 @@
                             납품일자
                         </td>
                         <td>
-                            <input class="input-modal" id="date" value="<fmt:formatDate value="${now}" pattern="yyyyMMdd" />">
+                            <input type="text" readonly class="input-modal" id="date" value="<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>">
                         </td>
                         <td class="top-td-la" style="padding-top: 10px;">
                             업체

@@ -3,13 +3,13 @@ package com.tobe.mes.tobesystem.MES.SCM.PARTNERS.SCMDCBox;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -24,17 +24,36 @@ public class SCMDCBox_CONTROLLER {
     }
 
     @RequestMapping("scmDCBoxAdd")
-    public ModelAndView scmDCBoxAdd(SCM_DC_BOX scmDcBox)
-    {
+    public ModelAndView scmDCBoxAdd(SCM_DC_BOX scmDcBox) throws ParseException {
+        // ModelAndView 객체 생성
         ModelAndView mav = new ModelAndView();
-        System.out.println(scmDcBox.getPart_code());
-        System.out.println(scmDcBox.getLot_no());
-        System.out.println(scmDcBox.getOrder_qty());
-        System.out.println(scmDcBox.getWork_date());
 
+        // 날짜 포멧
+        String strDate = scmDcBox.getWork_date();
+        DateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        Date date = sdf.parse(strDate);
+        String work_date = sdf.format(date);
+        scmDcBox.setWork_date(work_date);
+
+        // 데이터 처리
         List<SCM_DC_BOX> data = scmdcBox_service.scmDCBoxAdd(scmDcBox);
+
+        // 객체 생성
         mav.addObject("print_data",data);
-        mav.setViewName("barcode/2x2");
+
+        // 프린트 규격 별 view return
+        if(scmDcBox.getSize().equals("대"))
+        {
+            mav.setViewName("barcode/2x2");
+        }
+        if(scmDcBox.getSize().equals("중"))
+        {
+            mav.setViewName("barcode/4x4");
+        }
+        if(scmDcBox.getSize().equals("소"))
+        {
+            mav.setViewName("barcode/8x8");
+        }
         return mav;
     }
 }

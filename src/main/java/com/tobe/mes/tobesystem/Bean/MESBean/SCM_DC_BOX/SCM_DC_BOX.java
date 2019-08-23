@@ -14,7 +14,23 @@ public class SCM_DC_BOX {
     private String dc_no;
     private String part_name;
     private String part_grp_name;
+    private String size;
+    private String supp_name;
 
+    public String getSupp_name() {
+        return supp_name;
+    }
+
+    public void setSupp_name(String supp_name) {
+        this.supp_name = supp_name;
+    }
+
+    public String getSize() {
+        return size;
+    }
+    public void setSize(String size) {
+        this.size = size;
+    }
     public String getWork_date() {
         return work_date;
     }

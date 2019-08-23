@@ -3,6 +3,7 @@
 .barcode{font-family:C39TWttf,C39TWeot; font-size: 30px;}
 .line-sero{size:100px; width:1px; color:blue; align:center;}
 .line-garo{border:1px dotted #ccc; width: 100%; margin-bottom: 35px; margin-top: 35px}
+.line-garo1{border:0px dotted #ccc; width: 100%; margin-bottom: 35px; margin-top: 35px}
 .b{font-weight: 700}
 * {
     box-sizing: border-box;

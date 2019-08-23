@@ -39,8 +39,9 @@ function formmatter_date(cellValue) { // 날짜 필터
 function callback(cb) {
     cb();
 }
-function scmDCBoxAdd(data) {
+
+function scmDCBoxAdd(_this,data) {
     var date = $("#date").val();
-    var url="scmDCBoxAdd?part_code="+encodeURI(data.part_code)+"&order_qty="+encodeURI(data.qty)+"&lot_no="+data.lot_no+"&work_date="+encodeURI(date);
+    var url="scmDCBoxAdd?part_code="+encodeURI(data.part_code)+"&order_qty="+encodeURI(data.qty)+"&lot_no="+data.lot_no+"&work_date="+encodeURI(date)+"&size="+encodeURI(data.size)+"&supp_code="+encodeURI(_this.keyword.keyword);
     window.open(url);
 }

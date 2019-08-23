@@ -1,5 +1,6 @@
 Vue.prototype.EventBus = new Vue();
 
+
 window.onload = function () {
     new Vue({
         el:"#app",
@@ -133,7 +134,6 @@ window.onload = function () {
                 var _this =this;
                 _this.keyword.keyword = code;
                 _this.supp_name = name;
-
             },
             jqGrid1:function(){ // jqGrid 메소드
                 var _this = this;
@@ -243,7 +243,7 @@ window.onload = function () {
                             if(icol == 10)
                             {
                                 var data = grid.jqGrid('getRowData',rowid)
-                                scmDCBoxAdd(data);
+                                scmDCBoxAdd(_this,data);
                             }
                     },
                     beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지

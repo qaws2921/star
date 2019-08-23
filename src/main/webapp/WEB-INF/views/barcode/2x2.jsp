@@ -17,11 +17,9 @@
 <c:set var="page" value="${fn:length(print_data)}" />
         <c:forEach var="i" begin="1" end="${page+((page%1>=0.5)?(1-(page%1))%1:-(page%1))-1}" step="1">
             <div class="x2-page">
-
-
             <c:forEach items="${print_data}" var="data" varStatus="status">
                 <c:if test="${status.index == (i%2 == 1 ? i-1 : i)  || status.index == (i%2 == 1 ? i : i+1)}">
-                    <c:if test="${status.index ==0}">
+                    <c:if test="${status.index == 0}">
                         <div class="x2-btn-group">
                             <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
                         </div>
@@ -50,7 +48,7 @@
                                     업체명
                                 </th>
                                 <td>
-                                    ${data.part_name}
+                                    ${data.supp_name}
                                 </td>
                             </tr>
                             <tr>
