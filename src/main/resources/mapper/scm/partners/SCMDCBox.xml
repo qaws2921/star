@@ -6,6 +6,6 @@
         CALL TOBE_MES.SP_SCM_DC_BOX_GET()
     </select>
     <select id="SP_SCM_DC_BOX_ADD" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SCM_DC_BOX.SCM_DC_BOX">
-        CALL TOBE_MES.SP_SCM_DC_BOX_ADD(#{work_date},'',#{part_code},#{lot_no},'10',#{order_qty},'ADMIN')
+        CALL TOBE_MES.SP_SCM_DC_BOX_ADD(#{work_date},#{supp_code},#{part_code},#{lot_no},'10',#{order_qty},'ADMIN')
     </select>
 </mapper>

@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="resource/img/icon.png">
 </head>
 <body>
+
 <div class="page">
     <div class="btn-group">
         <a style="float: right" href="javascript:window.print()"><button id="print-button">인쇄하기</button></a>
