@@ -1,4 +1,4 @@
-function jquery_scmln(_this){
+function jquery_scmOutOrder(_this){
 
     $( "#date_input1" ).datepicker(date).on('change', function(e) {
         _this.keyword.start_date = e.target.value;
@@ -8,11 +8,20 @@ function jquery_scmln(_this){
     });
 
     $( "#date_input3" ).datepicker(date).on('change', function(e) {
-        _this.scm_in.work_date = e.target.value;
+        _this.out_order.work_date = e.target.value;
     });
 
     $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
         _this.keyword_modal.keyword2 = $("#part_group_select").val();
+    });
+    $(document).on("change","#cargo_group_select",function(){ // select 박스 바뀔때
+        _this.keyword.keyword = $("#cargo_group_select").val();
+    });
+    $(document).on("change","#cargo_group_modal_select",function(){ // select 박스 바뀔때
+        _this.out_order.cargo_code_to = $("#cargo_group_modal_select").val();
+    });
+    $(document).on("change","#rq_type_select",function(){ // select 박스 바뀔때
+        _this.keyword.keyword2 = $("#rq_type_select").val();
     });
 
 }
@@ -55,16 +64,18 @@ function jqgrid_au_modal(_this) {
     $("#jqGrid").jqGrid({
         datatype: "json",
         mtype: 'POST',
-        colNames:['입고일자','입고번호','납품증번호','업체코드','업체명','비고','등록자','등록일시'],
+        colNames:['출고일자','전표번호','받을창고','처리구분','등록자','요청일시','처리자','출고일시','cargo_code_to','rq_type'],
         colModel:[
             {name:'work_date',index:'work_date',width:50,sortable: false,width:150},
-            {name:'in_no',index:'in_no',width:100 ,key: true,sortable: false,width:150},
-            {name:'dc_no',index:'dc_no',width:100,sortable: false,width:150},
-            {name:'supp_code',index:'supp_code',width:100,sortable: false,width:150},
-            {name:'supp_name',index:'supp_name',width:100,sortable: false,width:150},
-            {name:'remark',index:'remark',width:100,sortable: false,width:150},
+            {name:'rq_no',index:'rq_no',width:100 ,key: true,sortable: false,width:150},
+            {name:'cargo_name_to',index:'cargo_name_to',width:100,sortable: false,width:150},
+            {name:'rq_type_desc',index:'rq_type_desc',width:100,sortable: false,width:150},
             {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
-            {name:'update_date',index:'update_date',width:100,sortable: false,width:150,formatter:formmatter_date},
+            {name:'create_date',index:'create_date',width:100,sortable: false,width:150,formatter:formmatter_date},
+            {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
+            {name:'out_date',index:'out_date',width:100,sortable: false,width:150},
+            {name:'cargo_code_to',index:'cargo_code_to',width:100,sortable: false,width:150,hidden:true},
+            {name:'rq_type',index:'rq_type',width:100,sortable: false,width:150,hidden:true},
 
         ],
         autowidth: true,
@@ -85,7 +96,7 @@ function jqgrid_au_modal(_this) {
         ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
             var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
             _this.main_edit(data); // 데이터 가공
-            _this.main_update(); // 수정창 띄어주기
+            _this.main_update(data); // 수정창 띄어주기
 
         }
 
@@ -106,7 +117,7 @@ var lastsel2;
             {name:'part_name',index:'part_name',sortable: false},
             {name:'spec',index:'spec',sortable: false},
             {name:'unit_code',index:'unit_code',sortable: false},
-            {name:'pack_qty',index:'pack_qty',sortable: false},
+            {name:'qty',index:'qty',sortable: false},
             // {name:'lot_no',index:'lot_no',width:100,sortable: false, formatter: function (cellValue, option) {
             //         return '<input type="text" size="7" name="txtBox" id="txt_' + option.rowId +'"/>';
             //     }},
@@ -134,13 +145,15 @@ var lastsel2;
         datatype: "json",
         mtype: 'POST',
         editurl: 'clientArray',
-        colNames:['품목그룹','품번','품명','단위','입고수량'],
+        colNames:['품목그룹','품번','품명','규격','단위','요청수량'],
         colModel:[
             {name:'part_grp_name',index:'part_grp_name',sortable: false},
             {name:'part_code',index:'part_code',key: true ,sortable: false},
             {name:'part_name',index:'part_name',sortable: false},
+            {name:'spec',index:'spec',sortable: false},
             {name:'unit_code',index:'unit_code',sortable: false},
-            {name:'in_qty',index:'in_qty',sortable: false,
+            {name:'qty',index:'qty',sortable: false
+                ,
                 editrules: { number: true },
                 editable: true,
                 editoptions: {
@@ -150,8 +163,8 @@ var lastsel2;
                             type: 'focusout',
                             fn: function (e) {
 
-                                if ($("#"+lastsel2+"_in_qty").val()){
-                                    if (isNaN($("#"+lastsel2+"_in_qty").val())){
+                                if ($("#"+lastsel2+"_qty").val()){
+                                    if (isNaN($("#"+lastsel2+"_qty").val())){
                                         alert("숫자만 가능합니다.");
                                         return false;
                                     }
@@ -166,11 +179,6 @@ var lastsel2;
                 },
 
         ],
-        afterEditCell:function(rowid, cellname, value, iRow, iCol){
-            alert("sss");
-
-        },
-
 
         onCellSelect: function(rowid,icol,cellcontent,e){
 
@@ -182,9 +190,9 @@ var lastsel2;
 
 
 
-             if (icol == 5){
-               if ($("#"+lastsel2+"_in_qty").val()){
-                   if (isNaN($("#"+lastsel2+"_in_qty").val())){
+             if (icol == 6){
+               if ($("#"+lastsel2+"_qty").val()){
+                   if (isNaN($("#"+lastsel2+"_qty").val())){
                        alert("숫자만 가능합니다.");
                        return false;
                    }
@@ -193,9 +201,10 @@ var lastsel2;
                  // alert($("#"+lastsel2+"_in_qty").val());
                  $("#au_modal2").jqGrid('saveRow', lastsel2);
                 $("#au_modal2").jqGrid('editRow',rowid,{
-                     keys: true,
+                     keys: false,
                  });
                lastsel2=rowid;
+                 _this.lastsel2 = rowid;
             }
 
 

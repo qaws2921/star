@@ -58,7 +58,7 @@
                 전표번호
             </th>
             <td class="b">
-
+                    ${scm_dc.dc_no}
             </td>
         </tr>
         </tbody>

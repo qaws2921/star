@@ -90,4 +90,12 @@ public class COMMON_SERVICE {
             return new SYS_BPART_CDS(sys_bpart_cdList,total,(int)(page*1),bPart_get_count);
         }
     }
+
+    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET() {
+        Page p = new Page();
+        p.setPage_num(0);
+        p.setTotal_num(0);
+        p.setKeyword("M");
+        return scmCargo_mapper.cargo_cd_get(p);
+    }
 }

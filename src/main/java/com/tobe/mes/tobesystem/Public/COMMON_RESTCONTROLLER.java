@@ -31,6 +31,10 @@ public class COMMON_RESTCONTROLLER {
     public List<SYS_CARGO_CD> cargo_cd_get (){
         return common_service.cargo_cd_get();
     }
+    @RequestMapping(value = "/common/SP_SYS_CARGO_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
+    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET (){
+        return common_service.common_SP_SYS_CARGO_GET();
+    }
     @RequestMapping(value = "/common/loc/cd/get", method = RequestMethod.POST) // 코드 리스트 가져오기
     public List<SYS_LOC_CD> loc_cd_get (Page p){
         return common_service.loc_cd_get(p);

@@ -73,12 +73,15 @@
                                     </li>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">입고처리</a>
+                                        <a class="scmInFromDC" href="scmInFromDC?active=scm&check=materials">입고처리</a>
                                     </li>
                                     <li>
                                         <a class="scmln" href="scmln?active=scm&check=materials">입고관리</a>
                                     </li>
 
+                                    <li>
+                                        <a class="scmOutOrder" href="scmOutOrder?active=scm&check=materials">출고요청</a>
+                                    </li>
                                     <li>
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">출고처리</a>
                                     </li>
