@@ -6,6 +6,7 @@ import com.tobe.mes.tobesystem.Bean.Result;
 
 import java.util.List;
 
+
 public interface SCMInFromDC_Mapper {
     List<SP_SCM_IN_READY_GET> scmInFromDC_SP_SCM_IN_READY_GET(Page p);
 

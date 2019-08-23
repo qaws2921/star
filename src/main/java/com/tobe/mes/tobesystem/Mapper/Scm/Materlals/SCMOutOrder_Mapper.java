@@ -17,4 +17,5 @@ public interface SCMOutOrder_Mapper {
     List<SP_SCM_OUT_ORDER_SUB_GET> scmOutOrder_SP_SCM_OUT_ORDER_SUB_GET(SP_SCM_OUT_ORDER_SUB_GET ssoosg);
 
     Result scmOutOrder_SP_SCM_OUT_ORDER_DEL(SP_SCM_OUT_ORDER_GET ssoog);
+
 }

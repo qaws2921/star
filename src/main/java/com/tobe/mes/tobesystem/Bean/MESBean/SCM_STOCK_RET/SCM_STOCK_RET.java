@@ -1,5 +1,6 @@
 package com.tobe.mes.tobesystem.Bean.MESBean.SCM_STOCK_RET;
 
+
 public class SCM_STOCK_RET {
     private String ret_no;
     private String work_date;

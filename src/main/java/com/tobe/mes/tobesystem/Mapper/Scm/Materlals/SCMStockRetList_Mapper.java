@@ -9,4 +9,5 @@ public interface SCMStockRetList_Mapper {
     List<SCM_STOCK_RET> scmStockRet_SP_SCM_STOCK_RET_GET(Page p);
 
     int scmStockRet_SP_SCM_STOCK_RET_GET_count(Page p);
+
 }

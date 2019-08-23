@@ -17,4 +17,5 @@ public class SCMStockRetList_RESTCONTROLLER {
         return scmStockRet_service.scmStockRet_SP_SCM_STOCK_RET_GET(page,rows,p);
     }
 
+
 }

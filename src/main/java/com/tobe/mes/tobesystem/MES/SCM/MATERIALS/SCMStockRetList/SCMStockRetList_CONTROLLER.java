@@ -9,4 +9,5 @@ public class SCMStockRetList_CONTROLLER {
     public String scmStockRet(){
         return "scm/materials/scmStockRetList";
     }
+
 }

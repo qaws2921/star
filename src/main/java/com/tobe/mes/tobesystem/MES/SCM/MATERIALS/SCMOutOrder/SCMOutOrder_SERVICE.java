@@ -62,6 +62,7 @@ public class SCMOutOrder_SERVICE {
         return scmOutOrder_mapper.scmOutOrder_SP_SCM_OUT_ORDER_ADD(ssoog);
 
 
+
     }
 
     public List<SP_SCM_OUT_ORDER_SUB_GET> scmOutOrder_SP_SCM_OUT_ORDER_SUB_GET(SP_SCM_OUT_ORDER_SUB_GET ssoosg) {

@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Bean.MESBean.SCM_STOCK_RET;
 
 import java.util.List;
 
+
 public class SCM_STOCK_RETS {
     private List<SCM_STOCK_RET> rows;
     private int total;

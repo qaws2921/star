@@ -37,6 +37,7 @@ public class SCMln_SERVICE {
             int total =(int) Math.ceil(scmln_SP_SCM_IN_GET_count/(rows*1));
 
 
+
             return new SCM_INS(scm_inList,total,(int)(page*1),scmln_SP_SCM_IN_GET_count);
         }
     }

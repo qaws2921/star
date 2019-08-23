@@ -11,5 +11,6 @@ public interface SCMStockList_Mapper {
 
     int scmStockList_SP_SCM_STOCK_BPART_GET_count(Page p);
 
+
     List<SP_SCM_STOCK_BPART_GET> scmStockList_download(Page p);
 }

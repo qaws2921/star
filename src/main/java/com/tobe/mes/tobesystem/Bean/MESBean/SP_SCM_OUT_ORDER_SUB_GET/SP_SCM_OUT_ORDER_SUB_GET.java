@@ -1,5 +1,6 @@
 package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_OUT_ORDER_SUB_GET;
 
+
 public class SP_SCM_OUT_ORDER_SUB_GET {
     private String rq_no;
     private String part_code;

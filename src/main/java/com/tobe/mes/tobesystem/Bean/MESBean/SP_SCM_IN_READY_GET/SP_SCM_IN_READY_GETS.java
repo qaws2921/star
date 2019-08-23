@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_IN_READY_GET;
 
 import java.util.List;
 
+
 public class SP_SCM_IN_READY_GETS {
     private List<SP_SCM_IN_READY_GET> rows;
     private int total;

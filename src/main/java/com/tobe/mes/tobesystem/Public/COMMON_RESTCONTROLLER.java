@@ -48,4 +48,5 @@ public class COMMON_RESTCONTROLLER {
         return common_service.bPart_get(page,rows,p);
     }
 
+
 }

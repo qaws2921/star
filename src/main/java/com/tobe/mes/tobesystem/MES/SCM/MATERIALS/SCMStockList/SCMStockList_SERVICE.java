@@ -18,6 +18,7 @@ public class SCMStockList_SERVICE {
     @Autowired
     private SCMStockList_Mapper scmStockList_mapper;
 
+
     public SP_SCM_STOCK_BPART_GETS scmStockList_SP_SCM_STOCK_BPART_GET(Double page, Double rows, Page p) {
         if (page == null && rows == null) {
             return new SP_SCM_STOCK_BPART_GETS(null,0,0,0);

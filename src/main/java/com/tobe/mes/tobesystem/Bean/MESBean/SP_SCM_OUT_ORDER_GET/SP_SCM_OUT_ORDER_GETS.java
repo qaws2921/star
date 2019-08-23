@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_OUT_ORDER_GET;
 
 import java.util.List;
 
+
 public class SP_SCM_OUT_ORDER_GETS {
     private List<SP_SCM_OUT_ORDER_GET> rows;
     private int total;

@@ -29,6 +29,7 @@ public class SCMStockRetList_SERVICE {
 
 
             return new SCM_STOCK_RETS(list,total,(int)(page*1),list_count);
+
         }
     }
 }

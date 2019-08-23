@@ -18,6 +18,7 @@ public class SCMInFromDC_SERVICE {
         return scmInFromDC_mapper.scmInFromDC_SP_SCM_IN_READY_GET(p);
     }
 
+
     public Result scmInFromDC_SP_SCM_IN_ADD(SP_SCM_IN_READY_GET ssirg) {
         ssirg.setWork_date(ssirg.getWork_date().replace("-",""));
 

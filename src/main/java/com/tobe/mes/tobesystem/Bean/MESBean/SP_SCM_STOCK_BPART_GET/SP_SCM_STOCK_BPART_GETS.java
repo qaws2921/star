@@ -2,6 +2,7 @@ package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_STOCK_BPART_GET;
 
 import java.util.List;
 
+
 public class SP_SCM_STOCK_BPART_GETS {
 
     private List<SP_SCM_STOCK_BPART_GET> rows;

@@ -18,4 +18,5 @@ public interface SCMln_Mapper {
     Result scmln_SP_SCM_IN_ADD(SCM_IN si);
 
     Result scmln_SP_SCM_IN_DEL(SCM_IN si);
+
 }

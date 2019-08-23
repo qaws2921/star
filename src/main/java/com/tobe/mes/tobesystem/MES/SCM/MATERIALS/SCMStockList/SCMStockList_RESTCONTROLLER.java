@@ -16,6 +16,7 @@ public class SCMStockList_RESTCONTROLLER {
     private SCMStockList_SERVICE scmStockList_service;
 
 
+
     @RequestMapping(value = "/scmStockList/SP_SCM_STOCK_BPART_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
     public SP_SCM_STOCK_BPART_GETS scmStockList_SP_SCM_STOCK_BPART_GET (Double page, Double rows, Page p){
         return scmStockList_service.scmStockList_SP_SCM_STOCK_BPART_GET(page,rows,p);

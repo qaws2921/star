@@ -1,5 +1,6 @@
 package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_IN_READY_GET;
 
+
 public class SP_SCM_IN_READY_GET {
     private String dc_no;
     private String work_date;

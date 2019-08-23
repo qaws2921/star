@@ -91,6 +91,7 @@ public class COMMON_SERVICE {
         }
     }
 
+
     public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET() {
         Page p = new Page();
         p.setPage_num(0);
