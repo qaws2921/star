@@ -7,6 +7,7 @@ function jquery_scmInFromDC(_this){
 
 }
 
+
 var date={
     dateFormat: 'yy-mm-dd',
     prevText: '이전 달',
