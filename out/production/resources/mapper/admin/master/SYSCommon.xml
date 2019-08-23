@@ -9,7 +9,7 @@
         CALL TOBE_MES.SP_SYS_COMMON_GET(#{page_num},#{total_num},#{keyword},'','')
     </select>
     <select id="common_group_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
-        CALL TOBE_MES.SP_SYS_COMMON_GROUP_GET(0,0,"S")
+        CALL TOBE_MES.SP_SYS_COMMON_GET(0,0,'GROUP_TYPE','','S')
     </select>
     <select id="common_au" parameterType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_COMMON_ADD(#{code_type},#{code_value},#{code_name1},#{code_name2},#{code_name3},#{code_name4},#{code_name5},#{code_name6},#{code_name7},#{code_name8},#{use_yn},#{user_code},#{keyword})

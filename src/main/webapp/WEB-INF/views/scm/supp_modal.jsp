@@ -20,7 +20,7 @@
                                         <td class="button-group">
                                             <button class="btn" @click="supp_get_btn">조회</button>
                                             <button class="btn" id="supp_check">선택</button>
-                                            <button class="btn" data-dismiss="modal">취소</button>
+                                            <button class="btn" data-dismiss="modal" @click="supp_x">취소</button>
 
                                         </td>
                                     </tr>

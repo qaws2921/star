@@ -92,7 +92,7 @@
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">자재이동</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">반출증관리</a>
+                                        <a class="scmStockRet" href="scmStockRet?active=scm&check=materials">자재반출</a>
                                     </li>
 
                         </ul>

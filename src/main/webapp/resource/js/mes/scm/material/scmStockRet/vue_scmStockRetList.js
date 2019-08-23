@@ -5,19 +5,22 @@ window.onload = function () {
         el:"#app",
         data: function () {
             return{
+                sys_cargo_cd:[],
 
-                sys_part_group:[],
                 keyword:{
+                    start_date:'',
+                    end_date:'',
                     keyword:'',
                     keyword2:'',
-                    keyword3:'',
+
 
 
                 },
                 keyword_post:{
+                    start_date:'',
+                    end_date:'',
                     keyword:'',
                     keyword2:'',
-                    keyword3:'',
                 },
 
                 supp_code:'',
@@ -41,8 +44,8 @@ window.onload = function () {
 
         mounted: function(){
             var _this = this;
-            _this.sys_part_group_get(); // 코드그룹 가져오기
-            jquery_scmStockList(_this); // vue 에서 실행 못하는 jquery
+            _this.sys_carogo_cd_get(); // 코드그룹 가져오기
+            jquery_scmStockRetList(_this); // vue 에서 실행 못하는 jquery
             _this.selectBox();
             jqgrid_au_modal(_this);
 
@@ -57,7 +60,7 @@ window.onload = function () {
                 if ( _this.effectiveness2()){
 
                 _this.keyword_post = _this.keyword;
-                $('#jqGrid').setGridParam({ url: 'scmStockList/SP_SCM_STOCK_BPART_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
+                $('#jqGrid').setGridParam({ url: 'scmStockRet/SP_SCM_STOCK_RET_GET',postData: _this.keyword_post ,datatype: "json", page: page}).trigger("reloadGrid");
                 }
             },
             excel_download:function(){
@@ -82,7 +85,10 @@ window.onload = function () {
 
             effectiveness:function () { // 유효성 검사
                 var _this = this;
-                if (_this.keyword_post.keyword === ''){
+                if (_this.keyword_post.start_date === ''){
+                    alert("날짜를 입력해주세요");
+                    return false;
+                } else if (_this.keyword_post.end_date=== ''){
                     alert("날짜를 입력해주세요");
                     return false;
                 }else {
@@ -91,7 +97,10 @@ window.onload = function () {
             },
             effectiveness2:function () { // 유효성 검사
                 var _this = this;
-                if (_this.keyword.keyword === ''){
+                if (_this.keyword.start_date === ''){
+                    alert("날짜를 입력해주세요");
+                    return false;
+                } else if (_this.keyword.end_date=== ''){
                     alert("날짜를 입력해주세요");
                     return false;
                 }else {
@@ -115,17 +124,17 @@ window.onload = function () {
 
             },
             selectBox:function(){  // select2 실행 메소드
-                $("#part_group_select").select2();
+                $("#cargo_select").select2();
             },
-            sys_part_group_get:function(){
+            sys_carogo_cd_get:function(){
                 var _this = this;
                 $.ajax({
-                    url: "common/part/group/get",
+                    url: "common/cargo/cd/get",
                     type: 'POST',
                     async: true,
                     dataType: "json",
                     success: function (data) {
-                        _this.sys_part_group = data;
+                        _this.sys_cargo_cd = data;
                     },
                     error: function () {
 

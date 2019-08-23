@@ -42,6 +42,7 @@ public class SCMln_SERVICE {
     }
 
     public List<SP_SCM_IN_SUB_GET> scmln_SP_SCM_IN_SUB_GET(SCM_IN si) {
+
         return scMln_mapper.scmln_SP_SCM_IN_SUB_GET(si);
     }
 
