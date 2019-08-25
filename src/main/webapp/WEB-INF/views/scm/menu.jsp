@@ -86,7 +86,7 @@
                                         <a class="scmOut" href="scmOut?active=scm&check=materials">출고관리</a>
                                     </li>
                                     <li>
-                                        <a class="sysBoard" href="sysBoard?active=scm&check=master">재고조정</a>
+                                        <a class="scmStockRev" href="scmStockRev?active=scm&check=materials">재고조정</a>
                                     </li>
                                     <li>
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">재고조정이력</a>

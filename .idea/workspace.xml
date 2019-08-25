@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96d9b366-9800-40f6-9867-7708b4b2eb72" name="Default Changelist" comment="커밋">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_OUT/SCM_OUT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_OUT/SCM_OUTS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_OUT_SUB_GET/SP_SCM_OUT_SUB_GET.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_CONTROLLER.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_RESTCONTROLLER.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_SERVICE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMOut_Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmOut.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/jquery_scmOut.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/vue_scmOut.js" afterDir="false" />
+    <list default="true" id="96d9b366-9800-40f6-9867-7708b4b2eb72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REVS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_CONTROLLER.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_RESTCONTROLLER.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_SERVICE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockRev_Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockRev.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockRev.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/jquery_scmStockRev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/vue_scmStockRev.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/mapper/scm/materlals/SCMStockList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/mapper/scm/materlals/SCMStockList.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_OUT_ORDER_SUB_GET/SP_SCM_OUT_ORDER_SUB_GET.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_OUT_ORDER_SUB_GET/SP_SCM_OUT_ORDER_SUB_GET.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOutOrder.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOutOrder.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockList.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMlnFromDC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMlnFromDC.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOutOrder/jquery_scmOutOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOutOrder/jquery_scmOutOrder.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -54,106 +48,159 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42919075">
+    <splitter split-orientation="horizontal" split-proportion="0.4732659">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_RET/SCM_STOCK_RET.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_SERVICE.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="30">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmOutOrder.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="341">
-                  <caret line="51" selection-start-line="51" selection-end-line="59" selection-end-column="29" />
+                <state relative-caret-position="420">
+                  <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
                   <folding>
-                    <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMln.xml">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockRev.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                <state relative-caret-position="60">
+                  <caret line="4" column="126" selection-start-line="4" selection-start-column="126" selection-end-line="4" selection-end-column="126" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMlnFromDC.xml">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_SERVICE.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="10" selection-start-line="10" selection-end-line="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockRet.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="34" selection-start-line="34" selection-end-line="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOutOrder.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" selection-start-line="20" selection-end-line="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockList.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" selection-start-line="15" selection-end-line="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmOut.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="284">
-                  <caret line="252" column="90" selection-start-line="252" selection-start-column="90" selection-end-line="252" selection-end-column="90" />
-                  <folding>
-                    <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#td#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#0;n#main#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/partners/scmDC.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="96" column="61" lean-forward="true" selection-start-line="96" selection-start-column="61" selection-end-line="96" selection-end-column="61" />
+                <state relative-caret-position="480">
+                  <caret line="41" column="9" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="41" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_RESTCONTROLLER.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+                <state relative-caret-position="195">
+                  <caret line="13" column="62" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="62" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REV.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="30" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#476#477#0" expanded="true" />
+                    <element signature="e#502#503#0" expanded="true" />
+                    <element signature="e#537#538#0" expanded="true" />
+                    <element signature="e#567#568#0" expanded="true" />
+                    <element signature="e#603#604#0" expanded="true" />
+                    <element signature="e#635#636#0" expanded="true" />
+                    <element signature="e#685#686#0" expanded="true" />
+                    <element signature="e#727#728#0" expanded="true" />
+                    <element signature="e#762#763#0" expanded="true" />
+                    <element signature="e#793#794#0" expanded="true" />
+                    <element signature="e#841#842#0" expanded="true" />
+                    <element signature="e#881#882#0" expanded="true" />
+                    <element signature="e#917#918#0" expanded="true" />
+                    <element signature="e#949#950#0" expanded="true" />
+                    <element signature="e#999#1000#0" expanded="true" />
+                    <element signature="e#1041#1042#0" expanded="true" />
+                    <element signature="e#1082#1083#0" expanded="true" />
+                    <element signature="e#1119#1120#0" expanded="true" />
+                    <element signature="e#1179#1180#0" expanded="true" />
+                    <element signature="e#1231#1232#0" expanded="true" />
+                    <element signature="e#1267#1268#0" expanded="true" />
+                    <element signature="e#1299#1300#0" expanded="true" />
+                    <element signature="e#1349#1350#0" expanded="true" />
+                    <element signature="e#1391#1392#0" expanded="true" />
+                    <element signature="e#1427#1428#0" expanded="true" />
+                    <element signature="e#1459#1460#0" expanded="true" />
+                    <element signature="e#1509#1510#0" expanded="true" />
+                    <element signature="e#1551#1552#0" expanded="true" />
+                    <element signature="e#1589#1590#0" expanded="true" />
+                    <element signature="e#1623#1624#0" expanded="true" />
+                    <element signature="e#1677#1678#0" expanded="true" />
+                    <element signature="e#1723#1724#0" expanded="true" />
+                    <element signature="e#1759#1760#0" expanded="true" />
+                    <element signature="e#1791#1792#0" expanded="true" />
+                    <element signature="e#1841#1842#0" expanded="true" />
+                    <element signature="e#1883#1884#0" expanded="true" />
+                    <element signature="e#1919#1920#0" expanded="true" />
+                    <element signature="e#1951#1952#0" expanded="true" />
+                    <element signature="e#2001#2002#0" expanded="true" />
+                    <element signature="e#2043#2044#0" expanded="true" />
+                    <element signature="e#2079#2080#0" expanded="true" />
+                    <element signature="e#2111#2112#0" expanded="true" />
+                    <element signature="e#2161#2162#0" expanded="true" />
+                    <element signature="e#2203#2204#0" expanded="true" />
+                    <element signature="e#2243#2244#0" expanded="true" />
+                    <element signature="e#2279#2280#0" expanded="true" />
+                    <element signature="e#2337#2338#0" expanded="true" />
+                    <element signature="e#2387#2388#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_IN/SCM_INS.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REVS.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+                  <folding>
+                    <element signature="e#499#500#0" expanded="true" />
+                    <element signature="e#552#553#0" expanded="true" />
+                    <element signature="e#584#585#0" expanded="true" />
+                    <element signature="e#613#614#0" expanded="true" />
+                    <element signature="e#641#642#0" expanded="true" />
+                    <element signature="e#680#681#0" expanded="true" />
+                    <element signature="e#714#715#0" expanded="true" />
+                    <element signature="e#742#743#0" expanded="true" />
+                    <element signature="e#769#770#0" expanded="true" />
+                    <element signature="e#806#807#0" expanded="true" />
+                    <element signature="e#838#839#0" expanded="true" />
+                    <element signature="e#869#870#0" expanded="true" />
+                    <element signature="e#899#900#0" expanded="true" />
+                    <element signature="e#942#943#0" expanded="true" />
+                    <element signature="e#980#981#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockRev.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-110">
+                  <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_CONTROLLER.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="13" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -174,8 +221,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_RESTCONTROLLER.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="36" column="5" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="36" selection-end-column="5" />
+                <state relative-caret-position="165">
+                  <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -192,15 +239,6 @@
                     <element signature="e#2071#2072#0" expanded="true" />
                     <element signature="e#2134#2135#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_OUT_ORDER_SUB_GET/SP_SCM_OUT_ORDER_SUB_GET.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="525">
-                  <caret line="59" selection-start-line="59" selection-end-line="59" />
                 </state>
               </provider>
             </entry>
@@ -240,15 +278,6 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOutOrder/jquery_scmOutOrder.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-809">
-                  <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_SERVICE.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="272">
@@ -260,7 +289,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_CONTROLLER.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="15">
@@ -276,16 +305,34 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMOut_Mapper.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="225">
-                  <caret line="22" column="49" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="49" />
+                  <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/vue_scmStockRev.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-551">
+                  <caret line="93" column="82" selection-start-line="93" selection-start-column="82" selection-end-line="93" selection-end-column="82" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/jquery_scmOut.js">
+            <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/jquery_scmStockRev.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="672">
-                  <caret line="327" column="26" selection-start-line="327" selection-start-column="26" selection-end-line="327" selection-end-column="26" />
+                <state relative-caret-position="-554">
+                  <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockRev_Mapper.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="8" column="56" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -356,16 +403,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOutOrder/SCMOutOrder_RESTCONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOutOrder/SCMOutOrder_SERVICE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_RESTCONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMInFromDC/SCMInFromDC_SERVICE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_RESTCONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockInfo/SCMStockInfo_SERVICE.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockList/SCMStockList_CONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockList/SCMStockList_RESTCONTROLLER.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockList/SCMStockList_SERVICE.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRetList/SCMStockRetList_CONTROLLER.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRetList/SCMStockRetList_RESTCONTROLLER.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRetList/SCMStockRetList_SERVICE.java" />
@@ -389,7 +426,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmInFromDC/vue_scmInFromDC.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_IN_READY_GET/SP_SCM_IN_READY_GET.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_IN_READY_GET/SP_SCM_IN_READY_GETS.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmOutOrder.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_OUT/SCM_OUTS.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOutOrder.xml" />
@@ -403,10 +439,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmOut.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_RESTCONTROLLER.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMOut_Mapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/vue_scmOut.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_SERVICE.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_CONTROLLER.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_CONTROLLER.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockRev.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REV.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REVS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_RESTCONTROLLER.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_SERVICE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockRev_Mapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockRev.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/jquery_scmStockRev.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/vue_scmStockRev.js" />
       </list>
     </option>
   </component>
@@ -551,6 +598,20 @@
               <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
               <item name="Bean" type="462c0819:PsiDirectoryNode" />
               <item name="MESBean" type="462c0819:PsiDirectoryNode" />
+              <item name="SCM_STOCK_REV" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="tobe" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="Bean" type="462c0819:PsiDirectoryNode" />
+              <item name="MESBean" type="462c0819:PsiDirectoryNode" />
               <item name="SP_SCM_IN_SUB_GET" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -580,20 +641,6 @@
               <item name="Bean" type="462c0819:PsiDirectoryNode" />
               <item name="MESBean" type="462c0819:PsiDirectoryNode" />
               <item name="SP_SCM_OUT_ORDER_SUB_GET" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="tobe" type="462c0819:PsiDirectoryNode" />
-              <item name="mes" type="462c0819:PsiDirectoryNode" />
-              <item name="tobesystem" type="462c0819:PsiDirectoryNode" />
-              <item name="Bean" type="462c0819:PsiDirectoryNode" />
-              <item name="MESBean" type="462c0819:PsiDirectoryNode" />
-              <item name="SP_SCM_OUT_SUB_GET" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
@@ -715,7 +762,7 @@
               <item name="MES" type="462c0819:PsiDirectoryNode" />
               <item name="SCM" type="462c0819:PsiDirectoryNode" />
               <item name="MATERIALS" type="462c0819:PsiDirectoryNode" />
-              <item name="SCMOut" type="462c0819:PsiDirectoryNode" />
+              <item name="SCMOutOrder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
@@ -730,7 +777,7 @@
               <item name="MES" type="462c0819:PsiDirectoryNode" />
               <item name="SCM" type="462c0819:PsiDirectoryNode" />
               <item name="MATERIALS" type="462c0819:PsiDirectoryNode" />
-              <item name="SCMOutOrder" type="462c0819:PsiDirectoryNode" />
+              <item name="SCMStockRev" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
@@ -855,6 +902,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="mes" type="462c0819:PsiDirectoryNode" />
+              <item name="scm" type="462c0819:PsiDirectoryNode" />
+              <item name="material" type="462c0819:PsiDirectoryNode" />
+              <item name="scmStockRev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tobesystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tobemes" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -933,8 +993,8 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials" />
       <recent name="$PROJECT_DIR$/src/main/resources/mapper/scm/materlals" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOutOrder" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmInFromDC" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tobe.mes.tobesystem.Mapper.Scm.Standard" />
@@ -1010,7 +1070,7 @@
       <workItem from="1566431042894" duration="23644000" />
       <workItem from="1566517635012" duration="19142000" />
       <workItem from="1566562810496" duration="530000" />
-      <workItem from="1566692413978" duration="12617000" />
+      <workItem from="1566692413978" duration="15208000" />
     </task>
     <task id="LOCAL-00001" summary="테스트">
       <created>1563251645840</created>
@@ -1299,11 +1359,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566563444447</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="커밋">
+      <created>1566716064700</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1566716064700</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="400392000" />
+    <option name="totallyTimeSpent" value="402983000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1318,7 +1385,7 @@
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2630458" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2630458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1329,7 +1396,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49733758" weight="0.32970297" />
       <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49893504" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.5889244" visible="true" weight="0.32871288" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.5889244" visible="true" weight="0.32871288" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4978701" weight="0.32970297" />
@@ -1377,105 +1444,6 @@
     <SUITE FILE_PATH="coverage/tobesystem$TobesystemApplication.ic" NAME="TobesystemApplication Coverage Results" MODIFIED="1566550666956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRetList/SCMStockRetList_RESTCONTROLLER.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRetList/SCMStockRetList_SERVICE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Public/COMMON_RESTCONTROLLER.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Public/COMMON_SERVICE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMInFromDC_Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMln_Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOutOrder/SCMOutOrder_SERVICE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_OUT_ORDER_GET/SP_SCM_OUT_ORDER_GETS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/classes/com/tobe/mes/tobesystem/Bean/MESBean/SCM_DC_BOX/SCM_DC_BOX.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#2988#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMOutOrder_Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockList_Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockRetList_Mapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_RET/SCM_STOCK_RETS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SP_SCM_IN_READY_GET/SP_SCM_IN_READY_GET.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1528,20 +1496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_CONTROLLER.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="85" column="97" selection-start-line="85" selection-start-column="97" selection-end-line="85" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_RET/SCM_STOCK_RET.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1587,13 +1541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_IN/SCM_INS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_OUT/SCM_OUTS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1632,13 +1579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_SERVICE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="51" selection-start-line="51" selection-end-line="69" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1691,13 +1631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_RESTCONTROLLER.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="36" column="5" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_OUT/SCM_OUT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -1738,38 +1671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_RESTCONTROLLER.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="39" column="51" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#2071#2072#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/vue_scmOut.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="390" column="46" selection-start-line="390" selection-start-column="46" selection-end-line="390" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMOut_Mapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1822,6 +1727,236 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMOut/SCMOut_RESTCONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="39" column="51" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#2071#2072#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmOut/vue_scmOut.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="390" column="46" selection-start-line="390" selection-start-column="46" selection-end-line="390" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMOut.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCMStockRev/SCMStockRev_CONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCMStockRev/SCMStockRev_RESTCONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCMStockRev/SCMStockRev_SERVICE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_CONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="88" column="107" selection-start-line="88" selection-start-column="107" selection-end-line="88" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_CONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_RESTCONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_IN/SCM_INS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REVS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#552#553#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMln/SCMln_SERVICE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="41" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_SERVICE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="81" selection-start-line="31" selection-start-column="81" selection-end-line="31" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/scm/materlals/SCMStockRev.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="126" selection-start-line="4" selection-start-column="126" selection-end-line="4" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Mapper/Scm/Materlals/SCMStockRev_Mapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scm/materials/scmStockRev.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/Bean/MESBean/SCM_STOCK_REV/SCM_STOCK_REV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1427#1428#0" expanded="true" />
+            <element signature="e#1459#1460#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
+            <element signature="e#1883#1884#0" expanded="true" />
+            <element signature="e#1919#1920#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#2001#2002#0" expanded="true" />
+            <element signature="e#2043#2044#0" expanded="true" />
+            <element signature="e#2079#2080#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2203#2204#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2279#2280#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tobe/mes/tobesystem/MES/SCM/MATERIALS/SCMStockRev/SCMStockRev_RESTCONTROLLER.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="62" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/jquery_scmStockRev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="67" column="50" selection-start-line="67" selection-start-column="50" selection-end-line="67" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/js/mes/scm/material/scmStockRev/vue_scmStockRev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="93" column="82" selection-start-line="93" selection-start-column="82" selection-end-line="93" selection-end-column="82" />
         </state>
       </provider>
     </entry>
