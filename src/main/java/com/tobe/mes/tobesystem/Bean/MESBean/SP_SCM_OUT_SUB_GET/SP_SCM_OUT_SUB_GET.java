@@ -1,21 +1,19 @@
-package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_OUT_ORDER_SUB_GET;
+package com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_OUT_SUB_GET;
 
-
-public class SP_SCM_OUT_ORDER_SUB_GET {
-    private String rq_no;
+public class SP_SCM_OUT_SUB_GET {
+    private String out_no;
     private String part_code;
     private int qty;
     private String part_name;
     private String spec;
     private String part_grp_name;
 
-
-    public String getRq_no() {
-        return rq_no;
+    public String getOut_no() {
+        return out_no;
     }
 
-    public void setRq_no(String rq_no) {
-        this.rq_no = rq_no;
+    public void setOut_no(String out_no) {
+        this.out_no = out_no;
     }
 
     public String getPart_code() {
@@ -57,5 +55,4 @@ public class SP_SCM_OUT_ORDER_SUB_GET {
     public void setPart_grp_name(String part_grp_name) {
         this.part_grp_name = part_grp_name;
     }
-
 }
