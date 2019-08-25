@@ -115,13 +115,16 @@
                                                             입고일자
                                                         </td>
                                                         <td>
-                                                            <input id="date_input3" class="input-modal" v-model="scm_in.work_date">
+                                                            <input id="date_input3" class="input-modal" v-model="scm_stock_rev.work_date">
                                                         </td>
                                                         <td class="top-td-la" style="padding-top: 10px;">
-                                                            비고
+                                                            조정사유
                                                         </td>
                                                         <td>
-                                                            <input  class="input-modal" v-model="scm_in.remark">
+                                                            <select id="common_get_select"  v-model="scm_stock_rev.rev_code">
+                                                                <option value="">선택안함</option>
+                                                                <option v-for="(cg,index) in common_get" :key="index" :value="cg.code_value">{{ cg.code_name1}}</option>
+                                                            </select>
                                                         </td>
 
                                                     </tr>

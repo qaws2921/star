@@ -3,6 +3,7 @@ package com.tobe.mes.tobesystem.MES.SCM.MATERIALS.SCMStockRev;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_STOCK_REV.SCM_STOCK_REV;
 import com.tobe.mes.tobesystem.Bean.MESBean.SCM_STOCK_REV.SCM_STOCK_REVS;
 import com.tobe.mes.tobesystem.Bean.Page;
+import com.tobe.mes.tobesystem.Bean.Result;
 import com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMStockRev_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,5 +39,29 @@ public class SCMStockRev_SERVICE {
             return new SCM_STOCK_REVS(list,total,(int)(page*1),count);
         }
 
+    }
+
+    public Result scmStockRev_SP_SCM_STOCK_REV_ADD(SCM_STOCK_REV ssr) {
+        String work_date = ssr.getWork_date().replace("-","");
+        ssr.setWork_date(work_date);
+
+
+        char a = (char)5;
+        char b = (char)4;
+        String list[] = ssr.getPart_code().split(",");
+        String list2[] = ssr.getStock_qty_prev().split(",");
+        String list3[] = ssr.getStock_qty().split(",");
+
+        String code_list="";
+        for (int i = 0; i < list.length ; i++) {
+            if (i == 0){
+                code_list += list[i]+a+list2[i]+a+list3[i];
+            }else {
+                code_list += b+list[i]+a+list2[i]+a+list3[i];
+            }
+        }
+        ssr.setPart_code(code_list);
+
+        return scmStockRev_mapper.scmStockRev_SP_SCM_STOCK_REV_ADD(ssr);
     }
 }

@@ -8,7 +8,9 @@
     <select id="scmStockRev_SP_SCM_STOCK_REV_GET_count" resultType="Integer">
         CALL TOBE_MES.SP_SCM_STOCK_REV_GET(#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'C')
     </select>
-
+    <select id="scmStockRev_SP_SCM_STOCK_REV_ADD" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SCM_STOCK_REV_ADD(#{work_date},#{rev_code},#{part_code},#{user_code})
+    </select>
 
 
     <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">

@@ -6,6 +6,8 @@ window.onload = function () {
         data: function () {
             return{
 
+                common_get:[],
+
                 modal_list:[],
 
                 sys_part_group:[],
@@ -29,6 +31,24 @@ window.onload = function () {
                     keyword2:'',
 
                 },
+
+                scm_stock_rev:{
+                    seq:0,
+                    work_date:'',
+                    rev_code:'',
+                    part_code:'',
+                    stock_qty_prev:'',
+                    stock_qty:'',
+                    user_code:'',
+                    create_date:'',
+                    part_name:'',
+                    supp_name:'',
+                    user_name:'',
+                    part_grp_name:'',
+
+                },
+
+
 
                 scm_in :{
                     in_no:'',
@@ -75,6 +95,7 @@ window.onload = function () {
         mounted: function(){
             var _this = this;
             _this.sys_part_group_get(); // 코드그룹 가져오기
+            _this.sys_common_get(); // 코드그룹 가져오기
             jquery_scmStockRev(_this); // vue 에서 실행 못하는 jquery
             _this.selectBox();
             jqgrid_au_modal(_this);
@@ -138,6 +159,7 @@ window.onload = function () {
                         alert(overlap+"개 중복");
                     }
                     for(var i =0; i<_this.modal_list.length;i++){
+                        _this.modal_list[i].in_qty = _this.modal_list[i].pack_qty;
                         $('#au_modal2').jqGrid('addRowData',_this.modal_list[i].part_code,_this.modal_list[i]);
                     }
                     $('#au_modal1').jqGrid("resetSelection");
@@ -162,21 +184,25 @@ window.onload = function () {
                 callback(function () {
                     var keyword2 ='';
                     var keyword3 ='';
+                    var keyword4 ='';
                     for(var i =0; i<ids2.length;i++){
                         data = $('#au_modal2').jqGrid('getRowData', ids2[i]);
                         if (i === 0 ){
                             keyword2 += data.part_code;
-                            keyword3 += data.in_qty;
+                            keyword4 += data.in_qty;
+                            keyword3 += data.pack_qty;
                         } else {
                             keyword2 +=","+data.part_code;
-                            keyword3 +=","+data.in_qty;
+                            keyword4 +=","+data.in_qty;
+                            keyword3 +=","+data.pack_qty;
 
                         }
                     }
                         callback(function () {
 
-                            _this.scm_in.keyword2 = keyword2;
-                            _this.scm_in.keyword3 = keyword3;
+                            _this.scm_stock_rev.part_code = keyword2;
+                            _this.scm_stock_rev.stock_qty_prev = keyword3;
+                            _this.scm_stock_rev.stock_qty = keyword4;
                             _this.modal_add_go();
                         });
 
@@ -190,8 +216,8 @@ window.onload = function () {
 
                     if (true){
                         $.ajax({
-                            url: "scmln/SP_SCM_IN_ADD",
-                            data: _this.scm_in,
+                            url: "scmStockRev/SP_SCM_STOCK_REV_ADD",
+                            data: _this.scm_stock_rev,
                             type: 'POST',
                             async: true,
                             dataType: "json",
@@ -277,17 +303,26 @@ window.onload = function () {
                     keyword:'',
                     keyword2:''
                 };
-                _this.scm_in.in_no = '';
-                _this.scm_in.work_date = '';
-                _this.scm_in.remark = '';
-                _this.scm_in.supp_code = '';
-                _this.scm_in.keyword = '';
-                _this.scm_in.keyword2 = '';
-                _this.scm_in.keyword3 = '';
-                _this.scm_in.keyword4 = '';
+
+                _this.scm_stock_rev={
+                    seq:0,
+                        work_date:'',
+                        rev_code:'',
+                        part_code:'',
+                        stock_qty_prev:'',
+                        stock_qty:'',
+                        user_code:'',
+                        create_date:'',
+                        part_name:'',
+                        supp_name:'',
+                        user_name:'',
+                        part_grp_name:'',
+
+                };
 
                 _this.supp_name_modal = '';
                 $("#part_group_select").val("").select2();
+                $("#common_get_select").val("").select2();
                 $("#au_modal1").jqGrid('clearGridData');
                 $("#au_modal2").jqGrid('clearGridData');
 
@@ -295,11 +330,11 @@ window.onload = function () {
 
             effectiveness:function () { // 유효성 검사
                 var _this = this;
-                if (_this.scm_in.work_date === ''){
+                if (_this.scm_stock_rev.work_date === ''){
                     alert("날짜를 입력해주세요");
                     return false;
-                }else if (_this.scm_in.remark === ''){
-                    alert("비고를 입력해주세요");
+                }else if (_this.scm_stock_rev.rev_code === ''){
+                    alert("조정사유를 선택해주세요");
                     return false;
 
                 }else {
@@ -353,6 +388,7 @@ window.onload = function () {
             },
             selectBox:function(){  // select2 실행 메소드
                 $("#part_group_select").select2();
+                $("#common_get_select").select2();
             },
             sys_part_group_get:function(){
                 var _this = this;
@@ -363,6 +399,23 @@ window.onload = function () {
                     dataType: "json",
                     success: function (data) {
                         _this.sys_part_group = data;
+                    },
+                    error: function () {
+
+                    }
+                });
+
+            },
+            sys_common_get:function(){
+                var _this = this;
+                $.ajax({
+                    url: "common/common/get",
+                    type: 'POST',
+                    async: true,
+                    data:{keyword:'STOCK_REV'},
+                    dataType: "json",
+                    success: function (data) {
+                        _this.common_get = data;
                     },
                     error: function () {
 

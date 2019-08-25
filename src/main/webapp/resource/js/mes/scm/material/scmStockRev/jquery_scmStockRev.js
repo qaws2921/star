@@ -8,11 +8,15 @@ function jquery_scmStockRev(_this){
     });
 
     $( "#date_input3" ).datepicker(date).on('change', function(e) {
-        _this.scm_in.work_date = e.target.value;
+        _this.scm_stock_rev.work_date = e.target.value;
     });
 
     $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
         _this.keyword_modal.keyword2 = $("#part_group_select").val();
+    });
+
+    $(document).on("change","#common_get_select",function(){ // select 박스 바뀔때
+        _this.scm_stock_rev.rev_code = $("#common_get_select").val();
     });
 
 }
@@ -100,13 +104,14 @@ var lastsel2;
    $("#au_modal1").jqGrid({
         datatype: "json",
         mtype: 'POST',
-        colNames:['품목그룹','품번','품명','규격','단위','포장수량'],
+        colNames:['품목그룹','품번','품명','규격','단위','로케이션','재고'],
         colModel:[
             {name:'part_grp_name',index:'part_grp_name',sortable: false},
             {name:'part_code',index:'part_code',key: true ,sortable: false},
             {name:'part_name',index:'part_name',sortable: false},
             {name:'spec',index:'spec',sortable: false},
             {name:'unit_code',index:'unit_code',sortable: false},
+            {name:'loc_code',index:'loc_code',sortable: false},
             {name:'pack_qty',index:'pack_qty',sortable: false},
             // {name:'lot_no',index:'lot_no',width:100,sortable: false, formatter: function (cellValue, option) {
             //         return '<input type="text" size="7" name="txtBox" id="txt_' + option.rowId +'"/>';
@@ -135,12 +140,13 @@ var lastsel2;
         datatype: "json",
         mtype: 'POST',
         editurl: 'clientArray',
-        colNames:['품목그룹','품번','품명','단위','입고수량'],
+        colNames:['품목그룹','품번','품명','조정전 재고','조정후 제고'],
         colModel:[
             {name:'part_grp_name',index:'part_grp_name',sortable: false},
             {name:'part_code',index:'part_code',key: true ,sortable: false},
             {name:'part_name',index:'part_name',sortable: false},
-            {name:'unit_code',index:'unit_code',sortable: false},
+
+            {name:'pack_qty',index:'pack_qty',sortable: false},
             {name:'in_qty',index:'in_qty',sortable: false,
                 editrules: { number: true },
                 editable: true,
