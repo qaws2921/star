@@ -10,7 +10,7 @@ body {
     sans-serif; width: 100%;
     height: 700px;
     font-size: .875rem;
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 .btn{
     display: inline-block;

@@ -242,61 +242,6 @@ window.onload = function () {
                 }
 
             },
-
-            main_update:function () { // 업데이트 모달창
-                var _this = this;
-                _this.add_update_check="U";
-                $("#au_modal2").setGridParam({ url: 'scmln/SP_SCM_IN_SUB_GET',postData: {in_no:_this.scm_in.in_no} ,datatype: "json"}).trigger("reloadGrid");
-                $('#myModal').modal("show");
-            },
-            main_edit:function (data) {   // 수정 값을 객체에 저장
-                var _this = this;
-                _this.reset();
-                _this.scm_in.in_no = data.in_no;
-                _this.scm_in.work_date = data.work_date;
-                _this.scm_in.remark = data.remark;
-
-            },
-            main_delete:function () { //삭제를 누를시
-                var _this = this;
-                 var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
-                var in_no = ids.join(",");
-                if (in_no === ''){
-                    alert("삭제하는 데이터를 선택해주세요");
-                } else {
-                    if (confirm("삭제하겠습니까?")){
-                        _this.main_delete_ajax(in_no);
-
-                    }
-
-                }
-            },
-            main_delete_ajax:function (in_no) {  // 삭제 ajax
-                wrapWindowByMask();
-                 var _this = this;
-                 $.ajax({
-                    url:"scmln/SP_SCM_IN_DEL",
-                    data:{in_no:in_no},
-                    type : 'DELETE',
-                    async: true,
-                    dataType : "json",
-                    success : function(data){
-                        if (data.result === 'NG'){
-                            closeWindowByMask();
-                            alert(data.message);
-                        } else {
-                            closeWindowByMask();
-                            _this.main_gat_btn2($("#jqGrid").getGridParam('page'));
-                        }
-
-                        },
-                     error: function () {
-                         closeWindowByMask();
-                         alert("삭제실패")
-                     }
-
-                });
-            },
             reset:function(){ //코드 객체 리셋
                 var _this = this;
                 _this.keyword_modal={
@@ -345,21 +290,6 @@ window.onload = function () {
                 var _this = this;
                 if (_this.keyword_modal.keyword === ''){
                     alert("협럭업체를 선택해주세요");
-                    return false;
-                }else {
-                    return true;
-                }
-            },
-            effectiveness3:function () { // 유효성 검사
-                var _this = this;
-                if (_this.keyword_modal.keyword === ''){
-                    alert("날짜를 선택해주세요");
-                    return false;
-                }else if (_this.keyword_modal.keyword2 === ''){
-                    alert("협럭업체를 선택해주세요");
-                    return false;
-                }else if (_this.keyword_modal.keyword4 === ''){
-                    alert("비고를 입력해주세요");
                     return false;
                 }else {
                     return true;

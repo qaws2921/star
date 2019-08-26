@@ -64,47 +64,13 @@ window.onload = function () {
                     keyword2:'',
                 },
 
-                scm_in :{
-                    in_no:'',
-                    work_date:'',
-                    supp_code:'',
-                    supp_name:'',
-                    dc_no:'',
-                    user_code:'',
-                    user_name:'',
-                    close_yn:'',
-                    remark:'',
 
-                    create_date:'',
-                    update_date:'',
-                    keyword:'',
-                    keyword2:'',
-                    keyword3:'',
-                    keyword4:'',
-                },
-
-
-                supp_code:'',
-
-                supp_name:'',
-                supp_name_modal:'',
 
 
                 add_update_check:'I',    // 저장인지 수정인지 체크
-                supp_bus_check:''
-            }
-        },
-        watch: {
-
-            supp_code: function () {
-                if(this.add_update_check === 'I'){
-
-                    $("#au_modal2").jqGrid('clearGridData');
-                }
 
             }
         },
-
 
         mounted: function(){
             var _this = this;
@@ -479,42 +445,7 @@ window.onload = function () {
                     return true;
                 }
             },
-            effectiveness3:function () { // 유효성 검사
-                var _this = this;
-                if (_this.keyword_modal.keyword === ''){
-                    alert("날짜를 선택해주세요");
-                    return false;
-                }else if (_this.keyword_modal.keyword2 === ''){
-                    alert("협럭업체를 선택해주세요");
-                    return false;
-                }else if (_this.keyword_modal.keyword4 === ''){
-                    alert("비고를 입력해주세요");
-                    return false;
-                }else {
-                    return true;
-                }
-            },
 
-
-            _supp_bus_check:function (what){
-                var _this = this;
-                _this.supp_bus_check = what;
-            },
-
-            supp_bus:function(code,name){
-                var _this =this;
-                if ( _this.supp_bus_check === 'M'){
-
-                    _this.keyword.keyword = code;
-                    _this.supp_name = name;
-                }else if( _this.supp_bus_check === 'S'){
-                    _this.keyword_modal.keyword = code;
-                    _this.scm_in.supp_code =code;
-                    _this.supp_code = code;
-                    _this.supp_name_modal = name;
-                }
-
-            },
             selectBox:function(){  // select2 실행 메소드
                 $("#part_group_select").select2();
                 $("#cargo_group_select").select2();

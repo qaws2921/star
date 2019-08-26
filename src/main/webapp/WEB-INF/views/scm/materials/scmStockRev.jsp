@@ -27,7 +27,6 @@
                     <td class="button-group">
                         <button class="btn" @click="main_gat_btn(1)">조회</button>
                         <button class="btn" type="button" data-toggle="modal" data-target="#myModal" @click="add_btn">추가</button>
-                        <button class="btn" @click="main_delete">삭제</button>
                     </td>
                 </tr>
                 </tbody>
