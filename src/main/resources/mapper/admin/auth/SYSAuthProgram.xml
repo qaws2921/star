@@ -6,10 +6,10 @@
         CALL TOBE_MES.SP_SYS_MENU_GROUP_GET()
     </select>
     <select id="menu_cd_program_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_MENU_CD.SYS_MENU_CD">
-         CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_GET(#{menu_code},#{auth_code})
+         CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_GET(#{site_code},#{menu_code},#{auth_code})
     </select>
     <select id="auth_program_add" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_ADD(#{auth_code},#{menu_code},#{check_get},#{check_add},#{check_edit},#{check_del})
+        CALL TOBE_MES.SP_SYS_AUTH_PROGRAM_ADD(#{site_code},#{auth_code},#{menu_code},#{check_get},#{check_add},#{check_edit},#{check_del})
     </select>
 
 

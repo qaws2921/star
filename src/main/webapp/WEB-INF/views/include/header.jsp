@@ -87,6 +87,8 @@
                 <a href="#" class="s-menu">MES</a>
                 <a href="scmCargo?active=scm&check=standard" class="s-menu scm">SCM</a>
                 <a href="#" class="s-menu">BOM</a>
+                <a class="s-menu company" id="company_1">1공장</a>
+                <a class="s-menu company" id="company_2">2공장</a>
             </td>
         </tr>
     </tbody>

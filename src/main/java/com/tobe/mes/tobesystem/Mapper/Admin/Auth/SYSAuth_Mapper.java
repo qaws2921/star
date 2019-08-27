@@ -11,5 +11,5 @@ public interface SYSAuth_Mapper {
     List<SYS_AUTH_CD> auth_cd_get(Page p);
     int auth_cd_count(Page p);
     Result auth_cd_au(SYS_AUTH_CD sac);
-    Result auth_cd_delete(String code);
+    Result auth_cd_delete(SYS_AUTH_CD sac);
 }

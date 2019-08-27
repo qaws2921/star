@@ -14,5 +14,5 @@ public interface SYSUser_Mapper {
     int user_get_count(Page p);
     Result user_cd_au(SYS_USER_CD suc);
 
-    Result user_cd_delete(String code);
+    Result user_cd_delete(SYS_USER_CD suc);
 }

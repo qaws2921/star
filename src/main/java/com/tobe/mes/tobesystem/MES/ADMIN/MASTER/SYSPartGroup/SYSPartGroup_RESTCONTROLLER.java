@@ -8,23 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class SYSPartGroup_RESTCONTROLLER {
     @Autowired
     private SYSPartGroup_SERVICE sys_part_group_service;
 
     @RequestMapping(value = "/sysPartGroup/part/group/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public SYS_PART_GROUPS part_group_get (Double page, Double rows){
-        return sys_part_group_service.part_group_get(page,rows);
+    public SYS_PART_GROUPS part_group_get (Double page, Double rows, HttpServletRequest req){
+        return sys_part_group_service.part_group_get(page,rows,req);
     }
     @RequestMapping(value = "/sysPartGroup/part/group/au", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public Result part_group_au (SYS_PART_GROUP spg){
-        return sys_part_group_service.part_group_au(spg);
+    public Result part_group_au (SYS_PART_GROUP spg, HttpServletRequest req){
+        return sys_part_group_service.part_group_au(spg,req);
     }
 
     @RequestMapping(value = "/sysPartGroup/part/group/delete", method = RequestMethod.DELETE) // 코드 리스트 가져오기
-    public Result part_group_delete (SYS_PART_GROUP spg){
-        return sys_part_group_service.part_group_delete(spg);
+    public Result part_group_delete (SYS_PART_GROUP spg, HttpServletRequest req){
+        return sys_part_group_service.part_group_delete(spg,req);
     }
 
 }

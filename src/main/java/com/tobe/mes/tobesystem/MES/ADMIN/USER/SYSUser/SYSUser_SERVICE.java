@@ -9,6 +9,7 @@ import com.tobe.mes.tobesystem.Mapper.Admin.User.SYSUser_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -25,7 +26,7 @@ public class SYSUser_SERVICE {
         return sysUser_mapper.common_duty_get();
     }
 
-    public SYS_USER_CDS user_get(Double page, Double rows, String dept_code) {
+    public SYS_USER_CDS user_get(Double page, Double rows, String dept_code, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SYS_USER_CDS(null,0,0,0);
         }else {
@@ -33,6 +34,9 @@ public class SYSUser_SERVICE {
             p.setPage_num((int)(page*1));
             p.setTotal_num(((int)(rows*1)));
             p.setKeyword(dept_code);
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
+
             List<SYS_USER_CD> sys_user_cdList = sysUser_mapper.user_get(p);
             int user_get_count = sysUser_mapper.user_get_count(p);
 
@@ -43,11 +47,13 @@ public class SYSUser_SERVICE {
         }
     }
 
-    public Result user_cd_au(SYS_USER_CD suc) {
+    public Result user_cd_au(SYS_USER_CD suc, HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        suc.setSite_code(site_code);
         return sysUser_mapper.user_cd_au(suc);
     }
 
-    public Result user_cd_delete(SYS_USER_CD suc) {
+    public Result user_cd_delete(SYS_USER_CD suc, HttpServletRequest req) {
         char a = (char) 5;
         char b = (char) 4;
         String user_cd_code[] = suc.getUser_code().split(",");
@@ -59,6 +65,10 @@ public class SYSUser_SERVICE {
                 code += b + user_cd_code[i];
             }
         }
-        return sysUser_mapper.user_cd_delete(code);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        suc.setSite_code(site_code);
+        suc.setUser_code(code);
+
+        return sysUser_mapper.user_cd_delete(suc);
     }
 }

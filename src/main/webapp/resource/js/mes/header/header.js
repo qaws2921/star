@@ -1,6 +1,10 @@
 $(function () {
     $(".file-tree").filetree();
     var params = getUrlParams();
+
+    if(params.check){
+
+
     $("."+params.check).css("background-color","#1453a1").css("color","#FFF");
     $("."+params.active).addClass("s-menu-active");
     // $(".file-tree").slideDown();
@@ -17,6 +21,7 @@ $(function () {
     $("."+link2[0]).parent().parent().parent().children(".menuMainA").addClass("menuMainA_down");
     $("."+link2[0]).parent().parent(".file-tree").slideDown(100);
 
+    }
     $(document).on("click",".menuMainA",function () {
         if (!$(this).hasClass("menuMainA_down")){
             $(".menuMainA").removeClass("menuMainA_down");
@@ -40,8 +45,28 @@ $(function () {
 
 
 
+    $(document).on("click",".company",function () {
 
+        var data;
+        if($(this).attr("id") === "company_1"){
+            data = "C0001";
+        }else if($(this).attr("id") === "company_2"){
+            data = "C0002";
+        }
 
+        $.ajax({
+            url: "session_check",
+            data: {session_check:data},
+            type: 'POST',
+            async: true,
+            dataType: "json",
+            success: function (data1) {
+                location.href = "/";
+            }
+
+        });
+
+    });
 
 
 });

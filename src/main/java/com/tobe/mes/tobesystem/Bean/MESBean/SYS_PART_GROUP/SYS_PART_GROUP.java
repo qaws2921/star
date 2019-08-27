@@ -9,7 +9,7 @@ public class SYS_PART_GROUP {
     private String update_date;
     private String keyword;
     private String user_name;
-
+    private String site_code;
     public String getPart_grp_code() {
         return part_grp_code;
     }
@@ -72,5 +72,13 @@ public class SYS_PART_GROUP {
 
     public void setUser_name(String user_name) {
         this.user_name = user_name;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

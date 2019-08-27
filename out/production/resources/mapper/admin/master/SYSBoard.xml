@@ -3,13 +3,13 @@
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Master.SYSBoard_Mapper">
     <select id="board_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_BOARD_CD.SYS_BOARD_CD">
-        CALL TOBE_MES.SP_SYS_BOARD_GET(#{page_num},#{total_num},'')
+        CALL TOBE_MES.SP_SYS_BOARD_GET(#{site_code},#{page_num},#{total_num},'')
     </select>
     <select id="board_cd_count" resultType="Integer">
-         SELECT count(*) from SYS_BOARD_CD
+         SELECT count(*) from SYS_BOARD_CD where site_code = #{site_code}
     </select>
     <select id="board_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_BOARD_ADD(#{board_code},#{board_en},#{board_kr},#{board_auth},#{files},#{file_size},#{use_yn},#{user_code},#{keyword})
+        CALL TOBE_MES.SP_SYS_BOARD_ADD(#{site_code},#{board_code},#{board_en},#{board_kr},#{board_auth},#{files},#{file_size},#{use_yn},#{user_code},#{keyword})
     </select>
 
 

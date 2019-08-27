@@ -15,6 +15,7 @@ public class SYS_USER_CD {
     private String update_date;
     private String login_date;
     private String keyword;
+    private String site_code;
 
     public String getUser_code() {
         return user_code;
@@ -126,5 +127,13 @@ public class SYS_USER_CD {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

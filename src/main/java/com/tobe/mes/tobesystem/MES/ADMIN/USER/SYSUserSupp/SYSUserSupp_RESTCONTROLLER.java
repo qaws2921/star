@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class SYSUserSupp_RESTCONTROLLER {
 
@@ -15,13 +17,13 @@ public class SYSUserSupp_RESTCONTROLLER {
     private SYSUserSupp_SERVICE sysUserSupp_service;
 
     @RequestMapping(value = "/sysUserSupp/user/supp/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public SYS_USER_SUPP_CDS user_supp_get (Double page, Double rows){
-        return sysUserSupp_service.user_supp_get(page,rows);
+    public SYS_USER_SUPP_CDS user_supp_get (Double page, Double rows, HttpServletRequest req){
+        return sysUserSupp_service.user_supp_get(page,rows,req);
     }
 
     @RequestMapping(value = "/sysUserSupp/user/supp/cd/au", method = RequestMethod.POST)  // 코드 저장 수정
-    public Result user_supp_cd_au (SYS_USER_SUPP_CD susc){
-        return sysUserSupp_service.user_supp_cd_au(susc);
+    public Result user_supp_cd_au (SYS_USER_SUPP_CD susc, HttpServletRequest req){
+        return sysUserSupp_service.user_supp_cd_au(susc,req);
 
     }
 

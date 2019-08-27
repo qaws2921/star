@@ -8,6 +8,7 @@ import com.tobe.mes.tobesystem.Mapper.Admin.Auth.SYSAuth_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -16,7 +17,7 @@ public class SYSAuth_SERVICE {
     @Autowired
     private SYSAuth_Mapper sys_auth_cd_mapper;
 
-    public SYS_AUTH_CDS auth_cd_get(Double page, Double rows) {
+        public SYS_AUTH_CDS auth_cd_get(Double page, Double rows, HttpServletRequest req) {
 
         if (page == null && rows == null) {
             return new SYS_AUTH_CDS(null,0,0,0);
@@ -24,7 +25,8 @@ public class SYSAuth_SERVICE {
             Page p =new Page();
             p.setPage_num((int)(page*1));
             p.setTotal_num(((int)(rows*1)));
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SYS_AUTH_CD> sys_board_cdList = sys_auth_cd_mapper.auth_cd_get(p);
             int sys_auth_cd_count = sys_auth_cd_mapper.auth_cd_count(p);
 
@@ -35,11 +37,13 @@ public class SYSAuth_SERVICE {
         }
     }
 
-    public Result auth_cd_au(SYS_AUTH_CD sac) {
+    public Result auth_cd_au(SYS_AUTH_CD sac, HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sac.setSite_code(site_code);
         return sys_auth_cd_mapper.auth_cd_au(sac);
     }
 
-    public Result auth_cd_delete(SYS_AUTH_CD sac) {
+    public Result auth_cd_delete(SYS_AUTH_CD sac, HttpServletRequest req) {
         char a = (char) 5;
         char b = (char) 4;
         String sac_code[] = sac.getAuth_code().split(",");
@@ -51,7 +55,10 @@ public class SYSAuth_SERVICE {
                 code += b + sac_code[i];
             }
         }
-        return sys_auth_cd_mapper.auth_cd_delete(code);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sac.setSite_code(site_code);
+        sac.setAuth_code(code);
+        return sys_auth_cd_mapper.auth_cd_delete(sac);
 
     }
 }

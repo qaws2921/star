@@ -13,6 +13,7 @@ public class Page {
     private String end_date;
     private String user_code;
     private String date;
+    private String site_code;
 
     public String getDate() {
         return date;
@@ -108,5 +109,13 @@ public class Page {
 
     public void setUser_code(String user_code) {
         this.user_code = user_code;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

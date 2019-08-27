@@ -8,6 +8,7 @@ import com.tobe.mes.tobesystem.Mapper.Admin.User.SYSUserSupp_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -16,14 +17,15 @@ public class SYSUserSupp_SERVICE {
     @Autowired
     private SYSUserSupp_Mapper sysUserSupp_mapper;
 
-    public SYS_USER_SUPP_CDS user_supp_get(Double page, Double rows) {
+    public SYS_USER_SUPP_CDS user_supp_get(Double page, Double rows, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SYS_USER_SUPP_CDS(null,0,0,0);
         }else {
             Page p =new Page();
             p.setPage_num((int)(page*1));
             p.setTotal_num(((int)(rows*1)));
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SYS_USER_SUPP_CD> sys_user_supp_cdList = sysUserSupp_mapper.user_supp_get(p);
             int user_supp_get_count = sysUserSupp_mapper.user_supp_get_count(p);
 
@@ -34,7 +36,9 @@ public class SYSUserSupp_SERVICE {
         }
     }
 
-    public Result user_supp_cd_au(SYS_USER_SUPP_CD susc) {
+    public Result user_supp_cd_au(SYS_USER_SUPP_CD susc, HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        susc.setSite_code(site_code);
         return sysUserSupp_mapper.user_supp_cd_au(susc);
     }
 

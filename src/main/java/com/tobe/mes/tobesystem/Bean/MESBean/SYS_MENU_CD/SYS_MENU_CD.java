@@ -12,6 +12,7 @@ public class SYS_MENU_CD {
     private String check_del;
     private String auth_code;
     private String keyword;
+    private String site_code;
 
     public String getMenu_code() {
         return menu_code;
@@ -99,5 +100,13 @@ public class SYS_MENU_CD {
 
     public void setParent_menu_code(String parent_menu_code) {
         this.parent_menu_code = parent_menu_code;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

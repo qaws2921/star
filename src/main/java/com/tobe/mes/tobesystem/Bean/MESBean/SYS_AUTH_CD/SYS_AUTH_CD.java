@@ -8,6 +8,7 @@ public class SYS_AUTH_CD {
     private String keyword;
     private String user_code;
     private String user_name;
+    private String site_code;
 
     public String getAuth_code() {
         return auth_code;
@@ -63,5 +64,13 @@ public class SYS_AUTH_CD {
 
     public void setUser_name(String user_name) {
         this.user_name = user_name;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

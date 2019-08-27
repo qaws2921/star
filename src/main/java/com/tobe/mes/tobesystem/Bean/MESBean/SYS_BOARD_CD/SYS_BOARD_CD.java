@@ -1,6 +1,7 @@
 package com.tobe.mes.tobesystem.Bean.MESBean.SYS_BOARD_CD;
 
 public class SYS_BOARD_CD {
+    private String site_code;
     private String board_code;
     private String board_en;
     private String board_kr;
@@ -108,5 +109,13 @@ public class SYS_BOARD_CD {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

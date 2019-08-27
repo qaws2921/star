@@ -2,6 +2,11 @@ function jquery_index(_this){
     $(document).on("change","#common_group_select",function(){ // select 박스 바뀔때
         _this.common_group_change($("#common_group_select").val(),$("#common_group_select option:checked").text());
     });
+    var check = $("#session_check").val();
+
+    if (check === ''){
+        alert("공장을 선택해주세요");
+    }
 
 }
 

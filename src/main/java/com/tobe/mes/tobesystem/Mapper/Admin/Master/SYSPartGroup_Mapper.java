@@ -11,7 +11,7 @@ public interface SYSPartGroup_Mapper {
     List<SYS_PART_GROUP> part_group_get(Page p);
     int part_group_count(Page p);
     Result part_group_au(SYS_PART_GROUP spg);
-    Result part_group_delete(String code);
+    Result part_group_delete(SYS_PART_GROUP spg);
 
 
 }
