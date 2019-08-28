@@ -13,7 +13,7 @@ public interface SCMPart_Mapper {
 
     Result scmPart_au(SYS_BPART_CD sbc);
 
-    Result scmPart_delete(String code);
+    Result scmPart_delete(SYS_BPART_CD sbc);
 
     List<SYS_BPART_CD> bPart_supp_get(Page p);
 

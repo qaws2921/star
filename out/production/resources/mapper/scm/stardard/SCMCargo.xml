@@ -6,17 +6,17 @@
         CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
     </select>
     <select id="cargo_cd_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_CARGO_CD.SYS_CARGO_CD">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','S')
+        CALL TOBE_MES.SP_SYS_CARGO_GET(#{site_code},#{page_num},#{total_num},#{keyword},'','S')
     </select>
     <select id="cargo_cd_get_count" resultType="Integer">
-        CALL TOBE_MES.SP_SYS_CARGO_GET(#{page_num},#{total_num},#{keyword},'','')
+        CALL TOBE_MES.SP_SYS_CARGO_GET(#{site_code},#{page_num},#{total_num},#{keyword},'','C')
     </select>
     <select id="cargo_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_CARGO_ADD(#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})
+        CALL TOBE_MES.SP_SYS_CARGO_ADD(#{site_code},#{cargo_code},#{cargo_name},#{cargo_grp_code},#{qty_yn},#{use_yn},#{user_code},#{keyword})
     </select>
 
     <select id="cargo_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_CARGO_DEL(#{code})
+        CALL TOBE_MES.SP_SYS_CARGO_DEL(#{site_code},#{cargo_code})
     </select>
 
 </mapper>

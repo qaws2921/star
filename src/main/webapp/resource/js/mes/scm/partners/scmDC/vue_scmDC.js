@@ -162,6 +162,9 @@ window.onload = function () {
             main_update:function (data) { // 업데이트 모달창
                 var _this = this;
                 _this.add_update_check="U";
+                if(data.in_type === "1"){
+                    _this.add_update_check="S";
+                }
                 $("#scmDC_au_modal2").setGridParam({ url: 'scmDC/SP_SCM_DC_BOX_GET',postData: {dc_no:data.dc_no} ,datatype: "json"}).trigger("reloadGrid");
                 $('#myModal').modal("show");
             },

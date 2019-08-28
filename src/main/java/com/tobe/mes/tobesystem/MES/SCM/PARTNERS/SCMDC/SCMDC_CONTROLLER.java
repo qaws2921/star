@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class SCMDC_CONTROLLER {
 
@@ -14,16 +16,23 @@ public class SCMDC_CONTROLLER {
     private SCMDC_SERVICE scmdc_service;
 
     @RequestMapping(value = "/scmDC")
-    public String scmDC(){
-        return "scm/partners/scmDC";
+    public String scmDC(HttpServletRequest req){
+
+        if (req.getSession().getAttribute("session_check") != null){
+            return "scm/partners/scmDC";
+        }else {
+            return "index";
+        }
+
+
     }
     @RequestMapping(value = "/print_delivered")
     public String print_delivered(){
         return "scm/partners/print/delivered";
     }
     @RequestMapping(value = "/scmDC/print", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public ModelAndView scmDC_print (SCM_DC sd, ModelAndView mav){
-        return scmdc_service.scmDC_print(sd,mav);
+    public ModelAndView scmDC_print (SCM_DC sd, ModelAndView mav,HttpServletRequest req){
+        return scmdc_service.scmDC_print(sd,mav,req);
     }
 
 }

@@ -3,13 +3,13 @@
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMStockRev_Mapper">
     <select id="scmStockRev_SP_SCM_STOCK_REV_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SCM_STOCK_REV.SCM_STOCK_REV">
-        CALL TOBE_MES.SP_SCM_STOCK_REV_GET(#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'S')
+        CALL TOBE_MES.SP_SCM_STOCK_REV_GET(#{site_code},#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'S')
     </select>
     <select id="scmStockRev_SP_SCM_STOCK_REV_GET_count" resultType="Integer">
-        CALL TOBE_MES.SP_SCM_STOCK_REV_GET(#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'C')
+        CALL TOBE_MES.SP_SCM_STOCK_REV_GET(#{site_code},#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'C')
     </select>
     <select id="scmStockRev_SP_SCM_STOCK_REV_ADD" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SCM_STOCK_REV_ADD(#{work_date},#{rev_code},#{part_code},#{user_code})
+        CALL TOBE_MES.SP_SCM_STOCK_REV_ADD(#{site_code},#{work_date},#{rev_code},#{part_code},#{user_code})
     </select>
 
 

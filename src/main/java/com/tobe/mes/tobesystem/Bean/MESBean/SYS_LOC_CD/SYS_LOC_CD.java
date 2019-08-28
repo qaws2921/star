@@ -12,6 +12,7 @@ public class SYS_LOC_CD {
     private String create_date;
     private String update_date;
     private String keyword;
+    private String site_code;
 
     public String getCargo_code() {
         return cargo_code;
@@ -99,5 +100,13 @@ public class SYS_LOC_CD {
 
     public void setPlant_code(String plant_code) {
         this.plant_code = plant_code;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

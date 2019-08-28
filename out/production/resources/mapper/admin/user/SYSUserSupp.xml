@@ -3,13 +3,13 @@
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.User.SYSUserSupp_Mapper">
     <select id="user_supp_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_USER_SUPP_CD.SYS_USER_SUPP_CD">
-        CALL TOBE_MES.SP_SYS_USER_SUPP_GET(#{page_num},#{total_num},'','S')
+        CALL TOBE_MES.SP_SYS_USER_SUPP_GET(#{site_code},#{page_num},#{total_num},'','S')
     </select>
     <select id="user_supp_get_count" resultType="Integer">
-         CALL TOBE_MES.SP_SYS_USER_SUPP_GET(#{page_num},#{total_num},'','C')
+         CALL TOBE_MES.SP_SYS_USER_SUPP_GET(#{site_code},#{page_num},#{total_num},'','C')
     </select>
     <select id="user_supp_cd_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-            CALL TOBE_MES.SP_SYS_USER_SUPP_ADD(#{user_code},#{user_name},#{auth_code},#{tel_no},#{email},#{use_yn},#{update_user},#{keyword})
+            CALL TOBE_MES.SP_SYS_USER_SUPP_ADD(#{user_code},#{user_name},#{site_code},#{auth_code},#{tel_no},#{email},#{use_yn},#{update_user},#{keyword})
     </select>
     <select id="user_supp_cd_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
         CALL TOBE_MES.SP_SYS_USER_SUPP_DEL(#{code})

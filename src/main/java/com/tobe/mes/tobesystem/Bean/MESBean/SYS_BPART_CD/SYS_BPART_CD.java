@@ -20,6 +20,7 @@ public class SYS_BPART_CD {
     private String create_date;
     private String update_date;
     private String keyword;
+    private String site_code;
 
 
     public String getPart_code() {
@@ -172,5 +173,13 @@ public class SYS_BPART_CD {
 
     public void setPart_grp_name(String part_grp_name) {
         this.part_grp_name = part_grp_name;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

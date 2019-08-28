@@ -3,10 +3,10 @@
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMInFromDC_Mapper">
     <select id="scmInFromDC_SP_SCM_IN_READY_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_IN_READY_GET.SP_SCM_IN_READY_GET">
-        CALL TOBE_MES.SP_SCM_IN_READY_GET(#{keyword})
+        CALL TOBE_MES.SP_SCM_IN_READY_GET(#{site_code},#{keyword})
     </select>
     <select id="scmInFromDC_SP_SCM_IN_ADD" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SCM_IN_ADD(#{work_date},#{supp_code},#{dc_no},#{user_code},#{part_code},#{remark})
+        CALL TOBE_MES.SP_SCM_IN_ADD(#{site_code},#{work_date},#{supp_code},#{dc_no},#{user_code},#{part_code},#{remark})
     </select>
 
 

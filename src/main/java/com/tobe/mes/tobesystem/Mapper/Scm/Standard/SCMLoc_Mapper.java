@@ -13,5 +13,5 @@ public interface SCMLoc_Mapper {
 
     Result scmLoc_au(SYS_LOC_CD slc);
 
-    Result scmLoc_delete(String type_value);
+    Result scmLoc_delete(SYS_LOC_CD slc);
 }

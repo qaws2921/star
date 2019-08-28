@@ -17,6 +17,7 @@ public class SCM_IN {
     private String keyword2;
     private String keyword3;
     private String keyword4;
+    private String site_code;
 
     public String getIn_no() {
         return in_no;
@@ -136,5 +137,13 @@ public class SCM_IN {
 
     public void setKeyword4(String keyword4) {
         this.keyword4 = keyword4;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

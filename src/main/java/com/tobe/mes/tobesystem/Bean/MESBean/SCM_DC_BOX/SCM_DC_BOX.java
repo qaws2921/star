@@ -16,6 +16,7 @@ public class SCM_DC_BOX {
     private String part_grp_name;
     private String size;
     private String supp_name;
+    private String site_code;
 
     public String getSupp_name() {
         return supp_name;
@@ -133,5 +134,13 @@ public class SCM_DC_BOX {
 
     public void setPart_grp_name(String part_grp_name) {
         this.part_grp_name = part_grp_name;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

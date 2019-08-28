@@ -102,8 +102,8 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="auth_cd_au('I')">저장</button>
-                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="auth_cd_au('U')">저장</button>
+                                        <button v-if="add_update_check==='I'"  type="button" class="btn" @click="cargo_cd_au('I')">저장</button>
+                                        <button v-if="add_update_check==='U'"  type="button" class="btn" @click="cargo_cd_au('U')">저장</button>
                                         <button type="button" class="btn" data-dismiss="modal">취소</button>
                                     </div>
                                 </div>

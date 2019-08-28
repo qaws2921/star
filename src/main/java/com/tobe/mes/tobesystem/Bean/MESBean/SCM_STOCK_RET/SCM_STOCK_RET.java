@@ -11,6 +11,7 @@ public class SCM_STOCK_RET {
     private String remark;
     private String create_date;
     private String update_date;
+    private String site_code;
 
     public String getRet_no() {
         return ret_no;
@@ -82,5 +83,13 @@ public class SCM_STOCK_RET {
 
     public void setUpdate_date(String update_date) {
         this.update_date = update_date;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

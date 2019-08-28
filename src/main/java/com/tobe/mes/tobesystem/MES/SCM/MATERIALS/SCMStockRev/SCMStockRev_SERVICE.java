@@ -8,6 +8,7 @@ import com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMStockRev_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -15,7 +16,7 @@ public class SCMStockRev_SERVICE {
     @Autowired
     private SCMStockRev_Mapper scmStockRev_mapper;
 
-    public SCM_STOCK_REVS scmStockRev_SP_SCM_STOCK_REV_GET(Double page, Double rows, Page p) {
+    public SCM_STOCK_REVS scmStockRev_SP_SCM_STOCK_REV_GET(Double page, Double rows, Page p, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SCM_STOCK_REVS(null,0,0,0);
         }else {
@@ -27,7 +28,8 @@ public class SCMStockRev_SERVICE {
 
             p.setStart_date(start_date);
             p.setEnd_date(end_date);
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
 
             List<SCM_STOCK_REV> list = scmStockRev_mapper.scmStockRev_SP_SCM_STOCK_REV_GET(p);
             int count = scmStockRev_mapper.scmStockRev_SP_SCM_STOCK_REV_GET_count(p);
@@ -41,7 +43,7 @@ public class SCMStockRev_SERVICE {
 
     }
 
-    public Result scmStockRev_SP_SCM_STOCK_REV_ADD(SCM_STOCK_REV ssr) {
+    public Result scmStockRev_SP_SCM_STOCK_REV_ADD(SCM_STOCK_REV ssr, HttpServletRequest req) {
         String work_date = ssr.getWork_date().replace("-","");
         ssr.setWork_date(work_date);
 
@@ -60,6 +62,8 @@ public class SCMStockRev_SERVICE {
                 code_list += b+list[i]+a+list2[i]+a+list3[i];
             }
         }
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        ssr.setSite_code(site_code);
         ssr.setPart_code(code_list);
 
         return scmStockRev_mapper.scmStockRev_SP_SCM_STOCK_REV_ADD(ssr);

@@ -17,6 +17,7 @@ import com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMSupp_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -40,10 +41,12 @@ public class COMMON_SERVICE {
     private SCMPart_Mapper scmPart_mapper;
 
 
-    public List<SYS_PART_GROUP> part_group_get() {
+    public List<SYS_PART_GROUP> part_group_get(HttpServletRequest req) {
         Page p = new Page();
         p.setPage_num(0);
         p.setTotal_num(0);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         return sysPartGroup_mapper.part_group_get(p);
     }
 
@@ -53,34 +56,41 @@ public class COMMON_SERVICE {
         return sysCommon_mapper.common_get(p);
     }
 
-    public List<SYS_CARGO_CD> cargo_cd_get() {
+    public List<SYS_CARGO_CD> cargo_cd_get(HttpServletRequest req) {
         Page p = new Page();
         p.setPage_num(0);
         p.setTotal_num(0);
         p.setKeyword("");
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         return scmCargo_mapper.cargo_cd_get(p);
     }
 
-    public List<SYS_LOC_CD> loc_cd_get(Page p) {
+    public List<SYS_LOC_CD> loc_cd_get(Page p,HttpServletRequest req) {
 
         p.setPage_num(0);
         p.setTotal_num(0);
-
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         return scmLoc_mapper.scmLoc_get(p);
     }
 
-    public List<SYS_SUPP_CD> supp_get(Page p) {
+    public List<SYS_SUPP_CD> supp_get(Page p,HttpServletRequest req) {
         p.setPage_num(0);
         p.setTotal_num(0);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         return scmSupp_mapper.supp_cd_get_modal(p);
     }
 
-    public SYS_BPART_CDS bPart_get(Double page, Double rows, Page p) {
+    public SYS_BPART_CDS bPart_get(Double page, Double rows, Page p,HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SYS_BPART_CDS(null,0,0,0);
         }else {
             p.setPage_num((int)(page*1));
             p.setTotal_num(((int)(rows*1)));
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SYS_BPART_CD> sys_bpart_cdList = scmPart_mapper.bPart_supp_get(p);
             int bPart_get_count = scmPart_mapper.bPart_get_supp_count(p);
 
@@ -92,11 +102,13 @@ public class COMMON_SERVICE {
     }
 
 
-    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET() {
+    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET(HttpServletRequest req) {
         Page p = new Page();
         p.setPage_num(0);
         p.setTotal_num(0);
         p.setKeyword("M");
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         return scmCargo_mapper.cargo_cd_get(p);
     }
 }

@@ -3,16 +3,22 @@
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Admin.Master.SYSPartGroup_Mapper">
     <select id="part_group_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_PART_GROUP.SYS_PART_GROUP">
-        CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{page_num},#{total_num},'','S')
+        CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{site_code},#{page_num},#{total_num},'','S')
     </select>
     <select id="part_group_count" resultType="Integer">
-         CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{page_num},#{total_num},'','')
+         CALL TOBE_MES.SP_SYS_PART_GROUP_GET(#{site_code},#{page_num},#{total_num},'','C')
     </select>
-    <select id="part_group_au" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_PART_GROUP_ADD(#{part_grp_code},#{part_grp_name},#{remark},#{user_code},#{keyword})
+    <select id="part_group_au"
+
+
+
+
+
+            resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.SP_SYS_PART_GROUP_ADD(#{site_code},#{part_grp_code},#{part_grp_name},#{remark},#{user_code},#{keyword})
     </select>
     <select id="part_group_delete" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SYS_PART_GROUP_DEL(#{code})
+        CALL TOBE_MES.SP_SYS_PART_GROUP_DEL(#{site_code},#{part_grp_code})
     </select>
 
 </mapper>

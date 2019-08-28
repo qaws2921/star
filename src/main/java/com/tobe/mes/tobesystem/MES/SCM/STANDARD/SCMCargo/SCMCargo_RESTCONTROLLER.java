@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -22,16 +23,16 @@ public class SCMCargo_RESTCONTROLLER {
     }
 
     @RequestMapping(value = "/scmCargo/cargo/cd/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public SYS_CARGO_CDS cargo_cd_get (Double page, Double rows, String cargo_grp_code){
-        return scmCargo_service.cargo_cd_get(page,rows,cargo_grp_code);
+    public SYS_CARGO_CDS cargo_cd_get (Double page, Double rows, String cargo_grp_code, HttpServletRequest req){
+        return scmCargo_service.cargo_cd_get(page,rows,cargo_grp_code,req);
     }
     @RequestMapping(value = "/scmCargo/cargo/cd/au", method = RequestMethod.POST)  // 코드 저장 수정
-    public Result cargo_cd_au (SYS_CARGO_CD scc){
-        return scmCargo_service.cargo_cd_au(scc);
+    public Result cargo_cd_au (SYS_CARGO_CD scc, HttpServletRequest req){
+        return scmCargo_service.cargo_cd_au(scc,req);
 
     }
     @RequestMapping(value = "/scmCargo/cargo/cd/delete", method = RequestMethod.DELETE) // 코드 리스트 가져오기
-    public Result cargo_cd_delete (SYS_CARGO_CD scc){
-        return scmCargo_service.cargo_cd_delete(scc);
+    public Result cargo_cd_delete (SYS_CARGO_CD scc, HttpServletRequest req){
+        return scmCargo_service.cargo_cd_delete(scc,req);
     }
 }

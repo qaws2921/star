@@ -9,6 +9,7 @@ import com.tobe.mes.tobesystem.Mapper.Scm.Standard.SCMCargo_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class SCMCargo_SERVICE {
         return scmCargo_mapper.common_cargo_type_get();
     }
 
-    public SYS_CARGO_CDS cargo_cd_get(Double page, Double rows, String cargo_grp_code) {
+    public SYS_CARGO_CDS cargo_cd_get(Double page, Double rows, String cargo_grp_code, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SYS_CARGO_CDS(null,0,0,0);
         }else {
@@ -29,6 +30,9 @@ public class SCMCargo_SERVICE {
             p.setPage_num((int)(page*1));
             p.setTotal_num(((int)(rows*1)));
             p.setKeyword(cargo_grp_code);
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
+
             List<SYS_CARGO_CD> sys_cargo_cdList = scmCargo_mapper.cargo_cd_get(p);
             int cargo_cd_get_count = scmCargo_mapper.cargo_cd_get_count(p);
 
@@ -39,11 +43,14 @@ public class SCMCargo_SERVICE {
         }
     }
 
-    public Result cargo_cd_au(SYS_CARGO_CD scc) {
+    public Result cargo_cd_au(SYS_CARGO_CD scc, HttpServletRequest req) {
+
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        scc.setSite_code(site_code);
         return scmCargo_mapper.cargo_cd_au(scc);
     }
 
-    public Result cargo_cd_delete(SYS_CARGO_CD scc) {
+    public Result cargo_cd_delete(SYS_CARGO_CD scc, HttpServletRequest req) {
         char a = (char) 5;
         char b = (char) 4;
         String cargo_cd_code[] = scc.getCargo_code().split(",");
@@ -55,6 +62,9 @@ public class SCMCargo_SERVICE {
                 code += b + cargo_cd_code[i];
             }
         }
-        return scmCargo_mapper.cargo_cd_delete(code);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        scc.setSite_code(site_code);
+        scc.setCargo_code(code);
+        return scmCargo_mapper.cargo_cd_delete(scc);
     }
 }

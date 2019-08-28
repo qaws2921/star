@@ -15,6 +15,7 @@ public class SCM_DC {
     private String imp_type;
     private String remark;
     private String keyword;
+    private String site_code;
 
     public String getDc_no() {
         return dc_no;
@@ -126,5 +127,13 @@ public class SCM_DC {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

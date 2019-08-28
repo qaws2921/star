@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class SCMDC_SERVICE {
     @Autowired
     private SCMDC_Mapper scmdc_mapper;
 
-    public SCM_DCS scmDC_get(Double page, Double rows, Page p) {
+    public SCM_DCS scmDC_get(Double page, Double rows, Page p, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SCM_DCS(null,0,0,0);
         }else {
@@ -31,7 +32,8 @@ public class SCMDC_SERVICE {
 
             p.setStart_date(start_date);
             p.setEnd_date(end_date);
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SCM_DC> scm_dcList = scmdc_mapper.scmDC_get(p);
             int scmDC_get_count = scmdc_mapper.scmDC_get_count(p);
 
@@ -40,7 +42,7 @@ public class SCMDC_SERVICE {
         }
     }
 
-    public SCM_DC_BOXS scmDC_SP_SCM_DC_BOX_READY_GET_get(Double page, Double rows, Page p) {
+    public SCM_DC_BOXS scmDC_SP_SCM_DC_BOX_READY_GET_get(Double page, Double rows, Page p,HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SCM_DC_BOXS(null,0,0,0);
         }else {
@@ -51,7 +53,8 @@ public class SCMDC_SERVICE {
 
             p.setKeyword(keyword);
 
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SCM_DC_BOX> scm_dc_boxList = scmdc_mapper.scmDC_SP_SCM_DC_BOX_READY_GET_get(p);
             int scmDC_SP_SCM_DC_BOX_READY_GET_get_count = scmdc_mapper.scmDC_SP_SCM_DC_BOX_READY_GET_get_count(p);
 
@@ -62,7 +65,7 @@ public class SCMDC_SERVICE {
         }
     }
 
-    public Result scmDC_SP_SCM_DC_ADD_au(Page p) {
+    public Result scmDC_SP_SCM_DC_ADD_au(Page p,HttpServletRequest req) {
 
         String date = p.getKeyword().replace("-","");
 
@@ -79,7 +82,8 @@ public class SCMDC_SERVICE {
                 code += b + box_no[i];
             }
         }
-
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        p.setSite_code(site_code);
         p.setKeyword5(code);
 
         return scmdc_mapper.scmDC_SP_SCM_DC_ADD_au(p);
@@ -88,12 +92,14 @@ public class SCMDC_SERVICE {
 
     }
 
-    public List<SCM_DC_BOX> scmDC_SP_SCM_DC_BOX_GET_get(SCM_DC sd) {
+    public List<SCM_DC_BOX> scmDC_SP_SCM_DC_BOX_GET_get(SCM_DC sd,HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sd.setSite_code(site_code);
         return scmdc_mapper.scmDC_SP_SCM_DC_BOX_GET_get(sd);
 
     }
 
-    public Result scmDC_SP_SCM_DC_DEL(SCM_DC sd) {
+    public Result scmDC_SP_SCM_DC_DEL(SCM_DC sd,HttpServletRequest req) {
         char a = (char) 5;
         char b = (char) 4;
         String list[] = sd.getDc_no().split(",");
@@ -105,11 +111,13 @@ public class SCMDC_SERVICE {
                 code += b + list[i];
             }
         }
-
-        return scmdc_mapper.scmDC_SP_SCM_DC_DEL(code);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sd.setSite_code(site_code);
+        sd.setDc_no(code);
+        return scmdc_mapper.scmDC_SP_SCM_DC_DEL(sd);
     }
 
-    public Result scmDC_SP_SP_SCM_DC_BOX_DEL(SCM_DC_BOX sdb) {
+    public Result scmDC_SP_SP_SCM_DC_BOX_DEL(SCM_DC_BOX sdb,HttpServletRequest req) {
         char a = (char) 5;
         char b = (char) 4;
         String list[] = sdb.getBox_no().split(",");
@@ -121,11 +129,15 @@ public class SCMDC_SERVICE {
                 code += b + list[i];
             }
         }
-
-        return scmdc_mapper.scmDC_SP_SP_SCM_DC_BOX_DEL(code);
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sdb.setSite_code(site_code);
+        sdb.setBox_no(code);
+        return scmdc_mapper.scmDC_SP_SP_SCM_DC_BOX_DEL(sdb);
     }
 
-    public ModelAndView scmDC_print(SCM_DC sd, ModelAndView mav) {
+    public ModelAndView scmDC_print(SCM_DC sd, ModelAndView mav,HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        sd.setSite_code(site_code);
         List<SCM_DC_BOX> list = scmdc_mapper.scmDC_SP_SCM_DC_BOX_GET_get(sd);
 
 

@@ -9,18 +9,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class SCMStockRev_RESTCONTROLLER {
     @Autowired
     private SCMStockRev_SERVICE scmStockRev_service;
     @RequestMapping(value = "/scmStockRev/SP_SCM_STOCK_REV_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public SCM_STOCK_REVS scmStockRev_SP_SCM_STOCK_REV_GET (Double page, Double rows, Page p){
-        return scmStockRev_service.scmStockRev_SP_SCM_STOCK_REV_GET(page,rows,p);
+    public SCM_STOCK_REVS scmStockRev_SP_SCM_STOCK_REV_GET (Double page, Double rows, Page p, HttpServletRequest req){
+        return scmStockRev_service.scmStockRev_SP_SCM_STOCK_REV_GET(page,rows,p,req);
 
     }
 
     @RequestMapping(value = "/scmStockRev/SP_SCM_STOCK_REV_ADD", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public Result scmStockRev_SP_SCM_STOCK_REV_ADD (SCM_STOCK_REV ssr){
-        return scmStockRev_service.scmStockRev_SP_SCM_STOCK_REV_ADD(ssr);
+    public Result scmStockRev_SP_SCM_STOCK_REV_ADD (SCM_STOCK_REV ssr, HttpServletRequest req){
+        return scmStockRev_service.scmStockRev_SP_SCM_STOCK_REV_ADD(ssr,req);
     }
 }

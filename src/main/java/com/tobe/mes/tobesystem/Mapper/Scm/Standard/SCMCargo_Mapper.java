@@ -13,5 +13,5 @@ public interface SCMCargo_Mapper {
     List<SYS_CARGO_CD> cargo_cd_get(Page p);
     int cargo_cd_get_count(Page p);
     Result cargo_cd_au(SYS_CARGO_CD scc);
-    Result cargo_cd_delete(String code);
+    Result cargo_cd_delete(SYS_CARGO_CD scc);
 }

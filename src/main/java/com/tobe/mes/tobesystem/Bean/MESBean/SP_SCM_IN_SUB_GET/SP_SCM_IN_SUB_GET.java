@@ -13,6 +13,7 @@ public class SP_SCM_IN_SUB_GET {
     private String loc_name;
     private String spec;
     private String part_grp_name;
+    private String site_code;
 
 
     public String getIn_no() {
@@ -101,5 +102,13 @@ public class SP_SCM_IN_SUB_GET {
 
     public void setPart_grp_name(String part_grp_name) {
         this.part_grp_name = part_grp_name;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

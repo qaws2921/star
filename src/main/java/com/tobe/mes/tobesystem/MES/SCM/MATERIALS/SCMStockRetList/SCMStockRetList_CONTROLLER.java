@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SCMStockRetList_CONTROLLER {
-    @RequestMapping(value = "/scmStockRet")
+    @RequestMapping(value = "/scmStockRetList")
     public String scmStockRet(){
         return "scm/materials/scmStockRetList";
     }

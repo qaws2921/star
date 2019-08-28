@@ -36,6 +36,7 @@ public class SP_SCM_IN_READY_GET {
     private String order_qty_s;
     private String bad_qty_s;
     private String in_qty_s;
+    private String site_code;
 
     public String getDc_no() {
         return dc_no;
@@ -315,5 +316,13 @@ public class SP_SCM_IN_READY_GET {
 
     public void setIn_qty_s(String in_qty_s) {
         this.in_qty_s = in_qty_s;
+    }
+
+    public String getSite_code() {
+        return site_code;
+    }
+
+    public void setSite_code(String site_code) {
+        this.site_code = site_code;
     }
 }

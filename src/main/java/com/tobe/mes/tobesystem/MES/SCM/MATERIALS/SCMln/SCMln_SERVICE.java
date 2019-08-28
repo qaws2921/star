@@ -9,6 +9,7 @@ import com.tobe.mes.tobesystem.Mapper.Scm.Materlals.SCMln_Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -17,7 +18,7 @@ public class SCMln_SERVICE {
     @Autowired
     private SCMln_Mapper scMln_mapper;
 
-    public SCM_INS scmln_SP_SCM_IN_GET(Double page, Double rows, Page p) {
+    public SCM_INS scmln_SP_SCM_IN_GET(Double page, Double rows, Page p, HttpServletRequest req) {
         if (page == null && rows == null) {
             return new SCM_INS(null,0,0,0);
         }else {
@@ -30,7 +31,8 @@ public class SCMln_SERVICE {
             p.setStart_date(start_date);
             p.setEnd_date(end_date);
 
-
+            String site_code = (String) req.getSession().getAttribute("session_check");
+            p.setSite_code(site_code);
             List<SCM_IN> scm_inList = scMln_mapper.scmln_SP_SCM_IN_GET(p);
             int scmln_SP_SCM_IN_GET_count = scMln_mapper.scmln_SP_SCM_IN_GET_count(p);
 
@@ -42,12 +44,13 @@ public class SCMln_SERVICE {
         }
     }
 
-    public List<SP_SCM_IN_SUB_GET> scmln_SP_SCM_IN_SUB_GET(SCM_IN si) {
-
+    public List<SP_SCM_IN_SUB_GET> scmln_SP_SCM_IN_SUB_GET(SCM_IN si, HttpServletRequest req) {
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        si.setSite_code(site_code);
         return scMln_mapper.scmln_SP_SCM_IN_SUB_GET(si);
     }
 
-    public Result scmln_SP_SCM_IN_ADD(SCM_IN si) {
+    public Result scmln_SP_SCM_IN_ADD(SCM_IN si, HttpServletRequest req) {
 
         String work_date = si.getWork_date().replace("-","");
         si.setWork_date(work_date);
@@ -65,12 +68,14 @@ public class SCMln_SERVICE {
                 code_list += b+part_code[i]+a+0+a+0+a+in_qty[i];
             }
         }
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        si.setSite_code(site_code);
         si.setKeyword2(code_list);
 
         return scMln_mapper.scmln_SP_SCM_IN_ADD(si);
     }
 
-    public Result scmln_SP_SCM_IN_DEL(SCM_IN si) {
+    public Result scmln_SP_SCM_IN_DEL(SCM_IN si, HttpServletRequest req) {
 
         char a = (char)5;
         char b = (char)4;
@@ -83,6 +88,8 @@ public class SCMln_SERVICE {
                 code_list += b+in_no[i];
             }
         }
+        String site_code = (String) req.getSession().getAttribute("session_check");
+        si.setSite_code(site_code);
         si.setIn_no(code_list);
 
         return scMln_mapper.scmln_SP_SCM_IN_DEL(si);

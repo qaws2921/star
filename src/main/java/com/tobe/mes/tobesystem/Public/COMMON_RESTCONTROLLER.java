@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -20,32 +21,32 @@ public class COMMON_RESTCONTROLLER {
     private COMMON_SERVICE common_service;
 
     @RequestMapping(value = "/common/part/group/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public List<SYS_PART_GROUP> part_group_get (){
-        return common_service.part_group_get();
+    public List<SYS_PART_GROUP> part_group_get (HttpServletRequest req){
+        return common_service.part_group_get(req);
     }
     @RequestMapping(value = "/common/common/get", method = RequestMethod.POST) // 코드 리스트 가져오기
     public List<SYS_COMMON_CD> common_get (Page p){
         return common_service.common_get(p);
     }
     @RequestMapping(value = "/common/cargo/cd/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public List<SYS_CARGO_CD> cargo_cd_get (){
-        return common_service.cargo_cd_get();
+    public List<SYS_CARGO_CD> cargo_cd_get (HttpServletRequest req){
+        return common_service.cargo_cd_get(req);
     }
     @RequestMapping(value = "/common/SP_SYS_CARGO_GET", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET (){
-        return common_service.common_SP_SYS_CARGO_GET();
+    public List<SYS_CARGO_CD> common_SP_SYS_CARGO_GET (HttpServletRequest req){
+        return common_service.common_SP_SYS_CARGO_GET(req);
     }
     @RequestMapping(value = "/common/loc/cd/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public List<SYS_LOC_CD> loc_cd_get (Page p){
-        return common_service.loc_cd_get(p);
+    public List<SYS_LOC_CD> loc_cd_get (Page p,HttpServletRequest req){
+        return common_service.loc_cd_get(p,req);
     }
     @RequestMapping(value = "/common/supp/get", method = RequestMethod.POST) // 코드 리스트 가져오기
-    public List<SYS_SUPP_CD> supp_get (Page p){
-        return common_service.supp_get(p);
+    public List<SYS_SUPP_CD> supp_get (Page p,HttpServletRequest req){
+        return common_service.supp_get(p,req);
     }
     @RequestMapping(value = "/scmPart/bPart/supp/get",method = RequestMethod.POST) // 코드 리스트 가져오기
-    public SYS_BPART_CDS bPart_get (Double page, Double rows, Page p){
-        return common_service.bPart_get(page,rows,p);
+    public SYS_BPART_CDS bPart_get (Double page, Double rows, Page p,HttpServletRequest req){
+        return common_service.bPart_get(page,rows,p,req);
     }
 
 

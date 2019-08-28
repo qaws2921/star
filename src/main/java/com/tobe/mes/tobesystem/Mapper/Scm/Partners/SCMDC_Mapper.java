@@ -20,7 +20,7 @@ public interface SCMDC_Mapper {
 
     List<SCM_DC_BOX> scmDC_SP_SCM_DC_BOX_GET_get(SCM_DC sd);
 
-    Result scmDC_SP_SCM_DC_DEL(String code);
+    Result scmDC_SP_SCM_DC_DEL(SCM_DC sd);
 
-    Result scmDC_SP_SP_SCM_DC_BOX_DEL(String code);
+    Result scmDC_SP_SP_SCM_DC_BOX_DEL(SCM_DC_BOX sd);
 }

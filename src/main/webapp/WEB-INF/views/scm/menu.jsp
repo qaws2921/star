@@ -89,25 +89,26 @@
                                         <a class="scmStockRev" href="scmStockRev?active=scm&check=materials">재고조정</a>
                                     </li>
                                     <li>
+                                        <a class="scmStockRet" href="scmStockRet?active=scm&check=materials">자재반출</a>
+                                    </li>
+                                    <li>
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">재고조정이력</a>
                                     </li>
                                     <li>
                                         <a class="sysBoard" href="sysBoard?active=scm&check=master">자재이동</a>
                                     </li>
-                                    <li>
-                                        <a class="scmStockRet" href="scmStockRet?active=scm&check=materials">자재반출</a>
-                                    </li>
+
 
                         </ul>
                     </li>
                     <li class="nav-item bor-bm">
-                        <a class="nav-link ba-color-999 supply menuMainA" href="#">
+                        <a class="nav-link ba-color-999 supplies menuMainA" href="#">
                             사급품<i class="fas fa-angle-down down-icon"></i>
                         </a>
                         <ul class="file-tree user">
 
                             <li>
-                                <a class="scmEC" href="scmEC?active=scm&check=supply">출고증관리</a>
+                                <a class="scmECOut" href="scmECOut?active=scm&check=supplies">출고증관리</a>
                             </li>
                             <li>
                                 <a class="scmECIn" href="scmECIn?active=scm&check=supply">입고처리</a>
