@@ -1,27 +1,15 @@
 window.onload = function () {
+
+var mixin = modal();
+
     new Vue({
         el:"#app",
+        mixins: [mixin],
         data: function () {
             return{
                 common_group_list:[], // 코드그룹 리스트
                 common_group_code:'', // 코드그룹 코드
                 common_group_code_post:'', // 코드그룹 코드 조회 데이터
-                sys_common:{        // 공통코드 객체
-                    code_type:"",
-                    code_value:"",
-                    code_name1:"",
-                    code_name2:"",
-                    code_name3:"",
-                    code_name4:"",
-                    code_name5:"",
-                    code_name6:"",
-                    code_name7:"",
-                    code_name8:"",
-                    use_yn:"Y",
-                    user_name:"",
-                    update_date:"",
-                    keyword:""
-                },
                 add_update_check:'I'    // 저장인지 수정인지 체크 I , U
             }
         },
@@ -55,77 +43,12 @@ window.onload = function () {
                 _this.add_update_check="I"; // add_update_check I, U 값들을 넣어 저장인지 수정인지 판별한다(I 저장,U 수정)
                 _this.reset(); // 공통코드 객체 리셋
             },
-            reset:function(){ //공통코드 객체 리셋(추가 버튼이나 수정을 할때 먼저 안에 있는 데이터들을 없앤다.)
-                var _this = this;
-                _this.sys_common.code_value="";
-                _this.sys_common.code_name1="";
-                _this.sys_common.code_name2="";
-                _this.sys_common.code_name3="";
-                _this.sys_common.code_name4="";
-                _this.sys_common.code_name5="";
-                _this.sys_common.code_name6="";
-                _this.sys_common.code_name6="";
-                _this.sys_common.code_name8="";
-                _this.sys_common.use_yn="Y";
-            },
             main_update_btn:function () { // 데이터를 더블 클릭시 발동되는 함수
                 var _this = this;
                 _this.add_update_check="U"; // add_update_check I, U 값들을 넣어 저장인지 수정인지 판별한다(I 저장,U 수정)
                 $('#myModal').modal("show"); // 모달창 오픈.
             },
-            main_edit:function (data) {   // 데이터를 더블 클릭시 발동되는 함수(데이트의 값들을 객체에 저장한다)
-                var _this = this;
-                _this.reset();
-                _this.sys_common.code_type=data.code_type;
-                _this.sys_common.code_value=data.code_value;
-                _this.sys_common.code_name1=data.code_name1;
-                _this.sys_common.code_name2=data.code_name2;
-                _this.sys_common.code_name3=data.code_name3;
-                _this.sys_common.code_name4=data.code_name4;
-                _this.sys_common.code_name5=data.code_name5;
-                _this.sys_common.code_name6=data.code_name6;
-                _this.sys_common.code_name7=data.code_name7;
-                _this.sys_common.code_name8=data.code_name8;
-                _this.sys_common.use_yn=data.use_yn;
-            },
-            main_add_update:function (au) { // 저장 수정 함수 (버튼에서 au값 I 나 U를 넣어줘서 실행)
-                var _this = this
-                var txt ='저장 히겠습니까?';   // confirm 안에 텍스트 내용이 I, U 일때 달라진다.
-                if (au === 'U'){
-                    var txt ='수정 히겠습니까?';
-                }
-                if(confirm(txt)){
-                    if (_this.effectiveness()) {
-                        _this.sys_common.keyword = au; // 저장인지 수정인지 sys_common.keyword 값을 저장 I,U
-                        $.ajax({
-                            url: "sysCommon/common/au",
-                            data: _this.sys_common, // 객체의 데이터를 보냄
-                            type: 'POST',
-                            async: true,
-                            dataType: "json",
-                            success: function (data) {
-                                if (data.result === 'NG'){ // 결과 값인 NG 로 넘어오면 실행
-                                    alert(data.message);
-                                } else {
-                                    $('#myModal').modal("hide"); //모달창을 닫는다
-                                    if (au === 'I') { // 저장일때 저장한 코드그룹으로 다시 새롭게 조회한다
-                                        _this.main_get($("#jqGrid").getGridParam(1));
-                                    } else {  // 수정일때 데이터를 바꾼 코드그룹으로 다시 새롭게 조회한다
-                                        _this.main_get2($("#jqGrid").getGridParam('page'));
-                                    }
-                                }
-                            },
-                            error: function () { // 에러일때 표시
-                                if (au === 'I') {
-                                    alert("저장실패");
-                                } else {
-                                    alert("수정실패");
-                                }
-                            }
-                        });
-                    }
-                }
-            },
+
             main_delete:function () { //삭제를 누를시
                 var _this = this;
                 var ids = jQuery("#jqGrid").getGridParam('selarrrow'); //체크된 row id들을 배열로 반환
@@ -161,18 +84,6 @@ window.onload = function () {
                         alert("삭제실패")
                     }
                 });
-            },
-            effectiveness:function () { // 유효성 검사
-                var _this = this;
-                if (_this.sys_common.code_value === ''){
-                    alert("코드를 입력해주세요");
-                    return false;
-                }else if (_this.sys_common.code_name1 === ''){
-                    alert("명칭1을 입력해주세요");
-                    return false;
-                }else {
-                    return true;
-                }
             },
             selectBox:function(){  // select2 실행 메소드
                 $("#common_group_select").select2();

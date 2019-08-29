@@ -1,4 +1,4 @@
 package com.tobe.mes.tobesystem.Mapper.Scm.Supply;
 
-public interface SCMECIn_Mapper {
+public interface SCMECIn2_Mapper {
 }

@@ -2,25 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.tobe.mes.tobesystem.Mapper.Scm.Supplies.SCMECOut_Mapper">
-    <select id="common_cargo_type_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SYS_COMMON_CD.SYS_COMMON_CD">
-        CALL TOBE_MES.SP_SYS_COMMON_ETC_GET('CARGO_TYPE')
-    </select>
+
     <select id="scmECOut_sp_scm_ec_out_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SCM_EC.SCM_EC">
         CALL TOBE_MES.sp_scm_ec_out_get(#{site_code},#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'','','S')
     </select>
     <select id="scmECOut_sp_scm_ec_out_getT_count" resultType="Integer">
         CALL TOBE_MES.sp_scm_ec_out_get(#{site_code},#{page_num},#{total_num},#{start_date},#{end_date},#{keyword},'','','C')
     </select>
-    <select id="scmln_SP_SCM_IN_SUB_GET" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SP_SCM_IN_SUB_GET.SP_SCM_IN_SUB_GET">
-        CALL TOBE_MES.SP_SCM_IN_SUB_GET(#{site_code},#{in_no})
+    <select id="scmECOut_sp_scm_ec_out_add" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.sp_scm_ec_out_add(#{site_code},#{work_date},#{ec_no},#{supp_code_from},#{supp_code_to},#{keyword},#{remark},#{user_code})
     </select>
-    <select id="scmln_SP_SCM_IN_ADD" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SCM_IN_ADD(#{site_code},#{work_date},#{supp_code},'',#{user_code},#{keyword2},#{remark})
+    <select id="scmECOut_sp_scm_ec_out_sub_get" resultType="com.tobe.mes.tobesystem.Bean.MESBean.SCM_EC_SUB.SCM_EC_SUB">
+        CALL TOBE_MES.sp_scm_ec_out_sub_get(#{site_code},#{ec_no})
     </select>
-    <select id="scmln_SP_SCM_IN_DEL" resultType="com.tobe.mes.tobesystem.Bean.Result">
-        CALL TOBE_MES.SP_SCM_IN_DEL(#{site_code},#{in_no})
+    <select id="scmECOut_sp_scm_ec_out_del" resultType="com.tobe.mes.tobesystem.Bean.Result">
+        CALL TOBE_MES.sp_scm_ec_out_del(#{site_code},#{ec_no})
 
     </select>
+
 
 
 

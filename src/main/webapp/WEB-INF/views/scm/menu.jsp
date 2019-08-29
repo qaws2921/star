@@ -111,7 +111,7 @@
                                 <a class="scmECOut" href="scmECOut?active=scm&check=supplies">출고증관리</a>
                             </li>
                             <li>
-                                <a class="scmECIn" href="scmECIn?active=scm&check=supply">입고처리</a>
+                                <a class="scmECIn" href="scmECIn?active=scm&check=supplies">입고처리</a>
                             </li>
                             <li>
                                 <a class="scmECList" href="scmECList?active=scm&check=supply">납품현황</a>

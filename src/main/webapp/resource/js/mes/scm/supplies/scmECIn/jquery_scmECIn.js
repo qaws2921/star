@@ -1,4 +1,4 @@
-function jquery_scmECOut(_this){
+function jquery_scmECIn(_this){
 
     $( "#date_input1" ).datepicker(date).on('change', function(e) {
         _this.keyword.start_date = e.target.value;
@@ -8,7 +8,7 @@ function jquery_scmECOut(_this){
     });
 
     $( "#date_input3" ).datepicker(date).on('change', function(e) {
-        _this.scm_ec.work_date = e.target.value;
+        _this.scm_in.work_date = e.target.value;
     });
 
     $(document).on("change","#part_group_select",function(){ // select 박스 바뀔때
@@ -34,8 +34,6 @@ var date={
 
 
 function formmatter_date(cellValue) { // 날짜 필터
-    if (cellValue !== ''){
-
     var y = cellValue.substring(0,4);
     var m = cellValue.substring(4,6);
     var d = cellValue.substring(6,8);
@@ -45,9 +43,6 @@ function formmatter_date(cellValue) { // 날짜 필터
     // 20190718092501
     var date = y+"-"+m+"-"+d+" "+h+":"+mm+":"+s;
     return date;
-    } else {
-        return '';
-    }
 }
 function callback(cb) {
     cb();
@@ -60,18 +55,15 @@ function jqgrid_au_modal(_this) {
     $("#jqGrid").jqGrid({
         datatype: "json",
         mtype: 'POST',
-        colNames:['출고일자','출고번호','받을업체','등록자','츨고일시','입고구분','입고일자','비고','supp_code_to','in_type'],
+        colNames:['입고일자','입고번호','업체코드','업체명','출고번호','등록자','입고일시'],
         colModel:[
             {name:'work_date',index:'work_date',width:50,sortable: false,width:150},
-            {name:'ec_no',index:'ec_no',width:100 ,key: true,sortable: false,width:150},
-            {name:'supp_name_to',index:'supp_name_from',width:100,sortable: false,width:150},
+            {name:'in_no',index:'in_no',width:100 ,sortable: false,width:150},
+            {name:'supp_code_from',index:'supp_code_from',width:100,sortable: false,width:150},
+            {name:'supp_name_from',index:'supp_name_from',width:100,sortable: false,width:150},
+            {name:'ec_no',index:'ec_no',width:100,key: true,sortable: false,width:150},
             {name:'user_name',index:'user_name',width:100,sortable: false,width:150},
-            {name:'create_date',index:'create_date',width:100,sortable: false,width:150,formatter:formmatter_date},
-            {name:'in_type_desc',index:'in_type_desc',width:100,sortable: false,width:150},
             {name:'in_datetime',index:'in_datetime',width:100,sortable: false,width:150,formatter:formmatter_date},
-            {name:'remark',index:'remark',width:100,sortable: false,width:150},
-            {name:'supp_code_to',index:'supp_code_to',width:100,sortable: false,width:150,hidden:true},
-            {name:'in_type',index:'in_type',width:100,sortable: false,width:150,hidden:true},
 
         ],
         autowidth: true,
@@ -103,51 +95,21 @@ function jqgrid_au_modal(_this) {
 
 
 var lastsel2;
-   $("#au_modal1").jqGrid({
-        datatype: "json",
-        mtype: 'POST',
-        colNames:['품목그룹','품번','품명','규격','단위','포장수량'],
-        colModel:[
-            {name:'part_grp_name',index:'part_grp_name',sortable: false},
-            {name:'part_code',index:'part_code',key: true ,sortable: false},
-            {name:'part_name',index:'part_name',sortable: false},
-            {name:'spec',index:'spec',sortable: false},
-            {name:'unit_code',index:'unit_code',sortable: false},
-            {name:'pack_qty',index:'pack_qty',sortable: false},
-            // {name:'lot_no',index:'lot_no',width:100,sortable: false, formatter: function (cellValue, option) {
-            //         return '<input type="text" size="7" name="txtBox" id="txt_' + option.rowId +'"/>';
-            //     }},
-        ],
-       autowidth: true,
-       emptyrecords:false,
-
-        shrinkToFit:false,
-        height:150,
-        pager:'#au_modal_page1',
-        jsonReader: {cell:""},
-        rowNum: 100,
-        rowList: [100, 200, 300, 400],
-        viewrecords: true,
-        multiselect:true,
 
 
-    }).navGrid("#au_modal_page1", { search: false, add: false, edit: false, del: false});
-
-    $("#au_modal2").focus(function () {
-        alert("ss");
-    });
 
     $("#au_modal2").jqGrid({
         datatype: "json",
         mtype: 'POST',
         editurl: 'clientArray',
-        colNames:['품목그룹','품번','품명','단위','출고수량'],
+        colNames:['품목그룹','품번','품명','단위','납품수량','입고수량'],
         colModel:[
             {name:'part_grp_name',index:'part_grp_name',sortable: false},
             {name:'part_code',index:'part_code',key: true ,sortable: false},
             {name:'part_name',index:'part_name',sortable: false},
             {name:'unit_code',index:'unit_code',sortable: false},
-            {name:'order_qty',index:'order_qty',sortable: false,
+            {name:'order_qty',index:'order_qty',sortable: false},
+            {name:'in_qty',index:'in_qty',sortable: false,
                 editrules: { number: true },
                 editable: true,
                 editoptions: {
@@ -157,9 +119,13 @@ var lastsel2;
                             type: 'focusout',
                             fn: function (e) {
 
-                                if ($("#"+lastsel2+"_order_qty").val()){
-                                    if (isNaN($("#"+lastsel2+"_order_qty").val())){
+                                if ($("#"+lastsel2+"_in_qty").val()){
+                                    var data = $('#au_modal2').jqGrid('getRowData', lastsel2);
+                                    if (isNaN($("#"+lastsel2+"_in_qty").val())){
                                         alert("숫자만 가능합니다.");
+                                        return false;
+                                    }else if($("#"+lastsel2+"_in_qty").val()>data.order_qty){
+                                        alert("입고수량이 초과했습니다.");
                                         return false;
                                     }
                                 }
@@ -190,14 +156,18 @@ var lastsel2;
 
 
              if (icol == 5){
-               if ($("#"+lastsel2+"_order_qty").val()){
-                   if (isNaN($("#"+lastsel2+"_order_qty").val())){
+               if ($("#"+lastsel2+"_in_qty").val()){
+                   var data = $('#au_modal2').jqGrid('getRowData', lastsel2);
+                   if (isNaN($("#"+lastsel2+"_in_qty").val())){
                        alert("숫자만 가능합니다.");
+                       return false;
+                   } else if($("#"+lastsel2+"_in_qty").val()>data.order_qty){
+                       alert("입고수량이 초과했습니다.");
                        return false;
                    }
                }
 
-                 // alert($("#"+lastsel2+"_order_qty").val());
+                 // alert($("#"+lastsel2+"_in_qty").val());
                  $("#au_modal2").jqGrid('saveRow', lastsel2);
                 $("#au_modal2").jqGrid('editRow',rowid,{
                      keys: true,
@@ -207,12 +177,6 @@ var lastsel2;
 
 
         },
-            beforeSelectRow: function (rowid, e) {          // 클릭시 체크 방지
-            var $myGrid = $(this),
-                i = $.jgrid.getCellIndex($(e.target).closest('td')[0]),
-                cm = $myGrid.jqGrid('getGridParam', 'colModel');
-            return (cm[i].name === 'cb');
-        },
         autowidth: true,
         shrinkToFit:false,
         height:184,
@@ -221,7 +185,7 @@ var lastsel2;
         rowNum: 100,
         rowList: [100, 200, 300, 400],
         viewrecords: true,
-        multiselect:true,
+
 
 
     });

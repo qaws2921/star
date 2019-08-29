@@ -55,7 +55,7 @@ function jqgrid(_this) {
         },
         ondblClickRow: function (rowid, iRow, iCol, e) { // 더블 클릭시 수정 모달창
             var data = $('#jqGrid').jqGrid('getRowData', rowid); // 그 셀에 해당되는 데이터
-            _this.main_edit(data); // 데이터 가공
+            _this.modal_edit(data); // 데이터 가공
             _this.main_update_btn(); // 수정창 띄어주기
 
         }
@@ -65,3 +65,4 @@ function jqgrid(_this) {
 
 
 }
+

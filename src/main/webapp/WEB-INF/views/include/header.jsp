@@ -36,7 +36,7 @@
     <script type="text/javascript" src="resource/js/jem/axios.js"></script>
     <script type="text/javascript" src="resource/js/jem/axios.min.js"></script>
     <script type="text/javascript" src="resource/js/jem/es6-promise.auto.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
     <script src="resource/js/mes/header/header.js"></script>
     <script src="resource/js/tree/file-explore.js"></script>
     <link href="resource/js/tree/file-explore.css" rel="stylesheet"/>

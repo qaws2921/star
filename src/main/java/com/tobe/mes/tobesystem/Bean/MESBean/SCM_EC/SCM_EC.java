@@ -15,8 +15,11 @@ public class SCM_EC {
     private String supp_name_from;
     private String supp_name_to;
     private String user_name;
+    private String user_name_to;
     private String in_type_desc;
     private String site_code;
+    private String keyword;
+    private String keyword2;
 
     public String getEc_no() {
         return ec_no;
@@ -144,5 +147,29 @@ public class SCM_EC {
 
     public void setSite_code(String site_code) {
         this.site_code = site_code;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public String getKeyword2() {
+        return keyword2;
+    }
+
+    public void setKeyword2(String keyword2) {
+        this.keyword2 = keyword2;
+    }
+
+    public String getUser_name_to() {
+        return user_name_to;
+    }
+
+    public void setUser_name_to(String user_name_to) {
+        this.user_name_to = user_name_to;
     }
 }
