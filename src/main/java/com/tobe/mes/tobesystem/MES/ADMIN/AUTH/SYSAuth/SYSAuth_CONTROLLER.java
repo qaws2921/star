@@ -13,7 +13,7 @@ public class SYSAuth_CONTROLLER {
 
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/auth/sysAuth";
+            return "admin/auth/sysAuth/sysAuth";
         }else {
             return "index";
         }

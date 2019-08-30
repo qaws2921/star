@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="../../include/header.jsp"%>
-<%@include file="../menu.jsp"%>
+<%@include file="../../../include/header.jsp"%>
+<%@include file="../../menu.jsp"%>
 <script src="resource/js/mes/admin/master/sysCommon/vue_sysCommon.js"></script>
 <script src="resource/js/mes/admin/master/sysCommon/jquery_sysCommon.js"></script>
 

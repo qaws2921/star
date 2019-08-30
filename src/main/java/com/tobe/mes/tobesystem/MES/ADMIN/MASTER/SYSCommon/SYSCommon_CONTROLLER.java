@@ -8,7 +8,7 @@ public class SYSCommon_CONTROLLER {
 
     @RequestMapping(value = "/sysCommon")
     public String sysCommon(){
-        return "admin/master/sysCommon";
+        return "admin/master/sysCommon/sysCommon";
     }
 
 }

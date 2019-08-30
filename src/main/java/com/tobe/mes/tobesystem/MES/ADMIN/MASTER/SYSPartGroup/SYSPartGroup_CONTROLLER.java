@@ -13,7 +13,7 @@ public class SYSPartGroup_CONTROLLER {
 
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/master/sysPartGroup";
+            return "admin/master/sysPartGroup/sysPartGroup";
         }else {
             return "index";
         }

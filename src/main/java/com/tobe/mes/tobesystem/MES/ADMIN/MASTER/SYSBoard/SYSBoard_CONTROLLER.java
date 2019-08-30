@@ -11,7 +11,7 @@ public class SYSBoard_CONTROLLER {
     public String sysMsg(HttpServletRequest req){
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/master/sysBoard";
+            return "admin/master/sysBoard/sysBoard";
         }else {
             return "index";
         }

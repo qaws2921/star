@@ -8,6 +8,6 @@ public class SYSMsg_CONTROLLER {
 
     @RequestMapping(value = "/sysMsg")
     public String sysMsg(){
-        return "admin/master/sysMsg";
+        return "admin/master/sysMsg/sysMsg";
     }
 }

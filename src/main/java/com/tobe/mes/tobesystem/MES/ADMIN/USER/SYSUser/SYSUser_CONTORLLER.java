@@ -12,7 +12,7 @@ public class SYSUser_CONTORLLER {
 
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/user/sysUser";
+            return "admin/user/sysUser/sysUser";
         }else {
             return "index";
         }

@@ -11,7 +11,7 @@ public class SYSUserSupp_CONTROLLER {
     public String sysUserSupp(HttpServletRequest req){
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/user/sysUserSupp";
+            return "admin/user/sysUserSupp/sysUserSupp";
         }else {
             return "index";
         }

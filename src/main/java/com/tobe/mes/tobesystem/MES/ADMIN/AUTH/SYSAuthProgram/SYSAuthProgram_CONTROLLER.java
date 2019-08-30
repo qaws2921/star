@@ -11,7 +11,7 @@ public class SYSAuthProgram_CONTROLLER {
     public String sysAuthProgram(HttpServletRequest req){
         if (req.getSession().getAttribute("session_check") != null){
 
-            return "admin/auth/sysAuthProgram";
+            return "admin/auth/sysAuthProgram/sysAuthProgram";
         }else {
             return "index";
         }
